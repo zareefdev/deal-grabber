@@ -12,18 +12,34 @@ Live discounted tech listings from Amazon.in and Flipkart, shown on a single sta
 
 Each refresh scrapes both stores, then merges the result with the previous snapshot:
 
-- A healthy scrape is **authoritative** — deals that are gone are dropped, so expired listings
-  disappear on their own.
-- If a store returns suspiciously little (CI IPs are often blocked), the run is treated as
-  **partial**: fresh deals are kept and recent unseen rows are retained, marked stale, and
-  aged out after `DEAL_TTL_MS` (24h). A fully blocked store holds its last snapshot for at most
-  `STORE_STALE_MS` (3h).
+- A scrape where **every query answered** is authoritative — deals that are gone are dropped, so
+  expired listings disappear on their own.
+- If **any query came back blocked** (CI IPs are often served a robot interstitial), the run is
+  treated as **degraded**: fresh deals are kept and recent unseen rows are retained, marked
+  stale, and aged out after `DEAL_TTL_MS` (24h). A fully blocked store holds its last snapshot
+  for at most `STORE_STALE_MS` (3h).
 - Every deal carries `firstSeen`/`lastSeen`; anything first seen in the last 24h gets a **New**
   badge in the UI.
 
 The previous snapshot lives in `.deal-state.json` (gitignored). In CI it is carried between
 runs with the Actions cache, so the ledger survives a fresh checkout without committing data
-churn. Tune with `MERGE_KEEP_RATIO`, `DEAL_TTL_MS`, `STORE_STALE_MS`, `MAX_STORE_DEALS`.
+churn. Tune with `DEAL_TTL_MS`, `STORE_STALE_MS`, `MAX_STORE_DEALS`.
+
+### Scraping from a datacenter IP
+
+Amazon rate-limits by IP and intermittently answers a search with a robot interstitial that
+carries no result cards. The scraper handles that directly:
+
+- A blocked query is detected in ~4s and **retried** (`AMAZON_QUERY_RETRIES`, default 2), which
+  recovers most of them; navigations are spaced out with a small random delay.
+- The Amazon context hides the automation flag, seeds INR/locale cookies, and warms up on the
+  homepage once, so the searches reuse a normal-looking session.
+- If queries still come back empty, the merge falls back to keeping the richer snapshot rather
+  than overwriting it.
+
+To remove the block entirely, set the repository secret **`SCRAPE_PROXY`** to a residential
+proxy (`http://user:pass@host:port` or `socks5://…`). The scraping browser then routes through
+it and CI sees the same result set as a local run. Unset means scrape direct.
 
 ## Local development
 
@@ -81,7 +97,8 @@ Required repository secrets:
 
 - GitHub's scheduler is best-effort: a 10-minute cron is the requested cadence, not a guarantee
   — runs can be delayed or dropped under load.
-- Amazon and Flipkart both block datacenter IP ranges, so a scheduled scrape can come back
-  small from CI. The merge logic above keeps the site from regressing; run `npm run scrape`
-  locally and commit `public/deals.json` to seed or repair it.
+- Amazon and Flipkart both rate-limit datacenter IP ranges, so a scheduled scrape can come back
+  small from CI. Blocked queries are retried, the merge keeps the richer snapshot when a run is
+  degraded, and `SCRAPE_PROXY` removes the block outright. To seed or repair the snapshot by
+  hand, run `npm run scrape` locally and commit `public/deals.json`.
 - Product images are third-party URLs served straight from the marketplaces.

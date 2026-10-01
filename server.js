@@ -12,11 +12,9 @@ const cacheFile = path.join(__dirname, 'public', 'deals.json');
 // the Actions cache in CI, so a fresh checkout still knows what it saw last time.
 const stateFile = path.join(__dirname, '.deal-state.json');
 
-// A store's fresh scrape becomes authoritative once it recovers at least this
-// share of the previous snapshot. Below it we assume the store partially blocked
-// us, merge instead of replacing, and let the missing rows age out.
-const MERGE_KEEP_RATIO = Number(process.env.MERGE_KEEP_RATIO || 0.6);
-// Unseen deals survive that merge for this long before being expired for good.
+// Unseen deals survive a merge for this long before being expired for good. A
+// scrape that returns fewer rows than last time never deletes the difference
+// outright, so this TTL is the only clock that removes a listing.
 const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
 // A fully blocked store may hold its last snapshot for at most this long.
 const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
@@ -26,22 +24,39 @@ const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 const AMAZON_TAG = process.env.AMAZON_TAG || 'mdzareef-21';
 const amazonUrl = asin => `https://www.amazon.in/dp/${asin}?tag=${encodeURIComponent(AMAZON_TAG)}`;
 
+// Optional outbound proxy for the whole scraping browser. On datacenter IPs the
+// stores intermittently answer with a robot interstitial (no result cards), which
+// is the only reason a CI run scrapes less than a local one. Pointing the browser
+// at a residential proxy removes that class of failure entirely. Accepts the
+// usual http(s)://user:pass@host:port and socks5:// URLs; unset means direct.
+const SCRAPE_PROXY = process.env.SCRAPE_PROXY || '';
+
 let cache;
 let cachedAt = 0;
 let inflight = null;
 
 // Restore the last good scrape so a restart cannot regress the page to one store
-// while Flipkart is transiently blocked. The sidecar wins because it is rewritten
-// on every scrape, whereas the deployed file may be a stale committed snapshot.
+// while Flipkart is transiently blocked. There are two candidates: the private
+// sidecar, which is rewritten on every scrape, and the committed public/deals.json,
+// which in CI is the rich snapshot captured on a residential IP. Take whichever
+// holds more of each store, so the committed floor is never shadowed by a smaller
+// ledger the runner accumulated.
+const restoredSnapshots = [];
 for (const file of [stateFile, cacheFile]) {
   try {
-    const restored = JSON.parse(readFileSync(file, 'utf8'));
-    if (restored && restored.amazon && restored.flipkart) {
-      cache = restored;
-      cachedAt = Date.parse(restored.updatedAt) || 0;
-      break;
-    }
+    const parsed = JSON.parse(readFileSync(file, 'utf8'));
+    if (parsed && parsed.amazon && parsed.flipkart) restoredSnapshots.push(parsed);
   } catch {}
+}
+if (restoredSnapshots.length) {
+  const richerStore = key => restoredSnapshots.reduce((best, snap) =>
+    ((snap[key].deals || []).length > (best[key].deals || []).length ? snap : best), restoredSnapshots[0]);
+  cache = {
+    ...restoredSnapshots[0],
+    amazon: richerStore('amazon').amazon,
+    flipkart: richerStore('flipkart').flipkart
+  };
+  cachedAt = Math.max(...restoredSnapshots.map(snap => Date.parse(snap.updatedAt) || 0));
 }
 
 function readJsonObjectAt(text, start) {
@@ -211,10 +226,14 @@ async function getRenderBrowser() {
   if (!browserPromise) {
     const executablePath = resolveChromiumExecutable(pw);
     browserPromise = pw.chromium
-      .launch({ headless: true, executablePath, args: ['--disable-blink-features=AutomationControlled'] })
+      .launch({
+        headless: true, executablePath,
+        args: ['--disable-blink-features=AutomationControlled'],
+        ...(SCRAPE_PROXY ? { proxy: { server: SCRAPE_PROXY } } : {})
+      })
       .then(browser => {
         browser.on('disconnected', () => { browserPromise = null; contextPromise = null; });
-        debugFlipkart('browser launched', browser.version(), executablePath || '(default cache path)');
+        debugFlipkart('browser launched', browser.version(), executablePath || '(default cache path)', SCRAPE_PROXY ? '(via proxy)' : '(direct)');
         return browser;
       })
       .catch(err => {
@@ -253,6 +272,21 @@ async function getAmazonContext() {
       userAgent: AMAZON_RENDER_UA, viewport: { width: 1366, height: 900 },
       locale: 'en-IN', timezoneId: 'Asia/Kolkata',
       extraHTTPHeaders: { 'Accept-Language': 'en-IN,en-US;q=0.9,en;q=0.8' }
+    }).then(async context => {
+      // The interstitial fingerprints the automation flag, and a context with no
+      // cookies looks like a cold bot on the very first request. Hide the flag and
+      // seed a normal Indian session (homepage + INR/locale cookies) once, so the
+      // eleven searches that follow all reuse a "warm" visitor.
+      await context.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+      });
+      await context.addCookies([
+        { name: 'i18n-prefs', value: 'INR', domain: '.amazon.in', path: '/' },
+        { name: 'lc-acbin', value: 'en_IN', domain: '.amazon.in', path: '/' }
+      ]).catch(() => {});
+      await context.request.get('https://www.amazon.in/', { timeout: 15000 }).catch(() => {});
+      debugAmazon('context warmed');
+      return context;
     }).catch(err => {
       console.error('[amazon] context failed:', err.message);
       amazonContextPromise = null;
@@ -261,6 +295,9 @@ async function getAmazonContext() {
   }
   return amazonContextPromise;
 }
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const jitter = (min, max) => Math.round(min + Math.random() * (max - min));
 
 function withTimeout(promise, ms, fallback) {
   if (!(ms > 0)) return Promise.resolve(fallback);
@@ -432,8 +469,12 @@ const AMAZON_SEARCHES = [
   { query: 'iphone', category: 'Mobiles' },
   { query: 'samsung galaxy s', category: 'Mobiles' }
 ];
-const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 75000);
+const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 150000);
 const AMAZON_PAGE_TIMEOUT_MS = Number(process.env.AMAZON_PAGE_TIMEOUT_MS || 15000);
+// A blocked query renders no result cards at all, so the selector wait is really
+// a bot check. Detect it quickly and retry before writing the query off.
+const AMAZON_SELECTOR_WAIT_MS = Number(process.env.AMAZON_SELECTOR_WAIT_MS || 4000);
+const AMAZON_QUERY_RETRIES = Number(process.env.AMAZON_QUERY_RETRIES || 2);
 const debugAmazon = (...args) => { if (process.env.DEBUG_AMAZON) console.error('[amazon]', ...args); };
 
 // Runs inside the page (serialised by page.evaluate): reads the search result
@@ -469,25 +510,40 @@ function normalizeAmazonSearchDeals(items, category) {
   }));
 }
 
-async function fetchAmazonSearchRendered(query, category) {
-  const context = await getAmazonContext();
-  if (!context) return [];
+// A single navigation. Returns [] when no result cards render — either a genuinely
+// empty result set or, far more often on a datacenter IP, the robot interstitial.
+async function amazonSearchAttempt(context, query, category, attempt) {
   let page;
   try { page = await context.newPage(); } catch (err) { debugAmazon('newPage failed', err.message); amazonContextPromise = null; return []; }
   const started = Date.now();
   try {
     await page.goto(`https://www.amazon.in/s?k=${encodeURIComponent(query)}`, { waitUntil: 'domcontentloaded', timeout: AMAZON_PAGE_TIMEOUT_MS });
-    await page.waitForSelector('[data-component-type="s-search-result"]', { timeout: 7000 }).catch(() => {});
-    await page.waitForTimeout(400);
+    await page.waitForSelector('[data-component-type="s-search-result"]', { timeout: AMAZON_SELECTOR_WAIT_MS }).catch(() => {});
+    await sleep(300);
     const items = await page.evaluate(extractAmazonSearch);
-    debugAmazon('rendered', query, 'items=' + items.length, (Date.now() - started) + 'ms');
+    debugAmazon('attempt', attempt, query, 'items=' + items.length, (Date.now() - started) + 'ms');
     return normalizeAmazonSearchDeals(items, category);
   } catch (err) {
-    debugAmazon('render failed', query, err.message);
+    debugAmazon('attempt', attempt, query, 'failed:', err.message);
     return [];
   } finally {
     try { await page.close(); } catch {}
   }
+}
+
+// Retries a query the interstitial blocked. A failed query is nearly free to
+// repeat (it returns in ~4s with no cards), and the block is per-request, so the
+// retry usually lands on a clean page and recovers the full result set.
+async function fetchAmazonSearchRendered(query, category) {
+  const context = await getAmazonContext();
+  if (!context) return [];
+  for (let attempt = 0; attempt <= AMAZON_QUERY_RETRIES; attempt++) {
+    const deals = await amazonSearchAttempt(context, query, category, attempt);
+    if (deals.length) return deals;
+    if (attempt < AMAZON_QUERY_RETRIES) await sleep(jitter(1500, 4000));
+  }
+  debugAmazon('giving up on', query, 'after', AMAZON_QUERY_RETRIES + 1, 'attempts');
+  return [];
 }
 
 // ── Data loading ─────────────────────────────────────────────────
@@ -527,12 +583,17 @@ async function loadFromAmazon() {
   // Search pages supply the bulk of the catalogue; the deal blob adds curated
   // discounts. Rotating the query order nudges the budget-limited tail around.
   const searchDeals = [];
+  let blocked = baseDeals.length ? 0 : 1;
   const deadline = Date.now() + AMAZON_BUDGET_MS;
   for (const { query, category } of shuffle(AMAZON_SEARCHES)) {
     const remaining = deadline - Date.now();
-    if (remaining < 2500) break;
+    if (remaining < 8000) { blocked++; continue; }
     const rendered = await withTimeout(fetchAmazonSearchRendered(query, category), remaining - 500, []);
+    if (!rendered.length) blocked++;
     searchDeals.push(...rendered);
+    // Space the navigations out a little; back-to-back requests from one IP are
+    // what triggers the interstitial in the first place.
+    await sleep(jitter(400, 1500));
   }
 
   const seen = new Set();
@@ -542,12 +603,13 @@ async function loadFromAmazon() {
     return true;
   });
 
-  debugAmazon('load complete', 'base=' + baseDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, baseError ? ('baseError=' + baseError) : '');
+  debugAmazon('load complete', 'base=' + baseDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, 'blocked=' + blocked, baseError ? ('baseError=' + baseError) : '');
 
   return {
     status: deals.length ? 'live' : 'error',
     deals,
     total: deals.length,
+    blocked,
     ...(deals.length ? {} : { reason: baseError || 'Amazon unavailable' })
   };
 }
@@ -612,7 +674,8 @@ async function loadFromFlipkart() {
   return {
     status: allDeals.length ? (failedCount >= searches.length ? 'error' : 'live') : 'error',
     deals: allDeals,
-    total: allDeals.length
+    total: allDeals.length,
+    blocked: failedCount
   };
 }
 
@@ -637,8 +700,10 @@ function annotateFresh(freshDeals, previousDeals, now) {
 }
 
 // Merge one store's fresh result with what we saw last time, expiring rows that
-// are gone. Returns a store block ({status, deals, total}) plus counters for logs.
-function mergeStore(freshDeals, previousDeals, now) {
+// are gone. `degraded` says some queries never rendered this run, which is the
+// only case where an absent row cannot be trusted to have expired. Returns a
+// store block ({status, deals, total}) plus counters for logs.
+function mergeStore(freshDeals, previousDeals, now, degraded) {
   const prev = Array.isArray(previousDeals) ? previousDeals : [];
   const dealt = annotateFresh(freshDeals || [], prev, now);
 
@@ -655,9 +720,10 @@ function mergeStore(freshDeals, previousDeals, now) {
     };
   }
 
-  // Healthy scrape: fresh is the source of truth, so anything absent has expired.
-  if (!prev.length || dealt.length >= prev.length * MERGE_KEEP_RATIO) {
-    const freshIds = new Set(dealt.map(d => d.id));
+  // Every query answered: the fresh set is trustworthy, so a row that is absent
+  // is genuinely gone and drops out now.
+  const freshIds = new Set(dealt.map(d => d.id));
+  if (!degraded) {
     return {
       status: 'live',
       deals: dealt.slice(0, MAX_STORE_DEALS),
@@ -667,8 +733,10 @@ function mergeStore(freshDeals, previousDeals, now) {
     };
   }
 
-  // Partial block: keep fresh plus every recent row we could not reconfirm.
-  const freshIds = new Set(dealt.map(d => d.id));
+  // Some query was blocked, so a missing row may simply not have been rendered.
+  // Keep those rows marked stale and let DEAL_TTL_MS expire them — this is what
+  // stops a datacenter run that scrapes less than a local one from deleting the
+  // deals it never got to see.
   const carried = [];
   let expired = 0;
   for (const d of prev) {
@@ -678,7 +746,7 @@ function mergeStore(freshDeals, previousDeals, now) {
   }
   const merged = [...dealt, ...carried].slice(0, MAX_STORE_DEALS);
   return {
-    status: 'partial',
+    status: carried.length ? 'partial' : 'live',
     deals: merged,
     total: merged.length,
     fresh: dealt.length, retained: carried.length, expired
@@ -703,8 +771,8 @@ async function scrapeDeals() {
 
   const now = Date.now();
   const previous = cache;
-  const amazon = mergeStore(amazonFresh.deals, previous && previous.amazon && previous.amazon.deals, now);
-  const flipkart = mergeStore(flipkartFresh.deals, previous && previous.flipkart && previous.flipkart.deals, now);
+  const amazon = mergeStore(amazonFresh.deals, previous && previous.amazon && previous.amazon.deals, now, (amazonFresh.blocked || 0) > 0);
+  const flipkart = mergeStore(flipkartFresh.deals, previous && previous.flipkart && previous.flipkart.deals, now, (flipkartFresh.blocked || 0) > 0);
 
   // Deduplicate across stores
   const seen = new Set();

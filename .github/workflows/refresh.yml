@@ -47,6 +47,9 @@ jobs:
         env:
           DEBUG_AMAZON: "1"
           DEBUG_FLIPKART: "1"
+          # Optional: a residential proxy removes the datacenter IP's robot
+          # interstitial entirely. Leave the secret unset to scrape direct.
+          SCRAPE_PROXY: ${{ secrets.SCRAPE_PROXY }}
         run: npm run scrape
 
       - name: Summarise snapshot
