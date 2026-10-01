@@ -5,21 +5,40 @@ const os = require('node:os');
 const path = require('node:path');
 
 const port = Number(process.env.PORT || 4173);
-const refreshMs = 10 * 60 * 1000;
+const refreshMs = Number(process.env.REFRESH_MS || 10 * 60 * 1000);
 const cacheFile = path.join(__dirname, 'public', 'deals.json');
+// public/deals.json is the artefact that gets deployed; this private sidecar keeps
+// the merge ledger alive between runs. It is gitignored locally and restored from
+// the Actions cache in CI, so a fresh checkout still knows what it saw last time.
+const stateFile = path.join(__dirname, '.deal-state.json');
+
+// A store's fresh scrape becomes authoritative once it recovers at least this
+// share of the previous snapshot. Below it we assume the store partially blocked
+// us, merge instead of replacing, and let the missing rows age out.
+const MERGE_KEEP_RATIO = Number(process.env.MERGE_KEEP_RATIO || 0.6);
+// Unseen deals survive that merge for this long before being expired for good.
+const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
+// A fully blocked store may hold its last snapshot for at most this long.
+const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
+const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
+
 let cache;
 let cachedAt = 0;
 let inflight = null;
 
 // Restore the last good scrape so a restart cannot regress the page to one store
-// while Flipkart is transiently blocked.
-try {
-  const restored = JSON.parse(readFileSync(cacheFile, 'utf8'));
-  if (restored && restored.amazon && restored.flipkart) {
-    cache = restored;
-    cachedAt = Date.parse(restored.updatedAt) || 0;
-  }
-} catch {}
+// while Flipkart is transiently blocked. The sidecar wins because it is rewritten
+// on every scrape, whereas the deployed file may be a stale committed snapshot.
+for (const file of [stateFile, cacheFile]) {
+  try {
+    const restored = JSON.parse(readFileSync(file, 'utf8'));
+    if (restored && restored.amazon && restored.flipkart) {
+      cache = restored;
+      cachedAt = Date.parse(restored.updatedAt) || 0;
+      break;
+    }
+  } catch {}
+}
 
 function readJsonObjectAt(text, start) {
   if (text[start] !== '{') return null;
@@ -593,10 +612,83 @@ async function loadFromFlipkart() {
   };
 }
 
-function keepLastGood(fresh, previous) {
-  if (fresh.deals.length || !previous || !previous.deals || !previous.deals.length) return fresh;
-  if (process.env.DEBUG_FLIPKART) console.error('[deals] keeping last good', fresh.status, '->', previous.deals.length);
-  return { ...previous, status: 'live', stale: true, reason: fresh.reason };
+// Deals carry firstSeen/lastSeen. Those stamps are the expiry clock: a row that
+// stops appearing in fresh scrapes survives a degraded merge, then ages out.
+function annotateFresh(freshDeals, previousDeals, now) {
+  const prev = previousDeals || [];
+  const prevById = new Map(prev.map(d => [d.id, d]));
+  const stamp = new Date(now).toISOString();
+  // With no baseline every deal is "seen for the first time", which would badge the
+  // whole page. Backdate the seed run so only later arrivals count as new.
+  const seeded = prev.length === 0;
+  const seedStamp = new Date(now - 25 * 60 * 60 * 1000).toISOString();
+  return freshDeals.map(d => {
+    const prior = prevById.get(d.id);
+    const firstSeen = (prior && prior.firstSeen) ? prior.firstSeen : (seeded ? seedStamp : stamp);
+    return {
+      ...d, firstSeen, lastSeen: stamp, stale: false,
+      isNew: now - (Date.parse(firstSeen) || now) < 24 * 60 * 60 * 1000
+    };
+  });
+}
+
+// Merge one store's fresh result with what we saw last time, expiring rows that
+// are gone. Returns a store block ({status, deals, total}) plus counters for logs.
+function mergeStore(freshDeals, previousDeals, now) {
+  const prev = Array.isArray(previousDeals) ? previousDeals : [];
+  const dealt = annotateFresh(freshDeals || [], prev, now);
+
+  // Store returned nothing at all — hold the newest rows briefly so one blocked
+  // run does not blank the page, then let them expire.
+  if (!dealt.length) {
+    const held = prev.filter(d => now - (Date.parse(d.lastSeen) || 0) < STORE_STALE_MS);
+    return {
+      status: held.length ? 'stale' : 'error',
+      deals: held.map(d => ({ ...d, stale: true })),
+      total: held.length,
+      fresh: 0, retained: held.length, expired: prev.length - held.length,
+      ...(held.length ? { stale: true } : { reason: 'store unavailable' })
+    };
+  }
+
+  // Healthy scrape: fresh is the source of truth, so anything absent has expired.
+  if (!prev.length || dealt.length >= prev.length * MERGE_KEEP_RATIO) {
+    const freshIds = new Set(dealt.map(d => d.id));
+    return {
+      status: 'live',
+      deals: dealt.slice(0, MAX_STORE_DEALS),
+      total: dealt.length,
+      fresh: dealt.length, retained: 0,
+      expired: prev.filter(d => !freshIds.has(d.id)).length
+    };
+  }
+
+  // Partial block: keep fresh plus every recent row we could not reconfirm.
+  const freshIds = new Set(dealt.map(d => d.id));
+  const carried = [];
+  let expired = 0;
+  for (const d of prev) {
+    if (freshIds.has(d.id)) continue;
+    if (now - (Date.parse(d.lastSeen) || 0) < DEAL_TTL_MS) carried.push({ ...d, stale: true });
+    else expired++;
+  }
+  const merged = [...dealt, ...carried].slice(0, MAX_STORE_DEALS);
+  return {
+    status: 'partial',
+    deals: merged,
+    total: merged.length,
+    fresh: dealt.length, retained: carried.length, expired
+  };
+}
+
+function storeBlock(merged) {
+  return {
+    status: merged.status,
+    deals: merged.deals,
+    total: merged.total,
+    ...(merged.stale ? { stale: true } : {}),
+    ...(merged.reason ? { reason: merged.reason } : {})
+  };
 }
 
 async function scrapeDeals() {
@@ -605,9 +697,10 @@ async function scrapeDeals() {
     loadFromFlipkart()
   ]);
 
+  const now = Date.now();
   const previous = cache;
-  const amazon = keepLastGood(amazonFresh, previous && previous.amazon);
-  const flipkart = keepLastGood(flipkartFresh, previous && previous.flipkart);
+  const amazon = mergeStore(amazonFresh.deals, previous && previous.amazon && previous.amazon.deals, now);
+  const flipkart = mergeStore(flipkartFresh.deals, previous && previous.flipkart && previous.flipkart.deals, now);
 
   // Deduplicate across stores
   const seen = new Set();
@@ -621,14 +714,24 @@ async function scrapeDeals() {
   });
 
   cache = {
-    updatedAt: new Date().toISOString(),
+    updatedAt: new Date(now).toISOString(),
     source: 'Direct Amazon & Flipkart pages',
-    amazon,
-    flipkart,
+    amazon: storeBlock(amazon),
+    flipkart: storeBlock(flipkart),
     total: deals.length
   };
-  cachedAt = Date.now();
-  writeFile(cacheFile, JSON.stringify(cache)).catch(() => {});
+  cachedAt = now;
+
+  const payload = JSON.stringify(cache);
+  await Promise.all([
+    writeFile(cacheFile, payload).catch(() => {}),
+    writeFile(stateFile, payload).catch(() => {})
+  ]);
+
+  for (const [name, s] of [['amazon', amazon], ['flipkart', flipkart]]) {
+    console.log(`[deals] ${name}: fresh=${s.fresh} retained=${s.retained} expired=${s.expired} total=${s.total} status=${s.status}`);
+  }
+  console.log(`[deals] merged ${deals.length} deals at ${cache.updatedAt}`);
   return cache;
 }
 

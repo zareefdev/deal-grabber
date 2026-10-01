@@ -1,5 +1,6 @@
 node_modules/
 .deals-cache.json
+.deal-state.json
 *.bak
 .DS_Store
 .wrangler/

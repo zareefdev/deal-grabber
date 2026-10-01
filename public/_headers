@@ -1,3 +1,21 @@
 /deals.json
   cache-control: no-store
   access-control-allow-origin: *
+
+/*
+  x-content-type-options: nosniff
+  referrer-policy: strict-origin-when-cross-origin
+  x-frame-options: SAMEORIGIN
+  permissions-policy: geolocation=(), microphone=(), camera=()
+
+/favicon.svg
+  cache-control: public, max-age=604800
+
+/og-image.png
+  cache-control: public, max-age=604800
+
+/robots.txt
+  content-type: text/plain; charset=utf-8
+
+/sitemap.xml
+  content-type: application/xml; charset=utf-8

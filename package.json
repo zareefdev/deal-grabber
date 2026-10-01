@@ -2,7 +2,7 @@
   "name": "deal-grabber",
   "version": "1.0.0",
   "private": true,
-  "description": "Live Amazon.in and Flipkart tech-deal scraper with a static frontend.",
+  "description": "Amazon to Flipkart Deals Grabber — live tech deals scraped from Amazon.in and Flipkart into a static, SEO-ready frontend.",
   "scripts": {
     "start": "node server.js",
     "scrape": "node server.js --once",
