@@ -552,9 +552,9 @@ async function fetchAmazonSearchRendered(query, category) {
 // care about the caller's IP address — precisely the CI shortfall the proxy below
 // only works around. The catch is Amazon's gate: the associate account must have
 // made 10 qualified sales in the trailing 30 days, and until then every call
-// answers 403 AssociateNotEligible. When the gate clears this path takes over on
-// its own; until then any failure (including that 403) falls straight through to
-// the rendered scraper, so the site keeps working either way.
+// answers 403 AssociateNotEligible. This path therefore runs alongside the scraper
+// rather than replacing it: whatever the API returns is merged with the scraped
+// rows, and any failure (including that 403) simply contributes nothing.
 const CREATORS_CLIENT_ID = process.env.AMAZON_CREATORS_CLIENT_ID || '';
 const CREATORS_CLIENT_SECRET = process.env.AMAZON_CREATORS_CLIENT_SECRET || '';
 const CREATORS_ENABLED = Boolean(CREATORS_CLIENT_ID && CREATORS_CLIENT_SECRET);
@@ -666,8 +666,8 @@ function normalizeCreatorsItems(items, category) {
 }
 
 // Returns the store block, or null when the API is off/unusable so the caller can
-// fall back. A fatal error aborts the query loop immediately rather than repeating
-// a doomed request eleven times.
+// carry on with the scraper alone. A fatal error aborts the query loop immediately
+// rather than repeating a doomed request eleven times.
 async function loadFromAmazonCreators() {
   if (!CREATORS_ENABLED) return null;
   const deals = [];
@@ -724,12 +724,9 @@ async function fetchAmazonHtml() {
   throw lastError || new Error('Amazon unavailable');
 }
 
-async function loadFromAmazon() {
-  // The official Creators API is IP-independent, so it is the reliable CI path;
-  // it returns null while disabled or blocked and the scraper below still runs.
-  const viaCreators = await loadFromAmazonCreators();
-  if (viaCreators) return viaCreators;
-
+// The page scraper on its own: the curated /deals blob plus the rendered search
+// pages. Returns the raw store block so the caller can merge it with the API.
+async function loadFromAmazonScrape() {
   let baseDeals = [];
   let baseError = '';
   try {
@@ -759,7 +756,7 @@ async function loadFromAmazon() {
     return true;
   });
 
-  debugAmazon('load complete', 'base=' + baseDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, 'blocked=' + blocked, baseError ? ('baseError=' + baseError) : '');
+  debugAmazon('scrape complete', 'base=' + baseDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, 'blocked=' + blocked, baseError ? ('baseError=' + baseError) : '');
 
   return {
     status: deals.length ? 'live' : 'error',
@@ -767,6 +764,37 @@ async function loadFromAmazon() {
     total: deals.length,
     blocked,
     ...(deals.length ? {} : { reason: baseError || 'Amazon unavailable' })
+  };
+}
+
+// Merge the two independent Amazon sources: the official Creators API (IP-independent,
+// authoritative price/availability) and the page scraper (search-page breadth the API
+// does not cover). They run in parallel and are deduplicated by ASIN with the API row
+// winning on a clash. Either side may be empty — API disabled or blocked, scraper served
+// the interstitial — without affecting the other, so one source degrading never loses
+// the other's rows.
+async function loadFromAmazon() {
+  const [viaCreators, viaScrape] = await Promise.all([
+    loadFromAmazonCreators(),
+    loadFromAmazonScrape()
+  ]);
+
+  const apiDeals = (viaCreators && viaCreators.deals) || [];
+  const seen = new Set();
+  const deals = [...apiDeals, ...viaScrape.deals].filter(d => {
+    if (seen.has(d.id)) return false;
+    seen.add(d.id);
+    return true;
+  });
+
+  debugAmazon('load complete', 'creators=' + apiDeals.length, 'scrape=' + viaScrape.deals.length, 'merged=' + deals.length, 'blocked=' + viaScrape.blocked);
+
+  return {
+    status: deals.length ? 'live' : 'error',
+    deals,
+    total: deals.length,
+    blocked: viaScrape.blocked,
+    ...(deals.length ? {} : { reason: viaScrape.reason || 'Amazon unavailable' })
   };
 }
 

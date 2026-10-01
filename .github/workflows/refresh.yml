@@ -49,9 +49,9 @@ jobs:
         env:
           DEBUG_AMAZON: "1"
           DEBUG_FLIPKART: "1"
-          # Official Amazon Creators API credentials. When present the Amazon side
-          # is fetched from the API instead of scraping (IP-independent). Unset
-          # falls back to the rendered scraper below.
+          # Official Amazon Creators API credentials. When present the API rows
+          # are merged with the scraped ones (IP-independent, so they work from CI
+          # too). Unset means the scraper is the only Amazon source.
           AMAZON_CREATORS_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_CLIENT_ID }}
           AMAZON_CREATORS_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_CLIENT_SECRET }}
           # Optional: a residential proxy removes the datacenter IP's robot

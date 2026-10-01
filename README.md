@@ -43,12 +43,15 @@ it and CI sees the same result set as a local run. Unset means scrape direct.
 
 ### Official Amazon data (Creators API)
 
-The cleanest fix is not to scrape Amazon at all. If **`AMAZON_CREATORS_CLIENT_ID`** and
-**`AMAZON_CREATORS_CLIENT_SECRET`** are set, the Amazon side is fetched from the official
+If **`AMAZON_CREATORS_CLIENT_ID`** and **`AMAZON_CREATORS_CLIENT_SECRET`** are set, Amazon rows
+are _also_ fetched from the official
 [Creators API](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction) — the
-successor to the deprecated Product Advertising API 5.0 — and the scraper is skipped. Because it
-is an authenticated REST call it is IP-independent, so CI returns the same catalogue as a local
-run without any proxy.
+successor to the deprecated Product Advertising API 5.0. It runs **alongside** the page scraper in
+the same refresh (the two execute in parallel) and their results are merged, deduplicated by ASIN,
+with the API's row winning on a clash. The API adds authoritative price/availability and is an
+authenticated REST call, so it is IP-independent and works from CI without a proxy; the scraper
+keeps contributing the search-page breadth the API does not cover. Either side coming back empty is
+harmless — the merge simply uses the other.
 
 - Credential **version 3.2** (EU home region) selects the Login-with-Amazon token endpoint
   `https://api.amazon.co.uk/auth/o2/token`; the credentials are global and the marketplace is
@@ -58,8 +61,9 @@ run without any proxy.
   same Actions cache as the merge ledger.
 - Amazon gates the API: the associate account must have made **10 qualified sales in the trailing
   30 days**. Until then every call answers `403 AssociateNotEligible`, the reason is logged
-  (`[amazon] creators api unusable: AssociateNotEligible`), and the run falls back to the scraper
-  automatically — no redeploy needed once the account qualifies.
+  (`[amazon] creators api unusable: AssociateNotEligible`), and the refresh carries on with the
+  scraper alone — no redeploy needed once the account qualifies, the API rows just start appearing
+  in the merge.
 
 Tune with `AMAZON_CREATORS_PAGES` (search pages per query, default 2), `AMAZON_MARKETPLACE`, and
 `AMAZON_CREATORS_TOKEN_URL`.
