@@ -44,6 +44,9 @@ jobs:
 
       - name: Scrape Amazon and Flipkart
         continue-on-error: true
+        env:
+          DEBUG_AMAZON: "1"
+          DEBUG_FLIPKART: "1"
         run: npm run scrape
 
       - name: Summarise snapshot
