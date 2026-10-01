@@ -121,6 +121,10 @@ async function loadSubscriptions() {
     headers: { authorization: `Bearer ${ADMIN_SECRET}` },
     cache: 'no-store'
   });
+  // 503 is the deployment saying it has no push storage bound yet. That is a
+  // configuration state rather than a failed digest, so report it and stop quietly
+  // instead of failing the run every morning until storage is in place.
+  if (response.status === 503) return null;
   if (!response.ok) throw new Error(`subscription list failed: HTTP ${response.status}`);
   const data = await response.json();
   return Array.isArray(data.subscriptions) ? data.subscriptions : [];
@@ -193,6 +197,10 @@ async function main() {
   webpush.setVapidDetails(SUBJECT, PUBLIC_KEY, PRIVATE_KEY);
 
   const subscriptions = await loadSubscriptions();
+  if (!subscriptions) {
+    console.log('::warning::The deployment has no push storage bound (SUBS), so there is nobody to send to — skipping the daily push.');
+    return;
+  }
   console.log(`[push] ${subscriptions.length} subscriber(s)`);
   if (!subscriptions.length) return;
 
