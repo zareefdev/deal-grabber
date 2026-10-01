@@ -20,7 +20,7 @@
 //   PUSH_ADMIN_SECRET                             required to gate the sender
 //   PAGES_PROJECT (deal-grabber), PUSH_KV_TITLE (deal-grabber-SUBS)   optional
 import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -38,6 +38,15 @@ const ADMIN_SECRET = process.env.PUSH_ADMIN_SECRET || '';
 // Marks the table this script owns, so a re-run replaces it instead of stacking a
 // second SUBS binding on top (wrangler rejects a duplicate binding name).
 const MARKER = '# --- push storage, written by scripts/provision-push.mjs ---';
+
+// The deploy is meant to survive a missing KV scope (the feed must still ship), but
+// that also means the failure hides inside a green run. Mirror the outcome onto the
+// run page so a dead push is visible without reading the step log.
+function summarise(lines) {
+  const file = process.env.GITHUB_STEP_SUMMARY;
+  if (!file) return;
+  try { appendFileSync(file, `${lines.join('\n')}\n`); } catch {}
+}
 
 // Cloudflare answers with a success:false envelope alongside the HTTP status; the
 // first error message names the actual problem (a missing scope, say) instead of
@@ -111,6 +120,7 @@ function storeAdminSecret() {
 async function main() {
   if (!TOKEN || !ACCOUNT) {
     console.log('::warning::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID are not set — leaving push storage unconfigured.');
+    summarise(['## Deal alerts', '', '- ⏭️ **Not provisioned** — this run had no Cloudflare credentials.']);
     return;
   }
 
@@ -134,9 +144,17 @@ async function main() {
 
   if (!failures.length) {
     console.log('[provision] push storage is ready.');
+    summarise(['## Deal alerts', '', '- ✅ **Ready** — KV bound as `SUBS` and `PUSH_ADMIN_SECRET` stored.']);
     return;
   }
   for (const failure of failures) console.error(`[provision] ${failure}`);
+  summarise([
+    '## Deal alerts',
+    '',
+    '- ❌ **Not provisioned** — the opt-in prompt stays hidden and the daily digest sends to nobody.',
+    '',
+    ...failures.map(failure => `- ${failure}`)
+  ]);
   process.exitCode = 1;
 }
 
