@@ -7,6 +7,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 concurrency:
   group: refresh-deploy
   cancel-in-progress: false
@@ -55,3 +58,18 @@ jobs:
             --project-name=deal-grabber \
             --branch=main \
             --commit-dirty=true
+
+      # GitHub disables scheduled workflows after 60 days without a commit, so
+      # leave a tiny heartbeat well before that. Pushes made with GITHUB_TOKEN do
+      # not re-trigger this workflow, so there is no loop.
+      - name: Keep the schedule alive
+        run: |
+          git config user.name "deal-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          AGE_DAYS=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+          echo "Days since last commit: $AGE_DAYS"
+          if [ "$AGE_DAYS" -lt 45 ]; then exit 0; fi
+          date -u +%Y-%m-%dT%H:%M:%SZ > .keepalive
+          git add .keepalive
+          git commit -m "chore: keep scheduled workflow enabled"
+          git push
