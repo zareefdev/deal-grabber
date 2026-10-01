@@ -105,23 +105,42 @@ function storeAdminSecret() {
   console.log('[provision] stored PUSH_ADMIN_SECRET as a Pages secret');
 }
 
+// The two halves are independent — storing the Pages secret is worth doing even when
+// the token cannot reach KV — so each reports on its own and the run fails only at the
+// end, naming the permission the token is missing.
 async function main() {
   if (!TOKEN || !ACCOUNT) {
     console.log('::warning::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID are not set — leaving push storage unconfigured.');
     return;
   }
 
-  const namespace = await ensureNamespace();
-  bindInConfig(namespace.id);
+  const failures = [];
 
-  if (ADMIN_SECRET) storeAdminSecret();
-  else console.log('::warning::PUSH_ADMIN_SECRET is not set — the daily sender could not read the subscriber list.');
+  try {
+    bindInConfig((await ensureNamespace()).id);
+  } catch (error) {
+    failures.push(`KV namespace: ${error.message} — the CLOUDFLARE_API_TOKEN needs "Workers KV Storage: Edit" on the account to create it`);
+  }
 
-  console.log('[provision] push storage is ready.');
+  if (!ADMIN_SECRET) {
+    console.log('::warning::PUSH_ADMIN_SECRET is not set — the daily sender could not read the subscriber list.');
+  } else {
+    try {
+      storeAdminSecret();
+    } catch (error) {
+      failures.push(`Pages secret: ${error.message} — the CLOUDFLARE_API_TOKEN needs "Cloudflare Pages: Edit" on the project to store it`);
+    }
+  }
+
+  if (!failures.length) {
+    console.log('[provision] push storage is ready.');
+    return;
+  }
+  for (const failure of failures) console.error(`[provision] ${failure}`);
+  process.exitCode = 1;
 }
 
 main().catch(error => {
   console.error(`[provision] ${error.message}`);
-  console.error('[provision] the CLOUDFLARE_API_TOKEN needs "Workers KV Storage: Edit" on the account, alongside "Cloudflare Pages: Edit", to create the SUBS namespace.');
   process.exitCode = 1;
 });
