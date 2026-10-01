@@ -21,6 +21,10 @@ const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
 // A fully blocked store may hold its last snapshot for at most this long.
 const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
 const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
+// Amazon Associates tracking id. Appended to every Amazon link we emit so the
+// click is attributed and the site earns the referral commission.
+const AMAZON_TAG = process.env.AMAZON_TAG || 'mdzareef-21';
+const amazonUrl = asin => `https://www.amazon.in/dp/${asin}?tag=${encodeURIComponent(AMAZON_TAG)}`;
 
 let cache;
 let cachedAt = 0;
@@ -399,7 +403,7 @@ function parseAmazon(html) {
     results.push({
       id: `amz-${o.asin}`, store: 'Amazon', title,
       image,
-      url: `https://www.amazon.in/dp/${o.asin}`,
+      url: amazonUrl(o.asin),
       price: `₹${Math.round(nv).toLocaleString('en-IN')}`,
       originalPrice: ov && ov > nv ? `₹${Math.round(ov).toLocaleString('en-IN')}` : '',
       discount: badge || (ov > nv ? Math.round(((ov - nv) / ov) * 100) : 0),
@@ -458,7 +462,7 @@ function normalizeAmazonSearchDeals(items, category) {
   return items.map(p => ({
     id: `amz-${p.asin}`, store: 'Amazon', title: decodeHtml(p.title),
     image: decodeHtml(p.image),
-    url: `https://www.amazon.in/dp/${p.asin}`,
+    url: amazonUrl(p.asin),
     price: inr(p.pay), originalPrice: p.mrp > p.pay ? inr(p.mrp) : '',
     discount: p.mrp > p.pay ? Math.round(((p.mrp - p.pay) / p.mrp) * 100) : 0,
     available: true, category

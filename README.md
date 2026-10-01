@@ -51,6 +51,16 @@ npm run scrape       # one scrape, writes public/deals.json, exits
 - `public/404.html` is served for unknown paths so junk URLs 404 instead of duplicating the
   homepage.
 
+## Affiliate links
+
+- Every Amazon link is tagged with the Associates id **`mdzareef-21`** (override with the
+  `AMAZON_TAG` env var). The tag is applied both when the scraper builds URLs and again at
+  render time, so even a snapshot scraped before the tag existed still earns the referral.
+- Outbound deal links carry `rel="sponsored noopener noreferrer"`, and the Amazon Associates
+  relationship is disclosed next to the listings, in the footer, and in the FAQ (visible copy
+  and JSON-LD).
+- Typefaces: **Inter** for body/UI, **Ubuntu** for headings, both loaded from Google Fonts.
+
 ## Deployment
 
 Cloudflare Pages (direct upload), driven by GitHub Actions.
