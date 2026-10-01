@@ -175,6 +175,10 @@
     // split. `deals` stays the full pool for the store filters, spotlight and
     // schema; `mixedDeals` is what the unfiltered grid renders.
     const AMAZON_SHARE=0.7;
+    // Only fresh, in-stock, ₹1000+ deals are ever shown, and the feed holds at
+    // most 500 in total. Applied again here so a stale snapshot can't slip through.
+    const MIN_PRICE=1000;
+    const MAX_DEALS=500;
     let amazonDeals=[];
     let flipkartDeals=[];
     let mixedDeals=[];
@@ -257,8 +261,10 @@
       const label=document.createElement('span');label.textContent='View deal';const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';link.append(label,arrow);
       body.append(top,title,priceRow,link);article.append(imageBox,body);return article;
     }
+    // Counts what the grid actually renders (the capped, mixed pool) so the store
+    // filter badge can never advertise rows the feed isn't showing.
     function storeCount(name){
-      return name==='All stores'?deals.length:deals.filter(deal=>deal.store===name).length;
+      return name==='All stores'?mixedDeals.length:mixedDeals.filter(deal=>deal.store===name).length;
     }
     const HERO_MIN_PRICE=50000;
     const SPOTLIGHT_ACCESSORY=/screen ?protector|tempered|glass|case\b|back ?cover|cover\b|charger|cable|adapter|power ?bank|holder|strap|sleeve|pouch|\bskin\b|\bbumper\b|\bmonitor\b|\bdock\b|\bhub\b|\bstand\b|\bkeyboard\b|\bmouse\b|compatible|for (macbook|iphone|samsung|galaxy)/i;
@@ -329,7 +335,7 @@
     }
     function render(){
       const query=document.querySelector('#query').value.trim().toLowerCase();
-      const pool=selectedStore==='All stores'?mixedDeals:deals.filter(deal=>deal.store===selectedStore);
+      const pool=selectedStore==='All stores'?mixedDeals:mixedDeals.filter(deal=>deal.store===selectedStore);
       const visible=pool.filter(deal=>(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query)));
       storeFilters.replaceChildren();
       stores.forEach(name=>{const button=document.createElement('button');button.type='button';button.className='filter store-filter';button.textContent=`${name} (${storeCount(name)})`;button.setAttribute('aria-pressed',String(name===selectedStore));button.addEventListener('click',()=>{selectedStore=name;render()});storeFilters.append(button)});
@@ -359,10 +365,11 @@
         const response=await fetch(`/api/deals${force?'?refresh=1':''}`,{cache:'no-store'});
         if(!response.ok)throw new Error('Feed request failed');
         const data=await response.json();
-        amazonDeals=[...(data.amazon?.deals||[])];
-        flipkartDeals=[...(data.flipkart?.deals||[])];
+        const publishable=list=>list.filter(deal=>!deal.stale&&deal.available!==false&&dealPrice(deal)>=MIN_PRICE);
+        amazonDeals=publishable([...(data.amazon?.deals||[])]);
+        flipkartDeals=publishable([...(data.flipkart?.deals||[])]);
         deals=shuffle([...amazonDeals,...flipkartDeals]);
-        mixedDeals=mixStores(amazonDeals,flipkartDeals);
+        mixedDeals=mixStores(amazonDeals,flipkartDeals).slice(0,MAX_DEALS);
         const ad=data.amazon;
         const fk=data.flipkart;
         const amzOk=(ad?.total||0)>0;

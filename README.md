@@ -15,15 +15,20 @@ Each refresh scrapes both stores, then merges the result with the previous snaps
 - A scrape where **every query answered** is authoritative — deals that are gone are dropped, so
   expired listings disappear on their own.
 - If **any query came back blocked** (CI IPs are often served a robot interstitial), the run is
-  treated as **degraded**: fresh deals are kept and recent unseen rows are retained, marked
-  stale, and aged out after `DEAL_TTL_MS` (24h). A fully blocked store holds its last snapshot
-  for at most `STORE_STALE_MS` (3h).
+  treated as **degraded**: unseen rows are retained in the ledger but marked stale so they can
+  age out after `DEAL_TTL_MS` (24h). A fully blocked store holds its last snapshot for at most
+  `STORE_STALE_MS` (3h).
 - Every deal carries `firstSeen`/`lastSeen`; anything first seen in the last 24h gets a **New**
   badge in the UI.
 
+**Only fresh, in-stock, ₹1000+ deals are published.** Stale (carried-over) rows, out-of-stock
+items and anything priced below `MIN_DEAL_PRICE` (default 1000) are dropped before the feed is
+written, and the pool is capped at `MAX_DEALS` (default 500) split 70/30 across stores. A blocked
+store therefore shows only what it scraped fresh this run — never a stale backlog.
+
 The previous snapshot lives in `.deal-state.json` (gitignored). In CI it is carried between
 runs with the Actions cache, so the ledger survives a fresh checkout without committing data
-churn. Tune with `DEAL_TTL_MS`, `STORE_STALE_MS`, `MAX_STORE_DEALS`.
+churn. Tune with `DEAL_TTL_MS`, `STORE_STALE_MS`, `MAX_DEALS`, `MIN_DEAL_PRICE`.
 
 The page itself leads with Amazon: **every Amazon listing is shown** and Flipkart is capped to
 at most **30%** of the feed (3/7 of the Amazon count), so the default grid holds a **70/30

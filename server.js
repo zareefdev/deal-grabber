@@ -20,6 +20,13 @@ const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
 // A fully blocked store may hold its last snapshot for at most this long.
 const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
 const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
+// The published feed holds at most this many deals in total, split 70/30 across
+// stores, and every listing must clear this price floor. Rows that are stale
+// (carried over, not seen this run) or out of stock are dropped outright.
+const MAX_DEALS = Number(process.env.MAX_DEALS || 500);
+const MIN_DEAL_PRICE = Number(process.env.MIN_DEAL_PRICE || 1000);
+// Amazon's slice of MAX_DEALS; the remainder is Flipkart's. Mirrors the client mix.
+const AMAZON_SHARE = 0.7;
 // Amazon Associates tracking id. Appended to every Amazon link we emit so the
 // click is attributed and the site earns the referral commission.
 const AMAZON_TAG = process.env.AMAZON_TAG || 'mdzareef-21';
@@ -57,6 +64,14 @@ if (restoredSnapshots.length) {
     amazon: richerStore('amazon').amazon,
     flipkart: richerStore('flipkart').flipkart
   };
+  // A restored snapshot can predate these rules, so strip stale/out-of-stock and
+  // sub-₹1000 rows here too — the first response is already clean.
+  const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
+  cache.amazon = { ...cache.amazon, deals: finaliseStoreDeals(cache.amazon.deals, amazonBudget) };
+  cache.flipkart = { ...cache.flipkart, deals: finaliseStoreDeals(cache.flipkart.deals, MAX_DEALS - amazonBudget) };
+  cache.amazon.total = cache.amazon.deals.length;
+  cache.flipkart.total = cache.flipkart.deals.length;
+  cache.total = cache.amazon.total + cache.flipkart.total;
   cachedAt = Math.max(...restoredSnapshots.map(snap => Date.parse(snap.updatedAt) || 0));
 }
 
@@ -131,10 +146,23 @@ function collectFlipkartProducts(node, out) {
       url,
       image,
       pay, mrp: mrp > pay ? mrp : 0,
+      available: stockAvailable(info.availability ?? info.availabilityStatus ?? node.availability),
       discount: Number(info.discountPercentage?.value || (mrp > pay ? Math.round(((mrp - pay) / mrp) * 100) : 0))
     });
   }
   for (const k in node) collectFlipkartProducts(node[k], out);
+}
+
+// Reads whatever availability signal a source exposes (a boolean, or an object
+// like {type:'OUT_OF_STOCK'} / {value:'IN_STOCK'}) and reports whether the item
+// is buyable. Absent signal means in stock — the default for the page scrapers,
+// which only ever surface cards the store is currently showing.
+function stockAvailable(raw) {
+  if (raw === false) return false;
+  if (raw === true || raw == null) return true;
+  const s = String(typeof raw === 'object' ? (raw.value ?? raw.status ?? raw.type ?? '') : raw);
+  if (!s) return true;
+  return !/OUT.?OF.?STOCK|UNAVAILABLE|NOT.?AVAILABLE|DISCONTINUED|SOLD.?OUT|NO_?LONGER/i.test(s);
 }
 
 // Shared normalisation: turns raw collector hits into the public deal shape.
@@ -155,7 +183,7 @@ function normalizeFlipkartDeals(found, category) {
       image: p.image,
       url: p.url.startsWith('http') ? p.url : `https://www.flipkart.com${p.url}`,
       price: inr(p.pay), originalPrice: p.mrp ? inr(p.mrp) : '',
-      discount: Math.round(p.discount), available: true, category
+      discount: Math.round(p.discount), available: p.available !== false, category
     });
   }
   return out;
@@ -660,7 +688,7 @@ function normalizeCreatorsItems(items, category) {
       price: money.displayAmount || `₹${Math.round(pay).toLocaleString('en-IN')}`,
       originalPrice: basis > pay ? (basisMoney.displayAmount || `₹${Math.round(basis).toLocaleString('en-IN')}`) : '',
       discount: pct || (basis > pay ? Math.round(((basis - pay) / basis) * 100) : 0),
-      available: true, category
+      available: stockAvailable(listing.availability), category
     });
   }
   return out;
@@ -948,6 +976,33 @@ function storeBlock(merged) {
   };
 }
 
+// Pulls the rupee value out of a display price ("₹1,29,900" → 129900).
+function dealPriceValue(deal) {
+  return Number(String((deal && deal.price) || '').replace(/[^\d]/g, '')) || 0;
+}
+
+// A deal reaches the page only if it was seen fresh this run, is in stock, and
+// costs at least MIN_DEAL_PRICE. Stale carries and out-of-stock rows are dropped
+// here rather than merely flagged, so nothing dead can reach the feed.
+function isPublishableDeal(deal) {
+  if (!deal || deal.stale) return false;
+  if (deal.available === false) return false;
+  return dealPriceValue(deal) >= MIN_DEAL_PRICE;
+}
+
+// Filters a store's merged pool down to publishable deals, dedupes by id and
+// caps it at `budget` so the combined feed respects MAX_DEALS.
+function finaliseStoreDeals(deals, budget) {
+  const seen = new Set(), out = [];
+  for (const d of deals || []) {
+    if (!isPublishableDeal(d) || seen.has(d.id)) continue;
+    seen.add(d.id);
+    out.push(d);
+    if (out.length >= budget) break;
+  }
+  return out;
+}
+
 async function scrapeDeals() {
   const [amazonFresh, flipkartFresh] = await Promise.all([
     loadFromAmazon(),
@@ -959,12 +1014,15 @@ async function scrapeDeals() {
   const amazon = mergeStore(amazonFresh.deals, previous && previous.amazon && previous.amazon.deals, now, (amazonFresh.blocked || 0) > 0);
   const flipkart = mergeStore(flipkartFresh.deals, previous && previous.flipkart && previous.flipkart.deals, now, (flipkartFresh.blocked || 0) > 0);
 
+  // Publish only fresh, in-stock, ₹1000+ deals, split 70/30 and capped so the two
+  // stores together never exceed MAX_DEALS.
+  const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
+  const amazonDeals = finaliseStoreDeals(amazon.deals, amazonBudget);
+  const flipkartDeals = finaliseStoreDeals(flipkart.deals, MAX_DEALS - amazonBudget);
+
   // Deduplicate across stores
   const seen = new Set();
-  const deals = [
-    ...amazon.deals,
-    ...flipkart.deals
-  ].filter(d => {
+  const deals = [...amazonDeals, ...flipkartDeals].filter(d => {
     if (seen.has(d.id)) return false;
     seen.add(d.id);
     return true;
@@ -973,8 +1031,8 @@ async function scrapeDeals() {
   cache = {
     updatedAt: new Date(now).toISOString(),
     source: 'Direct Amazon & Flipkart pages',
-    amazon: storeBlock(amazon),
-    flipkart: storeBlock(flipkart),
+    amazon: { ...storeBlock(amazon), deals: amazonDeals, total: amazonDeals.length },
+    flipkart: { ...storeBlock(flipkart), deals: flipkartDeals, total: flipkartDeals.length },
     total: deals.length
   };
   cachedAt = now;
@@ -985,10 +1043,10 @@ async function scrapeDeals() {
     writeFile(stateFile, payload).catch(() => {})
   ]);
 
-  for (const [name, s] of [['amazon', amazon], ['flipkart', flipkart]]) {
-    console.log(`[deals] ${name}: fresh=${s.fresh} retained=${s.retained} expired=${s.expired} total=${s.total} status=${s.status}`);
+  for (const [name, merged, published] of [['amazon', amazon, amazonDeals], ['flipkart', flipkart, flipkartDeals]]) {
+    console.log(`[deals] ${name}: scraped=${merged.fresh} dropped=${merged.deals.length - published.length} published=${published.length} status=${merged.status}`);
   }
-  console.log(`[deals] merged ${deals.length} deals at ${cache.updatedAt}`);
+  console.log(`[deals] merged ${deals.length} deals (cap ${MAX_DEALS}, min ₹${MIN_DEAL_PRICE}) at ${cache.updatedAt}`);
   return cache;
 }
 
