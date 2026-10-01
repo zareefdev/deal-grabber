@@ -13,7 +13,13 @@
   <meta name="geo.region" content="IN">
   <meta name="application-name" content="Amazon to Flipkart Deals Grabber">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Deals Grabber">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Ubuntu:wght@400;500;700&amp;display=swap">
@@ -88,6 +94,18 @@
     .seo-content dt{margin-top:12px;font-size:13px;font-weight:750}
     .seo-content dd{margin:4px 0 0}
     @media(max-width:600px){.brand{font-size:15px}.nav-note{display:none}.seo-content{padding:18px;margin-top:34px}}
+    .alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .alerts[hidden]{display:none}
+    .alerts-text{max-width:560px}
+    .alerts-text h2{margin:6px 0;font-size:clamp(17px,2.4vw,22px);letter-spacing:-.04em}
+    .alerts-text p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+    .alerts-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+    .alerts-btn{min-height:44px;padding:0 16px;border:1px solid var(--green-dark);border-radius:11px;background:var(--green);color:var(--green-dark);font-size:13px;font-weight:750;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
+    .alerts-btn:hover:not(:disabled){transform:translateY(-1px)}
+    .alerts-btn:disabled{opacity:.55;cursor:default;transform:none}
+    .alerts-btn.ghost{border-color:var(--line);background:#fff;color:var(--muted)}
+    .alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
+    @media(max-width:600px){.alerts{padding:15px}.alerts-btn{flex:1 1 auto}}
   </style>
 </head>
 <body>
@@ -104,6 +122,18 @@
       <label class="sr-only" for="query">Filter deals by product</label><input class="search" id="query" type="search" placeholder="Search phones, laptops, earbuds…" autocomplete="off">
       <button class="refresh" id="refresh" type="button">Refresh now</button><button id="pause" type="button" aria-pressed="false">Pause updates</button>
       <div class="refresh-meta"><span class="status"><span class="dot" id="dot"></span><span id="status-text" role="status" aria-live="polite">Connecting to deal feeds…</span></span><span id="updated">Next refresh in 10 minutes</span></div>
+    </section>
+    <section class="alerts" id="alerts" aria-labelledby="alerts-title" hidden>
+      <div class="alerts-text">
+        <div class="eyebrow">Deal alerts</div>
+        <h2 id="alerts-title">Get 2 handpicked deals every morning.</h2>
+        <p>Allow notifications and we will send the two best Amazon &amp; Flipkart deals once a day — straight to this browser. No account, no spam, and you can turn them off at any time.</p>
+      </div>
+      <div class="alerts-actions">
+        <button class="alerts-btn" id="alerts-enable" type="button">Allow notifications</button>
+        <button class="alerts-btn ghost" id="alerts-disable" type="button" hidden>Turn off</button>
+        <span class="alerts-state" id="alerts-state" role="status" aria-live="polite"></span>
+      </div>
     </section>
     <section aria-labelledby="deals-title"><div class="controls"><h2 id="deals-title">Current deals</h2><div class="filters" id="filters" role="group" aria-label="Filter deals by category"></div></div><div class="filters store-filters" id="store-filters" role="group" aria-label="Filter deals by store"></div><p class="summary" id="summary">Checking live marketplace offers…</p><div class="deal-grid" id="deal-grid" aria-live="polite" aria-busy="true"></div><p class="note">Listings are scraped directly from public Amazon &amp; Flipkart deal pages; prices and stock can change before you reach the store. Some outbound links are affiliate links: as an Amazon Associate this site earns from qualifying purchases, at no extra cost to you.</p></section>
     <section class="seo-content" aria-labelledby="about-title">
@@ -140,6 +170,14 @@
     const refreshButton=document.querySelector('#refresh');
     const pauseButton=document.querySelector('#pause');
     let deals=[];
+    // The feed leads with Amazon: every Amazon listing is shown and Flipkart is
+    // capped to a ~30% share, so the default grid holds a 70/30 Amazon/Flipkart
+    // split. `deals` stays the full pool for the store filters, spotlight and
+    // schema; `mixedDeals` is what the unfiltered grid renders.
+    const AMAZON_SHARE=0.7;
+    let amazonDeals=[];
+    let flipkartDeals=[];
+    let mixedDeals=[];
     let selectedCategory='All deals';
     let selectedStore='All stores';
     let paused=false;
@@ -169,6 +207,27 @@
     function shuffle(list){
       for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const swap=list[i];list[i]=list[j];list[j]=swap}
       return list;
+    }
+    // Every Amazon listing is kept; Flipkart is capped to 3/7 of the Amazon count
+    // so it can never exceed a 30% share. The stores are then woven against that
+    // target — rather than shuffled flat — so the 70/30 split holds from the first
+    // screen down. The Flipkart slice and the order within each store are still
+    // reshuffled on every load, so exposure keeps rotating.
+    function mixStores(amazon,flipkart){
+      if(!amazon.length)return shuffle(flipkart.slice());
+      if(!flipkart.length)return shuffle(amazon.slice());
+      const maxFlipkart=Math.floor(amazon.length*(1-AMAZON_SHARE)/AMAZON_SHARE);
+      const a=shuffle(amazon.slice());
+      const f=shuffle(flipkart.slice()).slice(0,maxFlipkart);
+      const out=[];
+      let ai=0,fi=0;
+      while(ai<a.length||fi<f.length){
+        // Integer Bresenham: slot a Flipkart item whenever the Amazon count would
+        // overshoot the 70% target, so every prefix of the feed holds the split.
+        const takeAmazon=fi>=f.length?true:ai>=a.length?false:((out.length+1)*7-ai*10)>=5;
+        out.push(takeAmazon?a[ai++]:f[fi++]);
+      }
+      return out;
     }
     function categoryFor(deal){
       const c=deal.category||'';
@@ -270,7 +329,8 @@
     }
     function render(){
       const query=document.querySelector('#query').value.trim().toLowerCase();
-      const visible=deals.filter(deal=>(selectedStore==='All stores'||deal.store===selectedStore)&&(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query)));
+      const pool=selectedStore==='All stores'?mixedDeals:deals.filter(deal=>deal.store===selectedStore);
+      const visible=pool.filter(deal=>(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query)));
       storeFilters.replaceChildren();
       stores.forEach(name=>{const button=document.createElement('button');button.type='button';button.className='filter store-filter';button.textContent=`${name} (${storeCount(name)})`;button.setAttribute('aria-pressed',String(name===selectedStore));button.addEventListener('click',()=>{selectedStore=name;render()});storeFilters.append(button)});
       filters.replaceChildren();
@@ -288,8 +348,8 @@
         }else{heading.textContent='No matching deals';description.textContent='Try another store, category, or clear your search.'}
         grid.append(state);
       }
-      const amzCount=storeCount('Amazon');
-      const fkCount=storeCount('Flipkart');
+      const amzCount=visible.filter(deal=>deal.store==='Amazon').length;
+      const fkCount=visible.filter(deal=>deal.store==='Flipkart').length;
       document.querySelector('#summary').textContent=`${visible.length} live deal${visible.length===1?'':'s'} shown · Amazon ${amzCount} · Flipkart ${fkCount}${visible.length?' · shuffled for this visit':''}`;
     }
     async function loadDeals(force=false){
@@ -299,7 +359,10 @@
         const response=await fetch(`/api/deals${force?'?refresh=1':''}`,{cache:'no-store'});
         if(!response.ok)throw new Error('Feed request failed');
         const data=await response.json();
-        deals=shuffle([...(data.amazon?.deals||[]),...(data.flipkart?.deals||[])]);
+        amazonDeals=[...(data.amazon?.deals||[])];
+        flipkartDeals=[...(data.flipkart?.deals||[])];
+        deals=shuffle([...amazonDeals,...flipkartDeals]);
+        mixedDeals=mixStores(amazonDeals,flipkartDeals);
         const ad=data.amazon;
         const fk=data.flipkart;
         const amzOk=(ad?.total||0)>0;
@@ -319,6 +382,148 @@
     pauseButton.addEventListener('click',()=>{paused=!paused;pauseButton.textContent=paused?'Resume updates':'Pause updates';pauseButton.setAttribute('aria-pressed',String(paused));updated.textContent=paused?'Automatic refresh paused':`Next refresh in ${Math.ceil(countdown/60)} minutes`});
     timer=setInterval(()=>{if(paused)return;countdown-=1;if(countdown<=0){loadDeals();countdown=600}else if(countdown%60===0)updated.textContent=`Next refresh in ${Math.ceil(countdown/60)} minutes`},1000);
     loadDeals();
+  </script>
+  <script>
+    // PWA + deal alerts. Kept apart from the feed script so a notification failure
+    // can never stop the page from rendering deals.
+    (function(){
+      const PREF_KEY='dg-alerts';
+
+      const section=document.querySelector('#alerts');
+      const enableButton=document.querySelector('#alerts-enable');
+      const disableButton=document.querySelector('#alerts-disable');
+      const stateLabel=document.querySelector('#alerts-state');
+      if(!section||!enableButton||!disableButton||!stateLabel)return;
+
+      const pushSupported='serviceWorker' in navigator&&'PushManager' in window&&'Notification' in window;
+      let registration=null;
+
+      const wantsAlerts=()=>{try{return localStorage.getItem(PREF_KEY)==='on'}catch{return false}};
+      const setPref=value=>{try{value?localStorage.setItem(PREF_KEY,'on'):localStorage.removeItem(PREF_KEY)}catch{}};
+      const setState=text=>{stateLabel.textContent=text||''};
+
+      // The public VAPID key is served by the deployment rather than committed here,
+      // so the matching private key only ever lives in CI secrets. `ready` is false
+      // until the deployment can actually store a subscription, and the prompt stays
+      // hidden until then so nobody allows notifications the daily job cannot send.
+      async function pushConfig(){
+        try{
+          const response=await fetch('/api/push/key',{cache:'no-store'});
+          if(!response.ok)return {key:'',ready:false};
+          const data=await response.json();
+          return {key:(data&&data.key)||'',ready:Boolean(data&&data.ready)};
+        }catch{return {key:'',ready:false}}
+      }
+
+      // iOS Safari only exposes Web Push to an installed web app, so guide those
+      // users to the Home Screen instead of just saying the browser is unsupported.
+      const isIos=()=>/iP(hone|ad|od)/.test(navigator.platform||'')||(/Mac/.test(navigator.platform||'')&&navigator.maxTouchPoints>1);
+
+      function paint(pushReady){
+        const subscribed=pushSupported&&Notification.permission==='granted'&&wantsAlerts();
+        enableButton.hidden=subscribed;
+        disableButton.hidden=!subscribed;
+        // A deployment without a key, or without storage to keep the subscription,
+        // cannot send anything — only show the prompt when a daily push is possible.
+        section.hidden=!pushReady&&!subscribed;
+        if(!pushSupported){
+          enableButton.disabled=true;
+          setState(isIos()
+            ?'On iPhone and iPad, add this site to your Home Screen first — iOS only allows deal alerts for installed web apps.'
+            :'This browser cannot show notifications.');
+          return;
+        }
+        if(subscribed){setState('On — two deals land here every morning.');return}
+        if(Notification.permission==='denied'){enableButton.disabled=true;setState('Notifications are blocked for this site — allow them in your browser settings to get the daily deals.')}
+        else enableButton.disabled=false;
+      }
+
+      function urlBase64ToUint8Array(base64){
+        const padded=(base64+'='.repeat((4-base64.length%4)%4)).replace(/-/g,'+').replace(/_/g,'/');
+        const raw=atob(padded);
+        const bytes=new Uint8Array(raw.length);
+        for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+        return bytes;
+      }
+
+      // The subscription is what the daily sender reads back, so keep the server's
+      // copy in step whenever the browser issues a new one. Returns whether the
+      // server actually stored it — the caller only claims "on" when it did.
+      async function syncServer(subscription){
+        try{
+          const response=await fetch('/api/push/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(subscription.toJSON())});
+          return response.ok;
+        }catch{return false}
+      }
+
+      async function activeRegistration(){
+        if(registration)return registration;
+        try{registration=await navigator.serviceWorker.register('/sw.js')}catch{}
+        if(!registration){try{registration=await navigator.serviceWorker.ready}catch{}}
+        return registration;
+      }
+
+      enableButton.addEventListener('click',async()=>{
+        if(!pushSupported)return;
+        enableButton.disabled=true;
+        const label=enableButton.textContent;
+        enableButton.textContent='Enabling…';
+        try{
+          const permission=await Notification.requestPermission();
+          if(permission!=='granted'){setState('Notifications were not allowed. You can change this in your browser settings.');return}
+          const {key}=await pushConfig();
+          if(!key){setState('Deal alerts are not set up on this deployment yet.');return}
+          const worker=await activeRegistration();
+          if(!worker){setState('Could not reach the service worker. Reload and try again.');return}
+          let subscription=await worker.pushManager.getSubscription();
+          if(!subscription)subscription=await worker.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:urlBase64ToUint8Array(key)});
+          // Only claim success once the server holds the endpoint — otherwise the
+          // daily job has nobody to send to and the browser would show a false "on".
+          if(!await syncServer(subscription)){
+            await subscription.unsubscribe().catch(()=>{});
+            setPref(false);
+            setState('Could not save your deal alerts. Please try again in a moment.');
+            return;
+          }
+          setPref(true);
+          setState('On — two deals land here every morning.');
+        }catch{
+          setState('Could not turn on alerts. Please try again.');
+        }finally{
+          enableButton.disabled=false;enableButton.textContent=label;paint(true);
+        }
+      });
+
+      disableButton.addEventListener('click',async()=>{
+        disableButton.disabled=true;
+        try{
+          const worker=await activeRegistration();
+          const subscription=worker&&await worker.pushManager.getSubscription();
+          if(subscription){
+            await fetch(`/api/push/subscribe?endpoint=${encodeURIComponent(subscription.endpoint)}`,{method:'DELETE'}).catch(()=>{});
+            await subscription.unsubscribe().catch(()=>{});
+          }
+        }catch{}
+        setPref(false);
+        disableButton.disabled=false;
+        setState('Alerts are off.');
+        paint(true);
+      });
+
+      if(!pushSupported){paint(false);return}
+
+      (async()=>{
+        const worker=await activeRegistration();
+        const {ready}=await pushConfig();
+        // Re-register a subscription the browser may have rotated, then only offer
+        // the button when the deployment can actually store and send a daily push.
+        if(worker&&wantsAlerts()&&Notification.permission==='granted'){
+          const subscription=await worker.pushManager.getSubscription().catch(()=>null);
+          if(subscription)syncServer(subscription);
+        }
+        paint(ready);
+      })();
+    })();
   </script>
 </body>
 </html>

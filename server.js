@@ -1,4 +1,5 @@
 const http = require('node:http');
+const { createHash } = require('node:crypto');
 const { readFile, writeFile } = require('node:fs/promises');
 const { existsSync, readdirSync, readFileSync, writeFileSync } = require('node:fs');
 const os = require('node:os');
@@ -999,6 +1000,82 @@ async function loadDeals(force = false) {
   return inflight;
 }
 
+// ── Local push storage ───────────────────────────────────────────
+// In production /api/push/* is a Cloudflare Pages Function over Workers KV
+// (functions/api/push/). Locally the same routes are served from a gitignored JSON
+// file, so `npm start` exercises the whole subscription flow.
+const pushSubsFile = path.join(__dirname, '.push-subs.json');
+const PUSH_SUB_PREFIX = 'sub:';
+
+function pushSubscriptionId(endpoint) {
+  return createHash('sha256').update(endpoint).digest('hex');
+}
+function readPushSubs() {
+  try { return JSON.parse(readFileSync(pushSubsFile, 'utf8')); } catch { return {}; }
+}
+function writePushSubs(subs) {
+  try { writeFileSync(pushSubsFile, JSON.stringify(subs, null, 2)); } catch {}
+}
+function isPushSubscription(value) {
+  return Boolean(value) && typeof value.endpoint === 'string' && value.endpoint.startsWith('https://') &&
+    value.keys && typeof value.keys.p256dh === 'string' && typeof value.keys.auth === 'string';
+}
+// Production serves the public key from wrangler.toml [vars]; locally it can come
+// from the gitignored .vapid.json that `npx web-push generate-vapid-keys` leaves in
+// the project root.
+function localVapidPublicKey() {
+  if (process.env.VAPID_PUBLIC_KEY) return process.env.VAPID_PUBLIC_KEY;
+  try { return JSON.parse(readFileSync(path.join(__dirname, '.vapid.json'), 'utf8')).publicKey || ''; } catch { return ''; }
+}
+function sendJson(response, status, body) {
+  response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
+  response.end(JSON.stringify(body));
+}
+async function readRequestBody(request) {
+  const chunks = [];
+  for await (const chunk of request) chunks.push(chunk);
+  return Buffer.concat(chunks).toString('utf8');
+}
+
+// ── Static files ─────────────────────────────────────────────────
+// The site is plain files under public/, so the dev server mirrors the deployed
+// layout: the service worker, manifest and icons all load from the root.
+const MIME_TYPES = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.webmanifest': 'application/manifest+json',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8'
+};
+
+async function serveStatic(response, pathname) {
+  const publicDir = path.join(__dirname, 'public');
+  let requested = '';
+  try { requested = decodeURIComponent(pathname); } catch {}
+  const relative = requested === '/' || requested === '' ? 'index.html' : requested.replace(/^\/+/, '');
+  const target = path.resolve(publicDir, relative);
+  // Never let a crafted path climb out of public/.
+  if (target !== publicDir && !target.startsWith(publicDir + path.sep)) {
+    response.writeHead(403);
+    response.end('Forbidden');
+    return;
+  }
+  try {
+    const body = await readFile(target);
+    response.writeHead(200, { 'content-type': MIME_TYPES[path.extname(target).toLowerCase()] || 'application/octet-stream' });
+    response.end(body);
+  } catch {
+    response.writeHead(404);
+    response.end('Not found');
+  }
+}
+
 // ── Server ───────────────────────────────────────────────────────
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, 'http://localhost');
@@ -1013,19 +1090,62 @@ const server = http.createServer(async (request, response) => {
     return;
   }
   
-  if (url.pathname !== '/' && url.pathname !== '/index.html') {
-    response.writeHead(404);
-    response.end('Not found');
+  if (url.pathname === '/api/push/key') {
+    // The local file store is always writable, so a key is all `ready` needs here.
+    const key = localVapidPublicKey();
+    sendJson(response, 200, { key, ready: Boolean(key) });
+    return;
+  }
+
+  if (url.pathname === '/api/push/subscribe') {
+    const subs = readPushSubs();
+
+    if (request.method === 'POST') {
+      let body;
+      try { body = JSON.parse((await readRequestBody(request)) || '{}'); } catch { sendJson(response, 400, { ok: false, error: 'Expected a JSON body.' }); return; }
+      const subscription = body && body.subscription ? body.subscription : body;
+      if (!isPushSubscription(subscription)) { sendJson(response, 400, { ok: false, error: 'Not a valid push subscription.' }); return; }
+      subs[PUSH_SUB_PREFIX + pushSubscriptionId(subscription.endpoint)] = {
+        endpoint: subscription.endpoint,
+        keys: { p256dh: subscription.keys.p256dh, auth: subscription.keys.auth },
+        createdAt: new Date().toISOString(),
+        userAgent: (request.headers['user-agent'] || '').slice(0, 200)
+      };
+      writePushSubs(subs);
+      sendJson(response, 200, { ok: true });
+      return;
+    }
+
+    if (request.method === 'DELETE') {
+      let endpoint = url.searchParams.get('endpoint') || '';
+      if (!endpoint) {
+        try {
+          const body = JSON.parse((await readRequestBody(request)) || '{}');
+          endpoint = (body && (body.endpoint || (body.subscription && body.subscription.endpoint))) || '';
+        } catch {}
+      }
+      if (!endpoint) { sendJson(response, 400, { ok: false, error: 'Missing endpoint.' }); return; }
+      delete subs[PUSH_SUB_PREFIX + pushSubscriptionId(endpoint)];
+      writePushSubs(subs);
+      sendJson(response, 200, { ok: true });
+      return;
+    }
+
+    if (request.method === 'GET') {
+      // Mirrors the deployed route: the list exists for the daily sender, so it is
+      // gated by the shared secret whenever one is configured.
+      const secret = process.env.PUSH_ADMIN_SECRET || '';
+      if (secret && request.headers.authorization !== `Bearer ${secret}`) { sendJson(response, 401, { ok: false, error: 'Unauthorized.' }); return; }
+      const subscriptions = Object.values(subs);
+      sendJson(response, 200, { ok: true, count: subscriptions.length, subscriptions });
+      return;
+    }
+
+    sendJson(response, 405, { ok: false, error: 'Method not allowed.' });
     return;
   }
   
-  try {
-    response.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
-    response.end(await readFile(path.join(__dirname, 'public', 'index.html')));
-  } catch {
-    response.writeHead(500);
-    response.end('Page could not be loaded.');
-  }
+  await serveStatic(response, url.pathname);
 });
 
 async function closeBrowser() {

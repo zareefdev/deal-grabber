@@ -69,15 +69,6 @@ jobs:
             console.log("total     :", d.total);
           '
 
-      - name: Save deal ledger
-        if: hashFiles('.deal-state.json') != ''
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            .deal-state.json
-            .creators-token.json
-          key: deal-state-${{ github.run_id }}
-
       - name: Stamp sitemap
         run: |
           node -e '
@@ -102,6 +93,15 @@ jobs:
             --project-name=deal-grabber \
             --branch=main \
             --commit-dirty=true
+
+      - name: Save deal ledger
+        if: hashFiles('.deal-state.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .deal-state.json
+            .creators-token.json
+          key: deal-state-${{ github.run_id }}
 
       # GitHub disables scheduled workflows after 60 days without a commit, so
       # leave a tiny heartbeat well before that. Pushes made with GITHUB_TOKEN do

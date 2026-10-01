@@ -25,6 +25,12 @@ The previous snapshot lives in `.deal-state.json` (gitignored). In CI it is carr
 runs with the Actions cache, so the ledger survives a fresh checkout without committing data
 churn. Tune with `DEAL_TTL_MS`, `STORE_STALE_MS`, `MAX_STORE_DEALS`.
 
+The page itself leads with Amazon: **every Amazon listing is shown** and Flipkart is capped to
+at most **30%** of the feed (3/7 of the Amazon count), so the default grid holds a **70/30
+Amazon/Flipkart** split — woven so the ratio holds from the first screen down. The Flipkart
+slice is reshuffled on each load for rotating exposure; the Amazon/Flipkart filter buttons
+still report each store's full count.
+
 ### Scraping from a datacenter IP
 
 Amazon rate-limits by IP and intermittently answers a search with a robot interstitial that
@@ -77,12 +83,76 @@ npm start            # http://localhost:4173
 ```
 
 `npm start` runs the dev server, which scrapes on demand and serves the live result at
-`/api/deals`. `GET /api/deals?refresh=1` forces a fresh scrape.
+`/api/deals`. `GET /api/deals?refresh=1` forces a fresh scrape. It also serves `public/`
+statically — so the manifest, service worker and icons load exactly as they do in
+production — and answers `/api/push/*` from a gitignored `.push-subs.json`.
 
 ## Refreshing the snapshot
 
 ```bash
 npm run scrape       # one scrape, writes public/deals.json, exits
+```
+
+## Installable app (PWA)
+
+`public/manifest.webmanifest` plus `public/sw.js` make the page installable and
+tolerant of a dead connection:
+
+- The shell (`/`, `/index.html`, `/offline.html`, the icons and the manifest) is
+  precached on install. Navigations are network-first, falling back to the cached
+  shell and then `offline.html`.
+- `/api/deals` is network-first too, so the feed is never stale while online; the
+  last good snapshot answers when the network is gone.
+- Product images and webfonts are cache-first, trimmed to the most recent 120 entries.
+- Icons come from the same arrow mark as `favicon.svg`. Regenerate them with
+  `npm run icons` (uses the Playwright the scraper already needs).
+
+## Push notifications
+
+The page offers an opt-in "2 handpicked deals every morning" prompt. Accepting it
+creates a plain VAPID Web Push subscription in the browser — no third-party push
+SDK and no vendor account — and `daily-push.yml` sends one digest a day.
+
+The prompt only appears once a subscription can really be stored and sent: `/api/push/key`
+reports `ready` alongside the public key, and the page keeps the section hidden while the
+key or the KV namespace is missing. If storing a subscription fails, the page says so
+instead of showing a false "On". On iPhone and iPad, Web Push is only available once the
+site is added to the Home Screen, and the prompt says that rather than failing silently.
+
+| Piece | Role |
+| --- | --- |
+| `public/index.html` | asks permission, creates the subscription, POSTs it to `/api/push/subscribe` |
+| `public/sw.js` | renders the notification and opens the deal on tap |
+| `functions/api/push/key.js` | serves the public VAPID key (set in `wrangler.toml` under `[vars]`) plus whether push storage is ready |
+| `functions/api/push/subscribe.js` | stores subscriptions in the KV namespace bound as `SUBS` |
+| `scripts/send-daily-push.js` | picks the two best deals, reads the subscriber list, sends |
+
+One-time setup:
+
+1. **VAPID key pair.** Generate one with `npx web-push generate-vapid-keys`. The
+   public key is committed in `wrangler.toml` (`[vars] VAPID_PUBLIC_KEY`) — public by
+   design; swap in a new pair only if you rotate. A pair generated on this machine is
+   also kept, gitignored, in `.vapid.json`.
+2. **KV namespace.**
+   ```bash
+   npx wrangler kv namespace create SUBS
+   ```
+   Bind it to the Pages project as `SUBS`, either by pasting the id into the
+   commented block in `wrangler.toml` or in the dashboard under *Settings →
+   Functions → KV namespace bindings*.
+3. **Secrets.** Add the repository secrets below, and set `PUSH_ADMIN_SECRET` as a
+   Pages secret too (it gates the subscriber-list route the sender calls).
+
+Until the namespace and key are in place the prompt stays hidden and the sender logs
+a warning and exits — nothing 500s.
+
+The digest goes out once a day (02:30 UTC / 08:00 IST in `daily-push.yml`). Change the
+cron there to move it, or `PUSH_DEAL_COUNT` to send a different number of deals.
+
+```bash
+npm start                    # local dev server: serves the PWA and /api/push/* endpoints
+npm run push:dry             # build the digest from the snapshot and print it, no send
+SITE_URL=http://localhost:4173 npm run push:dry   # same, against a local scrape
 ```
 
 ## SEO
@@ -110,8 +180,12 @@ Cloudflare Pages (direct upload), driven by GitHub Actions.
 
 - `.github/workflows/refresh.yml` runs on a best-effort 10-minute schedule, scrapes, and
   deploys `public/` to the `deal-grabber` Pages project with `wrangler pages deploy`.
+- `.github/workflows/daily-push.yml` sends the daily 2-deal digest described under
+  **Push notifications**.
 - On the deployed site `/api/deals` is served from `public/deals.json` via the
-  `public/_redirects` rewrite — there is no server process in production.
+  `public/_redirects` rewrite. The only dynamic routes are the Pages Functions under
+  `functions/api/push/`, which run on Cloudflare's edge — there is no server process to
+  keep alive.
 
 Required repository secrets:
 
@@ -122,6 +196,10 @@ Required repository secrets:
 | `AMAZON_CREATORS_CLIENT_ID` | Creators API credential id (preferred Amazon source) |
 | `AMAZON_CREATORS_CLIENT_SECRET` | Creators API credential secret |
 | `SCRAPE_PROXY` | Optional residential proxy for the scraping fallback |
+| `VAPID_PUBLIC_KEY` | Web Push public key — same value as `[vars]` in `wrangler.toml` |
+| `VAPID_PRIVATE_KEY` | Web Push private key, used only by the daily push job |
+| `VAPID_SUBJECT` | `https://` or `mailto:` contact for the push service |
+| `PUSH_ADMIN_SECRET` | Gates the subscriber list; set the same value as a Pages secret |
 
 ## Notes
 

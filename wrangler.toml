@@ -1,2 +1,21 @@
 name = "deal-grabber"
 pages_build_output_dir = "public"
+compatibility_date = "2026-08-18"
+
+# The public half of the VAPID key pair, served to the browser by /api/push/key so
+# it can create a push subscription. Public by design and safe to commit — the
+# private half (VAPID_PRIVATE_KEY) lives only in the repository secrets used by
+# .github/workflows/daily-push.yml, never here.
+[vars]
+VAPID_PUBLIC_KEY = "BHn1p0rJJ6rOcGG9F6GDR4D_FcjWQLKjSr5V1zkO1PEgbXF7JwGdEoe-bI8ZNS9pGzUkCUP99qC7pjViQFuSbY8"
+
+# Push subscriptions are kept in a Workers KV namespace bound as SUBS and read by
+# functions/api/push/subscribe.js. Create the namespace once, then bind it to the
+# Pages project — either paste the id below or add it in the dashboard under
+# Settings → Functions → KV namespace bindings.
+#
+#   npx wrangler kv namespace create SUBS
+#
+# [[kv_namespaces]]
+# binding = "SUBS"
+# id = "<namespace id>"

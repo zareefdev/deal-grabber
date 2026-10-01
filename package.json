@@ -6,10 +6,16 @@
   "scripts": {
     "start": "node server.js",
     "scrape": "node server.js --once",
-    "deploy": "wrangler pages deploy"
+    "deploy": "wrangler pages deploy",
+    "icons": "node scripts/generate-icons.mjs",
+    "push": "node scripts/send-daily-push.js",
+    "push:dry": "node scripts/send-daily-push.js --dry-run"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "playwright": "1.63.0"

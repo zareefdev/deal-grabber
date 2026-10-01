@@ -1,12 +1,27 @@
+# Deals snapshot: rewritten by CI and read by the page, never a shared cache entry.
 /deals.json
   cache-control: no-store
   access-control-allow-origin: *
 
-/*
-  x-content-type-options: nosniff
-  referrer-policy: strict-origin-when-cross-origin
-  x-frame-options: SAMEORIGIN
-  permissions-policy: geolocation=(), microphone=(), camera=()
+# The service worker controls caching for everything else, so it must never be
+# served from an old copy — a stale sw.js would pin the previous cache rules.
+/sw.js
+  cache-control: no-cache
+  service-worker-allowed: /
+
+/manifest.webmanifest
+  content-type: application/manifest+json
+  cache-control: public, max-age=3600
+
+# Subscriptions are per-browser data, never a shared cache entry.
+/api/push/*
+  cache-control: no-store
+
+/icons/*
+  cache-control: public, max-age=604800
+
+/apple-touch-icon.png
+  cache-control: public, max-age=604800
 
 /favicon.svg
   cache-control: public, max-age=604800
@@ -19,3 +34,9 @@
 
 /sitemap.xml
   content-type: application/xml; charset=utf-8
+
+/*
+  x-content-type-options: nosniff
+  referrer-policy: strict-origin-when-cross-origin
+  x-frame-options: SAMEORIGIN
+  permissions-policy: geolocation=(), microphone=(), camera=()

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Offline — Amazon to Flipkart Deals Grabber</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f5f5f2">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Ubuntu:wght@400;500;700&amp;display=swap">
+  <style>
+    :root{color-scheme:light;--ink:#17211d;--muted:#66716b;--paper:#f5f5f2;--line:#e2e5df;--green:#c5f36b;font-family:'Inter','Ubuntu',system-ui,-apple-system,"Segoe UI",sans-serif}
+    h1{font-family:'Ubuntu','Inter',system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:24px;padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom))}
+    .card{width:min(560px,100%);padding:36px;border:1px solid var(--line);border-radius:20px;background:#fff;text-align:center}
+    .mark{width:44px;height:44px;margin:0 auto 18px;display:grid;place-items:center;border-radius:13px;background:var(--green);font-size:22px}
+    h1{margin:0 0 10px;font-size:clamp(26px,5vw,38px);letter-spacing:-.05em}
+    p{margin:0 0 20px;color:var(--muted);line-height:1.6;font-size:14px}
+    a.home{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:11px;background:var(--ink);color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark" aria-hidden="true">↗</div>
+    <h1>You are offline</h1>
+    <p>The deal feed needs a connection to read the stores, but the last snapshot you loaded is still available on the home page. Reconnect and refresh for the newest listings.</p>
+    <a class="home" href="/">Back to the deal feed</a>
+  </main>
+</body>
+</html>

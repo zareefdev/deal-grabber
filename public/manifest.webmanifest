@@ -1,0 +1,29 @@
+{
+  "name": "Amazon to Flipkart Deals Grabber",
+  "short_name": "Deals Grabber",
+  "description": "Live Amazon.in and Flipkart tech deals in one place — phones, laptops, earbuds and TVs, refreshed every 10 minutes.",
+  "id": "/",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#f5f5f2",
+  "theme_color": "#f5f5f2",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Live deals",
+      "short_name": "Deals",
+      "url": "/?utm_source=pwa&utm_medium=shortcut",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

@@ -2,6 +2,9 @@ node_modules/
 .deals-cache.json
 .deal-state.json
 .creators-token.json
+.push-subs.json
+.vapid.json
+.dev.vars
 *.bak
 .DS_Store
 .wrangler/

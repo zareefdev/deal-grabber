@@ -1,0 +1,46 @@
+name: Daily deal push
+
+on:
+  schedule:
+    # 08:00 IST (02:30 UTC). GitHub's scheduler is best-effort, so the digest can
+    # land a little late — it is a nudge, not an alarm clock.
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Build the digest and log it without sending
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-push
+  cancel-in-progress: false
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # web-push is the only runtime dependency the sender needs, so install just
+      # the dependency tree and skip Playwright's browser download entirely.
+      - name: Install web-push
+        run: npm install --omit=dev --ignore-scripts --no-audit --no-fund
+
+      - name: Send the digest
+        env:
+          SITE_URL: https://atof.in
+          PUSH_ADMIN_SECRET: ${{ secrets.PUSH_ADMIN_SECRET }}
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node scripts/send-daily-push.js
