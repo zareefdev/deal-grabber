@@ -1,0 +1,3 @@
+/deals.json
+  cache-control: no-store
+  access-control-allow-origin: *

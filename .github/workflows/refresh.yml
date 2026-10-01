@@ -1,0 +1,49 @@
+name: Refresh and deploy
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: refresh-deploy
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape Amazon and Flipkart
+        continue-on-error: true
+        run: npm run scrape
+
+      - name: Summarise snapshot
+        run: |
+          node -e '
+            const d = require("./public/deals.json");
+            console.log("updatedAt :", d.updatedAt);
+            console.log("amazon    :", d.amazon.total, d.amazon.status);
+            console.log("flipkart  :", d.flipkart.total, d.flipkart.status);
+            console.log("total     :", d.total);
+          '
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy public --project-name=deal-grabber --branch=main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
