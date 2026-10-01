@@ -1,6 +1,7 @@
 node_modules/
 .deals-cache.json
 .deal-state.json
+.creators-token.json
 *.bak
 .DS_Store
 .wrangler/

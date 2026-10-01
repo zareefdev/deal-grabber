@@ -1,6 +1,6 @@
 const http = require('node:http');
 const { readFile, writeFile } = require('node:fs/promises');
-const { existsSync, readdirSync, readFileSync } = require('node:fs');
+const { existsSync, readdirSync, readFileSync, writeFileSync } = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
@@ -546,6 +546,157 @@ async function fetchAmazonSearchRendered(query, category) {
   return [];
 }
 
+// ── Amazon Creators API (official product data) ──────────────────
+// The Creators API is the official successor to the deprecated Product Advertising
+// API 5.0. It is an authenticated REST call, so unlike page scraping it does not
+// care about the caller's IP address — precisely the CI shortfall the proxy below
+// only works around. The catch is Amazon's gate: the associate account must have
+// made 10 qualified sales in the trailing 30 days, and until then every call
+// answers 403 AssociateNotEligible. When the gate clears this path takes over on
+// its own; until then any failure (including that 403) falls straight through to
+// the rendered scraper, so the site keeps working either way.
+const CREATORS_CLIENT_ID = process.env.AMAZON_CREATORS_CLIENT_ID || '';
+const CREATORS_CLIENT_SECRET = process.env.AMAZON_CREATORS_CLIENT_SECRET || '';
+const CREATORS_ENABLED = Boolean(CREATORS_CLIENT_ID && CREATORS_CLIENT_SECRET);
+const CREATORS_MARKETPLACE = process.env.AMAZON_MARKETPLACE || 'www.amazon.in';
+// Credential version 3.2 (EU home region) selects this Login-with-Amazon token
+// endpoint; the credentials themselves are global and the marketplace is chosen
+// per call by the x-marketplace header.
+const CREATORS_TOKEN_URL = process.env.AMAZON_CREATORS_TOKEN_URL || 'https://api.amazon.co.uk/auth/o2/token';
+const CREATORS_SEARCH_URL = 'https://creatorsapi.amazon/catalog/v1/searchItems';
+const CREATORS_ITEM_COUNT = 10;
+const CREATORS_PAGES = Number(process.env.AMAZON_CREATORS_PAGES || 2);
+const CREATORS_RESOURCES = [
+  'images.primary.large', 'itemInfo.title',
+  'offersV2.listings.price', 'offersV2.listings.availability', 'offersV2.listings.dealDetails'
+];
+// Access tokens last an hour and the token endpoint rate-limits per client — the
+// docs expect at most one token per hour, per credential. Cache it on disk so the
+// 10-minute cron reuses it; CI restores this file from the same Actions cache as
+// the merge ledger.
+const creatorsTokenFile = path.join(__dirname, '.creators-token.json');
+
+function readCachedCreatorsToken() {
+  try {
+    const saved = JSON.parse(readFileSync(creatorsTokenFile, 'utf8'));
+    if (saved && saved.value && saved.expiresAt - 120000 > Date.now()) return saved.value;
+  } catch {}
+  return '';
+}
+
+async function getCreatorsToken() {
+  const cached = readCachedCreatorsToken();
+  if (cached) return cached;
+  const res = await fetch(CREATORS_TOKEN_URL, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      grant_type: 'client_credentials',
+      client_id: CREATORS_CLIENT_ID,
+      client_secret: CREATORS_CLIENT_SECRET,
+      scope: 'creatorsapi::default'
+    }),
+    signal: AbortSignal.timeout(15000)
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!body.access_token) throw new Error(`token HTTP ${res.status} ${body.error_description || body.error || ''}`.trim());
+  const token = { value: body.access_token, expiresAt: Date.now() + Number(body.expires_in || 3600) * 1000 };
+  try { writeFileSync(creatorsTokenFile, JSON.stringify(token)); } catch {}
+  return token.value;
+}
+
+async function creatorsSearch(token, body) {
+  const res = await fetch(CREATORS_SEARCH_URL, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${token}`,
+      'content-type': 'application/json',
+      'x-marketplace': CREATORS_MARKETPLACE
+    },
+    body: JSON.stringify({ marketplace: CREATORS_MARKETPLACE, partnerTag: AMAZON_TAG, ...body }),
+    signal: AbortSignal.timeout(15000)
+  });
+  const json = await res.json().catch(() => ({}));
+  return { status: res.status, json };
+}
+
+// Throttles and 5xx are worth retrying; a 4xx reason (bad partner tag, ineligible
+// account) never is, so it throws at once and the caller drops to the scraper.
+async function creatorsRequest(token, body) {
+  for (let attempt = 0; ; attempt++) {
+    const { status, json } = await creatorsSearch(token, body);
+    if (status === 200) return json;
+    const reason = json.reason || json.type || `HTTP ${status}`;
+    if ((status === 429 || status >= 500) && attempt < 2) {
+      await sleep(Number(json.retryAfterSeconds || 0) * 1000 || 2000 * (attempt + 1));
+      continue;
+    }
+    throw new Error(reason);
+  }
+}
+
+// OffersV2 exposes only the featured buy-box listing; its savings block is the
+// discount we show, falling back to the saving basis when a percentage is absent.
+function normalizeCreatorsItems(items, category) {
+  const out = [];
+  for (const item of items || []) {
+    const title = item.itemInfo && item.itemInfo.title && item.itemInfo.title.displayValue;
+    if (!item.asin || !title) continue;
+    const listings = (item.offersV2 && item.offersV2.listings) || [];
+    const listing = listings.find(l => l.isBuyBoxWinner) || listings[0] || {};
+    const price = listing.price || {};
+    const money = price.money || {};
+    const pay = Number(money.amount);
+    if (!pay) continue;
+    const basisMoney = (price.savingBasis && price.savingBasis.money) || {};
+    const basis = Number(basisMoney.amount) || 0;
+    const pct = Number(price.savings && price.savings.percentage) || 0;
+    const images = (item.images && item.images.primary) || {};
+    const image = ((images.large || images.medium || images.small) || {}).url || '';
+    out.push({
+      id: `amz-${item.asin}`, store: 'Amazon', title: decodeHtml(String(title)),
+      image, url: amazonUrl(item.asin),
+      price: money.displayAmount || `₹${Math.round(pay).toLocaleString('en-IN')}`,
+      originalPrice: basis > pay ? (basisMoney.displayAmount || `₹${Math.round(basis).toLocaleString('en-IN')}`) : '',
+      discount: pct || (basis > pay ? Math.round(((basis - pay) / basis) * 100) : 0),
+      available: true, category
+    });
+  }
+  return out;
+}
+
+// Returns the store block, or null when the API is off/unusable so the caller can
+// fall back. A fatal error aborts the query loop immediately rather than repeating
+// a doomed request eleven times.
+async function loadFromAmazonCreators() {
+  if (!CREATORS_ENABLED) return null;
+  const deals = [];
+  const deadline = Date.now() + AMAZON_BUDGET_MS;
+  try {
+    const token = await getCreatorsToken();
+    for (const { query, category } of shuffle(AMAZON_SEARCHES)) {
+      for (let page = 1; page <= CREATORS_PAGES; page++) {
+        if (Date.now() > deadline) throw new Error('budget exhausted');
+        const json = await creatorsRequest(token, {
+          keywords: query, itemCount: CREATORS_ITEM_COUNT, itemPage: page, resources: CREATORS_RESOURCES
+        });
+        const items = (json.searchResult && json.searchResult.items) || [];
+        deals.push(...normalizeCreatorsItems(items, category));
+        if (items.length < CREATORS_ITEM_COUNT) break;
+        await sleep(1100);
+      }
+    }
+  } catch (err) {
+    debugAmazon('creators api unusable:', err.message);
+    if (!deals.length) return null;
+  }
+  if (!deals.length) return null;
+  const seen = new Set();
+  const unique = deals.filter(d => !seen.has(d.id) && seen.add(d.id));
+  debugAmazon('creators api complete', 'deals=' + unique.length);
+  return { status: 'live', deals: unique, total: unique.length, blocked: 0 };
+}
+
 // ── Data loading ─────────────────────────────────────────────────
 const AMAZON_DEAL_URLS = [
   'https://www.amazon.in/deals',
@@ -574,6 +725,11 @@ async function fetchAmazonHtml() {
 }
 
 async function loadFromAmazon() {
+  // The official Creators API is IP-independent, so it is the reliable CI path;
+  // it returns null while disabled or blocked and the scraper below still runs.
+  const viaCreators = await loadFromAmazonCreators();
+  if (viaCreators) return viaCreators;
+
   let baseDeals = [];
   let baseError = '';
   try {

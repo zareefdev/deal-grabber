@@ -27,7 +27,9 @@ jobs:
       - name: Restore deal ledger
         uses: actions/cache/restore@v4
         with:
-          path: .deal-state.json
+          path: |
+            .deal-state.json
+            .creators-token.json
           key: deal-state-${{ github.run_id }}
           restore-keys: |
             deal-state-
@@ -47,6 +49,11 @@ jobs:
         env:
           DEBUG_AMAZON: "1"
           DEBUG_FLIPKART: "1"
+          # Official Amazon Creators API credentials. When present the Amazon side
+          # is fetched from the API instead of scraping (IP-independent). Unset
+          # falls back to the rendered scraper below.
+          AMAZON_CREATORS_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_CLIENT_SECRET }}
           # Optional: a residential proxy removes the datacenter IP's robot
           # interstitial entirely. Leave the secret unset to scrape direct.
           SCRAPE_PROXY: ${{ secrets.SCRAPE_PROXY }}
@@ -66,7 +73,9 @@ jobs:
         if: hashFiles('.deal-state.json') != ''
         uses: actions/cache/save@v4
         with:
-          path: .deal-state.json
+          path: |
+            .deal-state.json
+            .creators-token.json
           key: deal-state-${{ github.run_id }}
 
       - name: Stamp sitemap

@@ -41,6 +41,29 @@ To remove the block entirely, set the repository secret **`SCRAPE_PROXY`** to a 
 proxy (`http://user:pass@host:port` or `socks5://…`). The scraping browser then routes through
 it and CI sees the same result set as a local run. Unset means scrape direct.
 
+### Official Amazon data (Creators API)
+
+The cleanest fix is not to scrape Amazon at all. If **`AMAZON_CREATORS_CLIENT_ID`** and
+**`AMAZON_CREATORS_CLIENT_SECRET`** are set, the Amazon side is fetched from the official
+[Creators API](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction) — the
+successor to the deprecated Product Advertising API 5.0 — and the scraper is skipped. Because it
+is an authenticated REST call it is IP-independent, so CI returns the same catalogue as a local
+run without any proxy.
+
+- Credential **version 3.2** (EU home region) selects the Login-with-Amazon token endpoint
+  `https://api.amazon.co.uk/auth/o2/token`; the credentials are global and the marketplace is
+  chosen per call with the `x-marketplace` header (`www.amazon.in` by default).
+- Access tokens last an hour and the token endpoint expects at most one token per hour, per
+  credential, so the token is cached to `.creators-token.json` and carried between CI runs in the
+  same Actions cache as the merge ledger.
+- Amazon gates the API: the associate account must have made **10 qualified sales in the trailing
+  30 days**. Until then every call answers `403 AssociateNotEligible`, the reason is logged
+  (`[amazon] creators api unusable: AssociateNotEligible`), and the run falls back to the scraper
+  automatically — no redeploy needed once the account qualifies.
+
+Tune with `AMAZON_CREATORS_PAGES` (search pages per query, default 2), `AMAZON_MARKETPLACE`, and
+`AMAZON_CREATORS_TOKEN_URL`.
+
 ## Local development
 
 ```bash
@@ -92,6 +115,9 @@ Required repository secrets:
 | --- | --- |
 | `CLOUDFLARE_API_TOKEN` | Scoped token with **Cloudflare Pages: Edit** on the account |
 | `CLOUDFLARE_ACCOUNT_ID` | Target Cloudflare account id |
+| `AMAZON_CREATORS_CLIENT_ID` | Creators API credential id (preferred Amazon source) |
+| `AMAZON_CREATORS_CLIENT_SECRET` | Creators API credential secret |
+| `SCRAPE_PROXY` | Optional residential proxy for the scraping fallback |
 
 ## Notes
 
