@@ -127,23 +127,23 @@ site is added to the Home Screen, and the prompt says that rather than failing s
 | `functions/api/push/subscribe.js` | stores subscriptions in the KV namespace bound as `SUBS` |
 | `scripts/send-daily-push.js` | picks the two best deals, reads the subscriber list, sends |
 
-One-time setup:
+Setup:
 
 1. **VAPID key pair.** Generate one with `npx web-push generate-vapid-keys`. The
    public key is committed in `wrangler.toml` (`[vars] VAPID_PUBLIC_KEY`) — public by
    design; swap in a new pair only if you rotate. A pair generated on this machine is
    also kept, gitignored, in `.vapid.json`.
-2. **KV namespace.**
-   ```bash
-   npx wrangler kv namespace create SUBS
-   ```
-   Bind it to the Pages project as `SUBS`, either by pasting the id into the
-   commented block in `wrangler.toml` or in the dashboard under *Settings →
-   Functions → KV namespace bindings*.
-3. **Secrets.** Add the repository secrets below, and set `PUSH_ADMIN_SECRET` as a
-   Pages secret too (it gates the subscriber-list route the sender calls).
+2. **Repository secrets.** Add the ones in the table below — `VAPID_PUBLIC_KEY` must
+   hold the same value as the `[vars]` entry above.
+3. **Push storage.** Nothing to create by hand. `scripts/provision-push.mjs` runs
+   before every deploy and creates the KV namespace the endpoints write to, binds it
+   as `SUBS`, and stores `PUSH_ADMIN_SECRET` as a Pages secret (which gates the
+   subscriber list the sender reads). It is idempotent, so it can run on every deploy,
+   and non-fatal: a token that cannot manage KV leaves the opt-in hidden rather than
+   failing the deploy. Run `npm run provision` to do the same locally against the
+   account `wrangler login` is using.
 
-Until the namespace and key are in place the prompt stays hidden and the sender logs
+Until the key and the namespace are in place the prompt stays hidden and the sender logs
 a warning and exits — nothing 500s.
 
 The digest goes out once a day (02:30 UTC / 08:00 IST in `daily-push.yml`). Change the
@@ -191,7 +191,7 @@ Required repository secrets:
 
 | Secret | Purpose |
 | --- | --- |
-| `CLOUDFLARE_API_TOKEN` | Scoped token with **Cloudflare Pages: Edit** on the account |
+| `CLOUDFLARE_API_TOKEN` | Scoped token with **Cloudflare Pages: Edit** and **Workers KV Storage: Edit** on the account |
 | `CLOUDFLARE_ACCOUNT_ID` | Target Cloudflare account id |
 | `AMAZON_CREATORS_CLIENT_ID` | Creators API credential id (preferred Amazon source) |
 | `AMAZON_CREATORS_CLIENT_SECRET` | Creators API credential secret |

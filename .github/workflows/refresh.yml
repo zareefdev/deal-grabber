@@ -80,6 +80,19 @@ jobs:
             console.log("sitemap lastmod ->", day);
           '
 
+      # The push endpoints need a KV namespace bound as SUBS and PUSH_ADMIN_SECRET
+      # stored as a Pages secret. Both are created here with the same token the
+      # deploy uses, so enabling deal alerts needs no dashboard step. Non-fatal: a
+      # token that cannot manage KV leaves push unconfigured but must not stop the
+      # feed from deploying.
+      - name: Provision push storage
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PUSH_ADMIN_SECRET: ${{ secrets.PUSH_ADMIN_SECRET }}
+        run: node scripts/provision-push.mjs
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

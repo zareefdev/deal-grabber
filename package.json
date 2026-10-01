@@ -8,6 +8,7 @@
     "scrape": "node server.js --once",
     "deploy": "wrangler pages deploy",
     "icons": "node scripts/generate-icons.mjs",
+    "provision": "node scripts/provision-push.mjs",
     "push": "node scripts/send-daily-push.js",
     "push:dry": "node scripts/send-daily-push.js --dry-run"
   },
