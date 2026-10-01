@@ -162,6 +162,13 @@
       statusText.textContent=text;
       dot.className=`dot ${state}`;
     }
+    // Deal placements are reshuffled on every visit so a wider spread of listings
+    // gets exposure. The order is fixed once per data load, so filtering and
+    // searching keep cards where the visitor just saw them.
+    function shuffle(list){
+      for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const swap=list[i];list[i]=list[j];list[j]=swap}
+      return list;
+    }
     function categoryFor(deal){
       const c=deal.category||'';
       // Prefer the category assigned by scraper
@@ -262,7 +269,7 @@
     }
     function render(){
       const query=document.querySelector('#query').value.trim().toLowerCase();
-      const visible=deals.filter(deal=>(selectedStore==='All stores'||deal.store===selectedStore)&&(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query))).sort((a,b)=>b.discount-a.discount);
+      const visible=deals.filter(deal=>(selectedStore==='All stores'||deal.store===selectedStore)&&(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query)));
       storeFilters.replaceChildren();
       stores.forEach(name=>{const button=document.createElement('button');button.type='button';button.className='filter store-filter';button.textContent=`${name} (${storeCount(name)})`;button.setAttribute('aria-pressed',String(name===selectedStore));button.addEventListener('click',()=>{selectedStore=name;render()});storeFilters.append(button)});
       filters.replaceChildren();
@@ -282,7 +289,7 @@
       }
       const amzCount=storeCount('Amazon');
       const fkCount=storeCount('Flipkart');
-      document.querySelector('#summary').textContent=`${visible.length} live deal${visible.length===1?'':'s'} shown · Amazon ${amzCount} · Flipkart ${fkCount}${visible.length?' · sorted by discount':''}`;
+      document.querySelector('#summary').textContent=`${visible.length} live deal${visible.length===1?'':'s'} shown · Amazon ${amzCount} · Flipkart ${fkCount}${visible.length?' · shuffled for this visit':''}`;
     }
     async function loadDeals(force=false){
       if(refreshing)return;
@@ -291,7 +298,7 @@
         const response=await fetch(`/api/deals${force?'?refresh=1':''}`,{cache:'no-store'});
         if(!response.ok)throw new Error('Feed request failed');
         const data=await response.json();
-        deals=[...(data.amazon?.deals||[]),...(data.flipkart?.deals||[])];
+        deals=shuffle([...(data.amazon?.deals||[]),...(data.flipkart?.deals||[])]);
         const ad=data.amazon;
         const fk=data.flipkart;
         const amzOk=(ad?.total||0)>0;
