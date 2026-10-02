@@ -111,7 +111,12 @@ const PROBE = `JSON.stringify((() => {
     footerLinks: document.querySelectorAll('.footer a').length,
     dealsMatchLd: !!document.querySelector('#deals-schema'),
     hasSkipLink: !!document.querySelector('.skip-link'),
-    crumbs: !!document.querySelector('.crumbs')
+    crumbs: !!document.querySelector('.crumbs'),
+    faqSchemaQuestions: (() => {
+      const node = ld.flatMap(v => (v && v['@graph']) || [v]).find(n => n && n['@type'] === 'FAQPage');
+      return node ? node.mainEntity.length : 0;
+    })(),
+    faqVisibleQuestions: document.querySelectorAll('.prose dl > dt').length
   };
 })())`;
 
@@ -158,6 +163,10 @@ try {
       [data.brokenImages === 0, `${data.brokenImages} broken images`],
       [data.affiliateTagged === data.amazonCards, `only ${data.affiliateTagged}/${data.amazonCards} Amazon links carry the affiliate tag`],
       [data.navLinks >= 5, `only ${data.navLinks} nav links`],
+      // Google only credits FAQPage markup when the answers are actually on the page,
+      // so schema without visible questions is a structured-data violation, not a nit.
+      [data.faqSchemaQuestions === 0 || data.faqVisibleQuestions >= data.faqSchemaQuestions,
+        `FAQPage claims ${data.faqSchemaQuestions} questions but only ${data.faqVisibleQuestions} are rendered`],
       [real.length === 0, real.slice(0, 3).join(' | ')]
     ];
     const failed = checks.filter(([ok]) => !ok);

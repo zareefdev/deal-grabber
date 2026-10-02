@@ -246,6 +246,12 @@ function renderPage(spec, deals, snapshotDate) {
     return `<tr><td>${escapeHtml(store)}</td><td>${count}</td><td>${deals.length ? Math.round((count / deals.length) * 100) : 0}%</td></tr>`;
   }).join('');
 
+  // Google only honours FAQPage markup whose answers are visible on the page, so
+  // this block has to ship alongside the schema below rather than be built and dropped.
+  const faqHtml = faq && faq.length ? `
+<h3>Frequently asked questions</h3>
+<dl>${faq.map(item => `<dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.answer)}</dd>`).join('')}</dl>` : '';
+
   const proseHtml = `
 <section class="prose" aria-labelledby="about-${slug}">
 <h2 id="about-${slug}">${escapeHtml(h1)} on ${escapeHtml(SITE_NAME)}</h2>
@@ -254,11 +260,8 @@ ${extraProse}
 <h3>Store split right now</h3>
 <table><thead><tr><th>Store</th><th>Live deals</th><th>Share</th></tr></thead><tbody>${storeSplit}</tbody></table>
 <p>Snapshot built ${escapeHtml(snapshotDate)}. Prices, stock and offers change without notice — always confirm the final amount at checkout.</p>
+${faqHtml}
 </section>`;
-
-  const faqHtml = faq && faq.length ? `
-<h3>Frequently asked questions</h3>
-<dl>${faq.map(item => `<dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.answer)}</dd>`).join('')}</dl>` : '';
 
   const schema = {
     '@context': 'https://schema.org',
