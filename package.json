@@ -8,6 +8,7 @@
     "scrape": "node server.js --once",
     "build:pages": "node scripts/build-pages.mjs",
     "check:pages": "node scripts/check-pages.mjs",
+    "audit:mobile": "node scripts/audit-mobile.mjs",
     "deploy": "wrangler pages deploy",
     "icons": "node scripts/generate-icons.mjs",
     "provision": "node scripts/provision-push.mjs",

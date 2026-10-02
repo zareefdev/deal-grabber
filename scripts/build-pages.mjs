@@ -54,26 +54,24 @@ const HOME_CSS = `
 .dot.error{background:#c2453a}
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
 
-.spotlight{margin:0 0 30px;padding:24px;border-radius:22px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
+.spotlight{margin:26px 0 0;padding:18px 18px 20px;border-radius:20px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
 .spotlight[hidden]{display:none}
-.spotlight-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:17px}
-.spotlight-head .eyebrow{color:var(--lime)}
-.spotlight-head h2{margin:7px 0 0;font-family:var(--font-display);font-size:clamp(21px,3.2vw,31px);font-weight:700;letter-spacing:-.045em;line-height:1.06}
-.spotlight-head p{max-width:360px;margin:0;color:#a3b1a7;font-size:12px;line-height:1.55}
-.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
-.spotlight-card{display:flex;flex-direction:column;gap:11px;padding:13px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
-.spotlight-card:hover{transform:translateY(-3px);border-color:var(--lime)}
-.spotlight-media{position:relative;display:grid;place-items:center;height:158px;border-radius:11px;background:#fff;overflow:hidden}
-.spotlight-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
-.spotlight-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
-.spotlight-tag{position:absolute;top:9px;left:9px;padding:4px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.spotlight-info{display:flex;flex:1;flex-direction:column;gap:8px}
-.spotlight-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;font-size:13px;line-height:1.35;font-weight:600}
-.spotlight-row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
-.spotlight-price{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.035em}
-.spotlight-was{color:#93a199;font-size:11px;text-decoration:line-through}
-.spotlight-off{margin-inline-start:auto;padding:4px 7px;border-radius:6px;background:rgba(200,242,108,.16);color:var(--lime);font-size:10.5px;font-weight:800;white-space:nowrap}
-.spotlight-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:9px;border-top:1px solid #2b3831;color:#c2cfc6;font-size:11px;font-weight:700}
+.spotlight-title{margin:0;font-family:var(--font-display);font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.04em}
+.spotlight-note{margin:5px 0 0;color:#93a199;font-size:11.5px;line-height:1.5}
+.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}
+.hero-card{display:flex;flex-direction:column;gap:11px;padding:12px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.hero-card:hover{transform:translateY(-3px);border-color:var(--lime)}
+.hero-media{position:relative;display:grid;place-items:center;aspect-ratio:4/3;border-radius:11px;background:#fff;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.hero-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
+.hero-info{display:flex;flex:1;flex-direction:column;gap:7px}
+.hero-tag{align-self:flex-start;padding:3px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.hero-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;font-size:12.5px;line-height:1.35;font-weight:600}
+.hero-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin-top:auto}
+.hero-now{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.035em}
+.hero-was{color:#93a199;font-size:11px;text-decoration:line-through}
+.hero-off{padding:3px 7px;border-radius:6px;background:rgba(200,242,108,.16);color:var(--lime);font-size:10.5px;font-weight:800;white-space:nowrap}
+.hero-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:8px;border-top:1px solid #2b3831;color:#c2cfc6;font-size:11px;font-weight:700}
 
 .alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:17px 19px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .alerts[hidden]{display:none}
@@ -87,16 +85,21 @@ const HOME_CSS = `
 .alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
 
 .hero h1 span{color:var(--lime-deep)}
-@media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spotlight-head{flex-direction:column;align-items:flex-start}}
+@media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){
-  .spotlight{padding:15px;border-radius:17px}
-  .spotlight-grid{grid-template-columns:1fr;gap:10px}
-  .spotlight-card{flex-direction:row;align-items:center;gap:11px;padding:11px}
-  .spotlight-media{flex:0 0 96px;width:96px;height:96px}
-  .spotlight-info{gap:5px}
-  .spotlight-info h3{-webkit-line-clamp:3;min-height:0;font-size:12px}
-  .spotlight-price{font-size:16px}
-  .spotlight-off{margin-inline-start:0}
+  .spotlight{padding:14px;border-radius:17px}
+  .spotlight-grid{grid-template-columns:1fr;gap:9px;margin-top:13px}
+  /* Row layout: image left, price and CTA on one line, so three flagships fit
+     a phone screen without the title wrapping into a paragraph. */
+  .hero-card{flex-direction:row;align-items:center;gap:11px;padding:10px}
+  .hero-media{flex:0 0 88px;width:88px;aspect-ratio:1}
+  .hero-info{gap:4px}
+  .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px}
+  .hero-tag{font-size:9px;padding:2px 7px}
+  .hero-now{font-size:16px}
+  .hero-was{font-size:10.5px}
+  .hero-off{font-size:10px}
+  .hero-cta{padding-top:6px;font-size:10.5px}
   .alerts{padding:14px}
   .alerts-btn{flex:1 1 auto}
 }
@@ -109,23 +112,60 @@ const OWNED_SLUGS = [
   ...PRICE_BANDS.map(p => p.slug)
 ];
 
+// FAQ entries are plain {name, answer} records. Both consumers — the visible <dl> and
+// the FAQPage schema — read that shape, so a question can never end up with an empty
+// answer in one place and a filled one in the other. (They used to be pre-shaped
+// schema nodes, which the {name, answer} readers silently turned into blank <dd>s and
+// blank acceptedAnswer.text.)
 const AFFILIATE_FAQ = {
-  '@type': 'Question',
   name: 'Is this site affiliated with Amazon or Flipkart?',
-  acceptedAnswer: {
-    '@type': 'Answer',
-    text: 'No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases, at no extra cost to you. It never changes the price you pay.'
-  }
+  answer: 'No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases, at no extra cost to you. It never changes the price you pay.'
 };
 
 const FRESHNESS_FAQ = {
-  '@type': 'Question',
-  name: `How often are these ${'deals'} updated?`,
-  acceptedAnswer: {
-    '@type': 'Answer',
-    text: `A scheduled job re-reads Amazon.in and Flipkart and republishes the feed roughly every ${REFRESH_MINUTES} minutes. Anything that leaves the stores ages out, so expired listings drop off on their own.`
-  }
+  name: 'How often are these deals updated?',
+  answer: `A scheduled job re-reads Amazon.in and Flipkart and republishes the feed roughly every ${REFRESH_MINUTES} minutes. Anything that leaves the stores ages out, so expired listings drop off on their own.`
 };
+
+const PRICE_FAQ = {
+  name: 'Are the prices guaranteed?',
+  answer: 'No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart.'
+};
+
+/** FAQPage node built from the {name, answer} records, so schema and page always agree. */
+function faqSchemaNode(faq, path) {
+  return {
+    '@type': 'FAQPage',
+    '@id': `${SITE_URL}${path}#faq`,
+    mainEntity: faq.map(item => ({
+      '@type': 'Question',
+      name: item.name,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer }
+    }))
+  };
+}
+
+/** The visible <dl>. Google only credits FAQPage markup whose answers are on the page. */
+function faqHtmlBlock(faq, heading = 'Frequently asked questions') {
+  if (!faq || !faq.length) return '';
+  return `<h3>${escapeHtml(heading)}</h3>
+<dl>${faq.map(item => `<dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.answer)}</dd>`).join('')}</dl>`;
+}
+
+// The homepage names the site in its affiliate answer and promises the same
+// behaviour as the landing pages, so both the visible <dl> and the FAQPage schema
+// are generated from this one list.
+const homeFaq = () => [
+  {
+    name: `Is ${SITE_NAME} affiliated with Amazon or Flipkart?`,
+    answer: 'No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases — at no extra cost to you, and it never changes the price you pay.'
+  },
+  PRICE_FAQ,
+  {
+    name: 'How often is the deal feed updated?',
+    answer: 'Throughout the day on a scheduled refresh. Each rebuild drops out-of-stock and expired listings and re-reads both stores, so the page never shows a dead deal.'
+  }
+];
 
 function loadSnapshot() {
   if (!fs.existsSync(SNAPSHOT)) {
@@ -239,7 +279,18 @@ function renderPage(spec, deals, snapshotDate) {
     `<a class="chip" href="${link.href}">${escapeHtml(link.label)} <span class="chip-n">${link.count}</span></a>`
   ).join('\n');
 
-  const breadcrumbHtml = `<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li>${breadcrumbTrail.map(c => `<li><a href="${c.href}">${escapeHtml(c.label)}</a></li>`).join('')}<li aria-current="page">${escapeHtml(h1)}</li></ol></nav>`;
+  // The trail must end at the current page exactly once. It used to append the h1
+  // on top of a trail whose last entry was already that same page, so every landing
+  // page read "Home / Mobile Phone Deals / Mobile phone deals".
+  const trail = breadcrumbTrail || [];
+  const lastLabel = (trail.length ? trail[trail.length - 1].label : '').trim();
+  const endsHere = lastLabel.toLowerCase() === h1.trim().toLowerCase();
+  const breadcrumbHtml = `<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li>${trail.map((c, i) => {
+    const isLast = i === trail.length - 1;
+    return (isLast && endsHere)
+      ? `<li aria-current="page">${escapeHtml(c.label)}</li>`
+      : `<li><a href="${c.href}">${escapeHtml(c.label)}</a></li>`;
+  }).join('')}${endsHere ? '' : `<li aria-current="page">${escapeHtml(h1)}</li>`}</ol></nav>`;
 
   const storeSplit = ['Amazon', 'Flipkart'].map(store => {
     const count = deals.filter(d => d.store === store).length;
@@ -248,9 +299,7 @@ function renderPage(spec, deals, snapshotDate) {
 
   // Google only honours FAQPage markup whose answers are visible on the page, so
   // this block has to ship alongside the schema below rather than be built and dropped.
-  const faqHtml = faq && faq.length ? `
-<h3>Frequently asked questions</h3>
-<dl>${faq.map(item => `<dt>${escapeHtml(item.name)}</dt><dd>${escapeHtml(item.answer)}</dd>`).join('')}</dl>` : '';
+  const faqHtml = faqHtmlBlock(faq);
 
   const proseHtml = `
 <section class="prose" aria-labelledby="about-${slug}">
@@ -295,15 +344,7 @@ ${faqHtml}
         url: `${SITE_URL}/`,
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }
       },
-      ...(faq && faq.length ? [{
-        '@type': 'FAQPage',
-        '@id': `${SITE_URL}${path}#faq`,
-        mainEntity: faq.map(item => ({
-          '@type': 'Question',
-          name: item.name,
-          acceptedAnswer: { '@type': 'Answer', text: item.answer }
-        }))
-      }] : [])
+      ...(faq && faq.length ? [faqSchemaNode(faq, path)] : [])
     ]
   };
 
@@ -526,18 +567,21 @@ function buildHomePage(feed, snapshotDate) {
     : '<div class="state"><h3>The feed is rebuilding</h3><p>No listings in this snapshot yet. Try refreshing in a moment.</p></div>';
 
   const spotlight = pickSpotlight(feed)
-    .map(({ tag, deal }) => `<a class="spotlight-card" href="${escapeHtml(affiliateUrl(deal.url))}" target="_blank" rel="sponsored noopener noreferrer">
-<div class="spotlight-media">${deal.image ? `<img src="${escapeHtml(deal.image)}" alt="${escapeHtml(deal.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : '<span class="image-fallback">Image unavailable</span>'}<span class="spotlight-tag">${escapeHtml(tag)}</span></div>
-<div class="spotlight-info"><h3>${escapeHtml(deal.title)}</h3><div class="spotlight-row"><span class="spotlight-price">${escapeHtml(deal.price)}</span>${deal.originalPrice ? `<span class="spotlight-was">${escapeHtml(deal.originalPrice)}</span>` : ''}${deal.discount ? `<span class="spotlight-off">${escapeHtml(`${Math.round(deal.discount)}% off`)}</span>` : ''}</div><div class="spotlight-cta"><span>${escapeHtml(deal.store)}</span><span>Grab deal &nearr;</span></div></div>
+    .map(({ tag, deal }) => `<a class="hero-card" href="${escapeHtml(affiliateUrl(deal.url))}" target="_blank" rel="sponsored noopener noreferrer">
+<div class="hero-media">${deal.image ? `<img src="${escapeHtml(deal.image)}" alt="${escapeHtml(deal.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : '<span class="image-fallback">Image unavailable</span>'}</div>
+<div class="hero-info"><span class="hero-tag">${escapeHtml(tag)}</span><h3>${escapeHtml(deal.title)}</h3><div class="hero-price"><span class="hero-now">${escapeHtml(deal.price)}</span>${deal.originalPrice ? `<span class="hero-was">${escapeHtml(deal.originalPrice)}</span>` : ''}${deal.discount ? `<span class="hero-off">${escapeHtml(`${Math.round(deal.discount)}% off`)}</span>` : ''}</div><div class="hero-cta"><span>${escapeHtml(deal.store)}</span><span>Grab deal &nearr;</span></div></div>
 </a>`)
     .join('\n');
 
+  // The hero carries the headline *and* the live flagship products, so a visitor sees
+  // real discounted hardware above the fold instead of a slogan and a scroll.
   const spotlightHtml = spotlight
-    ? `<section class="spotlight" id="spotlight" aria-labelledby="spotlight-title">
-<div class="spotlight-head"><div><p class="eyebrow">Flagship discounts</p><h2 id="spotlight-title">The big names, deep cuts.</h2></div><p>Live flagship pricing on the hardware people actually shop for — MacBook, iPhone and Galaxy.</p></div>
+    ? `<div class="spotlight" id="spotlight">
+<h2 class="spotlight-title" id="spotlight-title">Today's flagship deals</h2>
+<p class="spotlight-note">Live Apple &amp; Samsung pricing, picked by deepest discount.</p>
 <div class="spotlight-grid" id="spotlight-grid">${spotlight}</div>
-</section>`
-    : '<section class="spotlight" id="spotlight" hidden><div class="spotlight-grid" id="spotlight-grid"></div></section>';
+</div>`
+    : '<div class="spotlight" id="spotlight" hidden><div class="spotlight-grid" id="spotlight-grid"></div></div>';
 
   const chips = [
     { href: '/mobiles/', label: 'Mobiles', count: feed.filter(d => d.category === 'Mobiles').length },
@@ -581,23 +625,7 @@ function buildHomePage(feed, snapshotDate) {
         inLanguage: 'en-IN',
         mainEntity: itemListSchema('Live tech deals', description, shown, '/')
       },
-      {
-        '@type': 'FAQPage',
-        '@id': `${SITE_URL}/#faq`,
-        mainEntity: [
-          AFFILIATE_FAQ,
-          {
-            '@type': 'Question',
-            name: 'Are the prices guaranteed?',
-            acceptedAnswer: { '@type': 'Answer', text: 'No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart.' }
-          },
-          {
-            '@type': 'Question',
-            name: 'How often is the deal feed updated?',
-            acceptedAnswer: { '@type': 'Answer', text: `A scheduled job re-reads Amazon.in and Flipkart and republishes the feed throughout the day. Anything that leaves the stores ages out, so expired listings drop off on their own.` }
-          }
-        ]
-      }
+      faqSchemaNode(homeFaq(), '/')
     ]
   };
 
@@ -617,11 +645,11 @@ ${HOME_CSS}
 <body>
 ${renderNav('/')}
 <main class="wrap" id="main">
-<nav aria-label="Breadcrumb"><ol class="crumbs"><li aria-current="page">All deals</li></ol></nav>
 <section class="hero" aria-labelledby="hero-title">
 <p class="eyebrow">Amazon.in &middot; Flipkart &middot; one page</p>
 <h1 id="hero-title">Live tech deals,<br><span>without the hunt.</span></h1>
-<p class="lede">${escapeHtml(SITE_NAME)} reads live discount listings from Amazon.in and Flipkart and puts them on one page — phones, laptops, earbuds, smart TVs and more. Expired deals drop off automatically and the whole feed is rebuilt throughout the day, so what you see is still buyable.</p>
+<p class="lede">Live discount listings from Amazon.in and Flipkart, rebuilt throughout the day. Expired and out-of-stock deals drop off automatically, so what you see is still buyable.</p>
+${spotlightHtml}
 </section>
 ${renderStats([
     ['Live deals', String(feed.length)],
@@ -629,7 +657,6 @@ ${renderStats([
     ['Starting at', stats.min ? formatRupees(stats.min) : '—'],
     ['Avg. discount', `${stats.avgOff}%`]
   ])}
-${spotlightHtml}
 <section class="toolbar" aria-label="Deal controls">
 <label class="sr-only" for="query">Search deals by product</label><input class="search" id="query" type="search" placeholder="Search phones, laptops, earbuds…" autocomplete="off">
 <div class="toolbar-actions"><button class="refresh" id="refresh" type="button">Refresh now</button><button class="pause" id="pause" type="button" aria-pressed="false">Pause updates</button></div>
@@ -653,15 +680,7 @@ ${renderDisclosure()}
 <li><strong>Both stores mixed in.</strong> ${amazon} Amazon.in deals and ${flipkart} Flipkart deals on one page, so you are not locked into one marketplace.</li>
 <li><strong>Search and filter.</strong> Narrow by store, by category, or by typing a product name.</li>
 </ul>
-<h3>Frequently asked questions</h3>
-<dl>
-<dt>Is ${escapeHtml(SITE_NAME)} affiliated with Amazon or Flipkart?</dt>
-<dd>No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases — at no extra cost to you, and it never changes the price you pay.</dd>
-<dt>Are the prices guaranteed?</dt>
-<dd>No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart.</dd>
-<dt>How often is the deal feed updated?</dt>
-<dd>Throughout the day on a scheduled refresh. Each rebuild drops out-of-stock and expired listings and re-reads both stores, so the page never shows a dead deal.</dd>
-</dl>
+${faqHtmlBlock(homeFaq())}
 <p class="note">Cheapest live listing at build time: ${cheapest ? escapeHtml(cheapest.price) : '—'}. Snapshot built ${escapeHtml(snapshotDate)}.</p>
 </section>
 <section class="cta-band" aria-labelledby="cta-alerts">

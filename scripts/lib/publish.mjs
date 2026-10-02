@@ -158,28 +158,87 @@ export function feedFromSnapshot(snapshot) {
 }
 
 /**
- * Spotlight: the deepest live discount among flagship hardware. The picker and the
- * regexes are serialised into the page (id="spotlight-config") so the runtime
- * re-renders the exact same three picks from a fresh snapshot without shipping a
- * second copy of these patterns.
+ * Spotlight: the flagship hero. Apple and Samsung are both guaranteed a slot, and
+ * within each family the *deepest discount wins* — a 3%-off iPhone is not a "deep
+ * cut", so the old name-first ranking put the dullest product in the hero.
+ *
+ * The picker and the regexes are serialised into the page (id="spotlight-config")
+ * so the runtime re-renders the exact same picks from a fresh snapshot without
+ * shipping a second copy of these patterns.
  */
 export const HERO_MIN_PRICE = 50000;
+export const HERO_SLOTS = 3;
 export const SPOTLIGHT_ACCESSORY = /screen ?protector|tempered|glass|case\b|back ?cover|cover\b|charger|cable|adapter|power ?bank|holder|strap|sleeve|pouch|\bskin\b|\bbumper\b|\bmonitor\b|\bdock\b|\bhub\b|\bstand\b|\bkeyboard\b|\bmouse\b|compatible|for (macbook|iphone|samsung|galaxy)/i;
+
+/**
+ * Some scrapes return a bare brand word as the whole title ("Apple", "Samsung").
+ * Those rows are real listings with a broken name, and a hero card reading
+ * "Apple · ₹1,19,900" is nonsense, so they never get a slot.
+ */
+export const SPOTLIGHT_BARE_BRAND = /^(apple|samsung|google|redmi|oneplus|vivo|xiaomi|realme|oppo|nothing|motorola|nokia|honor|iqoo|asus|lenovo|dell|hp|acer|sony|jbl|boat|fire[-\s]?bolt|noise|lava|micromax|poco|tecno|infinix|nubia|casio|canon|nikon|garmin|fossil|fitbit|amazfit|realme|anker|boAt|mivi|zebronics|philips|titan|fastrack|wildcraft|nakshatra|beardo|beardo)\s*[0-9a-z+\-]{0,6}$/i;
+
+/** Ranks by markdown, newest-first as the tiebreak so equal discounts stay stable. */
+function deepestDiscount(a, b) {
+  const da = Number(a.discount) || 0;
+  const db = Number(b.discount) || 0;
+  if (db !== da) return db - da;
+  return dealPrice(b) - dealPrice(a);
+}
+
+/** Apple and Samsung, the two brands the hero is required to show. */
 export const SPOTLIGHT_FAMILIES = [
-  { tag: 'MacBook', test: /^(?=.*\bmacbook\b)(?=.*\bapple\b).*$/i },
-  { tag: 'iPhone', test: /\biphone\b/i, prefer: /iphone\s?(1[0-9]|air|se|pro|plus)/i },
   {
-    tag: 'Samsung Galaxy',
-    test: /^(?=.*\bsamsung\b)(?=.*\bgalaxy\b)(?!.*\bgalaxy\s+(a|m|f)\d)(?!.*\btab\s+a\d).*$/i,
-    prefer: /galaxy\s?(s\d{1,2}\b|z\b|z\s?(fold|flip)|note\b)|ultra|\btab\s?s\d/i,
-    flagshipTag: 'Galaxy flagship'
+    tag: 'Apple',
+    test: /\b(macbook|iphone|ipad|apple)\b/i,
+    // Prefer the halo names so a MacBook never loses the slot to an accessory.
+    prefer: /\b(macbook|iphone\s?(1[0-9]\b|air|se|pro|plus))\b/i,
+    flagshipTag: 'Apple flagship'
+  },
+  {
+    tag: 'Samsung',
+    test: /\b(samsung|galaxy)\b/i,
+    prefer: /\b(galaxy\s?(s\d{1,2}\b|z\b|note\b)|galaxy\s?z\s?(fold|flip)|ultra|macbook|book\d)\b/i,
+    flagshipTag: 'Samsung Galaxy'
   }
 ];
+
+/**
+ * A readable brand for the third hero slot. A category name ("Laptops") reads as a
+ * section header rather than a product brand, so prefer a name lifted off the title.
+ */
+const SPOTLIGHT_BRANDS = [
+  { tag: 'Apple', test: /\b(apple|macbook|iphone|ipad)\b/i },
+  { tag: 'Samsung', test: /\b(samsung|galaxy)\b/i },
+  { tag: 'OnePlus', test: /\bone\s?plus\b/i },
+  { tag: 'Xiaomi', test: /\b(xiaomi|redmi|poco|mi\s?\d|note\s?\d)\b/i },
+  { tag: 'Google', test: /\b(pixel|google)\b/i },
+  { tag: 'Realme', test: /\brealme\b/i },
+  { tag: 'Vivo', test: /\b(vivo|iQOO)\b/i },
+  { tag: 'Nothing', test: /\bnothing\b/i },
+  { tag: 'Motorola', test: /\bmotorola\b/i },
+  { tag: 'Lenovo', test: /\b(lenovo|thinkpad|ideapad|legion)\b/i },
+  { tag: 'Dell', test: /\b(dell|xps|inspiron|alienware|lattitude)\b/i },
+  { tag: 'HP', test: /\b(hp\b|pavilion|omen|envy|elite ?book)/i },
+  { tag: 'Asus', test: /\b(asus|rog\b|zenbook|vivo ?book)\b/i },
+  { tag: 'Acer', test: /\bacer\b/i },
+  { tag: 'Sony', test: /\b(sony|bravia|wh-\d)/i },
+  { tag: 'JBL', test: /\bjbl\b/i }
+];
+
+function brandTag(title, fallback) {
+  for (const brand of SPOTLIGHT_BRANDS) {
+    if (brand.test.test(title)) return brand.tag;
+  }
+  return fallback || 'Electronics';
+}
 
 export function spotlightConfig() {
   return {
     minPrice: HERO_MIN_PRICE,
+    slots: HERO_SLOTS,
     accessory: SPOTLIGHT_ACCESSORY.source,
+    bareBrand: SPOTLIGHT_BARE_BRAND.source,
+    brands: SPOTLIGHT_BRANDS.map(({ tag, test }) => ({ tag, test: test.source })),
     families: SPOTLIGHT_FAMILIES.map(({ tag, test, prefer, flagshipTag }) => ({
       tag,
       test: test.source,
@@ -189,38 +248,73 @@ export function spotlightConfig() {
   };
 }
 
-/** Picks one deal per flagship family, then tops up to three by raw discount. */
+/** Product name without colour/storage tails, so variants cannot double up in the hero. */
+function baseProduct(title) {
+  return String(title || '')
+    .replace(/\s*\([^)]*\)\s*$/g, '')
+    .replace(/\b\d+\s*(gb|tb|mb)\b/gi, '')
+    .replace(/\b\d{4}\s*model\b/gi, '')
+    .replace(/[^a-z0-9]+/gi, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+function heroCandidate(deal) {
+  return deal
+    && deal.title
+    && deal.url
+    && dealPrice(deal) > HERO_MIN_PRICE
+    && !SPOTLIGHT_ACCESSORY.test(deal.title)
+    && !SPOTLIGHT_BARE_BRAND.test(deal.title.trim());
+}
+
+/**
+ * One slot per brand, chosen by discount, then a third slot filled by the deepest
+ * remaining flagship so the hero still shows three products on a thin snapshot.
+ */
 export function pickSpotlight(list) {
-  const pool = list.filter(deal => deal.title && deal.url && dealPrice(deal) > HERO_MIN_PRICE && !SPOTLIGHT_ACCESSORY.test(deal.title));
+  const pool = (list || []).filter(heroCandidate);
   const used = new Set();
+  const bases = new Set();
   const picks = [];
+
   for (const family of SPOTLIGHT_FAMILIES) {
     const test = new RegExp(family.test, 'i');
-    const candidates = pool.filter(deal => !used.has(deal.id) && test.test(deal.title));
-    if (!candidates.length) continue;
     const prefer = family.prefer ? new RegExp(family.prefer, 'i') : null;
-    candidates.sort((a, b) => {
+    const candidates = pool.filter(deal => !used.has(deal.id) && test.test(deal.title));
+
+    // Discount first; the halo-name regex only separates rows that tie on markdown,
+    // so it can never promote a 3%-off iPhone over a genuinely reduced MacBook.
+    const best = candidates.slice().sort((a, b) => {
+      const byDiscount = deepestDiscount(a, b);
+      if (byDiscount) return byDiscount;
       if (prefer) {
         const pa = prefer.test(a.title) ? 1 : 0;
         const pb = prefer.test(b.title) ? 1 : 0;
         if (pb !== pa) return pb - pa;
       }
-      return b.discount - a.discount;
-    });
-    const best = candidates[0];
+      return 0;
+    })[0];
+
+    if (!best) continue;
     used.add(best.id);
+    bases.add(baseProduct(best.title));
     const isFlagship = prefer ? prefer.test(best.title) : false;
     picks.push({ tag: (family.flagshipTag && isFlagship) ? family.flagshipTag : family.tag, deal: best });
   }
-  if (picks.length < 3) {
-    pool.filter(deal => !used.has(deal.id))
-      .sort((a, b) => b.discount - a.discount)
-      .slice(0, 3 - picks.length)
+
+  if (picks.length < HERO_SLOTS) {
+    pool
+      .filter(deal => !used.has(deal.id) && !bases.has(baseProduct(deal.title)))
+      .sort(deepestDiscount)
+      .slice(0, HERO_SLOTS - picks.length)
       .forEach(deal => {
         used.add(deal.id);
-        picks.push({ tag: deal.category || 'Electronics', deal });
+        bases.add(baseProduct(deal.title));
+        picks.push({ tag: brandTag(deal.title, deal.category), deal });
       });
   }
+
   return picks;
 }
 

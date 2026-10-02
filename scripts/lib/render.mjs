@@ -142,6 +142,18 @@ img{max-width:100%}
 .footer a{color:inherit}
 .footer h2{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .footer-links{display:flex;flex-wrap:wrap;gap:4px 14px}
+/* Footer and breadcrumb links were bare text runs (18px / 15px tall), so on a phone
+   they were easy to miss and easy to mistap. Give them a 40px hit area on small
+   screens and tighten the gap so the padding does not inflate the footer. */
+@media (max-width:600px){
+  .footer-links{gap:0 6px}
+  .footer-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 4px}
+  .crumbs{margin-bottom:12px}
+  .crumbs ol{gap:0 2px}
+  .crumbs li{display:inline-flex;align-items:center;min-height:40px}
+  .crumbs a{display:inline-flex;align-items:center;min-height:40px;padding:0 4px}
+  .note{margin-top:14px}
+}
 .note{margin:20px 0 0;color:var(--muted-2);font-size:11.5px;line-height:1.6}
 
 @media (max-width:1000px){.deal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -149,20 +161,35 @@ img{max-width:100%}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nav{flex-wrap:wrap;min-height:0;padding:10px 0}
-  .nav-links{margin-inline-start:0;width:100%}
-  .hero{padding:30px 0 20px}
+  /* Every category must be reachable: the row used to scroll off-screen with a
+     half-clipped "Ama…" and no affordance, so the links wrapped instead. */
+  .nav-links{margin-inline-start:0;width:100%;flex-wrap:wrap;overflow:visible;gap:4px}
+  .hero{padding:26px 0 18px}
 }
 @media (max-width:560px){
   .wrap{padding-inline:16px;padding-inline:calc(16px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right))}
   .brand{font-size:16px}
-  .hero h1{font-size:clamp(30px,10vw,42px)}
-  .hero .lede{font-size:14.5px}
+  /* 44px is the smallest reliably hittable row on a phone; at 36px the links were
+     hard to tap and sat inside a 40px-high .nav that also shrank on some devices. */
+  .nav-links a{min-height:44px;padding:0 11px;font-size:13px}
+  .hero{padding:20px 0 14px}
+  .hero h1{margin-top:9px;font-size:clamp(28px,8.5vw,36px);letter-spacing:-.045em}
+  .hero .lede{margin-top:12px;font-size:14.5px;line-height:1.55}
+  .stats{margin-bottom:18px}
+  .stats div{padding:11px 13px}
+  .stats dd{font-size:17px}
   .deal-grid{gap:9px}
   .deal-media{aspect-ratio:1.1}
   .deal-body{padding:10px}
-  .deal h3{font-size:12.5px;min-height:4.3em;margin-bottom:8px}
+  /* No min-height: it forced a 4.3em block on every card, so short titles left a
+     dead gap above the price. Grid already equalises row heights. */
+  .deal h3{font-size:12.5px;line-height:1.36;min-height:0;margin-bottom:7px}
   .price{font-size:16px}
+  .deal-cta{min-height:40px;font-size:12px}
+  .pill{min-height:20px;padding:0 6px;font-size:9.5px}
   .prose{padding:18px;margin-top:32px}
+  .prose table{font-size:12.5px}
+  .prose th,.prose td{padding:8px 10px}
   .cta-band{padding:16px}
   .cta-band a{width:100%;justify-content:center}
   .footer{flex-direction:column}

@@ -29,22 +29,30 @@ function spotlightScript() {
   const config = spotlightConfig();
   return `function pickSpotlight(list){
   const accessory=new RegExp(${forScript(config.accessory)},'i');
+  const bareBrand=new RegExp(${forScript(config.bareBrand)},'i');
+  const brands=${forScript(config.brands)};
   const families=${forScript(config.families)}.map(f=>({...f,test:new RegExp(f.test,'i'),prefer:f.prefer?new RegExp(f.prefer,'i'):null}));
-  const pool=list.filter(d=>d.title&&d.url&&dealPrice(d)>${config.minPrice}&&!accessory.test(d.title));
-  const used=new Set(),picks=[];
+  const slots=${config.slots};
+  const byDiscount=(a,b)=>{const d=(Number(b.discount)||0)-(Number(a.discount)||0);return d?d:dealPrice(b)-dealPrice(a)};
+  const base=t=>String(t||'').replace(/\\s*\\([^)]*\\)\\s*$/g,'').replace(/\\b\\d+\\s*(gb|tb|mb)\\b/gi,'').replace(/\\b\\d{4}\\s*model\\b/gi,'').replace(/[^a-z0-9]+/gi,' ').trim().toLowerCase();
+  const pool=(list||[]).filter(d=>d&&d.title&&d.url&&dealPrice(d)>${config.minPrice}&&!accessory.test(d.title)&&!bareBrand.test(d.title.trim()));
+  const used=new Set(),bases=new Set(),picks=[];
   for(const family of families){
     const candidates=pool.filter(d=>!used.has(d.id)&&family.test.test(d.title));
     if(!candidates.length)continue;
-    candidates.sort((a,b)=>{
+    const best=candidates.slice().sort((a,b)=>{const byD=byDiscount(a,b);if(byD)return byD;
       if(family.prefer){const pa=family.prefer.test(a.title)?1:0,pb=family.prefer.test(b.title)?1:0;if(pb!==pa)return pb-pa}
-      return b.discount-a.discount;
-    });
-    const best=candidates[0];used.add(best.id);
-    picks.push({tag:(family.flagshipTag&&family.prefer&&family.prefer.test(best.title))?family.flagshipTag:family.tag,deal:best});
+      return 0;})[0];
+    if(!best)continue;
+    used.add(best.id);bases.add(base(best.title));
+    const halo=family.prefer&&family.prefer.test(best.title);
+    picks.push({tag:(family.flagshipTag&&halo)?family.flagshipTag:family.tag,deal:best});
   }
-  if(picks.length<3){
-    pool.filter(d=>!used.has(d.id)).sort((a,b)=>b.discount-a.discount).slice(0,3-picks.length)
-      .forEach(d=>{used.add(d.id);picks.push({tag:d.category||'Electronics',deal:d})});
+  if(picks.length<slots){
+    pool.filter(d=>!used.has(d.id)&&!bases.has(base(d.title))).sort(byDiscount).slice(0,slots-picks.length)
+      .forEach(d=>{used.add(d.id);bases.add(base(d.title));
+        let tag='Electronics';for(const brand of brands){if(new RegExp(brand.test,'i').test(d.title)){tag=brand.tag;break}}
+        picks.push({tag,deal:d})});
   }
   return picks;
 }`;
@@ -105,6 +113,18 @@ export const HOMEPAGE_RUNTIME = `
   const AMAZON_TAG=${forScript(AMAZON_TAG)};
   const POLL_SECONDS=${REFRESH_MINUTES * 60};
 
+  function affiliateUrl(url){
+    if(!url)return url;
+    try{const p=new URL(url,location.origin);if(/(^|\\.)amazon\\./i.test(p.hostname))p.searchParams.set('tag',AMAZON_TAG);return p.href}catch{return url}
+  }
+  function dealPrice(deal){const v=Number(String(deal&&deal.price||'').replace(/[^\\d]/g,''));return Number.isFinite(v)?v:0}
+
+  // productCard / pickSpotlight / injectDealSchema must sit *inside* this closure:
+  // they call affiliateUrl and dealPrice above. Emitting them at file scope made
+  // every card render throw ReferenceError, which loadDeals swallowed into a
+  // silent "could not reach the deal server" fallback with an empty grid.
+  ${PAGE_SCRIPTS}
+
   const grid=document.querySelector('#deal-grid');
   if(!grid)return;
 
@@ -119,11 +139,6 @@ export const HOMEPAGE_RUNTIME = `
   let selectedStore='All',selectedCategory='All';
   let paused=false,countdown=POLL_SECONDS,refreshing=false;
 
-  function affiliateUrl(url){
-    if(!url)return url;
-    try{const p=new URL(url,location.origin);if(/(^|\\.)amazon\\./i.test(p.hostname))p.searchParams.set('tag',AMAZON_TAG);return p.href}catch{return url}
-  }
-  function dealPrice(deal){const v=Number(String(deal&&deal.price||'').replace(/[^\\d]/g,''));return Number.isFinite(v)?v:0}
   function categoryFor(deal){
     if(deal.category)return deal.category;
     const t=String(deal.title||'').toLowerCase();
@@ -217,18 +232,18 @@ export const HOMEPAGE_RUNTIME = `
     host.replaceChildren();
     picks.forEach(({tag,deal})=>{
       const card=document.createElement('a');
-      card.className='spotlight-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
-      const media=document.createElement('div');media.className='spotlight-media';
+      card.className='hero-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
+      const media=document.createElement('div');media.className='hero-media';
       if(deal.image){const img=document.createElement('img');img.src=deal.image;img.alt=deal.title;img.loading='lazy';img.referrerPolicy='no-referrer';media.append(img)}
       else{const fb=document.createElement('span');fb.className='image-fallback';fb.textContent='Image unavailable';media.append(fb)}
-      const tagEl=document.createElement('span');tagEl.className='spotlight-tag';tagEl.textContent=tag;media.append(tagEl);
-      const info=document.createElement('div');info.className='spotlight-info';
+      const info=document.createElement('div');info.className='hero-info';
+      const tagEl=document.createElement('span');tagEl.className='hero-tag';tagEl.textContent=tag;info.append(tagEl);
       const t=document.createElement('h3');t.textContent=deal.title;
-      const row=document.createElement('div');row.className='spotlight-row';
-      const p=document.createElement('span');p.className='spotlight-price';p.textContent=deal.price;row.append(p);
-      if(deal.originalPrice){const w=document.createElement('span');w.className='spotlight-was';w.textContent=deal.originalPrice;row.append(w)}
-      if(deal.discount){const o=document.createElement('span');o.className='spotlight-off';o.textContent=Math.round(deal.discount)+'% off';row.append(o)}
-      const cta=document.createElement('div');cta.className='spotlight-cta';
+      const row=document.createElement('div');row.className='hero-price';
+      const p=document.createElement('span');p.className='hero-now';p.textContent=deal.price;row.append(p);
+      if(deal.originalPrice){const w=document.createElement('span');w.className='hero-was';w.textContent=deal.originalPrice;row.append(w)}
+      if(deal.discount){const o=document.createElement('span');o.className='hero-off';o.textContent=Math.round(deal.discount)+'% off';row.append(o)}
+      const cta=document.createElement('div');cta.className='hero-cta';
       const s=document.createElement('span');s.textContent=deal.store;
       const g=document.createElement('span');g.textContent='Grab deal ↗';cta.append(s,g);
       info.append(t,row,cta);card.append(media,info);host.append(card);
