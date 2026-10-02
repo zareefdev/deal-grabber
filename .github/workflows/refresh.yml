@@ -59,6 +59,12 @@ jobs:
           SCRAPE_PROXY: ${{ secrets.SCRAPE_PROXY }}
         run: npm run scrape
 
+      # Rebuild the homepage and every landing page from the snapshot just scraped.
+      # The crawler-visible cards and the ItemList JSON-LD are baked in here, so this
+      # has to run on the scrape output, before the deploy.
+      - name: Build static pages
+        run: npm run build:pages
+
       - name: Summarise snapshot
         run: |
           node -e '
@@ -67,17 +73,6 @@ jobs:
             console.log("amazon    :", d.amazon.total, d.amazon.status);
             console.log("flipkart  :", d.flipkart.total, d.flipkart.status);
             console.log("total     :", d.total);
-          '
-
-      - name: Stamp sitemap
-        run: |
-          node -e '
-            const fs = require("fs");
-            const d = require("./public/deals.json");
-            const p = "public/sitemap.xml";
-            const day = (d.updatedAt || new Date().toISOString()).slice(0, 10);
-            fs.writeFileSync(p, fs.readFileSync(p, "utf8").replace(/<lastmod>[^<]*<\/lastmod>/, `<lastmod>${day}</lastmod>`));
-            console.log("sitemap lastmod ->", day);
           '
 
       # The push endpoints need a KV namespace bound as SUBS and PUSH_ADMIN_SECRET

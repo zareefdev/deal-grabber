@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+# Nothing here is private, but the raw snapshot is a duplicate of the pages that
+# already render it — keep it out of the index so the crawl budget goes to the
+# landing pages instead.
+Disallow: /deals.json
+Disallow: /api/
 
 Sitemap: https://atof.in/sitemap.xml

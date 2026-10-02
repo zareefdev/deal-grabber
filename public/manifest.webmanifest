@@ -1,15 +1,15 @@
 {
   "name": "Amazon to Flipkart Deals Grabber",
   "short_name": "Deals Grabber",
-  "description": "Live Amazon.in and Flipkart tech deals in one place — phones, laptops, earbuds and TVs, refreshed every 10 minutes.",
+  "description": "Live Amazon.in and Flipkart tech deals in one place — phones, laptops, earbuds and TVs, rebuilt throughout the day.",
   "id": "/",
   "start_url": "/?utm_source=pwa",
   "scope": "/",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation": "any",
-  "background_color": "#f5f5f2",
-  "theme_color": "#f5f5f2",
+  "background_color": "#f4f5f0",
+  "theme_color": "#f4f5f0",
   "lang": "en-IN",
   "dir": "ltr",
   "categories": ["shopping", "lifestyle"],
@@ -23,6 +23,18 @@
       "name": "Live deals",
       "short_name": "Deals",
       "url": "/?utm_source=pwa&utm_medium=shortcut",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Mobiles",
+      "short_name": "Mobiles",
+      "url": "/mobiles/?utm_source=pwa&utm_medium=shortcut",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Deals under ₹10,000",
+      "short_name": "Under ₹10k",
+      "url": "/under-10000/?utm_source=pwa&utm_medium=shortcut",
       "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]

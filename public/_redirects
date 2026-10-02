@@ -1,1 +1,14 @@
+# www.atof.in serves a 200 by default, which makes it a duplicate of the apex. Every
+# canonical tag in the markup points at https://atof.in/, so 301 the other host there
+# rather than leaving both indexable.
+https://www.atof.in/*
+  https://atof.in/:splat 301!
+
+# Same for the default Pages hostname, which is public and would otherwise compete
+# with the apex for the same content.
+https://deal-grabber.pages.dev/*
+  https://atof.in/:splat 301!
+
+# The feed is a static file; keep the JSON alias working for the service worker and
+# for anything already pointing at it.
 /api/deals /deals.json 200

@@ -1,536 +1,1119 @@
 <!doctype html>
 <html lang="en-IN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Amazon to Flipkart Deals Grabber — Live Tech Deals &amp; Price Drops</title>
-  <meta name="description" content="Amazon to Flipkart Deals Grabber compares live deals from Amazon.in and Flipkart in one place — phones, laptops, earbuds, smart TVs and more, refreshed every 10 minutes.">
-  <link rel="canonical" href="https://atof.in/">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="theme-color" content="#f5f5f2">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="author" content="Amazon to Flipkart Deals Grabber">
-  <meta name="geo.region" content="IN">
-  <meta name="application-name" content="Amazon to Flipkart Deals Grabber">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Deals Grabber">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Ubuntu:wght@400;500;700&amp;display=swap">
-  <link rel="preconnect" href="https://m.media-amazon.com">
-  <link rel="preconnect" href="https://rukmini1.flixcart.com">
-  <link rel="dns-prefetch" href="https://www.amazon.in">
-  <link rel="dns-prefetch" href="https://www.flipkart.com">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Amazon to Flipkart Deals Grabber">
-  <meta property="og:title" content="Amazon to Flipkart Deals Grabber — Live Tech Deals &amp; Price Drops">
-  <meta property="og:description" content="Live Amazon.in and Flipkart tech deals in one place — phones, laptops, earbuds and TVs, refreshed every 10 minutes.">
-  <meta property="og:url" content="https://atof.in/">
-  <meta property="og:image" content="https://atof.in/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Amazon to Flipkart Deals Grabber — live tech deals">
-  <meta property="og:locale" content="en_IN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Amazon to Flipkart Deals Grabber — Live Tech Deals">
-  <meta name="twitter:description" content="Live Amazon.in and Flipkart tech deals in one place, refreshed every 10 minutes.">
-  <meta name="twitter:image" content="https://atof.in/og-image.png">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebSite","@id":"https://atof.in/#website","url":"https://atof.in/","name":"Amazon to Flipkart Deals Grabber","alternateName":"Deals Grabber","description":"Live tech deals from Amazon.in and Flipkart in one place, refreshed every 10 minutes.","inLanguage":"en-IN","publisher":{"@id":"https://atof.in/#org"}},
-    {"@type":"Organization","@id":"https://atof.in/#org","name":"Amazon to Flipkart Deals Grabber","url":"https://atof.in/","logo":{"@type":"ImageObject","url":"https://atof.in/og-image.png","width":1200,"height":630}},
-    {"@type":"CollectionPage","@id":"https://atof.in/#page","url":"https://atof.in/","name":"Amazon to Flipkart Deals Grabber — Live Tech Deals","isPartOf":{"@id":"https://atof.in/#website"},"about":"Live discounted electronics deals from Amazon.in and Flipkart","inLanguage":"en-IN"},
-    {"@type":"FAQPage","@id":"https://atof.in/#faq","mainEntity":[
-      {"@type":"Question","name":"Is Amazon to Flipkart Deals Grabber affiliated with Amazon or Flipkart?","acceptedAnswer":{"@type":"Answer","text":"No. It is an independent shortcut that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases — at no extra cost to you, and it never changes the price you pay."}},
-      {"@type":"Question","name":"Are the prices guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart."}},
-      {"@type":"Question","name":"How often are deals refreshed?","acceptedAnswer":{"@type":"Answer","text":"Roughly every 10 minutes, and the page also refreshes itself while it is open."}}
-    ]}
-  ]}
-  </script>
-  <style>
-    :root{color-scheme:light;--ink:#17211d;--muted:#66716b;--paper:#f5f5f2;--line:#e2e5df;--green:#c5f36b;--green-dark:#456323;--white:#fff;--font-ui:'Inter','Ubuntu',system-ui,-apple-system,"Segoe UI",sans-serif;--font-display:'Ubuntu','Inter',system-ui,-apple-system,"Segoe UI",sans-serif;font-family:var(--font-ui)}.brand,h1,h2,h3,dt,.price,.spotlight-price{font-family:var(--font-display)}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}a,button,input{touch-action:manipulation}body{margin:0;background:var(--paper);color:var(--ink);font-size:15px}a{color:inherit}button,input{font:inherit}.wrap{width:min(1180px,100%);margin-inline:auto;padding-inline:28px;padding-inline:calc(28px + env(safe-area-inset-left)) calc(28px + env(safe-area-inset-right))}.topline{padding:10px 16px;padding:calc(10px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 10px calc(16px + env(safe-area-inset-left));background:#17211d;color:#f5f5f2;text-align:center;font-size:12px}.topline strong{color:var(--green)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;min-height:44px;font-size:19px;font-weight:800;letter-spacing:-.05em;text-decoration:none}.mark{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;background:var(--green);font-size:17px}.nav-note{color:var(--muted);font-size:12px}.hero{padding:48px 0 27px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:28px}.eyebrow{color:var(--green-dark);font-size:11px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}.hero h1{margin:10px 0;font-size:clamp(37px,6vw,66px);letter-spacing:-.075em;line-height:.98}.hero h1 span{color:#638933}.hero p{max-width:600px;margin:0;color:var(--muted);line-height:1.6}.hero-note{max-width:215px;color:var(--muted);font-size:11px;line-height:1.55}.toolbar{display:grid;grid-template-columns:minmax(180px,1fr) auto auto;align-items:center;gap:10px;padding:10px;background:white;border:1px solid var(--line);border-radius:16px}.search{height:44px;width:100%;min-width:0;padding:0 12px;border:1px solid transparent;border-radius:10px;background:#f5f6f2;color:var(--ink)}.search:focus{outline:2px solid #89aa57;outline-offset:1px}.toolbar button{height:44px;min-width:44px;padding:0 15px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);font-weight:650;font-size:12px;cursor:pointer}.toolbar .refresh{background:var(--ink);border-color:var(--ink);color:white}.toolbar button:disabled{opacity:.6;cursor:wait}.refresh-meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;padding:1px 3px 3px;color:var(--muted);font-size:11px}.status{display:flex;align-items:center;gap:7px}.dot{width:8px;height:8px;border-radius:50%;background:#a4aaa3}.dot.live{background:#57972e}.dot.error{background:#cf603b}.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:30px 0 14px}.controls h2{margin:0;font-size:20px;letter-spacing:-.04em}.filters{display:flex;gap:7px;overflow:auto;padding:2px;scrollbar-width:thin}.filter{flex:0 0 auto;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:99px;background:#fff;color:#4e5852;font-size:12px;cursor:pointer}.filter[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:white}.summary{margin:0 0 14px;color:var(--muted);font-size:12px}.deal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.deal{min-width:0;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:15px;background:white}.deal-image{aspect-ratio:1.3;background:#f4f5f1;display:grid;place-items:center;overflow:hidden}.deal-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.image-fallback{color:#a5aaa2;font-size:12px}.deal-body{display:flex;flex:1;flex-direction:column;padding:13px}.deal-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;row-gap:6px}.store{color:#5a655e;font-size:10px;font-weight:750;letter-spacing:.06em;text-transform:uppercase}.discount{padding:5px 8px;border-radius:6px;background:#eef7df;color:#466b22;font-size:11px;font-weight:750;white-space:nowrap}.deal h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;min-height:3.9em;margin:13px 0 10px;font-size:13px;line-height:1.3;letter-spacing:-.015em}.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}.price{font-size:18px;font-weight:800;letter-spacing:-.04em}.was{color:var(--muted);font-size:11px;text-decoration:line-through}.deal-link{display:flex;align-items:center;justify-content:space-between;min-height:44px;margin-top:auto;border-top:1px solid #eff0eb;text-decoration:none;font-size:12px;font-weight:700}.deal-link span:last-child{font-size:16px}.state{grid-column:1/-1;padding:34px 20px;border:1px dashed #cfd4ca;border-radius:15px;background:#fff;text-align:center}.state h3{margin:0 0 8px;font-size:17px}.state p{max-width:550px;margin:0 auto 15px;color:var(--muted);font-size:13px;line-height:1.55}.state a{display:inline-flex;min-height:44px;align-items:center;padding:0 14px;border-radius:9px;background:#17211d;color:white;text-decoration:none;font-size:12px;font-weight:700}.note{margin:19px 0 0;color:var(--muted);font-size:11px;line-height:1.6}.footer{display:flex;justify-content:space-between;gap:12px;margin-top:48px;padding:18px 0 26px;padding-bottom:calc(26px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--muted);font-size:11px}.footer a{color:inherit}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}:focus-visible{outline:3px solid #71963c;outline-offset:3px}@media(max-width:850px){.deal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.controls{align-items:flex-start;flex-direction:column}.hero-note{max-width:180px}}@media(max-width:600px){.wrap{padding-inline:16px;padding-inline:calc(16px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right))}.topline{font-size:11px}.nav{height:62px}.nav-note{font-size:10px}.hero{display:block;padding:34px 0 22px}.hero h1{font-size:clamp(38px,12vw,56px)}.hero p{font-size:14px}.hero-note{max-width:none;margin-top:12px}.toolbar{grid-template-columns:minmax(0,1fr) auto;padding:8px}.toolbar .search{grid-column:1/-1;height:48px;font-size:16px}.toolbar button{padding-inline:12px}.refresh-meta{align-items:flex-start;flex-direction:column}.controls{margin-top:24px}.filters{width:100%;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scroll-snap-type:x proximity}.deal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.deal-image{aspect-ratio:1.12}.deal-body{padding:10px}.deal h3{font-size:12px;min-height:4.7em;margin:10px 0}.price{font-size:16px}.discount{font-size:10px;padding:4px 6px}.footer{flex-direction:column}}@media(max-width:600px){.spotlight-grid{grid-template-columns:minmax(0,1fr)}.spotlight-card,.spotlight-info{min-width:0}.spotlight-row,.spotlight-cta{flex-wrap:wrap}.spotlight-tag{font-size:10px}.store{font-size:11px}.filter{scroll-snap-align:start}.footer a{display:inline-block;padding:6px 2px}}
-    @media(max-width:350px){.deal-grid{grid-template-columns:1fr}.deal-image{aspect-ratio:1.5}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}
-    .store-filters{margin:0 0 12px}
-    .store-filter{font-weight:700}
-    .store-filter[aria-pressed=true]{border-color:var(--green-dark);background:var(--green);color:var(--green-dark)}
-    .spotlight{margin:6px 0 34px;padding:26px;border-radius:22px;background:linear-gradient(150deg,#1d2a23,#141d18);color:#eef2ea;box-shadow:0 22px 50px -34px rgba(23,33,29,.9)}
-    .spotlight[hidden]{display:none}
-    .spotlight-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
-    .spotlight-head .eyebrow{color:var(--green)}
-    .spotlight-head h2{margin:8px 0 0;font-size:clamp(23px,3.4vw,34px);letter-spacing:-.055em;line-height:1.05}
-    .spotlight-head p{max-width:370px;margin:0;color:#a7b2aa;font-size:12px;line-height:1.55}
-    .spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .spotlight-card{display:flex;flex-direction:column;gap:12px;padding:14px;border-radius:16px;background:#212d26;border:1px solid #2c3a32;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
-    .spotlight-card:hover{transform:translateY(-3px);border-color:var(--green)}
-    .spotlight-media{position:relative;height:172px;border-radius:12px;background:#fff;display:grid;place-items:center;overflow:hidden}
-    .spotlight-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
-    .spotlight-media .image-fallback{color:#a5aaa2}
-    .spotlight-tag{position:absolute;top:10px;left:10px;padding:5px 9px;border-radius:99px;background:var(--green);color:#243512;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-    .spotlight-info{display:flex;flex:1;flex-direction:column;gap:9px}
-    .spotlight-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.7em;margin:0;font-size:13px;line-height:1.35;letter-spacing:-.015em}
-    .spotlight-row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
-    .spotlight-price{font-size:19px;font-weight:800;letter-spacing:-.04em}
-    .spotlight-was{color:#95a19a;font-size:11px;text-decoration:line-through}
-    .spotlight-off{margin-inline-start:auto;padding:5px 8px;border-radius:7px;background:rgba(197,243,107,.16);color:var(--green);font-size:11px;font-weight:800;white-space:nowrap}
-    .spotlight-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:10px;border-top:1px solid #2c3a32;color:#c7d2ca;font-size:11px;font-weight:750}
-    @media(max-width:850px){.spotlight-head{flex-direction:column;align-items:flex-start;gap:6px}.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spotlight-media{height:150px}}
-    @media(max-width:600px){.spotlight{padding:16px;border-radius:18px}.spotlight-grid{grid-template-columns:1fr;gap:11px}.spotlight-card{flex-direction:row;align-items:center;gap:12px;padding:11px}.spotlight-media{flex:0 0 104px;width:104px;height:104px}.spotlight-tag{top:7px;left:7px;padding:4px 7px;font-size:9px}.spotlight-info{gap:5px}.spotlight-info h3{-webkit-line-clamp:3;min-height:0;font-size:12px}.spotlight-price{font-size:16px}.spotlight-off{margin-inline-start:0}}
-    .brand{letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .badge-new{padding:4px 7px;border-radius:6px;background:#e7efff;color:#1f4fd6;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-    .seo-content{margin:48px 0 0;padding:28px;border:1px solid var(--line);border-radius:18px;background:#fff}
-    .seo-content h2{margin:0 0 12px;font-size:clamp(21px,3vw,28px);letter-spacing:-.05em}
-    .seo-content h3{margin:22px 0 8px;font-size:15px;letter-spacing:-.02em}
-    .seo-content p,.seo-content li,.seo-content dd{color:var(--muted);font-size:13px;line-height:1.65}
-    .seo-content p{margin:0 0 10px}
-    .seo-content ul{margin:8px 0;padding-inline-start:20px}
-    .seo-content li{margin:6px 0}
-    .seo-content dl{margin:0}
-    .seo-content dt{margin-top:12px;font-size:13px;font-weight:750}
-    .seo-content dd{margin:4px 0 0}
-    @media(max-width:600px){.brand{font-size:15px}.nav-note{display:none}.seo-content{padding:18px;margin-top:34px}}
-    .alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff}
-    .alerts[hidden]{display:none}
-    .alerts-text{max-width:560px}
-    .alerts-text h2{margin:6px 0;font-size:clamp(17px,2.4vw,22px);letter-spacing:-.04em}
-    .alerts-text p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
-    .alerts-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-    .alerts-btn{min-height:44px;padding:0 16px;border:1px solid var(--green-dark);border-radius:11px;background:var(--green);color:var(--green-dark);font-size:13px;font-weight:750;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
-    .alerts-btn:hover:not(:disabled){transform:translateY(-1px)}
-    .alerts-btn:disabled{opacity:.55;cursor:default;transform:none}
-    .alerts-btn.ghost{border-color:var(--line);background:#fff;color:var(--muted)}
-    .alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
-    @media(max-width:600px){.alerts{padding:15px}.alerts-btn{flex:1 1 auto}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amazon to Flipkart Deals Grabber — 278 Live Deals</title>
+<meta name="description" content="Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.">
+<link rel="canonical" href="https://atof.in/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#f4f5f0" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="author" content="Amazon to Flipkart Deals Grabber">
+<meta name="geo.region" content="IN">
+<meta name="geo.placename" content="India">
+<meta name="application-name" content="Amazon to Flipkart Deals Grabber">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Deals Grabber">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Ubuntu:wght@400;500;700&amp;display=swap">
+<link rel="dns-prefetch" href="https://www.amazon.in">
+<link rel="dns-prefetch" href="https://www.flipkart.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amazon to Flipkart Deals Grabber">
+<meta property="og:title" content="Amazon to Flipkart Deals Grabber — Live Amazon &amp; Flipkart Deals">
+<meta property="og:description" content="Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.">
+<meta property="og:url" content="https://atof.in/">
+<meta property="og:image" content="https://atof.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amazon to Flipkart Deals Grabber — Live Amazon &amp; Flipkart Deals">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon to Flipkart Deals Grabber — Live Amazon &amp; Flipkart Deals">
+<meta name="twitter:description" content="Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.">
+<meta name="twitter:image" content="https://atof.in/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://atof.in/#website","url":"https://atof.in/","name":"Amazon to Flipkart Deals Grabber","description":"Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.","inLanguage":"en-IN","publisher":{"@id":"https://atof.in/#org"}},{"@type":"Organization","@id":"https://atof.in/#org","name":"Amazon to Flipkart Deals Grabber","url":"https://atof.in/","logo":{"@type":"ImageObject","url":"https://atof.in/og-image.png","width":1200,"height":630}},{"@type":"CollectionPage","@id":"https://atof.in/#page","url":"https://atof.in/","name":"Amazon to Flipkart Deals Grabber — 278 Live Deals","description":"Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.","isPartOf":{"@id":"https://atof.in/#website"},"about":{"@type":"Thing","name":"Discounted electronics deals on Amazon.in and Flipkart"},"inLanguage":"en-IN","mainEntity":{"@context":"https://schema.org","@type":"ItemList","@id":"https://atof.in/#deals","name":"Live tech deals","description":"Live tech deals from Amazon.in and Flipkart on one page — 278 phones, laptops, earbuds and TVs in stock right now, from ₹1,000. Rebuilt throughout the day.","numberOfItems":60,"itemListOrder":"https://schema.org/ItemListOrderDescending","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Fire-Boltt Talk Bluetooth Calling Smartwatch, 1.39\" TFT Display with Dual Button, Hands On Voice Assistance, 120 Sports Modes, in Built Mic & Speaker (Talk, Black)","url":"https://www.amazon.in/dp/B0BY2QJJ8J?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61Vk-Npjs-L._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1199","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0BY2QJJ8J?tag=mdzareef-21"}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Fire-Boltt Ninja X Ring Smart Watch with 1.96” Large Display, Bluetooth Calling, Wireless Charging, AI Voice Assistant, 500+ Watch Faces, Health Suite, Smart Watch for Man & Woman – Pink S","url":"https://www.amazon.in/dp/B0G61F9SDY?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61wT6-UtrlL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1199","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0G61F9SDY?tag=mdzareef-21"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Nervfit New Launch Orion S1 1.43\" AMOLED with AOD, BT Calling, Premium Finish, Luxury Smartwatch","url":"https://www.flipkart.com/product/p/ITMBDAFB23D0744F?pid=SMWHCKX6N4EHFTQP","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/t/g/v/1-43-nfw700225rg-android-ios-nervfit-yes-original-imahe36jagzsydh3.jpeg?q=90","offers":{"@type":"Offer","price":"2394","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITMBDAFB23D0744F?pid=SMWHCKX6N4EHFTQP"}}},{"@type":"ListItem","position":4,"item":{"@type":"Product","name":"boAt Lunar Discovery – 2026 Edition w/ 1.39\" (3.5 cm) HD Display, Bluetooth Calling, Emergency SOS, HR, SpO2 & Sleep Tracking Smart Watch for Men & Women (Active Black)","url":"https://www.amazon.in/dp/B0DFYL4635?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71NUFYTVuXL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1299","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0DFYL4635?tag=mdzareef-21"}}},{"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Nervfit Blaze Sports 1.4\" TrueColor+ LED, BT Call, Fitness Tracking, 7Day Battery Smartwatch","url":"https://www.flipkart.com/product/p/ITMAC74503EAD2DD?pid=SMWHA3YPVGSMSWYK","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/b/o/o/1-4-nfw700225-android-ios-nervfit-yes-original-imahdgyyryz2hwev.jpeg?q=90","offers":{"@type":"Offer","price":"2096","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITMAC74503EAD2DD?pid=SMWHA3YPVGSMSWYK"}}},{"@type":"ListItem","position":6,"item":{"@type":"Product","name":"GGCAM GoPro Action camera GoPro Action Camera 4k20MP Wifi 30M Waterproof Action Camera Sports DV Camcorder Sports and Action Camera","url":"https://www.flipkart.com/ggcam-gopro-action-camera-4k20mp-wifi-30m-waterproof-sports-dv-camcorder/p/itm32ab026701eff?pid=SAYHEFNDYBKNWWPY","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/sports-action-camera/o/m/c/gopro-action-camera-4k20mp-wifi-30m-waterproof-action-camera-original-imahed7te4m8fc7e.jpeg?q=90","offers":{"@type":"Offer","price":"1484","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/ggcam-gopro-action-camera-4k20mp-wifi-30m-waterproof-sports-dv-camcorder/p/itm32ab026701eff?pid=SAYHEFNDYBKNWWPY"}}},{"@type":"ListItem","position":7,"item":{"@type":"Product","name":"Eyetech 4Mp WiFi Bulb CCTV Camera for Home Security | 360° Rotation | Color Night Vision | Motion Detection Two-Way Audio | Wireless Light Bulb Camera with Mobile App V380 Pro (Heavy Light Camera)","url":"https://www.amazon.in/dp/B0HF4YSS7T?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61IJJIMrVDL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1689","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0HF4YSS7T?tag=mdzareef-21"}}},{"@type":"ListItem","position":8,"item":{"@type":"Product","name":"TECNOLOGIA Digital Instant Camera Instant Print Camera for Kids Instant Camera","url":"https://www.flipkart.com/tecnologia-digital-instant-camera-print-kids/p/itmcec7847cba12f?pid=INAHHP6TNYWGUMJA","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/x/i/f/instant-print-camera-for-kids-digital-instant-camera-instant-original-imahhp6tvrnkngwy.jpeg?q=90","offers":{"@type":"Offer","price":"1220","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/tecnologia-digital-instant-camera-print-kids/p/itmcec7847cba12f?pid=INAHHP6TNYWGUMJA"}}},{"@type":"ListItem","position":9,"item":{"@type":"Product","name":"bhindustry Instant Photo Print Camera for Kids Children Polaroid Camera, 48MP Printer DIY Instant Digital Camera Instant Camera","url":"https://www.flipkart.com/bhindustry-instant-photo-print-camera-kids-children-polaroid-camera-48mp-printer-diy-digital/p/itm21b4b26598b81?pid=INAHKBP7GKG4GCKU","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/y/d/t/diy-instant-digital-camera-instant-photo-print-camera-for-kids-original-imahkdu44c5nnhb9.jpeg?q=90","offers":{"@type":"Offer","price":"1096","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/bhindustry-instant-photo-print-camera-kids-children-polaroid-camera-48mp-printer-diy-digital/p/itm21b4b26598b81?pid=INAHKBP7GKG4GCKU"}}},{"@type":"ListItem","position":10,"item":{"@type":"Product","name":"boAt Wave Call 3 Smartwatch 1.83” HD Display with Animated Watch Faces; BT Calling, Functional Crown, Multiple Sports Modes, IP68, HR, SpO2 Monitor, Smart Watches for Men & Women (Timber Brown)","url":"https://www.amazon.in/dp/B0FLF5KFQ8?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71HwtfJ3c6L._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1310","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0FLF5KFQ8?tag=mdzareef-21"}}},{"@type":"ListItem","position":11,"item":{"@type":"Product","name":"Nervfit Vibe 1.85\" TrueColor+ Super HD, BT Calls, Waterproof, HR, BP, Sleep tracking Smartwatch","url":"https://www.flipkart.com/product/p/ITM75E673B1D5816?pid=SMWH89APBHGNMS3M","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/o/9/w/1-85-nfw700222-android-ios-nervfit-yes-original-imahcyes8xgscdzj.jpeg?q=90","offers":{"@type":"Offer","price":"1599","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITM75E673B1D5816?pid=SMWH89APBHGNMS3M"}}},{"@type":"ListItem","position":12,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Lavender, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-lavender-128-gb/p/itm9189006529d08?pid=MOBGTKQGKGYZDJZY","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/s/l/-resized-original-imagtnqjjuc6dh6v.jpeg?q=90","offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-lavender-128-gb/p/itm9189006529d08?pid=MOBGTKQGKGYZDJZY"}}},{"@type":"ListItem","position":13,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-256-gb/p/itmb3a0b1e650a0e?pid=MOBGSXD7TZZTJQXE","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/h/c/2/galaxy-s21-fe-5g-sm-g990blg4ins-samsung-original-imah4yeuthzf92qg.jpeg?q=90","offers":{"@type":"Offer","price":"15999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-256-gb/p/itmb3a0b1e650a0e?pid=MOBGSXD7TZZTJQXE"}}},{"@type":"ListItem","position":14,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-128-gb/p/itm628856d2794e5?pid=MOBGTKQGTQW4PZUF","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/a/y/g/-original-imagtnqkutcyzhgq.jpeg?q=90","offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-128-gb/p/itm628856d2794e5?pid=MOBGTKQGTQW4PZUF"}}},{"@type":"ListItem","position":15,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-256-gb/p/itm766f7432b6626?pid=MOBGSXD7DXBFQEDE","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/k/a/l/galaxy-s21-fe-5g-sm-g990bza4ins-samsung-original-imah3gndw9qvwxn4.jpeg?q=90","offers":{"@type":"Offer","price":"15999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-256-gb/p/itm766f7432b6626?pid=MOBGSXD7DXBFQEDE"}}},{"@type":"ListItem","position":16,"item":{"@type":"Product","name":"ClickPic Polaroird 48MP Lens with 3 Rolls Included in Box Retro Instant Camera","url":"https://www.flipkart.com/clickpic-polaroird-48mp-lens-3-rolls-included-box-retro-instant-camera/p/itmc74c143f5eb82?pid=INAHHYYDYKGRGMNC","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/m/t/l/in-built-printer-48-mp-1080q-screen-3-rolls-instant-polaroid-original-imahkqyawcpbyxup.jpeg?q=90","offers":{"@type":"Offer","price":"1000","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/clickpic-polaroird-48mp-lens-3-rolls-included-box-retro-instant-camera/p/itmc74c143f5eb82?pid=INAHHYYDYKGRGMNC"}}},{"@type":"ListItem","position":17,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-256-gb/p/itm634644b6561df?pid=MOBGSXD7KAXUY8NH","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/m/o/r/galaxy-s21-fe-5g-sm-g990bzb4ins-samsung-original-imah48yrc6qsnsdh.jpeg?q=90","offers":{"@type":"Offer","price":"15999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-256-gb/p/itm634644b6561df?pid=MOBGSXD7KAXUY8NH"}}},{"@type":"ListItem","position":18,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-128-gb/p/itmcb8fc8eb2e82b?pid=MOBGTKQG8T9ZHJMM","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/x/0/-original-imagtnqjjfgxzpz4.jpeg?q=90","offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-128-gb/p/itmcb8fc8eb2e82b?pid=MOBGTKQG8T9ZHJMM"}}},{"@type":"ListItem","position":19,"item":{"@type":"Product","name":"LIVORA Kids Instant Photo Print Camera with Dual HD Lens & Video Recording Digital Camera Toy for Kids with Instant Photo Printing Instant Camera","url":"https://www.flipkart.com/livora-kids-instant-photo-print-camera-dual-hd-lens-video-recording-digital-toy-printing/p/itm2f6ef81177405?pid=INAHHADBDYQPFHY8","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/p/r/a/digital-camera-toy-for-kids-with-instant-photo-printing-kids-original-imahhadbbp6bwjy2.jpeg?q=90","offers":{"@type":"Offer","price":"1156","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/livora-kids-instant-photo-print-camera-dual-hd-lens-video-recording-digital-toy-printing/p/itm2f6ef81177405?pid=INAHHADBDYQPFHY8"}}},{"@type":"ListItem","position":20,"item":{"@type":"Product","name":"Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-128-gb/p/itm5a614a9761bc7?pid=MOBGTKQGXJDVF95N","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/d/o/c/-resized-original-imagtnqjmfqxxbj2.jpeg?q=90","offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-128-gb/p/itm5a614a9761bc7?pid=MOBGTKQGXJDVF95N"}}},{"@type":"ListItem","position":21,"item":{"@type":"Product","name":"boAt Nirvana Ion, 120HRS Battery, Crystal Bionic Sound w/Dual EQ Modes, 4Mics ENx, App Support, Low Latency, IPX4, v.5.2 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Ivory White)","url":"https://www.amazon.in/dp/B0BW8RVQ3V?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71eTMdfGiwL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1699","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0BW8RVQ3V?tag=mdzareef-21"}}},{"@type":"ListItem","position":22,"item":{"@type":"Product","name":"Noise Pulse 2 Max 1.85\" Display, Bluetooth Calling Smart Watch, 10 Days Battery, 550 NITS Brightness, Smart DND, 100 Sports Modes, Smartwatch for Men and Women (Jet Black)","url":"https://www.amazon.in/dp/B0B6BLTGTT?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61bm7UEdGAL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0B6BLTGTT?tag=mdzareef-21"}}},{"@type":"ListItem","position":23,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Lavender, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-lavender-256-gb/p/itmfbae75e3840e1?pid=MOBGMFFXDQTGNWVK","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/6/g/j/-original-imah4zp7pfzx7fqu.jpeg?q=90","offers":{"@type":"Offer","price":"26499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-lavender-256-gb/p/itmfbae75e3840e1?pid=MOBGMFFXDQTGNWVK"}}},{"@type":"ListItem","position":24,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Cream, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-cream-128-gb/p/itmc77ff94cdf044?pid=MOBGMFFX5XYE8MZN","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/8/i/-original-imah4zp7fgtezhsz.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-cream-128-gb/p/itmc77ff94cdf044?pid=MOBGMFFX5XYE8MZN"}}},{"@type":"ListItem","position":25,"item":{"@type":"Product","name":"Trueview 3MP 4G Mini PT Security Camera with SIM Support | All-Time Color Vision | 360° Pan | Two-Way Audio | Human Detection | 256GB SD & Cloud | IP66 Waterproof | Alexa Compatible | STQC Certified","url":"https://www.amazon.in/dp/B0B38CMWWB?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/518Rt7wLhXL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"3799","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0B38CMWWB?tag=mdzareef-21"}}},{"@type":"ListItem","position":26,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Cream, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-cream-256-gb/p/itm745d4b532623e?pid=MOBGMFFXURCVYANE","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/8/i/-original-imah4zp7fgtezhsz.jpeg?q=90","offers":{"@type":"Offer","price":"26499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-cream-256-gb/p/itm745d4b532623e?pid=MOBGMFFXURCVYANE"}}},{"@type":"ListItem","position":27,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Green, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-green-256-gb/p/itm6840743bfd1ef?pid=MOBGMFFXB7RGPNET","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/p/w/p/-original-imah4zp8tfzndmmh.jpeg?q=90","offers":{"@type":"Offer","price":"26499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-green-256-gb/p/itm6840743bfd1ef?pid=MOBGMFFXB7RGPNET"}}},{"@type":"ListItem","position":28,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Phantom Black, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-256-gb/p/itm347e695feffe7?pid=MOBGMFFXPNSHBGRC","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=90","offers":{"@type":"Offer","price":"26499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-256-gb/p/itm347e695feffe7?pid=MOBGMFFXPNSHBGRC"}}},{"@type":"ListItem","position":29,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Phantom Black, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-128-gb/p/itm1f3efe01d1c61?pid=MOBGNPGZVX4PCTTF","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-128-gb/p/itm1f3efe01d1c61?pid=MOBGNPGZVX4PCTTF"}}},{"@type":"ListItem","position":30,"item":{"@type":"Product","name":"Samsung Galaxy S23 5G (Green, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-green-128-gb/p/itm7cdd081996dc8?pid=MOBGNPGYWGZAUZGK","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/p/w/p/-original-imah4zp8tfzndmmh.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-5g-green-128-gb/p/itm7cdd081996dc8?pid=MOBGNPGYWGZAUZGK"}}},{"@type":"ListItem","position":31,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Graphite, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-256-gb/p/itm3dd39c0d1ec9c?pid=MOBGVTA2GWPSR57X","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/x/k/h/-resized-original-imah5ywff9rr76zh.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-256-gb/p/itm3dd39c0d1ec9c?pid=MOBGVTA2GWPSR57X"}}},{"@type":"ListItem","position":32,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Mint, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-mint-256-gb/p/itmdb72279972171?pid=MOBGVTA2R8ZH4G3C","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/8/v/0/-original-imah5ywfebrs9bfg.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-mint-256-gb/p/itmdb72279972171?pid=MOBGVTA2R8ZH4G3C"}}},{"@type":"ListItem","position":33,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Graphite, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-128-gb/p/itme751066521899?pid=MOBGVTA2836DQWTT","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/x/k/h/-resized-original-imah5ywff9rr76zh.jpeg?q=90","offers":{"@type":"Offer","price":"22999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-128-gb/p/itme751066521899?pid=MOBGVTA2836DQWTT"}}},{"@type":"ListItem","position":34,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Purple, 128 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-purple-128-gb/p/itm03da6b42ff68e?pid=MOBGVTA24G7GHE6M","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/f/r/-resized-original-imah5ywfzzjzfkcn.jpeg?q=90","offers":{"@type":"Offer","price":"22999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-purple-128-gb/p/itm03da6b42ff68e?pid=MOBGVTA24G7GHE6M"}}},{"@type":"ListItem","position":35,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Cream, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-cream-256-gb/p/itm38258dc2d7a5c?pid=MOBGVTA2XGXYQVCC","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/n/0/e/-original-imah5ywf68xm7wfb.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-cream-256-gb/p/itm38258dc2d7a5c?pid=MOBGVTA2XGXYQVCC"}}},{"@type":"ListItem","position":36,"item":{"@type":"Product","name":"Samsung Galaxy S23 FE (Purple, 256 GB)","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-purple-256-gb/p/itm8f6a49271bf21?pid=MOBGVTA2VGHCJFGG","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/f/r/-resized-original-imah5ywfzzjzfkcn.jpeg?q=90","offers":{"@type":"Offer","price":"24999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/samsung-galaxy-s23-fe-purple-256-gb/p/itm8f6a49271bf21?pid=MOBGVTA2VGHCJFGG"}}},{"@type":"ListItem","position":37,"item":{"@type":"Product","name":"GOBOULT Mustang Torq Wireless in Ear Earbuds with 60H Playtime, App Support, Quad Mic ENC, 45ms Low Latency, 13mm Driver, Breathing LEDs, Made in India Ear Buds Wireless (Yellow)","url":"https://www.amazon.in/dp/B0DN1Q4NSJ?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71PfN9HA72L._AC_UL320_.jpg","offers":{"@type":"Offer","price":"1799","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0DN1Q4NSJ?tag=mdzareef-21"}}},{"@type":"ListItem","position":38,"item":{"@type":"Product","name":"WTG Active2 Classy 1.39\" AMOLED Display, Bluetooth Calling, Fitness & Sports, Music Smartwatch","url":"https://www.flipkart.com/product/p/ITM26BD91987C9DD?pid=SMWHYP65XYW9MNEU","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/o/a/t/35-active2-black-metal-strap-android-ios-wtg-yes-original-imahmytz2ycuyqwy.jpeg?q=90","offers":{"@type":"Offer","price":"1492","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITM26BD91987C9DD?pid=SMWHYP65XYW9MNEU"}}},{"@type":"ListItem","position":39,"item":{"@type":"Product","name":"Foxin FoxBuds F1 ANC True Wireless Bluetooth Earbuds Upto 30dB ANC, 50Hrs Playtime, Dual Pairing, Quad Mic ENC, 13mm Bass Driver, 40ms Low Latency, Digital Display, Gaming Mode, BT 5.4 (Shadow Black)","url":"https://www.amazon.in/dp/B0GNMRV6KV?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/51pWvMx8vhL._AC_UL320_.jpg","offers":{"@type":"Offer","price":"1189","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0GNMRV6KV?tag=mdzareef-21"}}},{"@type":"ListItem","position":40,"item":{"@type":"Product","name":"GameSir Active 2 Round Smartwatch with Smart Notifications & Fitness Tracking Smartwatch","url":"https://www.flipkart.com/product/p/ITMBEB0B00B395B9?pid=SMWH3GYX5J3MPZZW","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/d/b/1/35-a-69-round-black-metal-active-2-android-ios-gamesir-yes-original-imahpq3pxbhsmgdt.jpeg?q=90","offers":{"@type":"Offer","price":"1488","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITMBEB0B00B395B9?pid=SMWH3GYX5J3MPZZW"}}},{"@type":"ListItem","position":41,"item":{"@type":"Product","name":"LIVORA Kids Instant Print Camera Instant Photo Print Camera for Kids with Dual HD lens & Video Recording Instant Camera","url":"https://www.flipkart.com/livora-kids-instant-print-camera-photo-dual-hd-lens-video-recording/p/itm04b0e45d3671e?pid=INAHKXU5KXMRJGT2","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/m/9/6/instant-photo-print-camera-for-kids-with-dual-hd-lens-video-original-imahkxu5ux7tytxz.jpeg?q=90","offers":{"@type":"Offer","price":"1236","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/livora-kids-instant-print-camera-photo-dual-hd-lens-video-recording/p/itm04b0e45d3671e?pid=INAHKXU5KXMRJGT2"}}},{"@type":"ListItem","position":42,"item":{"@type":"Product","name":"DOMO Slate SL40 2C 10 Inch Android Tablet, IPS Display, 4G Dual SIM, 4GB RAM, 32GB Storage (Expandable to 1TB), Octa-Core Processor, GPS, WiFi, Bluetooth, for Students Foundation Exams (Grey)","url":"https://www.amazon.in/dp/B0HDQ287PM?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61V6T6ELEqL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"7990","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0HDQ287PM?tag=mdzareef-21"}}},{"@type":"ListItem","position":43,"item":{"@type":"Product","name":"boAt Chrome Horizon, Premium Metal Body, Video Watch Faces, 1.51”(3.83cm) AMOLED Round Display, HRV & VO2 Max, Auto-Activity Detection, ASAP Charge, HRV Smartwatch for Men & Women (Midnight Black)","url":"https://www.amazon.in/dp/B0F491YC5Q?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71JaNi+RfrL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"2999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0F491YC5Q?tag=mdzareef-21"}}},{"@type":"ListItem","position":44,"item":{"@type":"Product","name":"Noise Twist Round dial smart Watch with Bluetooth Calling, 1.38\" TFT Display, up-to 7 Days Battery, 100+ Watch Faces, IP68, Heart Rate Monitor, Sleep Tracking (Midnight Blue)","url":"https://www.amazon.in/dp/B0BJ74PQK6?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61ATaTpvEQL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1599","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0BJ74PQK6?tag=mdzareef-21"}}},{"@type":"ListItem","position":45,"item":{"@type":"Product","name":"boAt 2026 Launch Airdopes Prime 800D, Surround Sound by Dolby Audio, 45H Battery, Quad Mic AI-ENx™, 11mm Drivers, ASAP™ Charge,App Support Wireless Bluetooth TWS Earbuds with mic(Swedish White)","url":"https://www.amazon.in/dp/B0GZN9ZPRG?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/51nH84daelL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0GZN9ZPRG?tag=mdzareef-21"}}},{"@type":"ListItem","position":46,"item":{"@type":"Product","name":"Storio Camera for Kids with Print, Mini Camera Printer, 1080P HD","url":"https://www.amazon.in/dp/B0HJZK589N?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71dnhTsoiCL._AC_UL320_.jpg","offers":{"@type":"Offer","price":"1499","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0HJZK589N?tag=mdzareef-21"}}},{"@type":"ListItem","position":47,"item":{"@type":"Product","name":"Noise Twist Go Round dial Smartwatch with BT Calling, 1.39\" Display, Metal Build, 100+ Watch Faces, IP68, Sleep Tracking, 100+ Sports Modes, 24/7 Heart Rate Monitoring (Elite Black)","url":"https://www.amazon.in/dp/B0CQ4J4YFL?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61q0ZgCYoJL._AC_UL320_.jpg","offers":{"@type":"Offer","price":"1999","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0CQ4J4YFL?tag=mdzareef-21"}}},{"@type":"ListItem","position":48,"item":{"@type":"Product","name":"boAt New Launch Ultima Vogue 2, India's First AMOLED Type-C Smartwatch, 1.96\" Display, 1000 nits Brightness, Metal Body w/Premium Straps, 10-Days Battery Life, Smartwatch for Men & Women (Deep Blue)","url":"https://www.amazon.in/dp/B0H1J94XZN?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/714qzgsUWML._AC_UL320_.jpg","offers":{"@type":"Offer","price":"2799","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0H1J94XZN?tag=mdzareef-21"}}},{"@type":"ListItem","position":49,"item":{"@type":"Product","name":"boAt 2026 Launch Airdopes ProClip, Air Conduction Tech,Feather-Light Earbuds, Clip-On Design,All Day Wear Comfort,52H Battery,12mm Dynamic Drivers,App Support,BT v6.0,OWS Earbuds with mic(Silk Grey)","url":"https://www.amazon.in/dp/B0GZN7C6X8?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/61ECYAhX7YL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1799","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0GZN7C6X8?tag=mdzareef-21"}}},{"@type":"ListItem","position":50,"item":{"@type":"Product","name":"Omeron®-(1 Year Warranty) Instant Print Camera for Kids – 12MP Digital Camera with Instant Photo Printer, Video Recording, MP3 Music, Fun Filters, Rechargeable Battery & Print Paper Rolls – Purple","url":"https://www.amazon.in/dp/B0HF67H35T?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71VTtjFsSIL._AC_UL320_.jpg","offers":{"@type":"Offer","price":"1949","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0HF67H35T?tag=mdzareef-21"}}},{"@type":"ListItem","position":51,"item":{"@type":"Product","name":"SnapKartX 1 The New Mini Camera Instant Printer – Capture & Print Photos Instantly Instant Camera","url":"https://www.flipkart.com/snapkartx-1-new-mini-camera-instant-printer-capture-print-photos-instantly/p/itm8677ce9bb707b?pid=INAHH9XN8TNSWFZU","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/b/n/6/the-new-mini-camera-instant-printer-capture-print-photos-original-imahh9xnf2gbxuzc.jpeg?q=90","offers":{"@type":"Offer","price":"1199","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/snapkartx-1-new-mini-camera-instant-printer-capture-print-photos-instantly/p/itm8677ce9bb707b?pid=INAHH9XN8TNSWFZU"}}},{"@type":"ListItem","position":52,"item":{"@type":"Product","name":"JBL Wave Buds 2 Ear Buds Wireless BluetoothV5.3, Active Noise Cancellation Earbuds,Multi Connect, App for Customized Extra Bass Eq, Relax Mode,Speed Charge, 40H Playback, Fast Pair, 4 Mics,IP54(Black)","url":"https://www.amazon.in/dp/B0DHL63KWK?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/613Znd0DHhL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"2799","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0DHL63KWK?tag=mdzareef-21"}}},{"@type":"ListItem","position":53,"item":{"@type":"Product","name":"Visio World VW 60 cm (24 inch) Smartchoice HD Ready QLED TV VW24S2","url":"https://www.amazon.in/dp/B0H5R6C68N?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/81co4tkZgZL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"5299","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0H5R6C68N?tag=mdzareef-21"}}},{"@type":"ListItem","position":54,"item":{"@type":"Product","name":"Fastrack Jupitor R2 Smart Watch, 1.38” TFT Display, 240 * 240 Pixel Resolution, SingleSync BT Calling, AI Voice Assistant, 100+ Sports Modes & Smartwatch Faces,Upto 5 Day Battery, IP68 (Black)","url":"https://www.amazon.in/dp/B0DDQCDQQG?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/81p2I9e7gmL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"1699","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0DDQCDQQG?tag=mdzareef-21"}}},{"@type":"ListItem","position":55,"item":{"@type":"Product","name":"Zuigo DIY instant photo printer cemera Instant Photo Printer Camera for Kids, Boys & Girls BLUE colour - Instant Camera","url":"https://www.flipkart.com/zuigo-diy-instant-photo-printer-cemera-camera-kids-boys-girls-blue-colour/p/itmb9e268107d944?pid=INAHNG4D7TFF7RG2","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/u/1/9/instant-photo-printer-camera-for-kids-boys-girls-blue-colour-diy-original-imahng4dtnqah5e2.jpeg?q=90","offers":{"@type":"Offer","price":"1263","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/zuigo-diy-instant-photo-printer-cemera-camera-kids-boys-girls-blue-colour/p/itmb9e268107d944?pid=INAHNG4D7TFF7RG2"}}},{"@type":"ListItem","position":56,"item":{"@type":"Product","name":"Lenovo Tab M11 4 GB RAM 128 GB ROM 11.0 inch with Wi-Fi Only MediaTek Helio G88 Tablet (Seafoam Green)","url":"https://www.flipkart.com/product/p/ITM5E8422676823E?pid=TABH2AGTGHUANH7N","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/tablet/w/a/f/-original-imahfdyzd8pvs5hj.jpeg?q=90","offers":{"@type":"Offer","price":"12336","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITM5E8422676823E?pid=TABH2AGTGHUANH7N"}}},{"@type":"ListItem","position":57,"item":{"@type":"Product","name":"Lenovo V14 Intel Core i5 13th Gen 13420H 14.0\" FHD Laptop","url":"https://www.amazon.in/dp/B0H93GYSMW?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/71NA9vn97oL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"58240","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0H93GYSMW?tag=mdzareef-21"}}},{"@type":"ListItem","position":58,"item":{"@type":"Product","name":"OPPO Enco Buds3 Pro,12.4mm Driver,54hrs Playback,Deep Bass,Dual-Device Pairing,IP55 Bluetooth","url":"https://www.flipkart.com/product/p/ITM63AB721A99B18?pid=ACCHETEHDKHNBFKX","image":"https://rukmini1.flixcart.com/image/400/400/xif0q/headphone/7/8/l/-enriched-transparent-original-imahf4wbpvaf8she.png?q=90","offers":{"@type":"Offer","price":"1599","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.flipkart.com/product/p/ITM63AB721A99B18?pid=ACCHETEHDKHNBFKX"}}},{"@type":"ListItem","position":59,"item":{"@type":"Product","name":"REDMI A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box","url":"https://www.amazon.in/dp/B0GVG27VS7?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/81ddi09Y88L._AC_UY218_.jpg","offers":{"@type":"Offer","price":"12645","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0GVG27VS7?tag=mdzareef-21"}}},{"@type":"ListItem","position":60,"item":{"@type":"Product","name":"HP Professional 15 (2026), Intel (i3 14th Gen) Core 3 100U - (8 GB DDR5/512 GB SSD/Intel UHD Graphics) - Thin & Light Business Laptop/15.6\" FHD/Fingerprint/Silver/1.5kg","url":"https://www.amazon.in/dp/B0GHSYD43X?tag=mdzareef-21","image":"https://m.media-amazon.com/images/I/713Rk7E7dWL._AC_UY218_.jpg","offers":{"@type":"Offer","price":"47890","priceCurrency":"INR","availability":"https://schema.org/InStock","url":"https://www.amazon.in/dp/B0GHSYD43X?tag=mdzareef-21"}}}]}},{"@type":"FAQPage","@id":"https://atof.in/#faq","mainEntity":[{"@type":"Question","name":"Is this site affiliated with Amazon or Flipkart?","acceptedAnswer":{"@type":"Answer","text":"No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases, at no extra cost to you. It never changes the price you pay."}},{"@type":"Question","name":"Are the prices guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart."}},{"@type":"Question","name":"How often is the deal feed updated?","acceptedAnswer":{"@type":"Answer","text":"A scheduled job re-reads Amazon.in and Flipkart and republishes the feed throughout the day. Anything that leaves the stores ages out, so expired listings drop off on their own."}}]}]}
+</script>
+<style>
+:root{
+  color-scheme:light;
+  --ink:#0f1a15;
+  --ink-2:#1d2a23;
+  --muted:#5d6a63;
+  --muted-2:#7c8880;
+  --paper:#f4f5f0;
+  --surface:#fff;
+  --line:#e1e5dc;
+  --line-2:#eef0ea;
+  --lime:#c8f26c;
+  --lime-deep:#5b8a2a;
+  --lime-ink:#2c451a;
+  --amber:#b06a12;
+  --font-ui:'Inter','Ubuntu',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-display:'Ubuntu','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(15,26,21,.04),0 8px 24px -18px rgba(15,26,21,.35);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--lime-deep);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,100%);margin-inline:auto;padding-inline:24px;padding-inline:calc(24px + env(safe-area-inset-left)) calc(24px + env(safe-area-inset-right))}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:20;padding:10px 16px;border-radius:0 0 10px 10px;background:var(--ink);color:#fff;font-size:13px;font-weight:700;text-decoration:none;transition:top .18s ease}
+.skip-link:focus{top:0}
+
+/* ── Header ─────────────────────────────────────────────── */
+.topline{padding:9px 16px;padding:calc(9px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 9px calc(16px + env(safe-area-inset-left));background:var(--ink);color:#dbe4dd;text-align:center;font-size:12px;letter-spacing:.01em}
+.topline strong{color:var(--lime);font-weight:700}
+.nav{display:flex;align-items:center;gap:14px;min-height:68px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;min-height:44px;font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.mark{display:grid;place-items:center;flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--lime);color:var(--lime-ink);font-size:16px}
+.nav-links{display:flex;align-items:center;gap:2px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 11px;border-radius:9px;color:var(--muted);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s ease,background .15s ease}
+.nav-links a:hover{background:var(--line-2);color:var(--ink)}
+.nav-links a[aria-current=page]{color:var(--ink);background:var(--line-2)}
+
+/* ── Hero ───────────────────────────────────────────────── */
+.hero{padding:44px 0 26px}
+.eyebrow{color:var(--lime-deep);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.hero h1{max-width:19ch;margin:12px 0 0;font-family:var(--font-display);font-size:clamp(34px,6vw,60px);font-weight:700;letter-spacing:-.05em;line-height:1.02}
+.hero .lede{max-width:62ch;margin:16px 0 0;color:var(--muted);font-size:16px;line-height:1.6}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 16px;color:var(--muted-2);font-size:12px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.crumbs li{list-style:none}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+.crumbs li+li::before{content:'/';margin-inline-end:6px;color:var(--line)}
+
+/* ── Stats strip ────────────────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:0 0 26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--line);overflow:hidden}
+.stats div{padding:14px 16px;background:var(--surface)}
+.stats dt{color:var(--muted-2);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.stats dd{margin:3px 0 0;font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:-.03em}
+
+/* ── Filter chips ───────────────────────────────────────── */
+.chipbar{display:flex;gap:7px;overflow-x:auto;padding:2px;margin:0 0 14px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.chip{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;min-height:40px;padding:0 13px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--muted);font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .15s ease,color .15s ease,background .15s ease}
+.chip:hover{border-color:var(--lime-deep);color:var(--ink)}
+.chip[aria-current=page],.chip.is-on{border-color:var(--ink);background:var(--ink);color:#fff}
+.chip[aria-current=page] .chip-n,.chip.is-on .chip-n{color:#cbd6cc}
+
+/* ── Deal grid + card ───────────────────────────────────── */
+.deal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.deal{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.deal:hover{transform:translateY(-3px);border-color:#cfd6c8;box-shadow:0 1px 2px rgba(15,26,21,.05),0 18px 38px -22px rgba(15,26,21,.45)}
+.deal-media{position:relative;aspect-ratio:4/3;background:#f6f7f3;display:grid;place-items:center;overflow:hidden}
+.deal-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.deal-media figcaption{position:absolute;inset:0;display:grid;place-items:center;padding:12px;color:#a9b0a6;font-size:12px;text-align:center}
+.deal-badges{position:absolute;inset:9px 9px auto;display:flex;flex-wrap:wrap;gap:5px;align-items:flex-start}
+.pill{display:inline-flex;align-items:center;min-height:22px;padding:0 7px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--surface)}
+.pill-off{background:#e9f5d6;color:#3f6b1c}
+.pill-new{background:#e4edff;color:#1c47c4}
+.pill-store{background:rgba(255,255,255,.92);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+.deal-body{display:flex;flex:1;flex-direction:column;padding:13px}
+.deal h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;min-height:3.9em;margin:0 0 10px;font-size:13.5px;font-weight:600;line-height:1.32;letter-spacing:-.01em}
+.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
+.price{font-family:var(--font-display);font-size:19px;font-weight:700;letter-spacing:-.03em}
+.was{color:var(--muted-2);font-size:11.5px;text-decoration:line-through}
+.deal-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2);font-size:12.5px;font-weight:700;text-decoration:none}
+.deal-cta:hover{color:var(--lime-deep)}
+.deal-cta span:last-child{font-size:15px}
+
+.state{grid-column:1/-1;padding:38px 22px;border:1px dashed #ccd2c6;border-radius:var(--radius);background:var(--surface);text-align:center}
+.state h3{margin:0 0 8px;font-size:18px;letter-spacing:-.02em}
+.state p{max-width:56ch;margin:0 auto 16px;color:var(--muted);font-size:13.5px}
+.state a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--ink);color:#fff;font-size:13px;font-weight:700;text-decoration:none}
+.summary{margin:0 0 16px;color:var(--muted);font-size:12.5px}
+.summary strong{color:var(--ink);font-weight:700}
+
+/* ── Prose block ────────────────────────────────────────── */
+.prose{margin:44px 0 0;padding:26px 28px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.prose h2{margin:0 0 12px;font-family:var(--font-display);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.prose h3{margin:24px 0 8px;font-size:15px;font-weight:700;letter-spacing:-.02em}
+.prose p,.prose li,.prose dd{margin:0 0 10px;color:var(--muted);font-size:13.5px;line-height:1.68}
+.prose ul{margin:8px 0 14px;padding-inline-start:20px}
+.prose li{margin:5px 0}
+.prose dt{margin-top:14px;font-size:13.5px;font-weight:700}
+.prose dd{margin:4px 0 0}
+.prose table{width:100%;margin:12px 0 4px;border-collapse:collapse;font-size:13px}
+.prose th,.prose td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}
+.prose th{color:var(--ink);font-weight:700;background:var(--line-2)}
+.prose td{color:var(--muted)}
+.prose a{color:var(--ink);font-weight:600}
+
+.cta-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin:26px 0 0;padding:20px 24px;border-radius:18px;background:linear-gradient(120deg,var(--ink-2),#101a15);color:#e7eee8}
+.cta-band h2{margin:0;font-family:var(--font-display);font-size:clamp(18px,2.4vw,23px);font-weight:700;letter-spacing:-.03em}
+.cta-band p{max-width:52ch;margin:6px 0 0;color:#a9b7ac;font-size:13px;line-height:1.55}
+.cta-band a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:11px;background:var(--lime);color:var(--lime-ink);font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;margin-top:48px;padding:20px 0 28px;padding-bottom:calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--muted-2);font-size:11.5px;line-height:1.6}
+.footer a{color:inherit}
+.footer h2{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.footer-links{display:flex;flex-wrap:wrap;gap:4px 14px}
+.note{margin:20px 0 0;color:var(--muted-2);font-size:11.5px;line-height:1.6}
+
+@media (max-width:1000px){.deal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav{flex-wrap:wrap;min-height:0;padding:10px 0}
+  .nav-links{margin-inline-start:0;width:100%}
+  .hero{padding:30px 0 20px}
+}
+@media (max-width:560px){
+  .wrap{padding-inline:16px;padding-inline:calc(16px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right))}
+  .brand{font-size:16px}
+  .hero h1{font-size:clamp(30px,10vw,42px)}
+  .hero .lede{font-size:14.5px}
+  .deal-grid{gap:9px}
+  .deal-media{aspect-ratio:1.1}
+  .deal-body{padding:10px}
+  .deal h3{font-size:12.5px;min-height:4.3em;margin-bottom:8px}
+  .price{font-size:16px}
+  .prose{padding:18px;margin-top:32px}
+  .cta-band{padding:16px}
+  .cta-band a{width:100%;justify-content:center}
+  .footer{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 12px}
+.controls h2{margin:0;font-family:var(--font-display);font-size:clamp(19px,2.6vw,25px);font-weight:700;letter-spacing:-.04em}
+.toolbar{display:grid;gap:11px;margin:0 0 24px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.search{min-height:46px;padding:0 14px;border:1px solid var(--line);border-radius:11px;background:var(--paper);font-size:14px}
+.search:focus{border-color:var(--lime-deep)}
+.toolbar-actions{display:flex;flex-wrap:wrap;gap:8px}
+.refresh,.pause{min-height:44px;padding:0 15px;border:1px solid var(--ink);border-radius:11px;background:var(--ink);color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+.pause{border-color:var(--line);background:var(--surface);color:var(--muted)}
+.refresh:disabled{opacity:.55;cursor:default}
+.refresh-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;color:var(--muted-2);font-size:11.5px}
+.status{display:inline-flex;align-items:center;gap:7px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--muted-2)}
+.dot.live{background:#3f9c2f}
+.dot.partial{background:#c08a1e}
+.dot.error{background:#c2453a}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+
+.spotlight{margin:0 0 30px;padding:24px;border-radius:22px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
+.spotlight[hidden]{display:none}
+.spotlight-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:17px}
+.spotlight-head .eyebrow{color:var(--lime)}
+.spotlight-head h2{margin:7px 0 0;font-family:var(--font-display);font-size:clamp(21px,3.2vw,31px);font-weight:700;letter-spacing:-.045em;line-height:1.06}
+.spotlight-head p{max-width:360px;margin:0;color:#a3b1a7;font-size:12px;line-height:1.55}
+.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.spotlight-card{display:flex;flex-direction:column;gap:11px;padding:13px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.spotlight-card:hover{transform:translateY(-3px);border-color:var(--lime)}
+.spotlight-media{position:relative;display:grid;place-items:center;height:158px;border-radius:11px;background:#fff;overflow:hidden}
+.spotlight-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.spotlight-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
+.spotlight-tag{position:absolute;top:9px;left:9px;padding:4px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.spotlight-info{display:flex;flex:1;flex-direction:column;gap:8px}
+.spotlight-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;font-size:13px;line-height:1.35;font-weight:600}
+.spotlight-row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
+.spotlight-price{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.035em}
+.spotlight-was{color:#93a199;font-size:11px;text-decoration:line-through}
+.spotlight-off{margin-inline-start:auto;padding:4px 7px;border-radius:6px;background:rgba(200,242,108,.16);color:var(--lime);font-size:10.5px;font-weight:800;white-space:nowrap}
+.spotlight-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:9px;border-top:1px solid #2b3831;color:#c2cfc6;font-size:11px;font-weight:700}
+
+.alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:17px 19px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.alerts[hidden]{display:none}
+.alerts-text{max-width:560px}
+.alerts-text h2{margin:6px 0;font-family:var(--font-display);font-size:clamp(17px,2.3vw,21px);font-weight:700;letter-spacing:-.035em}
+.alerts-text p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.alerts-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.alerts-btn{min-height:44px;padding:0 16px;border:1px solid var(--lime-deep);border-radius:11px;background:var(--lime);color:var(--lime-ink);font-size:13px;font-weight:700;cursor:pointer}
+.alerts-btn.ghost{border-color:var(--line);background:var(--surface);color:var(--muted)}
+.alerts-btn:disabled{opacity:.55;cursor:default}
+.alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
+
+.hero h1 span{color:var(--lime-deep)}
+@media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spotlight-head{flex-direction:column;align-items:flex-start}}
+@media (max-width:600px){
+  .spotlight{padding:15px;border-radius:17px}
+  .spotlight-grid{grid-template-columns:1fr;gap:10px}
+  .spotlight-card{flex-direction:row;align-items:center;gap:11px;padding:11px}
+  .spotlight-media{flex:0 0 96px;width:96px;height:96px}
+  .spotlight-info{gap:5px}
+  .spotlight-info h3{-webkit-line-clamp:3;min-height:0;font-size:12px}
+  .spotlight-price{font-size:16px}
+  .spotlight-off{margin-inline-start:0}
+  .alerts{padding:14px}
+  .alerts-btn{flex:1 1 auto}
+}
+</style>
 </head>
 <body>
-  <div class="topline"><strong>Live deal feed</strong> · Amazon &amp; Flipkart prices, refreshed every 10 minutes</div>
-    <header class="wrap nav"><a class="brand" href="#top" aria-label="Amazon to Flipkart Deals Grabber home"><span class="mark" aria-hidden="true">↗</span> Amazon to Flipkart Deals Grabber</a><span class="nav-note">Independent deal tracker</span></header>
-  <main class="wrap" id="top">
-    <section class="hero" aria-labelledby="hero-title"><div><div class="eyebrow">Amazon.in · Flipkart · one page</div><h1 id="hero-title">Amazon to Flipkart deals,<br><span>without the hunt.</span></h1><p>Amazon to Flipkart Deals Grabber pulls live discounted phones, laptops, earbuds, smart TVs and electronics from Amazon.in and Flipkart into a single page. New deals appear as they are found, expired listings drop off automatically, and the feed is rebuilt every 10 minutes.</p></div><p class="hero-note">Prices are read from public listings and can change before checkout. Always confirm the final price, seller and delivery on the store.</p></section>
-    <noscript><p class="note">This deal feed needs JavaScript to render live listings. The latest snapshot is also available as <a href="/api/deals">JSON</a>, and it is rebuilt roughly every 10 minutes.</p></noscript>
-    <section class="spotlight" id="spotlight" aria-labelledby="spotlight-title" hidden>
-      <div class="spotlight-head"><div><div class="eyebrow">Most wanted this week</div><h2 id="spotlight-title">Flagship deals, front and centre.</h2></div><p>The deepest live discounts on the gear people actually hunt for — MacBook, iPhone and Samsung Galaxy flagships. Premium picks, all above ₹50,000.</p></div>
-      <div class="spotlight-grid" id="spotlight-grid"></div>
-    </section>
-    <section class="toolbar" aria-label="Deal controls">
-      <label class="sr-only" for="query">Filter deals by product</label><input class="search" id="query" type="search" placeholder="Search phones, laptops, earbuds…" autocomplete="off">
-      <button class="refresh" id="refresh" type="button">Refresh now</button><button id="pause" type="button" aria-pressed="false">Pause updates</button>
-      <div class="refresh-meta"><span class="status"><span class="dot" id="dot"></span><span id="status-text" role="status" aria-live="polite">Connecting to deal feeds…</span></span><span id="updated">Next refresh in 10 minutes</span></div>
-    </section>
-    <section class="alerts" id="alerts" aria-labelledby="alerts-title" hidden>
-      <div class="alerts-text">
-        <div class="eyebrow">Deal alerts</div>
-        <h2 id="alerts-title">Get 2 handpicked deals every morning.</h2>
-        <p>Allow notifications and we will send the two best Amazon &amp; Flipkart deals once a day — straight to this browser. No account, no spam, and you can turn them off at any time.</p>
-      </div>
-      <div class="alerts-actions">
-        <button class="alerts-btn" id="alerts-enable" type="button">Allow notifications</button>
-        <button class="alerts-btn ghost" id="alerts-disable" type="button" hidden>Turn off</button>
-        <span class="alerts-state" id="alerts-state" role="status" aria-live="polite"></span>
-      </div>
-    </section>
-    <section aria-labelledby="deals-title"><div class="controls"><h2 id="deals-title">Current deals</h2><div class="filters" id="filters" role="group" aria-label="Filter deals by category"></div></div><div class="filters store-filters" id="store-filters" role="group" aria-label="Filter deals by store"></div><p class="summary" id="summary">Checking live marketplace offers…</p><div class="deal-grid" id="deal-grid" aria-live="polite" aria-busy="true"></div><p class="note">Listings are scraped directly from public Amazon &amp; Flipkart deal pages; prices and stock can change before you reach the store. Some outbound links are affiliate links: as an Amazon Associate this site earns from qualifying purchases, at no extra cost to you.</p></section>
-    <section class="seo-content" aria-labelledby="about-title">
-      <h2 id="about-title">Amazon to Flipkart Deals Grabber</h2>
-      <p>Amazon to Flipkart Deals Grabber is a free, independent tracker that shows live discounts from Amazon.in and Flipkart on one page. It reads public deal and search listings for phones, laptops, tablets, earbuds, smart watches, televisions and cameras, then ranks them by how much the price has dropped. There is no account, no app and no middleman: every card links straight to the marketplace listing.</p>
-      <h3>How the deal feed works</h3>
-      <ul>
-        <li><strong>Updated every 10 minutes.</strong> A scheduled job re-reads both stores and republishes the snapshot.</li>
-        <li><strong>New deals appear automatically.</strong> Anything the crawl has not seen before is tagged <em>New</em> for its first day.</li>
-        <li><strong>Expired deals drop off.</strong> Listings that leave the stores age out, so you are not sent to a dead page.</li>
-        <li><strong>Filter and search.</strong> Narrow by store (Amazon or Flipkart), by category, or by typing a product name.</li>
-      </ul>
-      <h3>Frequently asked questions</h3>
-      <dl>
-        <dt>Is Amazon to Flipkart Deals Grabber affiliated with Amazon or Flipkart?</dt>
-        <dd>No. It is an independent shortcut that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases — at no extra cost to you, and it never changes the price you pay.</dd>
-        <dt>Are the prices guaranteed?</dt>
-        <dd>No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart.</dd>
-        <dt>How often are deals refreshed?</dt>
-        <dd>Roughly every 10 minutes, and the page also refreshes itself while it is open. You can press “Refresh now” at any time.</dd>
-      </dl>
-    </section>
-  </main>
-  <footer class="wrap footer"><span>Amazon to Flipkart Deals Grabber · Independent shopping shortcut</span><span>Not affiliated with <a href="https://www.amazon.in/?tag=mdzareef-21" target="_blank" rel="noopener noreferrer">Amazon</a> or <a href="https://www.flipkart.com/" target="_blank" rel="noopener noreferrer">Flipkart</a>. As an Amazon Associate we earn from qualifying purchases.</span></footer>
-  <script>
-    const categories=['All deals','Mobiles','Laptops','Electronics','Deals'];
-    const stores=['All stores','Amazon','Flipkart'];
-    const grid=document.querySelector('#deal-grid');
-    const filters=document.querySelector('#filters');
-    const storeFilters=document.querySelector('#store-filters');
-    const statusText=document.querySelector('#status-text');
-    const updated=document.querySelector('#updated');
-    const dot=document.querySelector('#dot');
-    const refreshButton=document.querySelector('#refresh');
-    const pauseButton=document.querySelector('#pause');
-    let deals=[];
-    // The feed leads with Amazon: every Amazon listing is shown and Flipkart is
-    // capped to a ~30% share, so the default grid holds a 70/30 Amazon/Flipkart
-    // split. `deals` stays the full pool for the store filters, spotlight and
-    // schema; `mixedDeals` is what the unfiltered grid renders.
-    const AMAZON_SHARE=0.7;
-    // Only fresh, in-stock, ₹1000+ deals are ever shown, and the feed holds at
-    // most 500 in total. Applied again here so a stale snapshot can't slip through.
-    const MIN_PRICE=1000;
-    const MAX_DEALS=500;
-    let amazonDeals=[];
-    let flipkartDeals=[];
-    let mixedDeals=[];
-    let selectedCategory='All deals';
-    let selectedStore='All stores';
-    let paused=false;
-    let countdown=600;
-    let timer;
-    let refreshing=false;
+<a class="skip-link" href="#main">Skip to deals</a>
+<div class="topline"><strong>Live deal feed</strong> &middot; Amazon &amp; Flipkart prices, refreshed every 20 minutes</div>
+<header class="wrap nav">
+<a class="brand" href="/"><span class="mark" aria-hidden="true">&nearr;</span> Amazon to Flipkart Deals Grabber</a>
+<nav class="nav-links" aria-label="Deal categories"><a href="/" aria-current="page">All deals</a><a href="/mobiles/">Mobiles</a><a href="/laptops/">Laptops</a><a href="/electronics/">Electronics</a><a href="/amazon/">Amazon</a><a href="/flipkart/">Flipkart</a><a href="/under-10000/">Under ₹10k</a></nav>
+</header>
+<main class="wrap" id="main">
+<nav aria-label="Breadcrumb"><ol class="crumbs"><li aria-current="page">All deals</li></ol></nav>
+<section class="hero" aria-labelledby="hero-title">
+<p class="eyebrow">Amazon.in &middot; Flipkart &middot; one page</p>
+<h1 id="hero-title">Live tech deals,<br><span>without the hunt.</span></h1>
+<p class="lede">Amazon to Flipkart Deals Grabber reads live discount listings from Amazon.in and Flipkart and puts them on one page — phones, laptops, earbuds, smart TVs and more. Expired deals drop off automatically and the whole feed is rebuilt throughout the day, so what you see is still buyable.</p>
+</section>
+<dl class="stats"><div><dt>Live deals</dt><dd>278</dd></div><div><dt>Amazon / Flipkart</dt><dd>203 / 75</dd></div><div><dt>Starting at</dt><dd>₹1,000</dd></div><div><dt>Avg. discount</dt><dd>35%</dd></div></dl>
+<section class="spotlight" id="spotlight" aria-labelledby="spotlight-title">
+<div class="spotlight-head"><div><p class="eyebrow">Flagship discounts</p><h2 id="spotlight-title">The big names, deep cuts.</h2></div><p>Live flagship pricing on the hardware people actually shop for — MacBook, iPhone and Galaxy.</p></div>
+<div class="spotlight-grid" id="spotlight-grid"><a class="spotlight-card" href="https://www.amazon.in/dp/B0GR1K73L4?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer">
+<div class="spotlight-media"><img src="https://m.media-amazon.com/images/I/61+jOMbYhYL._AC_UY218_.jpg" alt="Apple 2026 MacBook Pro Laptop with M5 Pro chip with 18‑core CPU and 20‑core GPU: Built for AI, 35.97 cm (14.2″) Liquid Retina XDR Display, 24GB Unified Memory, 2TB SSD Storage; Space Black" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="spotlight-tag">MacBook</span></div>
+<div class="spotlight-info"><h3>Apple 2026 MacBook Pro Laptop with M5 Pro chip with 18‑core CPU and 20‑core GPU: Built for AI, 35.97 cm (14.2″) Liquid Retina XDR Display, 24GB Unified Memory, 2TB SSD Storage; Space Black</h3><div class="spotlight-row"><span class="spotlight-price">₹3,67,900</span><span class="spotlight-was">₹3,99,900</span><span class="spotlight-off">8% off</span></div><div class="spotlight-cta"><span>Amazon</span><span>Grab deal &nearr;</span></div></div>
+</a>
+<a class="spotlight-card" href="https://www.amazon.in/dp/B0DGHZWBYB?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer">
+<div class="spotlight-media"><img src="https://m.media-amazon.com/images/I/61d88xzrklL._AC_UY218_.jpg" alt="iPhone 16 128 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery Life. Works with AirPods; White" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="spotlight-tag">iPhone</span></div>
+<div class="spotlight-info"><h3>iPhone 16 128 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery Life. Works with AirPods; White</h3><div class="spotlight-row"><span class="spotlight-price">₹86,900</span><span class="spotlight-was">₹89,900</span><span class="spotlight-off">3% off</span></div><div class="spotlight-cta"><span>Amazon</span><span>Grab deal &nearr;</span></div></div>
+</a>
+<a class="spotlight-card" href="https://www.flipkart.com/samsung-galaxy-s23-5g-lavender-128-gb/p/itmd3e8445fc75c9?pid=MOBGNPGZFWUKKJGR" target="_blank" rel="sponsored noopener noreferrer">
+<div class="spotlight-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/6/g/j/-original-imah4zp7pfzx7fqu.jpeg?q=90" alt="Samsung Galaxy S23 5G (Lavender, 128 GB)" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="spotlight-tag">Galaxy flagship</span></div>
+<div class="spotlight-info"><h3>Samsung Galaxy S23 5G (Lavender, 128 GB)</h3><div class="spotlight-row"><span class="spotlight-price">₹54,999</span><span class="spotlight-was">₹89,999</span><span class="spotlight-off">39% off</span></div><div class="spotlight-cta"><span>Flipkart</span><span>Grab deal &nearr;</span></div></div>
+</a></div>
+</section>
+<section class="toolbar" aria-label="Deal controls">
+<label class="sr-only" for="query">Search deals by product</label><input class="search" id="query" type="search" placeholder="Search phones, laptops, earbuds…" autocomplete="off">
+<div class="toolbar-actions"><button class="refresh" id="refresh" type="button">Refresh now</button><button class="pause" id="pause" type="button" aria-pressed="false">Pause updates</button></div>
+<div class="refresh-meta"><span class="status"><span class="dot" id="dot"></span><span id="status-text" role="status" aria-live="polite">Showing the last saved snapshot</span></span><span id="updated">Rebuilt 2026-10-01 11:12 UTC</span></div>
+</section>
+<section class="alerts" id="alerts" aria-labelledby="alerts-title" hidden>
+<div class="alerts-text"><p class="eyebrow">Deal alerts</p><h2 id="alerts-title">Get 2 handpicked deals every morning.</h2><p>Allow notifications and we send the two best Amazon &amp; Flipkart deals once a day. No account, no spam, off any time.</p></div>
+<div class="alerts-actions"><button class="alerts-btn" id="alerts-enable" type="button">Allow notifications</button><button class="alerts-btn ghost" id="alerts-disable" type="button" hidden>Turn off</button><span class="alerts-state" id="alerts-state" role="status" aria-live="polite"></span></div>
+</section>
+<p class="summary"><strong>60</strong> of 278 live deals shown, ranked by discount &middot; browse the category pages below for the rest.</p>
+<div class="deal-grid" id="deal-grid"><article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61Vk-Npjs-L._AC_UY218_.jpg" alt="Fire-Boltt Talk Bluetooth Calling Smartwatch, 1.39&quot; TFT Display with Dual Button, Hands On Voice Assistance, 120 Sports Modes, in Built Mic &amp; Speaker (Talk, Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">90% off</span></div></figure>
+<div class="deal-body">
+<h3>Fire-Boltt Talk Bluetooth Calling Smartwatch, 1.39&quot; TFT Display with Dual Button, Hands On Voice Assistance, 120 Sports Modes, in Built Mic &amp; Speaker (Talk, Black)</h3>
+<div class="price-row"><span class="was">₹11,999</span><span class="price">₹1,199</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0BY2QJJ8J?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61wT6-UtrlL._AC_UY218_.jpg" alt="Fire-Boltt Ninja X Ring Smart Watch with 1.96” Large Display, Bluetooth Calling, Wireless Charging, AI Voice Assistant, 500+ Watch Faces, Health Suite, Smart Watch for Man &amp; Woman – Pink S" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">88% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Fire-Boltt Ninja X Ring Smart Watch with 1.96” Large Display, Bluetooth Calling, Wireless Charging, AI Voice Assistant, 500+ Watch Faces, Health Suite, Smart Watch for Man &amp; Woman – Pink S</h3>
+<div class="price-row"><span class="was">₹9,999</span><span class="price">₹1,199</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0G61F9SDY?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/t/g/v/1-43-nfw700225rg-android-ios-nervfit-yes-original-imahe36jagzsydh3.jpeg?q=90" alt="Nervfit New Launch Orion S1 1.43&quot; AMOLED with AOD, BT Calling, Premium Finish, Luxury Smartwatch" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">87% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Nervfit New Launch Orion S1 1.43&quot; AMOLED with AOD, BT Calling, Premium Finish, Luxury Smartwatch</h3>
+<div class="price-row"><span class="was">₹17,999</span><span class="price">₹2,394</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITMBDAFB23D0744F?pid=SMWHCKX6N4EHFTQP" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71NUFYTVuXL._AC_UY218_.jpg" alt="boAt Lunar Discovery – 2026 Edition w/ 1.39&quot; (3.5 cm) HD Display, Bluetooth Calling, Emergency SOS, HR, SpO2 &amp; Sleep Tracking Smart Watch for Men &amp; Women (Active Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">85% off</span></div></figure>
+<div class="deal-body">
+<h3>boAt Lunar Discovery – 2026 Edition w/ 1.39&quot; (3.5 cm) HD Display, Bluetooth Calling, Emergency SOS, HR, SpO2 &amp; Sleep Tracking Smart Watch for Men &amp; Women (Active Black)</h3>
+<div class="price-row"><span class="was">₹8,499</span><span class="price">₹1,299</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0DFYL4635?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/b/o/o/1-4-nfw700225-android-ios-nervfit-yes-original-imahdgyyryz2hwev.jpeg?q=90" alt="Nervfit Blaze Sports 1.4&quot; TrueColor+ LED, BT Call, Fitness Tracking, 7Day Battery Smartwatch" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">84% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Nervfit Blaze Sports 1.4&quot; TrueColor+ LED, BT Call, Fitness Tracking, 7Day Battery Smartwatch</h3>
+<div class="price-row"><span class="was">₹12,999</span><span class="price">₹2,096</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITMAC74503EAD2DD?pid=SMWHA3YPVGSMSWYK" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/sports-action-camera/o/m/c/gopro-action-camera-4k20mp-wifi-30m-waterproof-action-camera-original-imahed7te4m8fc7e.jpeg?q=90" alt="GGCAM GoPro Action camera GoPro Action Camera 4k20MP Wifi 30M Waterproof Action Camera Sports DV Camcorder Sports and Action Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">84% off</span></div></figure>
+<div class="deal-body">
+<h3>GGCAM GoPro Action camera GoPro Action Camera 4k20MP Wifi 30M Waterproof Action Camera Sports DV Camcorder Sports and Action Camera</h3>
+<div class="price-row"><span class="was">₹8,999</span><span class="price">₹1,484</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/ggcam-gopro-action-camera-4k20mp-wifi-30m-waterproof-sports-dv-camcorder/p/itm32ab026701eff?pid=SAYHEFNDYBKNWWPY" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61IJJIMrVDL._AC_UY218_.jpg" alt="Eyetech 4Mp WiFi Bulb CCTV Camera for Home Security | 360° Rotation | Color Night Vision | Motion Detection Two-Way Audio | Wireless Light Bulb Camera with Mobile App V380 Pro (Heavy Light Camera)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">83% off</span></div></figure>
+<div class="deal-body">
+<h3>Eyetech 4Mp WiFi Bulb CCTV Camera for Home Security | 360° Rotation | Color Night Vision | Motion Detection Two-Way Audio | Wireless Light Bulb Camera with Mobile App V380 Pro (Heavy Light Camera)</h3>
+<div class="price-row"><span class="was">₹9,999</span><span class="price">₹1,689</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0HF4YSS7T?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/x/i/f/instant-print-camera-for-kids-digital-instant-camera-instant-original-imahhp6tvrnkngwy.jpeg?q=90" alt="TECNOLOGIA Digital Instant Camera Instant Print Camera for Kids Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">83% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>TECNOLOGIA Digital Instant Camera Instant Print Camera for Kids Instant Camera</h3>
+<div class="price-row"><span class="was">₹6,999</span><span class="price">₹1,220</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/tecnologia-digital-instant-camera-print-kids/p/itmcec7847cba12f?pid=INAHHP6TNYWGUMJA" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/y/d/t/diy-instant-digital-camera-instant-photo-print-camera-for-kids-original-imahkdu44c5nnhb9.jpeg?q=90" alt="bhindustry Instant Photo Print Camera for Kids Children Polaroid Camera, 48MP Printer DIY Instant Digital Camera Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">82% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>bhindustry Instant Photo Print Camera for Kids Children Polaroid Camera, 48MP Printer DIY Instant Digital Camera Instant Camera</h3>
+<div class="price-row"><span class="was">₹5,999</span><span class="price">₹1,096</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/bhindustry-instant-photo-print-camera-kids-children-polaroid-camera-48mp-printer-diy-digital/p/itm21b4b26598b81?pid=INAHKBP7GKG4GCKU" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71HwtfJ3c6L._AC_UY218_.jpg" alt="boAt Wave Call 3 Smartwatch 1.83” HD Display with Animated Watch Faces; BT Calling, Functional Crown, Multiple Sports Modes, IP68, HR, SpO2 Monitor, Smart Watches for Men &amp; Women (Timber Brown)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">81% off</span></div></figure>
+<div class="deal-body">
+<h3>boAt Wave Call 3 Smartwatch 1.83” HD Display with Animated Watch Faces; BT Calling, Functional Crown, Multiple Sports Modes, IP68, HR, SpO2 Monitor, Smart Watches for Men &amp; Women (Timber Brown)</h3>
+<div class="price-row"><span class="was">₹6,999</span><span class="price">₹1,310</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0FLF5KFQ8?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/o/9/w/1-85-nfw700222-android-ios-nervfit-yes-original-imahcyes8xgscdzj.jpeg?q=90" alt="Nervfit Vibe 1.85&quot; TrueColor+ Super HD, BT Calls, Waterproof, HR, BP, Sleep tracking Smartwatch" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">80% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Nervfit Vibe 1.85&quot; TrueColor+ Super HD, BT Calls, Waterproof, HR, BP, Sleep tracking Smartwatch</h3>
+<div class="price-row"><span class="was">₹7,999</span><span class="price">₹1,599</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITM75E673B1D5816?pid=SMWH89APBHGNMS3M" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/s/l/-resized-original-imagtnqjjuc6dh6v.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Lavender, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Lavender, 128 GB)</h3>
+<div class="price-row"><span class="was">₹69,999</span><span class="price">₹14,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-lavender-128-gb/p/itm9189006529d08?pid=MOBGTKQGKGYZDJZY" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/h/c/2/galaxy-s21-fe-5g-sm-g990blg4ins-samsung-original-imah4yeuthzf92qg.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 256 GB)</h3>
+<div class="price-row"><span class="was">₹74,999</span><span class="price">₹15,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-256-gb/p/itmb3a0b1e650a0e?pid=MOBGSXD7TZZTJQXE" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/a/y/g/-original-imagtnqkutcyzhgq.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Olive, 128 GB)</h3>
+<div class="price-row"><span class="was">₹69,999</span><span class="price">₹14,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-olive-128-gb/p/itm628856d2794e5?pid=MOBGTKQGTQW4PZUF" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/k/a/l/galaxy-s21-fe-5g-sm-g990bza4ins-samsung-original-imah3gndw9qvwxn4.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 256 GB)</h3>
+<div class="price-row"><span class="was">₹74,999</span><span class="price">₹15,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-256-gb/p/itm766f7432b6626?pid=MOBGSXD7DXBFQEDE" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/m/t/l/in-built-printer-48-mp-1080q-screen-3-rolls-instant-polaroid-original-imahkqyawcpbyxup.jpeg?q=90" alt="ClickPic Polaroird 48MP Lens with 3 Rolls Included in Box Retro Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>ClickPic Polaroird 48MP Lens with 3 Rolls Included in Box Retro Instant Camera</h3>
+<div class="price-row"><span class="was">₹4,853</span><span class="price">₹1,000</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/clickpic-polaroird-48mp-lens-3-rolls-included-box-retro-instant-camera/p/itmc74c143f5eb82?pid=INAHHYYDYKGRGMNC" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/m/o/r/galaxy-s21-fe-5g-sm-g990bzb4ins-samsung-original-imah48yrc6qsnsdh.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 256 GB)</h3>
+<div class="price-row"><span class="was">₹74,999</span><span class="price">₹15,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-256-gb/p/itm634644b6561df?pid=MOBGSXD7KAXUY8NH" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/x/0/-original-imagtnqjjfgxzpz4.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Navy, 128 GB)</h3>
+<div class="price-row"><span class="was">₹69,999</span><span class="price">₹14,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-navy-128-gb/p/itmcb8fc8eb2e82b?pid=MOBGTKQG8T9ZHJMM" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/p/r/a/digital-camera-toy-for-kids-with-instant-photo-printing-kids-original-imahhadbbp6bwjy2.jpeg?q=90" alt="LIVORA Kids Instant Photo Print Camera with Dual HD Lens &amp; Video Recording Digital Camera Toy for Kids with Instant Photo Printing Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>LIVORA Kids Instant Photo Print Camera with Dual HD Lens &amp; Video Recording Digital Camera Toy for Kids with Instant Photo Printing Instant Camera</h3>
+<div class="price-row"><span class="was">₹5,386</span><span class="price">₹1,156</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/livora-kids-instant-photo-print-camera-dual-hd-lens-video-recording-digital-toy-printing/p/itm2f6ef81177405?pid=INAHHADBDYQPFHY8" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/d/o/c/-resized-original-imagtnqjmfqxxbj2.jpeg?q=90" alt="Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S21 FE 5G with Snapdragon 888 (Graphite, 128 GB)</h3>
+<div class="price-row"><span class="was">₹69,999</span><span class="price">₹14,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s21-fe-5g-snapdragon-888-graphite-128-gb/p/itm5a614a9761bc7?pid=MOBGTKQGXJDVF95N" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71eTMdfGiwL._AC_UY218_.jpg" alt="boAt Nirvana Ion, 120HRS Battery, Crystal Bionic Sound w/Dual EQ Modes, 4Mics ENx, App Support, Low Latency, IPX4, v.5.2 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Ivory White)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">79% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>boAt Nirvana Ion, 120HRS Battery, Crystal Bionic Sound w/Dual EQ Modes, 4Mics ENx, App Support, Low Latency, IPX4, v.5.2 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Ivory White)</h3>
+<div class="price-row"><span class="was">₹7,990</span><span class="price">₹1,699</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0BW8RVQ3V?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61bm7UEdGAL._AC_UY218_.jpg" alt="Noise Pulse 2 Max 1.85&quot; Display, Bluetooth Calling Smart Watch, 10 Days Battery, 550 NITS Brightness, Smart DND, 100 Sports Modes, Smartwatch for Men and Women (Jet Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">75% off</span></div></figure>
+<div class="deal-body">
+<h3>Noise Pulse 2 Max 1.85&quot; Display, Bluetooth Calling Smart Watch, 10 Days Battery, 550 NITS Brightness, Smart DND, 100 Sports Modes, Smartwatch for Men and Women (Jet Black)</h3>
+<div class="price-row"><span class="was">₹5,999</span><span class="price">₹1,499</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0B6BLTGTT?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/6/g/j/-original-imah4zp7pfzx7fqu.jpeg?q=90" alt="Samsung Galaxy S23 5G (Lavender, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Lavender, 256 GB)</h3>
+<div class="price-row"><span class="was">₹95,999</span><span class="price">₹26,499</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-lavender-256-gb/p/itmfbae75e3840e1?pid=MOBGMFFXDQTGNWVK" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/8/i/-original-imah4zp7fgtezhsz.jpeg?q=90" alt="Samsung Galaxy S23 5G (Cream, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Cream, 128 GB)</h3>
+<div class="price-row"><span class="was">₹89,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-cream-128-gb/p/itmc77ff94cdf044?pid=MOBGMFFX5XYE8MZN" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/518Rt7wLhXL._AC_UY218_.jpg" alt="Trueview 3MP 4G Mini PT Security Camera with SIM Support | All-Time Color Vision | 360° Pan | Two-Way Audio | Human Detection | 256GB SD &amp; Cloud | IP66 Waterproof | Alexa Compatible | STQC Certified" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Trueview 3MP 4G Mini PT Security Camera with SIM Support | All-Time Color Vision | 360° Pan | Two-Way Audio | Human Detection | 256GB SD &amp; Cloud | IP66 Waterproof | Alexa Compatible | STQC Certified</h3>
+<div class="price-row"><span class="was">₹13,800</span><span class="price">₹3,799</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0B38CMWWB?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/y/8/i/-original-imah4zp7fgtezhsz.jpeg?q=90" alt="Samsung Galaxy S23 5G (Cream, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Cream, 256 GB)</h3>
+<div class="price-row"><span class="was">₹95,999</span><span class="price">₹26,499</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-cream-256-gb/p/itm745d4b532623e?pid=MOBGMFFXURCVYANE" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/p/w/p/-original-imah4zp8tfzndmmh.jpeg?q=90" alt="Samsung Galaxy S23 5G (Green, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Green, 256 GB)</h3>
+<div class="price-row"><span class="was">₹95,999</span><span class="price">₹26,499</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-green-256-gb/p/itm6840743bfd1ef?pid=MOBGMFFXB7RGPNET" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=90" alt="Samsung Galaxy S23 5G (Phantom Black, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Phantom Black, 256 GB)</h3>
+<div class="price-row"><span class="was">₹95,999</span><span class="price">₹26,499</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-256-gb/p/itm347e695feffe7?pid=MOBGMFFXPNSHBGRC" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/t/0/g/-original-imah4zp7fvqp8wev.jpeg?q=90" alt="Samsung Galaxy S23 5G (Phantom Black, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Phantom Black, 128 GB)</h3>
+<div class="price-row"><span class="was">₹89,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-phantom-black-128-gb/p/itm1f3efe01d1c61?pid=MOBGNPGZVX4PCTTF" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/p/w/p/-original-imah4zp8tfzndmmh.jpeg?q=90" alt="Samsung Galaxy S23 5G (Green, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">72% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 5G (Green, 128 GB)</h3>
+<div class="price-row"><span class="was">₹89,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-5g-green-128-gb/p/itm7cdd081996dc8?pid=MOBGNPGYWGZAUZGK" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/x/k/h/-resized-original-imah5ywff9rr76zh.jpeg?q=90" alt="Samsung Galaxy S23 FE (Graphite, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Graphite, 256 GB)</h3>
+<div class="price-row"><span class="was">₹84,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-256-gb/p/itm3dd39c0d1ec9c?pid=MOBGVTA2GWPSR57X" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/8/v/0/-original-imah5ywfebrs9bfg.jpeg?q=90" alt="Samsung Galaxy S23 FE (Mint, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Mint, 256 GB)</h3>
+<div class="price-row"><span class="was">₹84,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-mint-256-gb/p/itmdb72279972171?pid=MOBGVTA2R8ZH4G3C" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/x/k/h/-resized-original-imah5ywff9rr76zh.jpeg?q=90" alt="Samsung Galaxy S23 FE (Graphite, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Graphite, 128 GB)</h3>
+<div class="price-row"><span class="was">₹79,999</span><span class="price">₹22,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-graphite-128-gb/p/itme751066521899?pid=MOBGVTA2836DQWTT" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/f/r/-resized-original-imah5ywfzzjzfkcn.jpeg?q=90" alt="Samsung Galaxy S23 FE (Purple, 128 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Purple, 128 GB)</h3>
+<div class="price-row"><span class="was">₹79,999</span><span class="price">₹22,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-purple-128-gb/p/itm03da6b42ff68e?pid=MOBGVTA24G7GHE6M" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/n/0/e/-original-imah5ywf68xm7wfb.jpeg?q=90" alt="Samsung Galaxy S23 FE (Cream, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Cream, 256 GB)</h3>
+<div class="price-row"><span class="was">₹84,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-cream-256-gb/p/itm38258dc2d7a5c?pid=MOBGVTA2XGXYQVCC" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/mobile/4/f/r/-resized-original-imah5ywfzzjzfkcn.jpeg?q=90" alt="Samsung Galaxy S23 FE (Purple, 256 GB)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">71% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Samsung Galaxy S23 FE (Purple, 256 GB)</h3>
+<div class="price-row"><span class="was">₹84,999</span><span class="price">₹24,999</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/samsung-galaxy-s23-fe-purple-256-gb/p/itm8f6a49271bf21?pid=MOBGVTA2VGHCJFGG" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71PfN9HA72L._AC_UL320_.jpg" alt="GOBOULT Mustang Torq Wireless in Ear Earbuds with 60H Playtime, App Support, Quad Mic ENC, 45ms Low Latency, 13mm Driver, Breathing LEDs, Made in India Ear Buds Wireless (Yellow)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">70% off</span></div></figure>
+<div class="deal-body">
+<h3>GOBOULT Mustang Torq Wireless in Ear Earbuds with 60H Playtime, App Support, Quad Mic ENC, 45ms Low Latency, 13mm Driver, Breathing LEDs, Made in India Ear Buds Wireless (Yellow)</h3>
+<div class="price-row"><span class="was">₹5,999</span><span class="price">₹1,799</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0DN1Q4NSJ?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/o/a/t/35-active2-black-metal-strap-android-ios-wtg-yes-original-imahmytz2ycuyqwy.jpeg?q=90" alt="WTG Active2 Classy 1.39&quot; AMOLED Display, Bluetooth Calling, Fitness &amp; Sports, Music Smartwatch" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">70% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>WTG Active2 Classy 1.39&quot; AMOLED Display, Bluetooth Calling, Fitness &amp; Sports, Music Smartwatch</h3>
+<div class="price-row"><span class="was">₹4,999</span><span class="price">₹1,492</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITM26BD91987C9DD?pid=SMWHYP65XYW9MNEU" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/51pWvMx8vhL._AC_UL320_.jpg" alt="Foxin FoxBuds F1 ANC True Wireless Bluetooth Earbuds Upto 30dB ANC, 50Hrs Playtime, Dual Pairing, Quad Mic ENC, 13mm Bass Driver, 40ms Low Latency, Digital Display, Gaming Mode, BT 5.4 (Shadow Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">70% off</span></div></figure>
+<div class="deal-body">
+<h3>Foxin FoxBuds F1 ANC True Wireless Bluetooth Earbuds Upto 30dB ANC, 50Hrs Playtime, Dual Pairing, Quad Mic ENC, 13mm Bass Driver, 40ms Low Latency, Digital Display, Gaming Mode, BT 5.4 (Shadow Black)</h3>
+<div class="price-row"><span class="was">₹4,000</span><span class="price">₹1,189</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0GNMRV6KV?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/smartwatch/d/b/1/35-a-69-round-black-metal-active-2-android-ios-gamesir-yes-original-imahpq3pxbhsmgdt.jpeg?q=90" alt="GameSir Active 2 Round Smartwatch with Smart Notifications &amp; Fitness Tracking Smartwatch" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">70% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>GameSir Active 2 Round Smartwatch with Smart Notifications &amp; Fitness Tracking Smartwatch</h3>
+<div class="price-row"><span class="was">₹4,999</span><span class="price">₹1,488</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITMBEB0B00B395B9?pid=SMWH3GYX5J3MPZZW" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/m/9/6/instant-photo-print-camera-for-kids-with-dual-hd-lens-video-original-imahkxu5ux7tytxz.jpeg?q=90" alt="LIVORA Kids Instant Print Camera Instant Photo Print Camera for Kids with Dual HD lens &amp; Video Recording Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">69% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>LIVORA Kids Instant Print Camera Instant Photo Print Camera for Kids with Dual HD lens &amp; Video Recording Instant Camera</h3>
+<div class="price-row"><span class="was">₹3,999</span><span class="price">₹1,236</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/livora-kids-instant-print-camera-photo-dual-hd-lens-video-recording/p/itm04b0e45d3671e?pid=INAHKXU5KXMRJGT2" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61V6T6ELEqL._AC_UY218_.jpg" alt="DOMO Slate SL40 2C 10 Inch Android Tablet, IPS Display, 4G Dual SIM, 4GB RAM, 32GB Storage (Expandable to 1TB), Octa-Core Processor, GPS, WiFi, Bluetooth, for Students Foundation Exams (Grey)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">68% off</span></div></figure>
+<div class="deal-body">
+<h3>DOMO Slate SL40 2C 10 Inch Android Tablet, IPS Display, 4G Dual SIM, 4GB RAM, 32GB Storage (Expandable to 1TB), Octa-Core Processor, GPS, WiFi, Bluetooth, for Students Foundation Exams (Grey)</h3>
+<div class="price-row"><span class="was">₹24,990</span><span class="price">₹7,990</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0HDQ287PM?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71JaNi+RfrL._AC_UY218_.jpg" alt="boAt Chrome Horizon, Premium Metal Body, Video Watch Faces, 1.51”(3.83cm) AMOLED Round Display, HRV &amp; VO2 Max, Auto-Activity Detection, ASAP Charge, HRV Smartwatch for Men &amp; Women (Midnight Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">68% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>boAt Chrome Horizon, Premium Metal Body, Video Watch Faces, 1.51”(3.83cm) AMOLED Round Display, HRV &amp; VO2 Max, Auto-Activity Detection, ASAP Charge, HRV Smartwatch for Men &amp; Women (Midnight Black)</h3>
+<div class="price-row"><span class="was">₹9,499</span><span class="price">₹2,999</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0F491YC5Q?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61ATaTpvEQL._AC_UY218_.jpg" alt="Noise Twist Round dial smart Watch with Bluetooth Calling, 1.38&quot; TFT Display, up-to 7 Days Battery, 100+ Watch Faces, IP68, Heart Rate Monitor, Sleep Tracking (Midnight Blue)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">68% off</span></div></figure>
+<div class="deal-body">
+<h3>Noise Twist Round dial smart Watch with Bluetooth Calling, 1.38&quot; TFT Display, up-to 7 Days Battery, 100+ Watch Faces, IP68, Heart Rate Monitor, Sleep Tracking (Midnight Blue)</h3>
+<div class="price-row"><span class="was">₹4,999</span><span class="price">₹1,599</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0BJ74PQK6?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/51nH84daelL._AC_UY218_.jpg" alt="boAt 2026 Launch Airdopes Prime 800D, Surround Sound by Dolby Audio, 45H Battery, Quad Mic AI-ENx™, 11mm Drivers, ASAP™ Charge,App Support Wireless Bluetooth TWS Earbuds with mic(Swedish White)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">67% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>boAt 2026 Launch Airdopes Prime 800D, Surround Sound by Dolby Audio, 45H Battery, Quad Mic AI-ENx™, 11mm Drivers, ASAP™ Charge,App Support Wireless Bluetooth TWS Earbuds with mic(Swedish White)</h3>
+<div class="price-row"><span class="was">₹4,599</span><span class="price">₹1,499</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0GZN9ZPRG?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71dnhTsoiCL._AC_UL320_.jpg" alt="Storio Camera for Kids with Print, Mini Camera Printer, 1080P HD" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">67% off</span></div></figure>
+<div class="deal-body">
+<h3>Storio Camera for Kids with Print, Mini Camera Printer, 1080P HD</h3>
+<div class="price-row"><span class="was">₹4,499</span><span class="price">₹1,499</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0HJZK589N?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61q0ZgCYoJL._AC_UL320_.jpg" alt="Noise Twist Go Round dial Smartwatch with BT Calling, 1.39&quot; Display, Metal Build, 100+ Watch Faces, IP68, Sleep Tracking, 100+ Sports Modes, 24/7 Heart Rate Monitoring (Elite Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">67% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Noise Twist Go Round dial Smartwatch with BT Calling, 1.39&quot; Display, Metal Build, 100+ Watch Faces, IP68, Sleep Tracking, 100+ Sports Modes, 24/7 Heart Rate Monitoring (Elite Black)</h3>
+<div class="price-row"><span class="was">₹5,999</span><span class="price">₹1,999</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0CQ4J4YFL?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/714qzgsUWML._AC_UL320_.jpg" alt="boAt New Launch Ultima Vogue 2, India&#39;s First AMOLED Type-C Smartwatch, 1.96&quot; Display, 1000 nits Brightness, Metal Body w/Premium Straps, 10-Days Battery Life, Smartwatch for Men &amp; Women (Deep Blue)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">65% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>boAt New Launch Ultima Vogue 2, India&#39;s First AMOLED Type-C Smartwatch, 1.96&quot; Display, 1000 nits Brightness, Metal Body w/Premium Straps, 10-Days Battery Life, Smartwatch for Men &amp; Women (Deep Blue)</h3>
+<div class="price-row"><span class="was">₹7,999</span><span class="price">₹2,799</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0H1J94XZN?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/61ECYAhX7YL._AC_UY218_.jpg" alt="boAt 2026 Launch Airdopes ProClip, Air Conduction Tech,Feather-Light Earbuds, Clip-On Design,All Day Wear Comfort,52H Battery,12mm Dynamic Drivers,App Support,BT v6.0,OWS Earbuds with mic(Silk Grey)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">64% off</span></div></figure>
+<div class="deal-body">
+<h3>boAt 2026 Launch Airdopes ProClip, Air Conduction Tech,Feather-Light Earbuds, Clip-On Design,All Day Wear Comfort,52H Battery,12mm Dynamic Drivers,App Support,BT v6.0,OWS Earbuds with mic(Silk Grey)</h3>
+<div class="price-row"><span class="was">₹4,999</span><span class="price">₹1,799</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0GZN7C6X8?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71VTtjFsSIL._AC_UL320_.jpg" alt="Omeron®-(1 Year Warranty) Instant Print Camera for Kids – 12MP Digital Camera with Instant Photo Printer, Video Recording, MP3 Music, Fun Filters, Rechargeable Battery &amp; Print Paper Rolls – Purple" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">61% off</span></div></figure>
+<div class="deal-body">
+<h3>Omeron®-(1 Year Warranty) Instant Print Camera for Kids – 12MP Digital Camera with Instant Photo Printer, Video Recording, MP3 Music, Fun Filters, Rechargeable Battery &amp; Print Paper Rolls – Purple</h3>
+<div class="price-row"><span class="was">₹4,999</span><span class="price">₹1,949</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0HF67H35T?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/b/n/6/the-new-mini-camera-instant-printer-capture-print-photos-original-imahh9xnf2gbxuzc.jpeg?q=90" alt="SnapKartX 1 The New Mini Camera Instant Printer – Capture &amp; Print Photos Instantly Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">60% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>SnapKartX 1 The New Mini Camera Instant Printer – Capture &amp; Print Photos Instantly Instant Camera</h3>
+<div class="price-row"><span class="was">₹2,999</span><span class="price">₹1,199</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/snapkartx-1-new-mini-camera-instant-printer-capture-print-photos-instantly/p/itm8677ce9bb707b?pid=INAHH9XN8TNSWFZU" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/613Znd0DHhL._AC_UY218_.jpg" alt="JBL Wave Buds 2 Ear Buds Wireless BluetoothV5.3, Active Noise Cancellation Earbuds,Multi Connect, App for Customized Extra Bass Eq, Relax Mode,Speed Charge, 40H Playback, Fast Pair, 4 Mics,IP54(Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">60% off</span></div></figure>
+<div class="deal-body">
+<h3>JBL Wave Buds 2 Ear Buds Wireless BluetoothV5.3, Active Noise Cancellation Earbuds,Multi Connect, App for Customized Extra Bass Eq, Relax Mode,Speed Charge, 40H Playback, Fast Pair, 4 Mics,IP54(Black)</h3>
+<div class="price-row"><span class="was">₹6,999</span><span class="price">₹2,799</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0DHL63KWK?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/81co4tkZgZL._AC_UY218_.jpg" alt="Visio World VW 60 cm (24 inch) Smartchoice HD Ready QLED TV VW24S2" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">59% off</span></div></figure>
+<div class="deal-body">
+<h3>Visio World VW 60 cm (24 inch) Smartchoice HD Ready QLED TV VW24S2</h3>
+<div class="price-row"><span class="was">₹12,999</span><span class="price">₹5,299</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0H5R6C68N?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/81p2I9e7gmL._AC_UY218_.jpg" alt="Fastrack Jupitor R2 Smart Watch, 1.38” TFT Display, 240 * 240 Pixel Resolution, SingleSync BT Calling, AI Voice Assistant, 100+ Sports Modes &amp; Smartwatch Faces,Upto 5 Day Battery, IP68 (Black)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">58% off</span></div></figure>
+<div class="deal-body">
+<h3>Fastrack Jupitor R2 Smart Watch, 1.38” TFT Display, 240 * 240 Pixel Resolution, SingleSync BT Calling, AI Voice Assistant, 100+ Sports Modes &amp; Smartwatch Faces,Upto 5 Day Battery, IP68 (Black)</h3>
+<div class="price-row"><span class="was">₹3,999</span><span class="price">₹1,699</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0DDQCDQQG?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/instant-camera/u/1/9/instant-photo-printer-camera-for-kids-boys-girls-blue-colour-diy-original-imahng4dtnqah5e2.jpeg?q=90" alt="Zuigo DIY instant photo printer cemera Instant Photo Printer Camera for Kids, Boys &amp; Girls BLUE colour - Instant Camera" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">58% off</span></div></figure>
+<div class="deal-body">
+<h3>Zuigo DIY instant photo printer cemera Instant Photo Printer Camera for Kids, Boys &amp; Girls BLUE colour - Instant Camera</h3>
+<div class="price-row"><span class="was">₹2,999</span><span class="price">₹1,263</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/zuigo-diy-instant-photo-printer-cemera-camera-kids-boys-girls-blue-colour/p/itmb9e268107d944?pid=INAHNG4D7TFF7RG2" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/tablet/w/a/f/-original-imahfdyzd8pvs5hj.jpeg?q=90" alt="Lenovo Tab M11 4 GB RAM 128 GB ROM 11.0 inch with Wi-Fi Only MediaTek Helio G88 Tablet (Seafoam Green)" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">57% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>Lenovo Tab M11 4 GB RAM 128 GB ROM 11.0 inch with Wi-Fi Only MediaTek Helio G88 Tablet (Seafoam Green)</h3>
+<div class="price-row"><span class="was">₹29,000</span><span class="price">₹12,336</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITM5E8422676823E?pid=TABH2AGTGHUANH7N" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/71NA9vn97oL._AC_UY218_.jpg" alt="Lenovo V14 Intel Core i5 13th Gen 13420H 14.0&quot; FHD Laptop" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">55% off</span></div></figure>
+<div class="deal-body">
+<h3>Lenovo V14 Intel Core i5 13th Gen 13420H 14.0&quot; FHD Laptop</h3>
+<div class="price-row"><span class="was">₹1,28,999</span><span class="price">₹58,240</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0H93GYSMW?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://rukmini1.flixcart.com/image/400/400/xif0q/headphone/7/8/l/-enriched-transparent-original-imahf4wbpvaf8she.png?q=90" alt="OPPO Enco Buds3 Pro,12.4mm Driver,54hrs Playback,Deep Bass,Dual-Device Pairing,IP55 Bluetooth" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Flipkart</span><span class="pill pill-off">54% off</span><span class="pill pill-new">New</span></div></figure>
+<div class="deal-body">
+<h3>OPPO Enco Buds3 Pro,12.4mm Driver,54hrs Playback,Deep Bass,Dual-Device Pairing,IP55 Bluetooth</h3>
+<div class="price-row"><span class="was">₹3,499</span><span class="price">₹1,599</span></div>
+<a class="deal-cta" href="https://www.flipkart.com/product/p/ITM63AB721A99B18?pid=ACCHETEHDKHNBFKX" target="_blank" rel="sponsored noopener noreferrer"><span>View on Flipkart</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/81ddi09Y88L._AC_UY218_.jpg" alt="REDMI A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment&#39;s Slimmest Smartphone | Segment&#39;s Largest 6300mAh Battery | Segment&#39;s Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">53% off</span></div></figure>
+<div class="deal-body">
+<h3>REDMI A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment&#39;s Slimmest Smartphone | Segment&#39;s Largest 6300mAh Battery | Segment&#39;s Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box</h3>
+<div class="price-row"><span class="was">₹26,999</span><span class="price">₹12,645</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0GVG27VS7?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article>
+<article class="deal">
+<figure class="deal-media"><img src="https://m.media-amazon.com/images/I/713Rk7E7dWL._AC_UY218_.jpg" alt="HP Professional 15 (2026), Intel (i3 14th Gen) Core 3 100U - (8 GB DDR5/512 GB SSD/Intel UHD Graphics) - Thin &amp; Light Business Laptop/15.6&quot; FHD/Fingerprint/Silver/1.5kg" width="400" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="deal-badges"><span class="pill pill-store">Amazon</span><span class="pill pill-off">53% off</span></div></figure>
+<div class="deal-body">
+<h3>HP Professional 15 (2026), Intel (i3 14th Gen) Core 3 100U - (8 GB DDR5/512 GB SSD/Intel UHD Graphics) - Thin &amp; Light Business Laptop/15.6&quot; FHD/Fingerprint/Silver/1.5kg</h3>
+<div class="price-row"><span class="was">₹1,00,990</span><span class="price">₹47,890</span></div>
+<a class="deal-cta" href="https://www.amazon.in/dp/B0GHSYD43X?tag=mdzareef-21" target="_blank" rel="sponsored noopener noreferrer"><span>View on Amazon</span><span aria-hidden="true">&nearr;</span></a>
+</div>
+</article></div>
+<nav class="chipbar" aria-label="Browse deals by category, store and price"><a class="chip" href="/mobiles/">Mobiles <span class="chip-n">101</span></a>
+<a class="chip" href="/laptops/">Laptops <span class="chip-n">41</span></a>
+<a class="chip" href="/electronics/">Electronics <span class="chip-n">136</span></a>
+<a class="chip" href="/amazon/">Amazon <span class="chip-n">203</span></a>
+<a class="chip" href="/flipkart/">Flipkart <span class="chip-n">75</span></a>
+<a class="chip" href="/under-10000/">Under ₹10k <span class="chip-n">77</span></a></nav>
+<p class="note">Listings are read from public Amazon.in and Flipkart deal pages and prices and stock can change before you reach the store. Some outbound links are affiliate links: as an Amazon Associate this site earns from qualifying purchases, at no extra cost to you.</p>
+<section class="prose" aria-labelledby="about-title">
+<h2 id="about-title">About Amazon to Flipkart Deals Grabber</h2>
+<p>Amazon to Flipkart Deals Grabber is a free, independent tracker that shows live discounts from Amazon.in and Flipkart on one page. It reads public deal and search listings for phones, laptops, tablets, earbuds, smart watches, televisions and cameras, then ranks them by how much the price has dropped. There is no account, no app and no middleman: every card links straight to the marketplace listing.</p>
+<h3>How the deal feed works</h3>
+<ul>
+<li><strong>Rebuilt throughout the day.</strong> A scheduled job re-reads both stores and republishes this page with whatever is live.</li>
+<li><strong>Fresh only.</strong> Out-of-stock and expired listings are removed before publishing, and anything under ₹1,000 is filtered out to keep the signal high.</li>
+<li><strong>Both stores mixed in.</strong> 203 Amazon.in deals and 75 Flipkart deals on one page, so you are not locked into one marketplace.</li>
+<li><strong>Search and filter.</strong> Narrow by store, by category, or by typing a product name.</li>
+</ul>
+<h3>Frequently asked questions</h3>
+<dl>
+<dt>Is Amazon to Flipkart Deals Grabber affiliated with Amazon or Flipkart?</dt>
+<dd>No. It is an independent tracker that only reads publicly visible listings and links back to the stores. It takes part in the Amazon Associates programme, so some links are affiliate links and we may earn a commission from qualifying purchases — at no extra cost to you, and it never changes the price you pay.</dd>
+<dt>Are the prices guaranteed?</dt>
+<dd>No. Prices, stock and offers change without notice, so always confirm the final amount at checkout on Amazon.in or Flipkart.</dd>
+<dt>How often is the deal feed updated?</dt>
+<dd>Throughout the day on a scheduled refresh. Each rebuild drops out-of-stock and expired listings and re-reads both stores, so the page never shows a dead deal.</dd>
+</dl>
+<p class="note">Cheapest live listing at build time: ₹2,39,900. Snapshot built 2026-10-01 11:12 UTC.</p>
+</section>
+<section class="cta-band" aria-labelledby="cta-alerts">
+<div><h2 id="cta-alerts">Want the two best deals each morning?</h2><p>Allow notifications and we will send a short digest of the sharpest Amazon &amp; Flipkart discounts once a day. No account, no spam.</p></div>
+<a href="/#alerts">Get deal alerts</a>
+</section>
+</main>
+<footer class="wrap footer">
+<div><h2>Amazon to Flipkart Deals Grabber</h2><p>An independent deal tracker for Amazon.in and Flipkart. Not affiliated with either store.</p></div>
+<div><h2>Browse</h2><div class="footer-links">
+<a href="/">All deals</a><a href="/mobiles/">Mobiles</a><a href="/laptops/">Laptops</a>
+<a href="/electronics/">Electronics</a><a href="/amazon/">Amazon</a><a href="/flipkart/">Flipkart</a>
+<a href="/under-5000/">Under ₹5,000</a><a href="/under-10000/">Under ₹10,000</a>
+<a href="/under-25000/">Under ₹25,000</a><a href="/over-50000/">Above ₹50,000</a>
+</div></div>
+</footer>
+<script>
+(function(){
+  // Imported, not hardcoded: if the publish rules change, the browser picks them up
+  // on the next build instead of silently keeping yesterday's numbers.
+  const AMAZON_SHARE=0.7, MIN_PRICE="1000", MAX_DEALS="500";
+  const MAX_PLAUSIBLE_PRICE_RATIO="15";
+  const AMAZON_TAG="mdzareef-21";
+  const POLL_SECONDS=1200;
 
-    // Every Amazon link is tagged with the Associates id at render time, so even a
-    // snapshot scraped before the tag existed still earns the referral.
-    const AMAZON_TAG='mdzareef-21';
-    function affiliateUrl(url){
-      if(!url)return url;
-      try{
-        const parsed=new URL(url,location.origin);
-        if(/(^|\.)amazon\./i.test(parsed.hostname))parsed.searchParams.set('tag',AMAZON_TAG);
-        return parsed.href;
-      }catch{return url}
-    }
+  const grid=document.querySelector('#deal-grid');
+  if(!grid)return;
 
-    function setStatus(text,state=''){
-      statusText.textContent=text;
-      dot.className=`dot ${state}`;
+  const statusText=document.querySelector('#status-text');
+  const updated=document.querySelector('#updated');
+  const dot=document.querySelector('#dot');
+  const refreshButton=document.querySelector('#refresh');
+  const pauseButton=document.querySelector('#pause');
+  const queryInput=document.querySelector('#query');
+
+  let deals=[],amazonDeals=[],flipkartDeals=[],mixedDeals=[];
+  let selectedStore='All',selectedCategory='All';
+  let paused=false,countdown=POLL_SECONDS,refreshing=false;
+
+  function affiliateUrl(url){
+    if(!url)return url;
+    try{const p=new URL(url,location.origin);if(/(^|\.)amazon\./i.test(p.hostname))p.searchParams.set('tag',AMAZON_TAG);return p.href}catch{return url}
+  }
+  function dealPrice(deal){const v=Number(String(deal&&deal.price||'').replace(/[^\d]/g,''));return Number.isFinite(v)?v:0}
+  function categoryFor(deal){
+    if(deal.category)return deal.category;
+    const t=String(deal.title||'').toLowerCase();
+    if(/mobile|smartphone|phone|iphone|galaxy|pixel|redmi|realme|oneplus/i.test(t))return'Mobiles';
+    if(/laptop|notebook|computer|macbook/i.test(t))return'Laptops';
+    return'Electronics';
+  }
+  // A row at 100x its own price has a mismatched variant MRP, not a real markdown.
+  // Keep the price but drop the discount claim, so the card and the JSON-LD never
+  // advertise a saving that was never there. Mirrors sanitiseDeal() in publish.mjs.
+  function plausibleRatio(deal){
+    const price=dealPrice(deal);
+    const was=Number(String(deal&&deal.originalPrice||'').replace(/[^\d]/g,''));
+    if(!price||!was||was<=price)return true;
+    return was/price<=MAX_PLAUSIBLE_PRICE_RATIO;
+  }
+  function sanitise(deal){
+    if(plausibleRatio(deal))return deal;
+    const copy=Object.assign({},deal);
+    delete copy.originalPrice;
+    copy.discount=0;
+    copy.discountUnverified=true;
+    return copy;
+  }
+  function publishable(list){return (list||[]).filter(d=>d&&!d.stale&&d.available!==false&&dealPrice(d)>=MIN_PRICE&&plausibleRatio(d)).map(sanitise)}
+  function shuffle(list){for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const s=list[i];list[i]=list[j];list[j]=s}return list}
+  function mixStores(amazon,flipkart){
+    if(!amazon.length)return shuffle(flipkart.slice());
+    if(!flipkart.length)return shuffle(amazon.slice());
+    const maxFlipkart=Math.floor(amazon.length*(1-AMAZON_SHARE)/AMAZON_SHARE);
+    const a=shuffle(amazon.slice()),f=shuffle(flipkart.slice()).slice(0,maxFlipkart);
+    const out=[];let ai=0,fi=0;
+    while(ai<a.length||fi<f.length){
+      const takeAmazon=fi>=f.length?true:ai>=a.length?false:((out.length+1)*7-ai*10)>=5;
+      out.push(takeAmazon?a[ai++]:f[fi++]);
     }
-    // Deal placements are reshuffled on every visit so a wider spread of listings
-    // gets exposure. The order is fixed once per data load, so filtering and
-    // searching keep cards where the visitor just saw them.
-    function shuffle(list){
-      for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const swap=list[i];list[i]=list[j];list[j]=swap}
-      return list;
+    return out;
+  }
+  function setStatus(text,state){if(statusText)statusText.textContent=text;if(dot)dot.className='dot '+(state||'')}
+
+  function storeCount(name){
+    return name==='All'?mixedDeals.length:mixedDeals.filter(d=>d.store===name).length;
+  }
+
+  function renderChipbar(){
+    const stores=['All','Amazon','Flipkart'];
+    let host=document.querySelector('#store-filters');
+    if(!host){
+      host=document.createElement('div');
+      host.id='store-filters';
+      host.className='filters';
+      const summary=document.querySelector('#summary');
+      (summary&&summary.parentNode?summary.parentNode:grid.parentNode).insertBefore(host,summary);
     }
-    // Every Amazon listing is kept; Flipkart is capped to 3/7 of the Amazon count
-    // so it can never exceed a 30% share. The stores are then woven against that
-    // target — rather than shuffled flat — so the 70/30 split holds from the first
-    // screen down. The Flipkart slice and the order within each store are still
-    // reshuffled on every load, so exposure keeps rotating.
-    function mixStores(amazon,flipkart){
-      if(!amazon.length)return shuffle(flipkart.slice());
-      if(!flipkart.length)return shuffle(amazon.slice());
-      const maxFlipkart=Math.floor(amazon.length*(1-AMAZON_SHARE)/AMAZON_SHARE);
-      const a=shuffle(amazon.slice());
-      const f=shuffle(flipkart.slice()).slice(0,maxFlipkart);
-      const out=[];
-      let ai=0,fi=0;
-      while(ai<a.length||fi<f.length){
-        // Integer Bresenham: slot a Flipkart item whenever the Amazon count would
-        // overshoot the 70% target, so every prefix of the feed holds the split.
-        const takeAmazon=fi>=f.length?true:ai>=a.length?false:((out.length+1)*7-ai*10)>=5;
-        out.push(takeAmazon?a[ai++]:f[fi++]);
-      }
-      return out;
+    host.replaceChildren();
+    stores.forEach(name=>{
+      const b=document.createElement('button');
+      b.type='button';b.className='chip';b.textContent=name==='All'?'All stores':name+' ('+storeCount(name)+')';
+      b.setAttribute('aria-pressed',String(name===selectedStore));
+      b.onclick=()=>{selectedStore=name;render()};
+      host.append(b);
+    });
+  }
+
+  function render(){
+    const query=(queryInput&&queryInput.value||'').trim().toLowerCase();
+    const pool=selectedStore==='All'?mixedDeals:mixedDeals.filter(d=>d.store===selectedStore);
+    const visible=pool.filter(d=>(selectedCategory==='All'||categoryFor(d)===selectedCategory)&&(!query||String(d.title).toLowerCase().includes(query)||String(d.store).toLowerCase().includes(query)));
+    grid.replaceChildren();
+    if(visible.length)visible.forEach(d=>grid.append(productCard(d)));
+    else{
+      const state=document.createElement('div');state.className='state';
+      const h=document.createElement('h3'),p=document.createElement('p');
+      h.textContent=deals.length?'No matching deals':'Live deals unavailable';
+      p.textContent=deals.length?'Try another store, clear your search, or browse the category pages.':'Both stores are currently inaccessible. Try refreshing shortly.';
+      state.append(h,p);grid.append(state);
     }
-    function categoryFor(deal){
-      const c=deal.category||'';
-      // Prefer the category assigned by scraper
-      if(c)return c;
-      const text=`${c} ${deal.title||''}`.toLowerCase();
-      if(/mobile|smartphone|phone|iphone|galaxy|pixel|redmi|realme|oneplus/i.test(text))return 'Mobiles';
-      if(/laptop|notebook|computer|macbook/i.test(text))return 'Laptops';
-      return 'Electronics';
-    }
-    function productCard(deal){
-      const article=document.createElement('article');article.className='deal';
-      const imageBox=document.createElement('div');imageBox.className='deal-image';
-      if(deal.image){const image=document.createElement('img');image.src=deal.image;image.alt=deal.title;image.loading='lazy';image.referrerPolicy='no-referrer';image.onerror=()=>{image.remove();imageBox.innerHTML='<span class="image-fallback">Image unavailable</span>'};imageBox.append(image)}else imageBox.innerHTML='<span class="image-fallback">No image</span>';
-      const body=document.createElement('div');body.className='deal-body';
-      const top=document.createElement('div');top.className='deal-top';
-      const store=document.createElement('span');store.className='store'+(deal.store==='Amazon'?' amazon':' flipkart');store.textContent=deal.store;
-      top.append(store);
-      if(deal.discount){const discount=document.createElement('span');discount.className='discount';discount.textContent=`${Math.round(deal.discount)}% off`;top.append(discount)}
-      if(deal.isNew){const isNew=document.createElement('span');isNew.className='badge-new';isNew.textContent='New';top.append(isNew)}
-      const title=document.createElement('h3');title.textContent=deal.title;
-      const priceRow=document.createElement('div');priceRow.className='price-row';
-      const price=document.createElement('span');price.className='price';price.textContent=deal.price;
-      if(deal.originalPrice){const original=document.createElement('span');original.className='was';original.textContent=deal.originalPrice;priceRow.append(original)}
-      priceRow.append(price);
-      const link=document.createElement('a');link.className='deal-link';link.href=affiliateUrl(deal.url);link.target='_blank';link.rel='sponsored noopener noreferrer';
-      const label=document.createElement('span');label.textContent='View deal';const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';link.append(label,arrow);
-      body.append(top,title,priceRow,link);article.append(imageBox,body);return article;
-    }
-    // Counts what the grid actually renders (the capped, mixed pool) so the store
-    // filter badge can never advertise rows the feed isn't showing.
-    function storeCount(name){
-      return name==='All stores'?mixedDeals.length:mixedDeals.filter(deal=>deal.store===name).length;
-    }
-    const HERO_MIN_PRICE=50000;
-    const SPOTLIGHT_ACCESSORY=/screen ?protector|tempered|glass|case\b|back ?cover|cover\b|charger|cable|adapter|power ?bank|holder|strap|sleeve|pouch|\bskin\b|\bbumper\b|\bmonitor\b|\bdock\b|\bhub\b|\bstand\b|\bkeyboard\b|\bmouse\b|compatible|for (macbook|iphone|samsung|galaxy)/i;
-    const SPOTLIGHT_FAMILIES=[
-      {tag:'MacBook',test:title=>/\bmacbook\b/i.test(title)&&/\bapple\b/i.test(title)},
-      {tag:'iPhone',test:title=>/\biphone\b/i.test(title),prefer:/iphone\s?(1[0-9]|air|se|pro|plus)/i},
-      {tag:'Samsung Galaxy',test:title=>/\bsamsung\b/i.test(title)&&/\bgalaxy\b/i.test(title)&&!/\bgalaxy\s+(a|m|f)\d/i.test(title)&&!/\btab\s+a\d/i.test(title),prefer:/galaxy\s?(s\d{1,2}\b|z\b|z\s?(fold|flip)|note\b)|ultra|\btab\s?s\d/i,flagshipTag:'Galaxy flagship'}
-    ];
-    function dealPrice(deal){
-      const value=Number(String(deal.price||'').replace(/[^\d]/g,''));
-      return Number.isFinite(value)?value:0;
-    }
-    function rankSpotlight(list,family){
-      return list.slice().sort((a,b)=>{
-        if(family.prefer){const fa=family.prefer.test(a.title)?1:0,fb=family.prefer.test(b.title)?1:0;if(fb!==fa)return fb-fa}
-        return b.discount-a.discount;
-      });
-    }
-    function spotlightCard(tag,deal){
-      const card=document.createElement('a');card.className='spotlight-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
+    const amz=visible.filter(d=>d.store==='Amazon').length;
+    const summary=document.querySelector('#summary');
+    if(summary)summary.innerHTML='<strong>'+visible.length+'</strong> live deal'+(visible.length===1?'':'s')+' shown &middot; Amazon '+amz+' &middot; Flipkart '+(visible.length-amz);
+    renderChipbar();
+  }
+
+  function renderSpotlight(){
+    const host=document.querySelector('#spotlight-grid');
+    const section=document.querySelector('#spotlight');
+    if(!host||!section)return;
+    const picks=pickSpotlight(deals);
+    if(!picks.length){section.hidden=true;return}
+    section.hidden=false;
+    host.replaceChildren();
+    picks.forEach(({tag,deal})=>{
+      const card=document.createElement('a');
+      card.className='spotlight-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
       const media=document.createElement('div');media.className='spotlight-media';
-      if(deal.image){const image=document.createElement('img');image.src=deal.image;image.alt=deal.title;image.loading='lazy';image.referrerPolicy='no-referrer';image.onerror=()=>{image.remove();media.insertAdjacentHTML('beforeend','<span class="image-fallback">Image unavailable</span>')};media.append(image)}else media.innerHTML='<span class="image-fallback">No image</span>';
+      if(deal.image){const img=document.createElement('img');img.src=deal.image;img.alt=deal.title;img.loading='lazy';img.referrerPolicy='no-referrer';media.append(img)}
+      else{const fb=document.createElement('span');fb.className='image-fallback';fb.textContent='Image unavailable';media.append(fb)}
       const tagEl=document.createElement('span');tagEl.className='spotlight-tag';tagEl.textContent=tag;media.append(tagEl);
       const info=document.createElement('div');info.className='spotlight-info';
-      const title=document.createElement('h3');title.textContent=deal.title;
+      const t=document.createElement('h3');t.textContent=deal.title;
       const row=document.createElement('div');row.className='spotlight-row';
-      const price=document.createElement('span');price.className='spotlight-price';price.textContent=deal.price;row.append(price);
-      if(deal.originalPrice){const was=document.createElement('span');was.className='spotlight-was';was.textContent=deal.originalPrice;row.append(was)}
-      if(deal.discount){const off=document.createElement('span');off.className='spotlight-off';off.textContent=`${Math.round(deal.discount)}% off`;row.append(off)}
+      const p=document.createElement('span');p.className='spotlight-price';p.textContent=deal.price;row.append(p);
+      if(deal.originalPrice){const w=document.createElement('span');w.className='spotlight-was';w.textContent=deal.originalPrice;row.append(w)}
+      if(deal.discount){const o=document.createElement('span');o.className='spotlight-off';o.textContent=Math.round(deal.discount)+'% off';row.append(o)}
       const cta=document.createElement('div');cta.className='spotlight-cta';
-      const store=document.createElement('span');store.textContent=deal.store;
-      const grab=document.createElement('span');grab.setAttribute('aria-hidden','true');grab.textContent='Grab deal ↗';
-      cta.append(store,grab);
-      info.append(title,row,cta);card.append(media,info);return card;
-    }
-    function renderSpotlight(){
-      const section=document.querySelector('#spotlight');
-      const host=document.querySelector('#spotlight-grid');
-      if(!section||!host)return;
-      const pool=deals.filter(deal=>deal.title&&deal.url&&dealPrice(deal)>HERO_MIN_PRICE&&!SPOTLIGHT_ACCESSORY.test(deal.title));
-      const used=new Set(),picks=[];
-      SPOTLIGHT_FAMILIES.forEach(family=>{
-        const best=rankSpotlight(pool.filter(deal=>!used.has(deal.id)&&family.test(deal.title)),family)[0];
-        if(!best)return;
-        used.add(best.id);
-        const tag=family.flagshipTag&&family.prefer&&family.prefer.test(best.title)?family.flagshipTag:family.tag;
-        picks.push({tag,deal:best});
-      });
-      if(picks.length<3)pool.filter(deal=>!used.has(deal.id)).sort((a,b)=>b.discount-a.discount).slice(0,3-picks.length).forEach(deal=>{used.add(deal.id);picks.push({tag:categoryFor(deal),deal})});
-      if(!picks.length){section.hidden=true;return}
-      section.hidden=false;
-      host.replaceChildren(...picks.map(pick=>spotlightCard(pick.tag,pick.deal)));
-    }
-    function injectDealSchema(){
-      const top=deals.slice().sort((a,b)=>b.discount-a.discount).slice(0,30);
-      const itemListElement=top.map((deal,index)=>({
-        '@type':'ListItem',position:index+1,
-        item:{
-          '@type':'Product',name:deal.title,url:affiliateUrl(deal.url),
-          ...(deal.image?{image:deal.image}:{}),
-          offers:{'@type':'Offer',price:String(deal.price||'').replace(/[^\d]/g,''),priceCurrency:'INR',availability:'https://schema.org/InStock',url:affiliateUrl(deal.url)}
-        }
-      }));
-      const schema={'@context':'https://schema.org','@type':'ItemList',name:'Live Amazon and Flipkart tech deals',numberOfItems:itemListElement.length,itemListElement};
-      let host=document.querySelector('#deals-schema');
-      if(!host){host=document.createElement('script');host.type='application/ld+json';host.id='deals-schema';document.head.append(host)}
-      host.textContent=JSON.stringify(schema);
-    }
-    function render(){
-      const query=document.querySelector('#query').value.trim().toLowerCase();
-      const pool=selectedStore==='All stores'?mixedDeals:mixedDeals.filter(deal=>deal.store===selectedStore);
-      const visible=pool.filter(deal=>(selectedCategory==='All deals'||categoryFor(deal)===selectedCategory)&&(!query||deal.title.toLowerCase().includes(query)||deal.store.toLowerCase().includes(query)));
-      storeFilters.replaceChildren();
-      stores.forEach(name=>{const button=document.createElement('button');button.type='button';button.className='filter store-filter';button.textContent=`${name} (${storeCount(name)})`;button.setAttribute('aria-pressed',String(name===selectedStore));button.addEventListener('click',()=>{selectedStore=name;render()});storeFilters.append(button)});
-      filters.replaceChildren();
-      categories.forEach(category=>{const button=document.createElement('button');button.type='button';button.className='filter';button.textContent=category;button.setAttribute('aria-pressed',String(category===selectedCategory));button.addEventListener('click',()=>{selectedCategory=category;render()});filters.append(button)});
-      grid.replaceChildren();
-      if(visible.length){visible.forEach(deal=>grid.append(productCard(deal)))}
-      else {
-        const state=document.createElement('div');state.className='state';
-        const heading=document.createElement('h3');const description=document.createElement('p');state.append(heading,description);
-        if(!deals.length){
-          heading.textContent='Live deals unavailable';
-          description.textContent='Both stores are currently inaccessible. Try refreshing later.';
-          const amzn=document.createElement('a');amzn.href='https://www.amazon.in/deals?tag=mdzareef-21';amzn.target='_blank';amzn.rel='noopener noreferrer';amzn.textContent='Open Amazon.in Deals';state.append(amzn);
-          const fkp=document.createElement('a');fkp.href='https://www.flipkart.com/offers';fkp.target='_blank';fkp.rel='noopener noreferrer';fkp.textContent='Open Flipkart Offers';fkp.style.marginInlineStart='12px';state.append(fkp);
-        }else{heading.textContent='No matching deals';description.textContent='Try another store, category, or clear your search.'}
-        grid.append(state);
+      const s=document.createElement('span');s.textContent=deal.store;
+      const g=document.createElement('span');g.textContent='Grab deal ↗';cta.append(s,g);
+      info.append(t,row,cta);card.append(media,info);host.append(card);
+    });
+  }
+
+  async function loadDeals(force){
+    if(refreshing)return;
+    refreshing=true;
+    if(refreshButton){refreshButton.disabled=true;refreshButton.textContent='Updating…'}
+    grid.setAttribute('aria-busy','true');
+    setStatus('Reading the latest deals…');
+    try{
+      const res=await fetch('/api/deals'+(force?'?refresh=1':''),{cache:'no-store'});
+      if(!res.ok)throw new Error('feed request failed');
+      const data=await res.json();
+      amazonDeals=publishable(data.amazon&&data.amazon.deals);
+      flipkartDeals=publishable(data.flipkart&&data.flipkart.deals);
+      deals=shuffle([...amazonDeals,...flipkartDeals]);
+      mixedDeals=mixStores(amazonDeals,flipkartDeals).slice(0,MAX_DEALS);
+      const amzOk=amazonDeals.length>0,fkOk=flipkartDeals.length>0;
+      if(amzOk&&fkOk)setStatus(mixedDeals.length+' live listings · Amazon + Flipkart','live');
+      else if(amzOk)setStatus('Amazon only · '+mixedDeals.length+' listings','partial');
+      else if(fkOk)setStatus('Flipkart only · '+mixedDeals.length+' listings','partial');
+      else setStatus('Both stores unavailable','error');
+      if(updated&&data.updatedAt){
+        const t=new Date(data.updatedAt);
+        updated.textContent='Updated '+t.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
       }
-      const amzCount=visible.filter(deal=>deal.store==='Amazon').length;
-      const fkCount=visible.filter(deal=>deal.store==='Flipkart').length;
-      document.querySelector('#summary').textContent=`${visible.length} live deal${visible.length===1?'':'s'} shown · Amazon ${amzCount} · Flipkart ${fkCount}${visible.length?' · shuffled for this visit':''}`;
+      countdown=POLL_SECONDS;
+      render();renderSpotlight();injectDealSchema(mixedDeals);
+    }catch{
+      setStatus('Could not reach the deal server — showing the last snapshot','error');
+    }finally{
+      refreshing=false;
+      if(refreshButton){refreshButton.disabled=false;refreshButton.textContent='Refresh now'}
+      grid.setAttribute('aria-busy','false');
     }
-    async function loadDeals(force=false){
-      if(refreshing)return;
-      refreshing=true;refreshButton.disabled=true;refreshButton.textContent='Updating…';grid.setAttribute('aria-busy','true');setStatus('Scraping Amazon & Flipkart listings…');
+  }
+
+  if(queryInput)queryInput.addEventListener('input',render);
+  if(refreshButton)refreshButton.addEventListener('click',()=>loadDeals(true));
+  if(pauseButton)pauseButton.addEventListener('click',()=>{
+    paused=!paused;
+    pauseButton.textContent=paused?'Resume updates':'Pause updates';
+    pauseButton.setAttribute('aria-pressed',String(paused));
+  });
+  setInterval(()=>{
+    if(paused)return;
+    countdown-=1;
+    if(countdown<=0){loadDeals();countdown=POLL_SECONDS}
+  },1000);
+
+  window.addEventListener('deal-alerts-state',render);
+
+  /* ── Daily deal alerts ─────────────────────────────────────────── */
+  (function(){
+    const section=document.querySelector('#alerts');
+    const enable=document.querySelector('#alerts-enable');
+    const disable=document.querySelector('#alerts-disable');
+    const stateLabel=document.querySelector('#alerts-state');
+    if(!section||!enable||!disable||!stateLabel)return;
+
+    const PREF_KEY='dg-alerts';
+    const supported='serviceWorker' in navigator&&'PushManager' in window&&'Notification' in window;
+    let registration=null;
+    const wants=()=>{try{return localStorage.getItem(PREF_KEY)==='on'}catch{return false}};
+    const setPref=v=>{try{v?localStorage.setItem(PREF_KEY,'on'):localStorage.removeItem(PREF_KEY)}catch{}};
+    const setState=t=>{stateLabel.textContent=t||''};
+    const isIos=()=>/iP(hone|ad|od)/.test(navigator.platform||'')||(/Mac/.test(navigator.platform||'')&&navigator.maxTouchPoints>1);
+
+    async function config(){
       try{
-        const response=await fetch(`/api/deals${force?'?refresh=1':''}`,{cache:'no-store'});
-        if(!response.ok)throw new Error('Feed request failed');
-        const data=await response.json();
-        const publishable=list=>list.filter(deal=>!deal.stale&&deal.available!==false&&dealPrice(deal)>=MIN_PRICE);
-        amazonDeals=publishable([...(data.amazon?.deals||[])]);
-        flipkartDeals=publishable([...(data.flipkart?.deals||[])]);
-        deals=shuffle([...amazonDeals,...flipkartDeals]);
-        mixedDeals=mixStores(amazonDeals,flipkartDeals).slice(0,MAX_DEALS);
-        const ad=data.amazon;
-        const fk=data.flipkart;
-        const amzOk=(ad?.total||0)>0;
-        const fkOk=(fk?.total||0)>0;
-        const cached=Boolean(ad?.stale||fk?.stale);
-        if(amzOk&&fkOk)setStatus(`${deals.length} live listings · Amazon + Flipkart${cached?' · some cached':''}`, 'live');
-        else if(amzOk)setStatus(`Amazon only · ${deals.length} listings`, 'partial');
-        else if(fkOk)setStatus(`Flipkart only · ${deals.length} listings`, 'partial');
-        else setStatus('Both stores unavailable','error');
-        if(data.updatedAt){const time=new Date(data.updatedAt);updated.textContent=`Updated ${time.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})} · next in 10 minutes`}
-        countdown=600;render();renderSpotlight();injectDealSchema();
-      }catch{setStatus('Could not reach deal server','error');const spot=document.querySelector('#spotlight');if(spot)spot.hidden=true;document.querySelector('#summary').textContent='The live feed could not be loaded. Use Refresh now to try again.';grid.replaceChildren();const state=document.createElement('div');state.className='state';state.textContent='Deal feed unavailable. Use Refresh now to try again.';grid.append(state)}
-      finally{refreshing=false;refreshButton.disabled=false;refreshButton.textContent='Refresh now';grid.setAttribute('aria-busy','false')}
+        const res=await fetch('/api/push/key',{cache:'no-store'});
+        if(!res.ok)return{key:'',ready:false};
+        const data=await res.json();
+        return{key:(data&&data.key)||'',ready:Boolean(data&&data.ready)};
+      }catch{return{key:'',ready:false}}
     }
-    document.querySelector('#query').addEventListener('input',render);
-    refreshButton.addEventListener('click',()=>loadDeals(true));
-    pauseButton.addEventListener('click',()=>{paused=!paused;pauseButton.textContent=paused?'Resume updates':'Pause updates';pauseButton.setAttribute('aria-pressed',String(paused));updated.textContent=paused?'Automatic refresh paused':`Next refresh in ${Math.ceil(countdown/60)} minutes`});
-    timer=setInterval(()=>{if(paused)return;countdown-=1;if(countdown<=0){loadDeals();countdown=600}else if(countdown%60===0)updated.textContent=`Next refresh in ${Math.ceil(countdown/60)} minutes`},1000);
-    loadDeals();
-  </script>
-  <script>
-    // PWA + deal alerts. Kept apart from the feed script so a notification failure
-    // can never stop the page from rendering deals.
-    (function(){
-      const PREF_KEY='dg-alerts';
-
-      const section=document.querySelector('#alerts');
-      const enableButton=document.querySelector('#alerts-enable');
-      const disableButton=document.querySelector('#alerts-disable');
-      const stateLabel=document.querySelector('#alerts-state');
-      if(!section||!enableButton||!disableButton||!stateLabel)return;
-
-      const pushSupported='serviceWorker' in navigator&&'PushManager' in window&&'Notification' in window;
-      let registration=null;
-
-      const wantsAlerts=()=>{try{return localStorage.getItem(PREF_KEY)==='on'}catch{return false}};
-      const setPref=value=>{try{value?localStorage.setItem(PREF_KEY,'on'):localStorage.removeItem(PREF_KEY)}catch{}};
-      const setState=text=>{stateLabel.textContent=text||''};
-
-      // The public VAPID key is served by the deployment rather than committed here,
-      // so the matching private key only ever lives in CI secrets. `ready` is false
-      // until the deployment can actually store a subscription, and the prompt stays
-      // hidden until then so nobody allows notifications the daily job cannot send.
-      async function pushConfig(){
-        try{
-          const response=await fetch('/api/push/key',{cache:'no-store'});
-          if(!response.ok)return {key:'',ready:false};
-          const data=await response.json();
-          return {key:(data&&data.key)||'',ready:Boolean(data&&data.ready)};
-        }catch{return {key:'',ready:false}}
+    function paint(ready){
+      const on=supported&&Notification.permission==='granted'&&wants();
+      enable.hidden=on;disable.hidden=!on;
+      section.hidden=!ready&&!on;
+      if(!supported){
+        enable.disabled=true;
+        setState(isIos()?'On iPhone and iPad, add this site to your Home Screen first — iOS only allows deal alerts for installed web apps.':'This browser cannot show notifications.');
+        return;
       }
+      if(on){setState('On — two deals land here every morning.');return}
+      if(Notification.permission==='denied'){enable.disabled=true;setState('Notifications are blocked for this site — allow them in your browser settings to get the daily deals.')}
+      else enable.disabled=false;
+    }
+    function keyToBytes(base64){
+      const padded=(base64+'='.repeat((4-base64.length%4)%4)).replace(/-/g,'+').replace(/_/g,'/');
+      const raw=atob(padded);const bytes=new Uint8Array(raw.length);
+      for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+      return bytes;
+    }
+    async function worker(){
+      if(registration)return registration;
+      try{registration=await navigator.serviceWorker.register('/sw.js')}catch{}
+      if(!registration){try{registration=await navigator.serviceWorker.ready}catch{}}
+      return registration;
+    }
+    async function sync(sub){
+      try{
+        const res=await fetch('/api/push/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(sub.toJSON())});
+        return res.ok;
+      }catch{return false}
+    }
 
-      // iOS Safari only exposes Web Push to an installed web app, so guide those
-      // users to the Home Screen instead of just saying the browser is unsupported.
-      const isIos=()=>/iP(hone|ad|od)/.test(navigator.platform||'')||(/Mac/.test(navigator.platform||'')&&navigator.maxTouchPoints>1);
-
-      function paint(pushReady){
-        const subscribed=pushSupported&&Notification.permission==='granted'&&wantsAlerts();
-        enableButton.hidden=subscribed;
-        disableButton.hidden=!subscribed;
-        // A deployment without a key, or without storage to keep the subscription,
-        // cannot send anything — only show the prompt when a daily push is possible.
-        section.hidden=!pushReady&&!subscribed;
-        if(!pushSupported){
-          enableButton.disabled=true;
-          setState(isIos()
-            ?'On iPhone and iPad, add this site to your Home Screen first — iOS only allows deal alerts for installed web apps.'
-            :'This browser cannot show notifications.');
+    enable.addEventListener('click',async()=>{
+      if(!supported)return;
+      enable.disabled=true;
+      const label=enable.textContent;enable.textContent='Enabling…';
+      try{
+        const permission=await Notification.requestPermission();
+        if(permission!=='granted'){setState('Notifications were not allowed. You can change this in your browser settings.');return}
+        const {key}=await config();
+        if(!key){setState('Deal alerts are not set up on this deployment yet.');return}
+        const reg=await worker();
+        if(!reg){setState('Could not reach the service worker. Reload and try again.');return}
+        let sub=await reg.pushManager.getSubscription();
+        if(!sub)sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:keyToBytes(key)});
+        if(!await sync(sub)){
+          await sub.unsubscribe().catch(()=>{});
+          setPref(false);setState('Could not save your deal alerts. Please try again in a moment.');
           return;
         }
-        if(subscribed){setState('On — two deals land here every morning.');return}
-        if(Notification.permission==='denied'){enableButton.disabled=true;setState('Notifications are blocked for this site — allow them in your browser settings to get the daily deals.')}
-        else enableButton.disabled=false;
-      }
+        setPref(true);setState('On — two deals land here every morning.');
+      }catch{setState('Could not turn on alerts. Please try again.')}
+      finally{enable.disabled=false;enable.textContent=label;paint(true)}
+    });
 
-      function urlBase64ToUint8Array(base64){
-        const padded=(base64+'='.repeat((4-base64.length%4)%4)).replace(/-/g,'+').replace(/_/g,'/');
-        const raw=atob(padded);
-        const bytes=new Uint8Array(raw.length);
-        for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
-        return bytes;
-      }
-
-      // The subscription is what the daily sender reads back, so keep the server's
-      // copy in step whenever the browser issues a new one. Returns whether the
-      // server actually stored it — the caller only claims "on" when it did.
-      async function syncServer(subscription){
-        try{
-          const response=await fetch('/api/push/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(subscription.toJSON())});
-          return response.ok;
-        }catch{return false}
-      }
-
-      async function activeRegistration(){
-        if(registration)return registration;
-        try{registration=await navigator.serviceWorker.register('/sw.js')}catch{}
-        if(!registration){try{registration=await navigator.serviceWorker.ready}catch{}}
-        return registration;
-      }
-
-      enableButton.addEventListener('click',async()=>{
-        if(!pushSupported)return;
-        enableButton.disabled=true;
-        const label=enableButton.textContent;
-        enableButton.textContent='Enabling…';
-        try{
-          const permission=await Notification.requestPermission();
-          if(permission!=='granted'){setState('Notifications were not allowed. You can change this in your browser settings.');return}
-          const {key}=await pushConfig();
-          if(!key){setState('Deal alerts are not set up on this deployment yet.');return}
-          const worker=await activeRegistration();
-          if(!worker){setState('Could not reach the service worker. Reload and try again.');return}
-          let subscription=await worker.pushManager.getSubscription();
-          if(!subscription)subscription=await worker.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:urlBase64ToUint8Array(key)});
-          // Only claim success once the server holds the endpoint — otherwise the
-          // daily job has nobody to send to and the browser would show a false "on".
-          if(!await syncServer(subscription)){
-            await subscription.unsubscribe().catch(()=>{});
-            setPref(false);
-            setState('Could not save your deal alerts. Please try again in a moment.');
-            return;
-          }
-          setPref(true);
-          setState('On — two deals land here every morning.');
-        }catch{
-          setState('Could not turn on alerts. Please try again.');
-        }finally{
-          enableButton.disabled=false;enableButton.textContent=label;paint(true);
+    disable.addEventListener('click',async()=>{
+      disable.disabled=true;
+      try{
+        const reg=await worker();
+        const sub=reg&&await reg.pushManager.getSubscription();
+        if(sub){
+          await fetch('/api/push/subscribe?endpoint='+encodeURIComponent(sub.endpoint),{method:'DELETE'}).catch(()=>{});
+          await sub.unsubscribe().catch(()=>{});
         }
-      });
+      }catch{}
+      setPref(false);disable.disabled=false;setState('Alerts are off.');paint(true);
+    });
 
-      disableButton.addEventListener('click',async()=>{
-        disableButton.disabled=true;
-        try{
-          const worker=await activeRegistration();
-          const subscription=worker&&await worker.pushManager.getSubscription();
-          if(subscription){
-            await fetch(`/api/push/subscribe?endpoint=${encodeURIComponent(subscription.endpoint)}`,{method:'DELETE'}).catch(()=>{});
-            await subscription.unsubscribe().catch(()=>{});
-          }
-        }catch{}
-        setPref(false);
-        disableButton.disabled=false;
-        setState('Alerts are off.');
-        paint(true);
-      });
-
-      if(!pushSupported){paint(false);return}
-
-      (async()=>{
-        const worker=await activeRegistration();
-        const {ready}=await pushConfig();
-        // Re-register a subscription the browser may have rotated, then only offer
-        // the button when the deployment can actually store and send a daily push.
-        if(worker&&wantsAlerts()&&Notification.permission==='granted'){
-          const subscription=await worker.pushManager.getSubscription().catch(()=>null);
-          if(subscription)syncServer(subscription);
-        }
-        paint(ready);
-      })();
+    (async()=>{
+      const reg=await worker();
+      const {ready}=await config();
+      if(reg&&wants()&&Notification.permission==='granted'){
+        const sub=await reg.pushManager.getSubscription().catch(()=>null);
+        if(sub)sync(sub);
+      }
+      paint(ready);
     })();
-  </script>
+  })();
+
+  loadDeals();
+})();
+</script>
 </body>
 </html>

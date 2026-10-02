@@ -2,6 +2,12 @@
 /deals.json
   cache-control: no-store
   access-control-allow-origin: *
+  x-robots-tag: noindex
+
+# The raw snapshot and the JSON alias are duplicate copies of what the landing
+# pages already render, so keep them out of the index.
+/api/deals
+  x-robots-tag: noindex
 
 # The service worker controls caching for everything else, so it must never be
 # served from an old copy — a stale sw.js would pin the previous cache rules.
@@ -34,9 +40,11 @@
 
 /sitemap.xml
   content-type: application/xml; charset=utf-8
+  cache-control: public, max-age=3600
 
 /*
   x-content-type-options: nosniff
   referrer-policy: strict-origin-when-cross-origin
   x-frame-options: SAMEORIGIN
   permissions-policy: geolocation=(), microphone=(), camera=()
+  strict-transport-security: max-age=31536000; includeSubDomains; preload

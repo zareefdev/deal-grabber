@@ -5,28 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Offline — Amazon to Flipkart Deals Grabber</title>
   <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" content="#f5f5f2">
+  <meta name="theme-color" content="#f4f5f0">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Ubuntu:wght@400;500;700&amp;display=swap">
   <style>
-    :root{color-scheme:light;--ink:#17211d;--muted:#66716b;--paper:#f5f5f2;--line:#e2e5df;--green:#c5f36b;font-family:'Inter','Ubuntu',system-ui,-apple-system,"Segoe UI",sans-serif}
-    h1{font-family:'Ubuntu','Inter',system-ui,-apple-system,"Segoe UI",sans-serif}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);color:var(--ink);padding:24px;padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom))}
-    .card{width:min(560px,100%);padding:36px;border:1px solid var(--line);border-radius:20px;background:#fff;text-align:center}
-    .mark{width:44px;height:44px;margin:0 auto 18px;display:grid;place-items:center;border-radius:13px;background:var(--green);font-size:22px}
-    h1{margin:0 0 10px;font-size:clamp(26px,5vw,38px);letter-spacing:-.05em}
-    p{margin:0 0 20px;color:var(--muted);line-height:1.6;font-size:14px}
-    a.home{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:11px;background:var(--ink);color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+    :root{
+      color-scheme:light;
+      --ink:#0f1a15;--muted:#5d6a63;--paper:#f4f5f0;--surface:#fff;--line:#e1e5dc;--lime:#c8f26c;--lime-ink:#2c451a;
+      --font-ui:'Inter','Ubuntu',system-ui,-apple-system,'Segoe UI',sans-serif;
+      --font-display:'Ubuntu','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-family:var(--font-ui);padding:24px;padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom))}
+    .card{width:min(600px,100%);padding:36px;border:1px solid var(--line);border-radius:20px;background:var(--surface);text-align:center}
+    .mark{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 20px;border-radius:13px;background:var(--lime);color:var(--lime-ink);font-size:21px}
+    h1{margin:0 0 12px;font-family:var(--font-display);font-size:clamp(26px,5vw,38px);font-weight:700;letter-spacing:-.05em;line-height:1.08}
+    p{margin:0 0 22px;color:var(--muted);font-size:14.5px;line-height:1.65}
+    .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 22px}
+    .links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
+    .links a:hover{border-color:var(--ink);color:var(--ink)}
+    a.home{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:11px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;text-decoration:none}
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="mark" aria-hidden="true">↗</div>
+    <div class="mark" aria-hidden="true">&nearr;</div>
     <h1>You are offline</h1>
-    <p>The deal feed needs a connection to read the stores, but the last snapshot you loaded is still available on the home page. Reconnect and refresh for the newest listings.</p>
+    <p>The deal feed needs a connection to read the stores, but the last snapshot you loaded is still on the home page. Reconnect and refresh for the newest listings.</p>
+    <nav class="links" aria-label="Cached deal categories">
+      <a href="/">Live deals</a>
+      <a href="/mobiles/">Mobiles</a>
+      <a href="/laptops/">Laptops</a>
+    </nav>
     <a class="home" href="/">Back to the deal feed</a>
   </main>
 </body>

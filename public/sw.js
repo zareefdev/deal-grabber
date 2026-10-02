@@ -8,7 +8,7 @@
  *
  * Bump VERSION whenever the caching rules change so old caches are dropped.
  */
-const VERSION = 'dg-v1';
+const VERSION = 'dg-v2';
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 const MAX_RUNTIME_ENTRIES = 120;
@@ -16,6 +16,7 @@ const SHELL = [
   '/',
   '/index.html',
   '/offline.html',
+  '/404.html',
   '/manifest.webmanifest',
   '/favicon.svg',
   '/apple-touch-icon.png',
