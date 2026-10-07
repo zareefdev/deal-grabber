@@ -37,7 +37,10 @@ async function teardown(client) {
   client.ws?.close();
   if (client.chrome.exitCode === null && client.chrome.signalCode === null) {
     await new Promise(resolve => {
-      const timer = setTimeout(resolve, 3000);
+      const timer = setTimeout(() => {
+        client.chrome.kill('SIGKILL');
+        resolve();
+      }, 3000);
       timer.unref?.();
       client.chrome.once('exit', () => {
         clearTimeout(timer);
@@ -46,7 +49,12 @@ async function teardown(client) {
       client.chrome.kill();
     });
   }
-  fs.rmSync(client.profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  // Best-effort only: Chrome's helper processes can keep the profile open a moment
+  // past the main process exiting, and a leftover temp directory is harmless. Failing
+  // the check because cleanup raced Chrome is exactly the bug this guards against.
+  try {
+    fs.rmSync(client.profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  } catch {}
 }
 
 async function launch() {
