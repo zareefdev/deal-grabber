@@ -89,7 +89,7 @@ const HOME_CSS = `
 @media (max-width:600px){
   .spotlight{padding:14px;border-radius:17px}
   .spotlight-grid{grid-template-columns:1fr;gap:9px;margin-top:13px}
-  /* Row layout: image left, price and CTA on one line, so three flagships fit
+  /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
   .hero-card{flex-direction:row;align-items:center;gap:11px;padding:10px}
   .hero-media{flex:0 0 88px;width:88px;aspect-ratio:1}
@@ -578,7 +578,7 @@ function buildHomePage(feed, snapshotDate) {
   const spotlightHtml = spotlight
     ? `<div class="spotlight" id="spotlight">
 <h2 class="spotlight-title" id="spotlight-title">Today's flagship deals</h2>
-<p class="spotlight-note">Live Apple &amp; Samsung pricing, picked by deepest discount.</p>
+<p class="spotlight-note">Live flagship pricing across Apple, Samsung and more — picked by deepest discount.</p>
 <div class="spotlight-grid" id="spotlight-grid">${spotlight}</div>
 </div>`
     : '<div class="spotlight" id="spotlight" hidden><div class="spotlight-grid" id="spotlight-grid"></div></div>';

@@ -9,6 +9,7 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { requireChrome } from './lib/chrome.mjs';
 
 const [, , url, out, width = '1280', height = '1400', fullPage = 'false'] = process.argv;
 if (!url || !out) {
@@ -16,10 +17,7 @@ if (!url || !out) {
   process.exit(1);
 }
 
-const BIN = path.join(
-  os.homedir(),
-  'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
-);
+const BIN = requireChrome();
 const PORT = 9333 + Math.floor(Math.random() * 300);
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'shot-'));
 

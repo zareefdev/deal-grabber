@@ -14,19 +14,40 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { requireChrome } from './lib/chrome.mjs';
 
 const [, , base = 'http://127.0.0.1:8899', ...slugs] = process.argv;
 
-const CHROME = path.join(
-  os.homedir(),
-  'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
-);
+const CHROME = requireChrome();
 
 const SLUGS = slugs.length ? slugs : ['', 'mobiles/', 'laptops/', 'electronics/', 'amazon/', 'flipkart/', 'under-5000/', 'over-50000/'];
 const WIDTHS = [390, 360];
 const MIN_TAP = 40;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/**
+ * Chrome holds the profile directory open for a moment after SIGTERM, so the rm that
+ * used to run immediately after kill() raced it and threw ENOTEMPTY — turning a
+ * passing audit into a failed one. Wait for the process to actually exit, then retry
+ * the removal so a slow shutdown cannot fail the run.
+ */
+async function teardown(client) {
+  if (!client) return;
+  client.ws?.close();
+  if (client.chrome.exitCode === null && client.chrome.signalCode === null) {
+    await new Promise(resolve => {
+      const timer = setTimeout(resolve, 3000);
+      timer.unref?.();
+      client.chrome.once('exit', () => {
+        clearTimeout(timer);
+        resolve();
+      });
+      client.chrome.kill();
+    });
+  }
+  fs.rmSync(client.profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+}
 
 async function launch() {
   if (!fs.existsSync(CHROME)) throw new Error(`no chromium at ${CHROME}`);
@@ -151,7 +172,7 @@ let failures = 0;
 
 try {
   client = await launch();
-  const { chrome, profile, ws, send, listeners } = client;
+  const { send, listeners } = client;
 
   for (const slug of SLUGS) {
     const url = `${base.replace(/\/$/, '')}/${slug}`;
@@ -193,16 +214,11 @@ try {
     }
   }
 
-  chrome.kill();
-  ws.close();
-  fs.rmSync(profile, { recursive: true, force: true });
+  await teardown(client);
   console.log(failures ? `\n${failures} viewport(s) failed` : '\nAll mobile viewports passed');
   process.exitCode = failures ? 1 : 0;
 } catch (error) {
-  if (client) {
-    client.chrome.kill();
-    fs.rmSync(client.profile, { recursive: true, force: true });
-  }
+  await teardown(client);
   console.error('FAILED:', error.message);
   process.exitCode = 1;
 }

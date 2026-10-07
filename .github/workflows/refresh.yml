@@ -65,6 +65,32 @@ jobs:
       - name: Build static pages
         run: npm run build:pages
 
+      # Gates on the freshly built output. The hero picker is duplicated in the page
+      # runtime, so a divergence would silently swap the flagship after every live
+      # refresh; the page and mobile checks catch invalid structured data and the
+      # phone-width regressions that only show up at 390px.
+      - name: Verify hero picks
+        run: npm run check:hero
+
+      - name: Serve pages for verification
+        run: |
+          npx --yes http-server public -p 8899 --silent &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:8899/ >/dev/null && break
+            sleep 1
+          done
+          curl -sf http://127.0.0.1:8899/ >/dev/null || { echo "static server never came up"; exit 1; }
+
+      - name: Check pages
+        run: npm run check:pages
+
+      - name: Check mobile layout
+        run: npm run check:mobile
+
+      - name: Stop verification server
+        if: always()
+        run: pkill -f "http-server public -p 8899" || true
+
       - name: Summarise snapshot
         run: |
           node -e '

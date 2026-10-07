@@ -35,8 +35,9 @@ function spotlightScript() {
   const slots=${config.slots};
   const byDiscount=(a,b)=>{const d=(Number(b.discount)||0)-(Number(a.discount)||0);return d?d:dealPrice(b)-dealPrice(a)};
   const base=t=>String(t||'').replace(/\\s*\\([^)]*\\)\\s*$/g,'').replace(/\\b\\d+\\s*(gb|tb|mb)\\b/gi,'').replace(/\\b\\d{4}\\s*model\\b/gi,'').replace(/[^a-z0-9]+/gi,' ').trim().toLowerCase();
+  const tagOf=d=>{for(const brand of brands){if(new RegExp(brand.test,'i').test(d.title))return brand.tag}return d.category||'Electronics'};
   const pool=(list||[]).filter(d=>d&&d.title&&d.url&&dealPrice(d)>${config.minPrice}&&!accessory.test(d.title)&&!bareBrand.test(d.title.trim()));
-  const used=new Set(),bases=new Set(),picks=[];
+  const used=new Set(),bases=new Set(),tags=new Set(),picks=[];
   for(const family of families){
     const candidates=pool.filter(d=>!used.has(d.id)&&family.test.test(d.title));
     if(!candidates.length)continue;
@@ -44,15 +45,16 @@ function spotlightScript() {
       if(family.prefer){const pa=family.prefer.test(a.title)?1:0,pb=family.prefer.test(b.title)?1:0;if(pb!==pa)return pb-pa}
       return 0;})[0];
     if(!best)continue;
-    used.add(best.id);bases.add(base(best.title));
+    used.add(best.id);bases.add(base(best.title));tags.add(family.tag);
     const halo=family.prefer&&family.prefer.test(best.title);
     picks.push({tag:(family.flagshipTag&&halo)?family.flagshipTag:family.tag,deal:best});
   }
   if(picks.length<slots){
-    pool.filter(d=>!used.has(d.id)&&!bases.has(base(d.title))).sort(byDiscount).slice(0,slots-picks.length)
-      .forEach(d=>{used.add(d.id);bases.add(base(d.title));
-        let tag='Electronics';for(const brand of brands){if(new RegExp(brand.test,'i').test(d.title)){tag=brand.tag;break}}
-        picks.push({tag,deal:d})});
+    const remaining=pool.filter(d=>!used.has(d.id)&&!bases.has(base(d.title))).sort(byDiscount);
+    const unrivaled=[],repeated=[];
+    for(const d of remaining){const tag=tagOf(d);if(tags.has(tag))repeated.push(d);else{tags.add(tag);unrivaled.push(d)}}
+    [...unrivaled,...repeated].slice(0,slots-picks.length).forEach(d=>{const tag=tagOf(d);
+      used.add(d.id);bases.add(base(d.title));tags.add(tag);picks.push({tag,deal:d})});
   }
   return picks;
 }`;

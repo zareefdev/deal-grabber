@@ -46,8 +46,10 @@ export const CATEGORIES = [
 ];
 
 export const STORES = [
-  { key: 'Amazon', slug: 'amazon', title: 'Amazon India Deals', h1: 'Amazon.in deals' },
-  { key: 'Flipkart', slug: 'flipkart', title: 'Flipkart Deals', h1: 'Flipkart deals' }
+  // title and h1 differ only by case: the breadcrumb trail ends on `title` while the
+  // heading is `h1`, so any real difference would render as a duplicate crumb.
+  { key: 'Amazon', slug: 'amazon', title: 'Amazon India Deals', h1: 'Amazon India Deals' },
+  { key: 'Flipkart', slug: 'flipkart', title: 'Flipkart Deals', h1: 'Flipkart Deals' }
 ];
 
 /** Price bands, cheapest first. `test` must stay true for a deal to land in the band. */
@@ -152,9 +154,20 @@ export function mixStores(amazon, flipkart) {
  * Static pages slice this same array, so their counts always match the live feed.
  */
 export function feedFromSnapshot(snapshot) {
-  const amazon = publishable(snapshot?.amazon?.deals);
-  const flipkart = publishable(snapshot?.flipkart?.deals);
-  return mixStores(amazon, flipkart).slice(0, MAX_DEALS);
+  return mixStores(...publishablePools(snapshot)).slice(0, MAX_DEALS);
+}
+
+/**
+ * The publishable rows per store, before the 70/30 mix and the MAX_DEALS cap.
+ *
+ * The hero must be picked from *these*, not from feedFromSnapshot(): mixStores()
+ * hard-caps Flipkart at 30% of Amazon and discards the remainder, so a hero drawn
+ * from the trimmed grid pool could silently change the moment the client re-rendered
+ * from /api/deals. Sharing one pool makes the server-rendered hero and the
+ * client-rendered hero provably identical.
+ */
+function publishablePools(snapshot) {
+  return [publishable(snapshot?.amazon?.deals), publishable(snapshot?.flipkart?.deals)];
 }
 
 /**
@@ -167,7 +180,7 @@ export function feedFromSnapshot(snapshot) {
  * shipping a second copy of these patterns.
  */
 export const HERO_MIN_PRICE = 50000;
-export const HERO_SLOTS = 3;
+export const HERO_SLOTS = 6;
 export const SPOTLIGHT_ACCESSORY = /screen ?protector|tempered|glass|case\b|back ?cover|cover\b|charger|cable|adapter|power ?bank|holder|strap|sleeve|pouch|\bskin\b|\bbumper\b|\bmonitor\b|\bdock\b|\bhub\b|\bstand\b|\bkeyboard\b|\bmouse\b|compatible|for (macbook|iphone|samsung|galaxy)/i;
 
 /**
@@ -203,15 +216,19 @@ export const SPOTLIGHT_FAMILIES = [
 ];
 
 /**
- * A readable brand for the third hero slot. A category name ("Laptops") reads as a
- * section header rather than a product brand, so prefer a name lifted off the title.
+ * A readable brand for the remaining hero slots. A category name ("Laptops") reads as
+ * a section header rather than a product brand, so prefer a name lifted off the title.
+ *
+ * "Google" is listed *after* the real manufacturers on purpose. "Smart Google TV" is
+ * the platform running on an Acer/realme/Xiaomi/MOTOROLA panel, so matching on the
+ * bare word tagged an acer TV as a Google product. Order is what makes this correct:
+ * a title naming a manufacturer resolves to that manufacturer first.
  */
 const SPOTLIGHT_BRANDS = [
   { tag: 'Apple', test: /\b(apple|macbook|iphone|ipad)\b/i },
   { tag: 'Samsung', test: /\b(samsung|galaxy)\b/i },
   { tag: 'OnePlus', test: /\bone\s?plus\b/i },
   { tag: 'Xiaomi', test: /\b(xiaomi|redmi|poco|mi\s?\d|note\s?\d)\b/i },
-  { tag: 'Google', test: /\b(pixel|google)\b/i },
   { tag: 'Realme', test: /\brealme\b/i },
   { tag: 'Vivo', test: /\b(vivo|iQOO)\b/i },
   { tag: 'Nothing', test: /\bnothing\b/i },
@@ -220,9 +237,11 @@ const SPOTLIGHT_BRANDS = [
   { tag: 'Dell', test: /\b(dell|xps|inspiron|alienware|lattitude)\b/i },
   { tag: 'HP', test: /\b(hp\b|pavilion|omen|envy|elite ?book)/i },
   { tag: 'Asus', test: /\b(asus|rog\b|zenbook|vivo ?book)\b/i },
-  { tag: 'Acer', test: /\bacer\b/i },
+  { tag: 'Acer', test: /\b(acer|acerpure)\b/i },
   { tag: 'Sony', test: /\b(sony|bravia|wh-\d)/i },
-  { tag: 'JBL', test: /\bjbl\b/i }
+  { tag: 'JBL', test: /\bjbl\b/i },
+  // Last: the platform words only match when no real manufacturer was named.
+  { tag: 'Google', test: /\b(pixel)\b/i }
 ];
 
 function brandTag(title, fallback) {
@@ -269,13 +288,18 @@ function heroCandidate(deal) {
 }
 
 /**
- * One slot per brand, chosen by discount, then a third slot filled by the deepest
- * remaining flagship so the hero still shows three products on a thin snapshot.
+ * Apple and Samsung get a slot each, chosen by discount; every remaining slot is
+ * filled by the deepest-discount flagship left in the pool, so a thin snapshot still
+ * fills as many hero cards as it can without repeating a product.
  */
 export function pickSpotlight(list) {
   const pool = (list || []).filter(heroCandidate);
   const used = new Set();
   const bases = new Set();
+  // One product per brand, so six slots read as six different flagships rather than
+  // three near-identical SKUs of the same laptop. Repeats are a last resort for a
+  // thin pool, not a way to fill the row.
+  const tags = new Set();
   const picks = [];
 
   for (const family of SPOTLIGHT_FAMILIES) {
@@ -299,20 +323,29 @@ export function pickSpotlight(list) {
     if (!best) continue;
     used.add(best.id);
     bases.add(baseProduct(best.title));
+    tags.add(family.tag);
     const isFlagship = prefer ? prefer.test(best.title) : false;
     picks.push({ tag: (family.flagshipTag && isFlagship) ? family.flagshipTag : family.tag, deal: best });
   }
 
   if (picks.length < HERO_SLOTS) {
-    pool
+    const remaining = pool
       .filter(deal => !used.has(deal.id) && !bases.has(baseProduct(deal.title)))
-      .sort(deepestDiscount)
-      .slice(0, HERO_SLOTS - picks.length)
-      .forEach(deal => {
-        used.add(deal.id);
-        bases.add(baseProduct(deal.title));
-        picks.push({ tag: brandTag(deal.title, deal.category), deal });
-      });
+      .sort(deepestDiscount);
+    const unrivaled = [];
+    const repeated = [];
+    for (const deal of remaining) {
+      const tag = brandTag(deal.title, deal.category);
+      if (tags.has(tag)) repeated.push(deal);
+      else { tags.add(tag); unrivaled.push(deal); }
+    }
+    [...unrivaled, ...repeated].slice(0, HERO_SLOTS - picks.length).forEach(deal => {
+      const tag = brandTag(deal.title, deal.category);
+      used.add(deal.id);
+      bases.add(baseProduct(deal.title));
+      tags.add(tag);
+      picks.push({ tag, deal });
+    });
   }
 
   return picks;
