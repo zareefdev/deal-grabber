@@ -71,7 +71,6 @@ const CARD_FN = `function productCard(deal){
   if(deal.discount){const off=document.createElement('span');off.className='pill pill-off';off.textContent=Math.round(deal.discount)+'% off';badges.append(off)}
   if(deal.isNew){const isNew=document.createElement('span');isNew.className='pill pill-new';isNew.textContent='New';badges.append(isNew)}
   const body=document.createElement('div');body.className='deal-body';
-  body.append(badges);
   const title=document.createElement('h3');title.textContent=deal.title;
   const row=document.createElement('div');row.className='price-row';
   if(deal.originalPrice&&deal.originalPrice!==deal.price){const was=document.createElement('span');was.className='was';was.textContent=deal.originalPrice;row.append(was)}
@@ -79,7 +78,7 @@ const CARD_FN = `function productCard(deal){
   const cta=document.createElement('a');cta.className='deal-cta';cta.href=affiliateUrl(deal.url);cta.target='_blank';cta.rel='sponsored noopener noreferrer';
   const label=document.createElement('span');label.textContent='View on '+deal.store;
   const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';cta.append(label,arrow);
-  body.append(title,row,cta);article.append(media,body);return article;
+  body.append(title,row,badges,cta);article.append(media,body);return article;
 }`;
 
 /** Google Product rich-result eligibility needs stock + price on every offer. */

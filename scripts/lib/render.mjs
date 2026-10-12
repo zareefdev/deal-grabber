@@ -93,10 +93,10 @@ img{max-width:100%}
 .deal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
 .deal{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .deal:hover{transform:translateY(-3px);border-color:#cfd6c8;box-shadow:0 1px 2px rgba(15,26,21,.05),0 18px 38px -22px rgba(15,26,21,.45)}
-.deal-media{position:relative;aspect-ratio:4/3;background:#f6f7f3;display:grid;place-items:center;overflow:hidden}
+.deal-media{position:relative;aspect-ratio:1/1;background:#fff;display:grid;place-items:center;overflow:hidden}
 .deal-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .deal-media figcaption{position:absolute;inset:0;display:grid;place-items:center;padding:12px;color:#a9b0a6;font-size:12px;text-align:center}
-.deal-badges{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:0 0 9px}
+.deal-badges{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:2px 0 11px}
 .pill{display:inline-flex;align-items:center;min-height:22px;padding:0 7px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--surface)}
 .pill-off{background:#e9f5d6;color:#3f6b1c}
 .pill-new{background:#e4edff;color:#1c47c4}
@@ -179,7 +179,7 @@ img{max-width:100%}
   .stats div{padding:11px 13px}
   .stats dd{font-size:17px}
   .deal-grid{gap:9px}
-  .deal-media{aspect-ratio:1.1}
+  .deal-media{aspect-ratio:1/1}
   .deal-body{padding:10px}
   /* No min-height: it forced a 4.3em block on every card, so short titles left a
      dead gap above the price. Grid already equalises row heights. */
@@ -224,9 +224,9 @@ export function renderDealCard(deal) {
   return `<article class="deal">
 <figure class="deal-media">${image}</figure>
 <div class="deal-body">
-<div class="deal-badges">${badges}</div>
 <h3>${title}</h3>
 <div class="price-row">${was}<span class="price">${escapeHtml(deal.price)}</span></div>
+<div class="deal-badges">${badges}</div>
 <a class="deal-cta" href="${escapeHtml(url)}" target="_blank" rel="sponsored noopener noreferrer"><span>View on ${escapeHtml(deal.store)}</span><span aria-hidden="true">&nearr;</span></a>
 </div>
 </article>`;
