@@ -13,11 +13,13 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-const EXE = process.platform === 'win32'
-  ? 'chrome.exe'
-  : process.platform === 'darwin'
-    ? 'Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
-    : 'chrome-linux/chrome';
+// Playwright names the mac binary "Google Chrome for Testing" (or "Chromium" on
+// older builds) and the Linux one "chrome", so match on the basename rather than a
+// single hardcoded name — comparing a path here never matched and made every local
+// check on macOS fail.
+const EXE_NAMES = new Set(process.platform === 'win32'
+  ? ['chrome.exe']
+  : ['chrome', 'Chromium', 'Google Chrome', 'Google Chrome for Testing']);
 
 const SYSTEM = {
   darwin: [
@@ -64,10 +66,9 @@ export function findChrome() {
     return null;
   }
 
-  const EXE_NAME = process.platform === 'win32' ? 'chrome.exe' : 'chrome';
   const found = [];
   const walk = (dir, depth) => {
-    if (depth > 3) return;
+    if (depth > 6) return;
     let children = [];
     try {
       children = fs.readdirSync(dir, { withFileTypes: true });
@@ -78,7 +79,7 @@ export function findChrome() {
       const full = path.join(dir, child.name);
       if (child.isDirectory()) {
         walk(full, depth + 1);
-      } else if (child.name === EXE_NAME || child.name === EXE) {
+      } else if (EXE_NAMES.has(child.name)) {
         found.push(full);
       }
     }

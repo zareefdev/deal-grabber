@@ -70,8 +70,8 @@ const CARD_FN = `function productCard(deal){
   const store=document.createElement('span');store.className='pill pill-store';store.textContent=deal.store;badges.append(store);
   if(deal.discount){const off=document.createElement('span');off.className='pill pill-off';off.textContent=Math.round(deal.discount)+'% off';badges.append(off)}
   if(deal.isNew){const isNew=document.createElement('span');isNew.className='pill pill-new';isNew.textContent='New';badges.append(isNew)}
-  media.append(badges);
   const body=document.createElement('div');body.className='deal-body';
+  body.append(badges);
   const title=document.createElement('h3');title.textContent=deal.title;
   const row=document.createElement('div');row.className='price-row';
   if(deal.originalPrice&&deal.originalPrice!==deal.price){const was=document.createElement('span');was.className='was';was.textContent=deal.originalPrice;row.append(was)}
