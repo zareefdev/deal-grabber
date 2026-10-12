@@ -25,7 +25,7 @@ function forScript(json) {
  * The spotlight picker, mirroring pickSpotlight() in publish.mjs but reading the
  * serialised regex config rather than the module — the browser cannot import.
  */
-function spotlightScript() {
+export function spotlightScript() {
   const config = spotlightConfig();
   return `function pickSpotlight(list){
   const accessory=new RegExp(${forScript(config.accessory)},'i');

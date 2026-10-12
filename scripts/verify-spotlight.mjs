@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pickSpotlight, spotlightConfig, dealPrice, feedFromSnapshot } from './lib/publish.mjs';
+import { spotlightScript } from './lib/runtime.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -14,23 +15,15 @@ const feed = feedFromSnapshot(snapshot);
 // The build-time picker, straight from the module.
 const buildPicks = pickSpotlight(feed).map(({ tag, deal }) => ({ tag, title: deal.title }));
 
-// The runtime picker, reconstructed exactly as it is injected into the page.
+// The runtime picker, compiled from the exact string the page embeds. spotlightScript()
+// returns the *evaluated* template, so the backslashes in its regexes are real; pulling
+// the raw template source out with a regex instead double-escaped every \s, which broke
+// the variant-collapsing base() regex and reported a false divergence the moment a feed
+// carried colour/storage variants of one product.
 const cfg = spotlightConfig();
-const src = fs.readFileSync(path.join(ROOT, 'scripts/lib/runtime.mjs'), 'utf8');
-const body = src.match(/return `function pickSpotlight\(list\)\{[\s\S]*?\n\}\`;/);
-if (!body) throw new Error('could not locate the runtime picker in runtime.mjs');
-
-// The runtime picker is a template literal in runtime.mjs, so its ${...} holes have to
-// be filled the same way spotlightScript() does before it can be executed here.
-const forScript = s => JSON.stringify(s);
-const raw = body[0].replace(/^return `/, '').replace(/`;$/, '');
-const resolved = raw
-  .replace(/\$\{forScript\(config\.(\w+)\)\}/g, (_, key) => forScript(cfg[key]))
-  .replace(/\$\{config\.(\w+)\}/g, (_, key) => JSON.stringify(cfg[key]));
-
 const runtimeFn = new Function(`
   const dealPrice=${dealPrice.toString()};
-  ${resolved}
+  ${spotlightScript()}
   return pickSpotlight;
 `)();
 
