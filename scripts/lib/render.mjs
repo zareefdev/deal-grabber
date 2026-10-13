@@ -93,8 +93,12 @@ img{max-width:100%}
 .deal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
 .deal{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .deal:hover{transform:translateY(-3px);border-color:#cfd6c8;box-shadow:0 1px 2px rgba(15,26,21,.05),0 18px 38px -22px rgba(15,26,21,.45)}
-.deal-media{position:relative;aspect-ratio:1/1;background:#fff;display:grid;place-items:center;overflow:hidden}
-.deal-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+/* Plain block, not a centered grid: inside place-items:center the image's height:100%
+   resolved against an auto row, so a portrait product shot overflowed the square plate
+   and lost its top and bottom to overflow:hidden. With a definite block box the image
+   fills the plate and object-fit:contain shows the whole product. */
+.deal-media{position:relative;aspect-ratio:1/1;background:#fff;display:block;overflow:hidden}
+.deal-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .deal-media figcaption{position:absolute;inset:0;display:grid;place-items:center;padding:12px;color:#a9b0a6;font-size:12px;text-align:center}
 .deal-badges{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:2px 0 11px}
 .pill{display:inline-flex;align-items:center;min-height:22px;padding:0 7px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--surface)}
