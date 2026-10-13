@@ -54,20 +54,28 @@ const HOME_CSS = `
 .dot.error{background:#c2453a}
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
 
-/* The spotlight no longer brings its own box: it sits directly on the hero's
-   dark stage panel, so only the cards read as surfaces. */
-.spotlight{margin:clamp(18px,3vw,26px) 0 0}
+/* Marquee split: the copy sits left, the single hottest flagship right, and the
+   remaining picks line up below as one compact rail. The spotlight brings no box
+   of its own — everything sits on the hero's dark stage. */
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,486px);gap:clamp(22px,3vw,40px);align-items:center}
+.hero-copy,.hero-lead-slot{min-width:0}
+.hero-lead-slot:empty{display:none}
+.spotlight{margin:clamp(20px,3vw,30px) 0 0}
 .spotlight[hidden]{display:none}
+.spotlight-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 18px}
 .spotlight-title{margin:0;font-family:var(--font-display);font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.04em;color:#eef3e9}
-.spotlight-note{margin:5px 0 0;color:#8ea096;font-size:11.5px;line-height:1.5}
-.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.spotlight-note{margin:0;color:#8ea096;font-size:11.5px;line-height:1.5}
+.spotlight-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:13px}
 .hero-card{display:flex;flex-direction:column;gap:9px;padding:4px;border:1px solid #2a3830;border-radius:16px;background:linear-gradient(165deg,#1d2b24,#15211b);color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
 .hero-card:hover{transform:translateY(-3px);border-color:rgba(200,242,108,.5);box-shadow:0 20px 36px -26px rgba(0,0,0,.65)}
 .hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:12px;background:#fff;overflow:hidden}
 .hero-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .hero-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
 .hero-info{display:flex;flex:1;flex-direction:column;gap:8px;min-width:0}
+.hero-chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.hero-flame{padding:3px 9px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
 .hero-tag{align-self:flex-start;padding:3px 9px;border:1px solid rgba(200,242,108,.3);border-radius:99px;background:rgba(200,242,108,.1);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.hero-chips .hero-tag{align-self:auto}
 .hero-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;color:#e4ebe4;font-size:12.5px;line-height:1.35;font-weight:600}
 .hero-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin-top:auto}
 .hero-now{font-family:var(--font-display);font-size:19px;font-weight:700;letter-spacing:-.035em;color:#fff}
@@ -75,6 +83,15 @@ const HOME_CSS = `
 .hero-off{padding:3px 8px;border-radius:7px;background:var(--lime);color:var(--lime-ink);font-size:10.5px;font-weight:800;white-space:nowrap}
 .hero-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:9px;border-top:1px solid #2b3931;color:#9db0a2;font-size:11px;font-weight:700}
 .hero-cta span:last-child{color:var(--lime)}
+/* The featured flagship: image plate left, roomier type and a solid CTA right. */
+.hero-lead{display:grid;grid-template-columns:minmax(0,236px) minmax(0,1fr);gap:16px;align-items:center;padding:12px;border-radius:20px}
+.hero-lead .hero-info{gap:10px}
+.hero-lead h3{-webkit-line-clamp:3;min-height:0;font-size:15px;line-height:1.4}
+.hero-lead .hero-now{font-size:27px}
+.hero-lead .hero-was{font-size:12px}
+.hero-lead .hero-off{font-size:11.5px;padding:4px 10px}
+.hero-lead .hero-cta{border-top:0;padding-top:4px}
+.hero-lead .hero-cta span:last-child{margin-inline-start:auto;background:var(--lime);color:var(--lime-ink);padding:9px 14px;border-radius:11px;font-size:12px}
 
 .alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:17px 19px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .alerts[hidden]{display:none}
@@ -88,9 +105,15 @@ const HOME_CSS = `
 .alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
 
 .hero h1 span{color:var(--lime)}
-@media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1080px){.spotlight-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){
+  .hero-top{grid-template-columns:minmax(0,1fr);gap:20px}
+  .hero-lead{grid-template-columns:minmax(0,280px) minmax(0,1fr)}
+}
+@media (max-width:760px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){
   .spotlight{margin:16px 0 0}
+  .hero-top{gap:15px}
   /* minmax(0,1fr), not 1fr: a bare 1fr track is floored at its min-content, so one
      flagship whose title holds a long unbreakable token widened the single column —
      and every card in it — past the phone's width, scrolling the page sideways.
@@ -103,10 +126,19 @@ const HOME_CSS = `
   .hero-info{gap:4px;min-width:0}
   .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px;overflow-wrap:anywhere}
   .hero-tag{font-size:9px;padding:2px 8px}
+  .hero-flame{font-size:9px;padding:2px 8px}
   .hero-now{font-size:16px}
   .hero-was{font-size:10.5px}
   .hero-off{font-size:10px}
   .hero-cta{padding-top:6px;font-size:10.5px}
+  /* The featured card keeps its grid, just narrower: the rail's flex-row rules
+     above don't reach it, and a fixed 192px plate would burst the 150px track. */
+  .hero-lead{grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:10px;padding:8px}
+  .hero-lead .hero-media{width:auto;flex:none}
+  .hero-lead h3{-webkit-line-clamp:2;font-size:12px}
+  .hero-lead .hero-now{font-size:18px}
+  .hero-lead .hero-cta{padding-top:2px}
+  .hero-lead .hero-cta span:last-child{padding:7px 11px;font-size:11px}
   .alerts{padding:14px}
   .alerts-btn{flex:1 1 auto}
 }
@@ -114,9 +146,11 @@ const HOME_CSS = `
    CTA wrapped onto two lines. One notch off the image buys a full line back. */
 @media (max-width:380px){
   .hero-media{flex:0 0 168px;width:168px}
+  .hero-lead{grid-template-columns:minmax(0,132px) minmax(0,1fr)}
   .hero-tag{white-space:nowrap}
   .hero-cta{white-space:nowrap;gap:6px}
   .hero-cta span:last-child{font-size:10px}
+  .hero-lead .hero-cta{white-space:normal}
 }
 `.trim();
 
@@ -581,20 +615,24 @@ function buildHomePage(feed, snapshotDate) {
     ? shown.map(renderDealCard).join('\n')
     : '<div class="state"><h3>The feed is rebuilding</h3><p>No listings in this snapshot yet. Try refreshing in a moment.</p></div>';
 
-  const spotlight = pickSpotlight(feed)
-    .map(({ tag, deal }) => `<a class="hero-card" href="${escapeHtml(affiliateUrl(deal.url))}" target="_blank" rel="sponsored noopener noreferrer">
+  // Deepest discount first: the hottest flagship becomes the marquee card beside
+  // the headline, the rest line up as the rail below. The picker itself is
+  // untouched, so build and runtime still agree slot for slot.
+  const heroCardHtml = ({ tag, deal }, flame) => `<a class="hero-card${flame ? ' hero-lead' : ''}" href="${escapeHtml(affiliateUrl(deal.url))}" target="_blank" rel="sponsored noopener noreferrer">
 <div class="hero-media">${deal.image ? `<img src="${escapeHtml(deal.image)}" alt="${escapeHtml(deal.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : '<span class="image-fallback">Image unavailable</span>'}</div>
-<div class="hero-info"><span class="hero-tag">${escapeHtml(tag)}</span><h3>${escapeHtml(deal.title)}</h3><div class="hero-price"><span class="hero-now">${escapeHtml(deal.price)}</span>${deal.originalPrice ? `<span class="hero-was">${escapeHtml(deal.originalPrice)}</span>` : ''}${deal.discount ? `<span class="hero-off">${escapeHtml(`${Math.round(deal.discount)}% off`)}</span>` : ''}</div><div class="hero-cta"><span>${escapeHtml(deal.store)}</span><span>Grab deal &nearr;</span></div></div>
-</a>`)
-    .join('\n');
+<div class="hero-info">${flame ? `<span class="hero-chips"><span class="hero-flame">Hottest deal right now</span><span class="hero-tag">${escapeHtml(tag)}</span></span>` : `<span class="hero-tag">${escapeHtml(tag)}</span>`}<h3>${escapeHtml(deal.title)}</h3><div class="hero-price"><span class="hero-now">${escapeHtml(deal.price)}</span>${deal.originalPrice ? `<span class="hero-was">${escapeHtml(deal.originalPrice)}</span>` : ''}${deal.discount ? `<span class="hero-off">${escapeHtml(`${Math.round(deal.discount)}% off`)}</span>` : ''}</div><div class="hero-cta"><span>${escapeHtml(deal.store)}</span><span>Grab deal &nearr;</span></div></div>
+</a>`;
+  const rankedPicks = pickSpotlight(feed).slice()
+    .sort((a, b) => (Number(b.deal.discount) || 0) - (Number(a.deal.discount) || 0));
+  const leadHtml = rankedPicks.length ? heroCardHtml(rankedPicks[0], true) : '';
+  const rest = rankedPicks.slice(1);
 
   // The hero carries the headline *and* the live flagship products, so a visitor sees
   // real discounted hardware above the fold instead of a slogan and a scroll.
-  const spotlightHtml = spotlight
+  const spotlightHtml = rest.length
     ? `<div class="spotlight" id="spotlight">
-<h2 class="spotlight-title" id="spotlight-title">Today's flagship deals</h2>
-<p class="spotlight-note">Live flagship pricing across Apple, Samsung and more — picked by deepest discount.</p>
-<div class="spotlight-grid" id="spotlight-grid">${spotlight}</div>
+<div class="spotlight-head"><h2 class="spotlight-title" id="spotlight-title">More flagship deals</h2><p class="spotlight-note">One deepest-discount pick per brand, live from both stores.</p></div>
+<div class="spotlight-grid" id="spotlight-grid">${rest.map(pick => heroCardHtml(pick, false)).join('\n')}</div>
 </div>`
     : '<div class="spotlight" id="spotlight" hidden><div class="spotlight-grid" id="spotlight-grid"></div></div>';
 
@@ -661,9 +699,14 @@ ${HOME_CSS}
 ${renderNav('/')}
 <main class="wrap" id="main">
 <section class="hero" aria-labelledby="hero-title">
+<div class="hero-top">
+<div class="hero-copy">
 <p class="eyebrow">Amazon.in &middot; Flipkart &middot; one page</p>
 <h1 id="hero-title">Live tech deals,<br><span>without the hunt.</span></h1>
 <p class="lede">Live discount listings from Amazon.in and Flipkart, rebuilt throughout the day. Expired and out-of-stock deals drop off automatically, so what you see is still buyable.</p>
+</div>
+<div class="hero-lead-slot" id="hero-lead">${leadHtml}</div>
+</div>
 ${spotlightHtml}
 </section>
 ${renderStats([

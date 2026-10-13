@@ -227,32 +227,50 @@ export const HOMEPAGE_RUNTIME = `
     renderChipbar();
   }
 
+  function heroCardEl(tag,deal,flame){
+    const card=document.createElement('a');
+    card.className=flame?'hero-card hero-lead':'hero-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
+    const media=document.createElement('div');media.className='hero-media';
+    if(deal.image){const img=document.createElement('img');img.src=deal.image;img.alt=deal.title;img.loading='lazy';img.referrerPolicy='no-referrer';media.append(img)}
+    else{const fb=document.createElement('span');fb.className='image-fallback';fb.textContent='Image unavailable';media.append(fb)}
+    const info=document.createElement('div');info.className='hero-info';
+    if(flame){
+      const chips=document.createElement('span');chips.className='hero-chips';
+      const fl=document.createElement('span');fl.className='hero-flame';fl.textContent='Hottest deal right now';
+      const tg=document.createElement('span');tg.className='hero-tag';tg.textContent=tag;
+      chips.append(fl,tg);info.append(chips);
+    }else{
+      const tagEl=document.createElement('span');tagEl.className='hero-tag';tagEl.textContent=tag;info.append(tagEl);
+    }
+    const t=document.createElement('h3');t.textContent=deal.title;
+    const row=document.createElement('div');row.className='hero-price';
+    const p=document.createElement('span');p.className='hero-now';p.textContent=deal.price;row.append(p);
+    if(deal.originalPrice){const w=document.createElement('span');w.className='hero-was';w.textContent=deal.originalPrice;row.append(w)}
+    if(deal.discount){const o=document.createElement('span');o.className='hero-off';o.textContent=Math.round(deal.discount)+'% off';row.append(o)}
+    const cta=document.createElement('div');cta.className='hero-cta';
+    const s=document.createElement('span');s.textContent=deal.store;
+    const g=document.createElement('span');g.textContent='Grab deal ↗';cta.append(s,g);
+    info.append(t,row,cta);card.append(media,info);
+    return card;
+  }
+
   function renderSpotlight(){
     const host=document.querySelector('#spotlight-grid');
     const section=document.querySelector('#spotlight');
-    if(!host||!section)return;
-    const picks=pickSpotlight(deals);
-    if(!picks.length){section.hidden=true;return}
+    const leadHost=document.querySelector('#hero-lead');
+    if(!host||!section||!leadHost)return;
+    // Deepest discount first: the hottest flagship takes the marquee slot beside
+    // the headline, the rest fill the rail. Same sort as the build template, so
+    // the baked page and the live refresh show the same layout.
+    const picks=pickSpotlight(deals).slice().sort((a,b)=>(Number(b.deal.discount)||0)-(Number(a.deal.discount)||0));
+    leadHost.replaceChildren();
+    if(!picks.length){section.hidden=true;host.replaceChildren();return}
+    leadHost.append(heroCardEl(picks[0].tag,picks[0].deal,true));
+    const rest=picks.slice(1);
+    if(!rest.length){section.hidden=true;host.replaceChildren();return}
     section.hidden=false;
     host.replaceChildren();
-    picks.forEach(({tag,deal})=>{
-      const card=document.createElement('a');
-      card.className='hero-card';card.href=affiliateUrl(deal.url);card.target='_blank';card.rel='sponsored noopener noreferrer';
-      const media=document.createElement('div');media.className='hero-media';
-      if(deal.image){const img=document.createElement('img');img.src=deal.image;img.alt=deal.title;img.loading='lazy';img.referrerPolicy='no-referrer';media.append(img)}
-      else{const fb=document.createElement('span');fb.className='image-fallback';fb.textContent='Image unavailable';media.append(fb)}
-      const info=document.createElement('div');info.className='hero-info';
-      const tagEl=document.createElement('span');tagEl.className='hero-tag';tagEl.textContent=tag;info.append(tagEl);
-      const t=document.createElement('h3');t.textContent=deal.title;
-      const row=document.createElement('div');row.className='hero-price';
-      const p=document.createElement('span');p.className='hero-now';p.textContent=deal.price;row.append(p);
-      if(deal.originalPrice){const w=document.createElement('span');w.className='hero-was';w.textContent=deal.originalPrice;row.append(w)}
-      if(deal.discount){const o=document.createElement('span');o.className='hero-off';o.textContent=Math.round(deal.discount)+'% off';row.append(o)}
-      const cta=document.createElement('div');cta.className='hero-cta';
-      const s=document.createElement('span');s.textContent=deal.store;
-      const g=document.createElement('span');g.textContent='Grab deal ↗';cta.append(s,g);
-      info.append(t,row,cta);card.append(media,info);host.append(card);
-    });
+    rest.forEach(({tag,deal})=>host.append(heroCardEl(tag,deal,false)));
   }
 
   async function loadDeals(force){
