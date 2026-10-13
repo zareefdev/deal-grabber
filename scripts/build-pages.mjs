@@ -670,7 +670,7 @@ ${renderStats([
 <div class="alerts-text"><p class="eyebrow">Deal alerts</p><h2 id="alerts-title">Get 2 handpicked deals every morning.</h2><p>Allow notifications and we send the two best Amazon &amp; Flipkart deals once a day. No account, no spam, off any time.</p></div>
 <div class="alerts-actions"><button class="alerts-btn" id="alerts-enable" type="button">Allow notifications</button><button class="alerts-btn ghost" id="alerts-disable" type="button" hidden>Turn off</button><span class="alerts-state" id="alerts-state" role="status" aria-live="polite"></span></div>
 </section>
-<p class="summary"><strong>${shown.length}</strong> of ${feed.length} live deals shown, ranked by discount${feed.length > shown.length ? ' &middot; browse the category pages below for the rest' : ''}.</p>
+<p class="summary"><strong>${shown.length}</strong> of ${feed.length} live deals shown, reshuffled on every refresh${feed.length > shown.length ? ' &middot; browse the category pages below for the rest' : ''}.</p>
 <div class="deal-grid" id="deal-grid">${cards}</div>
 <nav class="chipbar" aria-label="Browse deals by category, store and price">${chips}</nav>
 ${renderDisclosure()}

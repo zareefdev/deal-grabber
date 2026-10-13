@@ -207,12 +207,11 @@ export const HOMEPAGE_RUNTIME = `
   function render(){
     const query=(queryInput&&queryInput.value||'').trim().toLowerCase();
     const pool=selectedStore==='All'?mixedDeals:mixedDeals.filter(d=>d.store===selectedStore);
-    const visible=pool.filter(d=>(selectedCategory==='All'||categoryFor(d)===selectedCategory)&&(!query||String(d.title).toLowerCase().includes(query)||String(d.store).toLowerCase().includes(query)))
-      // mixedDeals comes out of mixStores() shuffled, so appending it as-is scattered the
-      // 90%-off rows and buried the flagship cuts: the page advertised "ranked by discount"
-      // (the baked markup is sorted) and then the runtime reshuffled it on load. Sort the
-      // same way the generator does so the hottest deals stay at the top.
-      .sort((a,b)=>{const d=(Number(b.discount)||0)-(Number(a.discount)||0);return d?d:dealPrice(b)-dealPrice(a)});
+    // mixStores() shuffled this pool on the current refresh, so keep that
+    // order: every refresh (first load, "Refresh now", auto-poll) deals the
+    // cards fresh. The hero spotlight still carries the hottest flagship per
+    // brand, so the deepest cuts stay on the page.
+    const visible=pool.filter(d=>(selectedCategory==='All'||categoryFor(d)===selectedCategory)&&(!query||String(d.title).toLowerCase().includes(query)||String(d.store).toLowerCase().includes(query)));
     grid.replaceChildren();
     if(visible.length)visible.forEach(d=>grid.append(productCard(d)));
     else{
