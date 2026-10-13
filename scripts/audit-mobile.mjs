@@ -14,13 +14,30 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { requireChrome } from './lib/chrome.mjs';
 
 const [, , base = 'http://127.0.0.1:8899', ...slugs] = process.argv;
 
 const CHROME = requireChrome();
 
-const SLUGS = slugs.length ? slugs : ['', 'mobiles/', 'laptops/', 'electronics/', 'amazon/', 'flipkart/', 'under-5000/', 'over-50000/'];
+const PUBLIC_DIR = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'), 'public');
+
+/**
+ * Same guard check-pages.mjs learned the hard way: the generator skips a landing page
+ * whose slice is under MIN_PAGE_DEALS, so a hardcoded list turns a thin snapshot into a
+ * failed audit — the 404 page renders zero cards and the run aborts before the deploy.
+ * Audit exactly the pages that exist, plus the homepage.
+ */
+function builtSlugs() {
+  let entries = [];
+  try { entries = fs.readdirSync(PUBLIC_DIR, { withFileTypes: true }); } catch { return ['']; }
+  return ['', ...entries
+    .filter(entry => entry.isDirectory() && fs.existsSync(path.join(PUBLIC_DIR, entry.name, 'index.html')))
+    .map(entry => `${entry.name}/`)];
+}
+
+const SLUGS = slugs.length ? slugs : builtSlugs();
 const WIDTHS = [390, 360];
 const MIN_TAP = 40;
 
