@@ -64,7 +64,7 @@ const HOME_CSS = `
 .hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:11px;background:#fff;overflow:hidden}
 .hero-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .hero-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
-.hero-info{display:flex;flex:1;flex-direction:column;gap:7px}
+.hero-info{display:flex;flex:1;flex-direction:column;gap:7px;min-width:0}
 .hero-tag{align-self:flex-start;padding:3px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
 .hero-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;font-size:12.5px;line-height:1.35;font-weight:600}
 .hero-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin-top:auto}
@@ -88,13 +88,17 @@ const HOME_CSS = `
 @media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){
   .spotlight{padding:14px;border-radius:17px}
-  .spotlight-grid{grid-template-columns:1fr;gap:9px;margin-top:13px}
+  /* minmax(0,1fr), not 1fr: a bare 1fr track is floored at its min-content, so one
+     flagship whose title holds a long unbreakable token widened the single column —
+     and every card in it — past the phone's width, scrolling the page sideways.
+     The row's info column needs min-width:0 for the same reason. */
+  .spotlight-grid{grid-template-columns:minmax(0,1fr);gap:9px;margin-top:13px}
   /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
-  .hero-card{flex-direction:row;align-items:center;gap:10px;padding:8px}
+  .hero-card{flex-direction:row;align-items:center;gap:10px;padding:8px;min-width:0;overflow:hidden}
   .hero-media{flex:0 0 136px;width:136px;aspect-ratio:1}
-  .hero-info{gap:4px}
-  .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px}
+  .hero-info{gap:4px;min-width:0}
+  .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px;overflow-wrap:anywhere}
   .hero-tag{font-size:9px;padding:2px 7px}
   .hero-now{font-size:16px}
   .hero-was{font-size:10.5px}
