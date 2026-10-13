@@ -54,12 +54,12 @@ const HOME_CSS = `
 .dot.error{background:#c2453a}
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
 
-.spotlight{margin:26px 0 0;padding:8px 8px 10px;border-radius:20px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
+.spotlight{margin:26px 0 0;padding:6px 6px 8px;border-radius:20px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
 .spotlight[hidden]{display:none}
 .spotlight-title{margin:0;font-family:var(--font-display);font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.04em}
 .spotlight-note{margin:5px 0 0;color:#93a199;font-size:11.5px;line-height:1.5}
-.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:11px}
-.hero-card{display:flex;flex-direction:column;gap:8px;padding:4px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:11px}
+.hero-card{display:flex;flex-direction:column;gap:8px;padding:3px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
 .hero-card:hover{transform:translateY(-3px);border-color:var(--lime)}
 .hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:11px;background:#fff;overflow:hidden}
 .hero-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
@@ -92,11 +92,11 @@ const HOME_CSS = `
      flagship whose title holds a long unbreakable token widened the single column —
      and every card in it — past the phone's width, scrolling the page sideways.
      The row's info column needs min-width:0 for the same reason. */
-  .spotlight-grid{grid-template-columns:minmax(0,1fr);gap:9px;margin-top:13px}
+  .spotlight-grid{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:13px}
   /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
-  .hero-card{flex-direction:row;align-items:center;gap:9px;padding:7px;min-width:0;overflow:hidden}
-  .hero-media{flex:0 0 180px;width:180px;aspect-ratio:1}
+  .hero-card{flex-direction:row;align-items:center;gap:8px;padding:6px;min-width:0;overflow:hidden}
+  .hero-media{flex:0 0 192px;width:192px;aspect-ratio:1}
   .hero-info{gap:4px;min-width:0}
   .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px;overflow-wrap:anywhere}
   .hero-tag{font-size:9px;padding:2px 7px}
