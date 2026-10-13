@@ -15,13 +15,31 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { requireChrome } from './lib/chrome.mjs';
 
 const [, , base = 'http://127.0.0.1:8899', ...slugs] = process.argv;
 
 const CHROME = requireChrome();
 
-const PAGES = (slugs.length ? slugs : ['', 'mobiles/', 'laptops/', 'electronics/', 'amazon/', 'flipkart/', 'under-5000/', 'under-10000/', 'under-25000/', 'over-50000/'])
+const PUBLIC_DIR = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'), 'public');
+
+/**
+ * The generator drops a landing page when its slice falls under MIN_PAGE_DEALS, so a
+ * hardcoded page list turned a legitimately thin band — "only 6 deals under ₹5,000" —
+ * into a failed check, which aborted the job *before* the deploy step and left the site
+ * frozen on its previous build. Check exactly the pages that were built, plus the
+ * homepage, so a thin snapshot can never block a publish.
+ */
+function builtSlugs() {
+  let entries = [];
+  try { entries = fs.readdirSync(PUBLIC_DIR, { withFileTypes: true }); } catch { return ['']; }
+  return ['', ...entries
+    .filter(entry => entry.isDirectory() && fs.existsSync(path.join(PUBLIC_DIR, entry.name, 'index.html')))
+    .map(entry => `${entry.name}/`)];
+}
+
+const PAGES = (slugs.length ? slugs : builtSlugs())
   .map(slug => ({ slug: slug || 'index', url: `${base.replace(/\/$/, '')}/${slug}` }));
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -57,8 +75,13 @@ async function teardown(client) {
   } catch {}
 }
 
-async function launch() {
-  if (!fs.existsSync(CHROME)) throw new Error(`no chromium at ${CHROME}`);
+/**
+ * Chromium sometimes fails to open its debugging port on a cold CI runner, and a thrown
+ * launch failed the whole check — which, because the check gates the deploy, turned a
+ * flaky browser startup into a missed publish. Give a slow cold start a longer budget
+ * (20s) and let launch() respawn once before giving up.
+ */
+async function startChrome() {
   const port = 9400 + Math.floor(Math.random() * 400);
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'checkpages-'));
   const chrome = spawn(CHROME, [
@@ -73,7 +96,7 @@ async function launch() {
   ], { stdio: 'ignore' });
 
   let wsUrl = null;
-  for (let i = 0; i < 60 && !wsUrl; i += 1) {
+  for (let i = 0; i < 100 && !wsUrl; i += 1) {
     try {
       const res = await fetch(`http://127.0.0.1:${port}/json/version`);
       if (res.ok) wsUrl = (await res.json()).webSocketDebuggerUrl;
@@ -82,8 +105,17 @@ async function launch() {
   }
   if (!wsUrl) {
     chrome.kill();
-    throw new Error('chromium never exposed a debugging port');
+    try { fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); } catch {}
+    return null;
   }
+  return { chrome, profile, wsUrl };
+}
+
+async function launch() {
+  if (!fs.existsSync(CHROME)) throw new Error(`no chromium at ${CHROME}`);
+  const started = await startChrome() || await startChrome();
+  if (!started) throw new Error('chromium never exposed a debugging port');
+  const { chrome, profile, wsUrl } = started;
 
   const ws = new WebSocket(wsUrl);
   await new Promise((resolve, reject) => {

@@ -92,7 +92,7 @@ const HOME_CSS = `
   /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
   .hero-card{flex-direction:row;align-items:center;gap:11px;padding:10px}
-  .hero-media{flex:0 0 104px;width:104px;aspect-ratio:1}
+  .hero-media{flex:0 0 116px;width:116px;aspect-ratio:1}
   .hero-info{gap:4px}
   .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px}
   .hero-tag{font-size:9px;padding:2px 7px}
