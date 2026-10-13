@@ -53,16 +53,23 @@ img{max-width:100%}
 .skip-link:focus{top:0}
 
 /* ── Header ─────────────────────────────────────────────── */
-.topline{padding:9px 16px;padding:calc(9px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 9px calc(16px + env(safe-area-inset-left));background:var(--ink);color:#dbe4dd;text-align:center;font-size:12px;letter-spacing:.01em}
-.topline strong{color:var(--lime);font-weight:700}
-.nav{display:flex;align-items:center;gap:14px;min-height:68px;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:9px;min-height:44px;font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
-.mark{display:grid;place-items:center;flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--lime);color:var(--lime-ink);font-size:16px}
-.nav-links{display:flex;align-items:center;gap:2px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 11px;border-radius:9px;color:var(--muted);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s ease,background .15s ease}
-.nav-links a:hover{background:var(--line-2);color:var(--ink)}
-.nav-links a[aria-current=page]{color:var(--ink);background:var(--line-2)}
+/* One sticky dark bar: the old design stacked a topline strip over a plain
+   light nav, which read as two unrelated chrome layers. */
+.hdr{position:sticky;top:0;z-index:40;background:var(--ink);color:#e7eee8;box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.hdr-in{display:flex;align-items:center;gap:16px;min-height:62px;padding-top:calc(8px + env(safe-area-inset-top));padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;color:#fff;text-decoration:none;white-space:nowrap}
+.mark{display:grid;place-items:center;flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--lime);color:var(--lime-ink);font-family:var(--font-display);font-size:12px;font-weight:800;letter-spacing:-.03em}
+.wordmark{display:flex;flex-direction:column;gap:1px;line-height:1.12}
+.wordmark b{font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:-.03em}
+.wordmark i{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#93a199}
+.nav-links{display:flex;align-items:center;gap:2px;margin-inline-start:auto}
+.nav-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 11px;border-radius:9px;color:#a9b7ac;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s ease,background .15s ease}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav-links a[aria-current=page]{color:var(--lime-ink);background:var(--lime)}
+.live{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;margin-inline-start:14px;padding:6px 12px;border-radius:99px;background:rgba(200,242,108,.1);color:var(--lime);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:live-pulse 2.2s ease-in-out infinite}
+@keyframes live-pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,242,108,.55)}55%{box-shadow:0 0 0 6px rgba(200,242,108,0)}}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
 
 /* ── Hero ───────────────────────────────────────────────── */
 .hero{padding:44px 0 26px}
@@ -164,18 +171,22 @@ img{max-width:100%}
 @media (max-width:820px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nav{flex-wrap:wrap;min-height:0;padding:10px 0}
-  /* Every category must be reachable: the row used to scroll off-screen with a
-     half-clipped "Ama…" and no affordance, so the links wrapped instead. */
-  .nav-links{margin-inline-start:0;width:100%;flex-wrap:wrap;overflow:visible;gap:4px}
+  .hdr-in{flex-wrap:wrap;min-height:0;gap:6px 12px}
+  .live{margin-inline-start:auto}
+  /* Categories become one thumb-scrollable row instead of wrapping into a tall
+     block: the fade at the right edge is the "there is more" affordance. */
+  .nav-links{order:3;width:100%;margin-inline-start:0;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding-bottom:2px;mask-image:linear-gradient(90deg,#000 calc(100% - 30px),transparent)}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{border-radius:99px;background:rgba(255,255,255,.07)}
+  .nav-links a[aria-current=page]{background:var(--lime)}
   .hero{padding:26px 0 18px}
 }
 @media (max-width:560px){
   .wrap{padding-inline:16px;padding-inline:calc(16px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right))}
-  .brand{font-size:16px}
-  /* 44px is the smallest reliably hittable row on a phone; at 36px the links were
-     hard to tap and sat inside a 40px-high .nav that also shrank on some devices. */
-  .nav-links a{min-height:44px;padding:0 11px;font-size:13px}
+  .wordmark b{font-size:15px}
+  .live-sub{display:none}
+  /* 44px is the smallest reliably hittable row on a phone. */
+  .nav-links a{min-height:44px;padding:0 13px;font-size:13px}
   .hero{padding:20px 0 14px}
   .hero h1{margin-top:9px;font-size:clamp(28px,8.5vw,36px);letter-spacing:-.045em}
   .hero .lede{margin-top:12px;font-size:14.5px;line-height:1.55}
@@ -296,10 +307,12 @@ export function renderNav(current) {
   }).join('');
 
   return `<a class="skip-link" href="#main">Skip to deals</a>
-<div class="topline"><strong>Live deal feed</strong> &middot; Amazon &amp; Flipkart prices, refreshed every ${REFRESH_MINUTES} minutes</div>
-<header class="wrap nav">
-<a class="brand" href="/"><span class="mark" aria-hidden="true">&nearr;</span> ${escapeHtml(SITE_NAME)}</a>
+<header class="hdr">
+<div class="wrap hdr-in">
+<a class="brand" href="/" aria-label="${escapeHtml(SITE_NAME)} — home"><span class="mark" aria-hidden="true">a&rarr;f</span><span class="wordmark"><b>Deals Grabber</b><i>Amazon &rarr; Flipkart</i></span></a>
 <nav class="nav-links" aria-label="Deal categories">${items}</nav>
+<span class="live" title="Prices re-crawled about every ${REFRESH_MINUTES} minutes"><span class="live-dot" aria-hidden="true"></span>Live<span class="live-sub">&nbsp;&middot;&nbsp;every ${REFRESH_MINUTES}m</span></span>
+</div>
 </header>`;
 }
 
