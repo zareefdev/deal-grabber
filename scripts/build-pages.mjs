@@ -61,8 +61,8 @@ const HOME_CSS = `
 .spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}
 .hero-card{display:flex;flex-direction:column;gap:11px;padding:12px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
 .hero-card:hover{transform:translateY(-3px);border-color:var(--lime)}
-.hero-media{position:relative;display:grid;place-items:center;aspect-ratio:4/3;border-radius:11px;background:#fff;overflow:hidden}
-.hero-media img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:11px;background:#fff;overflow:hidden}
+.hero-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .hero-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
 .hero-info{display:flex;flex:1;flex-direction:column;gap:7px}
 .hero-tag{align-self:flex-start;padding:3px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
@@ -92,7 +92,7 @@ const HOME_CSS = `
   /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
   .hero-card{flex-direction:row;align-items:center;gap:11px;padding:10px}
-  .hero-media{flex:0 0 88px;width:88px;aspect-ratio:1}
+  .hero-media{flex:0 0 104px;width:104px;aspect-ratio:1}
   .hero-info{gap:4px}
   .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px}
   .hero-tag{font-size:9px;padding:2px 7px}
