@@ -72,10 +72,15 @@ img{max-width:100%}
 @media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
 
 /* ── Hero ───────────────────────────────────────────────── */
-.hero{padding:44px 0 26px}
+/* Dark stage: the header is a sticky dark bar, so the hero continues that
+   surface instead of dropping back to paper mid-fold. Headline, lede and the
+   flagship spotlight all sit on one rounded panel — previously the spotlight
+   was a second dark box floating inside a light hero, a box-in-a-box. */
+.hero{margin:28px 0 26px;padding:clamp(22px,3.6vw,42px) clamp(16px,3vw,40px) clamp(20px,3vw,36px);border-radius:26px;background:radial-gradient(90% 70% at 88% -8%,rgba(200,242,108,.13),transparent 60%),linear-gradient(160deg,#182621,#0c1511 70%);color:#e7eee8;box-shadow:0 30px 60px -45px rgba(15,26,21,.6)}
 .eyebrow{color:var(--lime-deep);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
-.hero h1{max-width:19ch;margin:12px 0 0;font-family:var(--font-display);font-size:clamp(34px,6vw,60px);font-weight:700;letter-spacing:-.05em;line-height:1.02}
-.hero .lede{max-width:62ch;margin:16px 0 0;color:var(--muted);font-size:16px;line-height:1.6}
+.hero .eyebrow{color:var(--lime)}
+.hero h1{max-width:19ch;margin:12px 0 0;color:#f3f7f0;font-family:var(--font-display);font-size:clamp(32px,5.6vw,56px);font-weight:700;letter-spacing:-.05em;line-height:1.03}
+.hero .lede{max-width:62ch;margin:14px 0 0;color:#a7b5aa;font-size:15.5px;line-height:1.6}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 16px;color:var(--muted-2);font-size:12px}
 .crumbs a{text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -168,9 +173,10 @@ img{max-width:100%}
 .note{margin:20px 0 0;color:var(--muted-2);font-size:11.5px;line-height:1.6}
 
 @media (max-width:1000px){.deal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:820px){
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* The single-row header (brand + 7 links + LIVE) needs ~950px to fit; below that
+   the nav wraps to its scrollable pill row. It used to break at 820, which left
+   821-950px viewports with a sideways-scrolling page and a clipped LIVE badge. */
+@media (max-width:980px){
   .hdr-in{flex-wrap:wrap;min-height:0;gap:6px 12px}
   .live{margin-inline-start:auto}
   /* Categories become one thumb-scrollable row instead of wrapping into a tall
@@ -179,7 +185,11 @@ img{max-width:100%}
   .nav-links::-webkit-scrollbar{display:none}
   .nav-links a{border-radius:99px;background:rgba(255,255,255,.07)}
   .nav-links a[aria-current=page]{background:var(--lime)}
-  .hero{padding:26px 0 18px}
+}
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero{margin:20px 0 20px;border-radius:22px}
 }
 @media (max-width:560px){
   .wrap{padding-inline:16px;padding-inline:calc(16px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right))}
@@ -187,7 +197,7 @@ img{max-width:100%}
   .live-sub{display:none}
   /* 44px is the smallest reliably hittable row on a phone. */
   .nav-links a{min-height:44px;padding:0 13px;font-size:13px}
-  .hero{padding:20px 0 14px}
+  .hero{margin:16px 0 18px;padding:20px 15px;border-radius:20px}
   .hero h1{margin-top:9px;font-size:clamp(28px,8.5vw,36px);letter-spacing:-.045em}
   .hero .lede{margin-top:12px;font-size:14.5px;line-height:1.55}
   .stats{margin-bottom:18px}

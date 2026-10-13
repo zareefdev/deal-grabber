@@ -54,24 +54,27 @@ const HOME_CSS = `
 .dot.error{background:#c2453a}
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
 
-.spotlight{margin:26px 0 0;padding:6px 6px 8px;border-radius:20px;background:linear-gradient(150deg,#1d2a23,#101a15);color:#e7eee8}
+/* The spotlight no longer brings its own box: it sits directly on the hero's
+   dark stage panel, so only the cards read as surfaces. */
+.spotlight{margin:clamp(18px,3vw,26px) 0 0}
 .spotlight[hidden]{display:none}
-.spotlight-title{margin:0;font-family:var(--font-display);font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.04em}
-.spotlight-note{margin:5px 0 0;color:#93a199;font-size:11.5px;line-height:1.5}
-.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:11px}
-.hero-card{display:flex;flex-direction:column;gap:8px;padding:3px;border:1px solid #2b3831;border-radius:15px;background:#1e2a23;color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
-.hero-card:hover{transform:translateY(-3px);border-color:var(--lime)}
-.hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:11px;background:#fff;overflow:hidden}
+.spotlight-title{margin:0;font-family:var(--font-display);font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-.04em;color:#eef3e9}
+.spotlight-note{margin:5px 0 0;color:#8ea096;font-size:11.5px;line-height:1.5}
+.spotlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.hero-card{display:flex;flex-direction:column;gap:9px;padding:4px;border:1px solid #2a3830;border-radius:16px;background:linear-gradient(165deg,#1d2b24,#15211b);color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.hero-card:hover{transform:translateY(-3px);border-color:rgba(200,242,108,.5);box-shadow:0 20px 36px -26px rgba(0,0,0,.65)}
+.hero-media{position:relative;display:block;aspect-ratio:1/1;border-radius:12px;background:#fff;overflow:hidden}
 .hero-media img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .hero-media .image-fallback,.image-fallback{display:grid;place-items:center;height:100%;color:#a5aaa2;font-size:12px}
-.hero-info{display:flex;flex:1;flex-direction:column;gap:7px;min-width:0}
-.hero-tag{align-self:flex-start;padding:3px 8px;border-radius:99px;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.hero-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;font-size:12.5px;line-height:1.35;font-weight:600}
+.hero-info{display:flex;flex:1;flex-direction:column;gap:8px;min-width:0}
+.hero-tag{align-self:flex-start;padding:3px 9px;border:1px solid rgba(200,242,108,.3);border-radius:99px;background:rgba(200,242,108,.1);color:var(--lime);font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.hero-info h3{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:2.6em;margin:0;color:#e4ebe4;font-size:12.5px;line-height:1.35;font-weight:600}
 .hero-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin-top:auto}
-.hero-now{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.035em}
-.hero-was{color:#93a199;font-size:11px;text-decoration:line-through}
-.hero-off{padding:3px 7px;border-radius:6px;background:rgba(200,242,108,.16);color:var(--lime);font-size:10.5px;font-weight:800;white-space:nowrap}
-.hero-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:8px;border-top:1px solid #2b3831;color:#c2cfc6;font-size:11px;font-weight:700}
+.hero-now{font-family:var(--font-display);font-size:19px;font-weight:700;letter-spacing:-.035em;color:#fff}
+.hero-was{color:#87958b;font-size:11px;text-decoration:line-through}
+.hero-off{padding:3px 8px;border-radius:7px;background:var(--lime);color:var(--lime-ink);font-size:10.5px;font-weight:800;white-space:nowrap}
+.hero-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:9px;border-top:1px solid #2b3931;color:#9db0a2;font-size:11px;font-weight:700}
+.hero-cta span:last-child{color:var(--lime)}
 
 .alerts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 22px;margin:0 0 26px;padding:17px 19px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .alerts[hidden]{display:none}
@@ -84,28 +87,36 @@ const HOME_CSS = `
 .alerts-btn:disabled{opacity:.55;cursor:default}
 .alerts-state{flex-basis:100%;color:var(--muted);font-size:11px}
 
-.hero h1 span{color:var(--lime-deep)}
+.hero h1 span{color:var(--lime)}
 @media (max-width:850px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){
-  .spotlight{padding:14px;border-radius:17px}
+  .spotlight{margin:16px 0 0}
   /* minmax(0,1fr), not 1fr: a bare 1fr track is floored at its min-content, so one
      flagship whose title holds a long unbreakable token widened the single column —
      and every card in it — past the phone's width, scrolling the page sideways.
      The row's info column needs min-width:0 for the same reason. */
-  .spotlight-grid{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:13px}
+  .spotlight-grid{grid-template-columns:minmax(0,1fr);gap:9px;margin-top:12px}
   /* Row layout: image left, price and CTA on one line, so the flagships stack into
      a phone screen without the title wrapping into a paragraph. */
   .hero-card{flex-direction:row;align-items:center;gap:8px;padding:6px;min-width:0;overflow:hidden}
   .hero-media{flex:0 0 192px;width:192px;aspect-ratio:1}
   .hero-info{gap:4px;min-width:0}
   .hero-info h3{-webkit-line-clamp:2;min-height:0;font-size:12px;overflow-wrap:anywhere}
-  .hero-tag{font-size:9px;padding:2px 7px}
+  .hero-tag{font-size:9px;padding:2px 8px}
   .hero-now{font-size:16px}
   .hero-was{font-size:10.5px}
   .hero-off{font-size:10px}
   .hero-cta{padding-top:6px;font-size:10.5px}
   .alerts{padding:14px}
   .alerts-btn{flex:1 1 auto}
+}
+/* Smallest phones: 192px leaves the info column ~110px, so the brand tag and the
+   CTA wrapped onto two lines. One notch off the image buys a full line back. */
+@media (max-width:380px){
+  .hero-media{flex:0 0 168px;width:168px}
+  .hero-tag{white-space:nowrap}
+  .hero-cta{white-space:nowrap;gap:6px}
+  .hero-cta span:last-child{font-size:10px}
 }
 `.trim();
 
