@@ -21,8 +21,13 @@ const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
 const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
 const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 // The published feed holds at most this many deals in total, split 70/30 across
-// stores, and every listing must clear this price floor. Rows that are stale
-// (carried over, not seen this run) or out of stock are dropped outright.
+// stores, and every listing must clear this price floor. Out-of-stock rows are
+// dropped outright. Carried (not seen this run) rows publish only while their
+// last fresh sighting is within PUBLISH_GRACE_MS — roughly three 20-minute
+// refresh cycles. Without that window one fully blocked Amazon run blanks the
+// store for half an hour, even though the deals it confirmed an hour ago are
+// still live; with it, an unconfirmed listing simply ages out after the grace.
+const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 90 * 60 * 1000);
 const MAX_DEALS = Number(process.env.MAX_DEALS || 500);
 const MIN_DEAL_PRICE = Number(process.env.MIN_DEAL_PRICE || 1000);
 // Amazon's slice of MAX_DEALS; the remainder is Flipkart's. Mirrors the client mix.
@@ -67,8 +72,9 @@ if (restoredSnapshots.length) {
   // A restored snapshot can predate these rules, so strip stale/out-of-stock and
   // sub-₹1000 rows here too — the first response is already clean.
   const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
-  cache.amazon = { ...cache.amazon, deals: finaliseStoreDeals(cache.amazon.deals, amazonBudget) };
-  cache.flipkart = { ...cache.flipkart, deals: finaliseStoreDeals(cache.flipkart.deals, MAX_DEALS - amazonBudget) };
+  const restoreNow = Date.now();
+  cache.amazon = { ...cache.amazon, deals: finaliseStoreDeals(cache.amazon.deals, amazonBudget, restoreNow) };
+  cache.flipkart = { ...cache.flipkart, deals: finaliseStoreDeals(cache.flipkart.deals, MAX_DEALS - amazonBudget, restoreNow) };
   cache.amazon.total = cache.amazon.deals.length;
   cache.flipkart.total = cache.flipkart.deals.length;
   cache.total = cache.amazon.total + cache.flipkart.total;
@@ -325,6 +331,19 @@ async function getAmazonContext() {
   return amazonContextPromise;
 }
 
+// Discard the current Amazon browser session (cookies and all) so the next
+// getAmazonContext() call builds a freshly warmed one.
+async function resetAmazonContext() {
+  const pending = amazonContextPromise;
+  amazonContextPromise = null;
+  if (!pending) return;
+  try {
+    const context = await pending;
+    await context?.close();
+  } catch {}
+  debugAmazon('context rotated after block streak');
+}
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const jitter = (min, max) => Math.round(min + Math.random() * (max - min));
 
@@ -498,12 +517,17 @@ const AMAZON_SEARCHES = [
   { query: 'iphone', category: 'Mobiles' },
   { query: 'samsung galaxy s', category: 'Mobiles' }
 ];
-const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 150000);
+const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 180000);
 const AMAZON_PAGE_TIMEOUT_MS = Number(process.env.AMAZON_PAGE_TIMEOUT_MS || 15000);
 // A blocked query renders no result cards at all, so the selector wait is really
-// a bot check. Detect it quickly and retry before writing the query off.
-const AMAZON_SELECTOR_WAIT_MS = Number(process.env.AMAZON_SELECTOR_WAIT_MS || 4000);
-const AMAZON_QUERY_RETRIES = Number(process.env.AMAZON_QUERY_RETRIES || 2);
+// a bot check. Detect it quickly and retry before writing the query off. The
+// wait is long enough for a self-resolving interstitial challenge to finish.
+const AMAZON_SELECTOR_WAIT_MS = Number(process.env.AMAZON_SELECTOR_WAIT_MS || 6000);
+const AMAZON_QUERY_RETRIES = Number(process.env.AMAZON_QUERY_RETRIES || 3);
+// Once this many consecutive queries render nothing, the session is baked into
+// a blocked state (the interstitial pins its verdict to the cookies), so the
+// next query runs in a brand-new context instead of reusing poisoned warm-up.
+const AMAZON_RESET_AFTER_BLOCKED = Number(process.env.AMAZON_RESET_AFTER_BLOCKED || 2);
 const debugAmazon = (...args) => { if (process.env.DEBUG_AMAZON) console.error('[amazon]', ...args); };
 
 // Runs inside the page (serialised by page.evaluate): reads the search result
@@ -569,7 +593,7 @@ async function fetchAmazonSearchRendered(query, category) {
   for (let attempt = 0; attempt <= AMAZON_QUERY_RETRIES; attempt++) {
     const deals = await amazonSearchAttempt(context, query, category, attempt);
     if (deals.length) return deals;
-    if (attempt < AMAZON_QUERY_RETRIES) await sleep(jitter(1500, 4000));
+    if (attempt < AMAZON_QUERY_RETRIES) await sleep(jitter(2000, 6000));
   }
   debugAmazon('giving up on', query, 'after', AMAZON_QUERY_RETRIES + 1, 'attempts');
   return [];
@@ -766,12 +790,21 @@ async function loadFromAmazonScrape() {
   // discounts. Rotating the query order nudges the budget-limited tail around.
   const searchDeals = [];
   let blocked = baseDeals.length ? 0 : 1;
+  let zeroStreak = 0;
   const deadline = Date.now() + AMAZON_BUDGET_MS;
   for (const { query, category } of shuffle(AMAZON_SEARCHES)) {
     const remaining = deadline - Date.now();
     if (remaining < 8000) { blocked++; continue; }
     const rendered = await withTimeout(fetchAmazonSearchRendered(query, category), remaining - 500, []);
-    if (!rendered.length) blocked++;
+    if (!rendered.length) {
+      blocked++;
+      if (++zeroStreak >= AMAZON_RESET_AFTER_BLOCKED) {
+        // The block has latched onto this session — drop it and warm a new one
+        // instead of spending the rest of the budget on poisoned cookies.
+        await resetAmazonContext();
+        zeroStreak = 0;
+      }
+    } else zeroStreak = 0;
     searchDeals.push(...rendered);
     // Space the navigations out a little; back-to-back requests from one IP are
     // what triggers the interstitial in the first place.
@@ -981,23 +1014,26 @@ function dealPriceValue(deal) {
   return Number(String((deal && deal.price) || '').replace(/[^\d]/g, '')) || 0;
 }
 
-// A deal reaches the page only if it was seen fresh this run, is in stock, and
-// costs at least MIN_DEAL_PRICE. Stale carries and out-of-stock rows are dropped
-// here rather than merely flagged, so nothing dead can reach the feed.
-function isPublishableDeal(deal) {
-  if (!deal || deal.stale) return false;
+// A deal reaches the page only if it is in stock and costs at least
+// MIN_DEAL_PRICE, and either it was confirmed fresh this run or its last fresh
+// sighting is within the publish grace. Grace-carried rows are emitted with the
+// stale flag cleared so every consumer (static build, client filter, badges)
+// treats them as ordinary live listings; rows older than the grace are dropped.
+function isPublishableDeal(deal, now) {
+  if (!deal) return false;
+  if (deal.stale && now - (Date.parse(deal.lastSeen) || 0) > PUBLISH_GRACE_MS) return false;
   if (deal.available === false) return false;
   return dealPriceValue(deal) >= MIN_DEAL_PRICE;
 }
 
 // Filters a store's merged pool down to publishable deals, dedupes by id and
 // caps it at `budget` so the combined feed respects MAX_DEALS.
-function finaliseStoreDeals(deals, budget) {
+function finaliseStoreDeals(deals, budget, now) {
   const seen = new Set(), out = [];
   for (const d of deals || []) {
-    if (!isPublishableDeal(d) || seen.has(d.id)) continue;
+    if (!isPublishableDeal(d, now) || seen.has(d.id)) continue;
     seen.add(d.id);
-    out.push(d);
+    out.push(d.stale ? { ...d, stale: false } : d);
     if (out.length >= budget) break;
   }
   return out;
@@ -1017,8 +1053,8 @@ async function scrapeDeals() {
   // Publish only fresh, in-stock, ₹1000+ deals, split 70/30 and capped so the two
   // stores together never exceed MAX_DEALS.
   const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
-  const amazonDeals = finaliseStoreDeals(amazon.deals, amazonBudget);
-  const flipkartDeals = finaliseStoreDeals(flipkart.deals, MAX_DEALS - amazonBudget);
+  const amazonDeals = finaliseStoreDeals(amazon.deals, amazonBudget, now);
+  const flipkartDeals = finaliseStoreDeals(flipkart.deals, MAX_DEALS - amazonBudget, now);
 
   // Deduplicate across stores
   const seen = new Set();
