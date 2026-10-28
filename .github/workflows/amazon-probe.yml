@@ -28,16 +28,16 @@ jobs:
             'upgrade-insecure-requests': '1'
           };
           const urls = [
-            'https://www.amazon.in/deals',
-            'https://www.amazon.in/gp/goldbox',
             'https://www.amazon.in/gp/bestsellers/electronics',
-            'https://www.amazon.in/gp/rss/bestsellers/electronics',
-            'https://www.amazon.in/gp/rss/new-releases/electronics',
-            'https://www.amazon.in/gp/rss/movers-and-shakers/electronics',
-            'https://www.amazon.in/gp/aw/s?k=smartphone',
-            'https://www.amazon.in/s?k=smartphone',
-            'https://www.amazon.in/s?k=smartphone&i=electronics',
-            'https://www.amazon.in/s?k=laptop&ref=nb_sb_noss'
+            'https://www.amazon.in/gp/bestsellers/electronics?pg=2',
+            'https://www.amazon.in/gp/bestsellers/computers',
+            'https://www.amazon.in/gp/bestsellers/computers?pg=2',
+            'https://www.amazon.in/gp/new-releases/electronics',
+            'https://www.amazon.in/gp/new-releases/computers',
+            'https://www.amazon.in/gp/movers-and-shakers/electronics',
+            'https://www.amazon.in/gp/movers-and-shakers/computers',
+            'https://www.amazon.in/gp/bestsellers/electronics/1389401031',
+            'https://www.amazon.in/gp/bestsellers/electronics/1388921031'
           ];
           for (const url of urls) {
             const t0 = Date.now();
@@ -47,9 +47,11 @@ jobs:
               const asins = new Set([...body.matchAll(/data-asin="([A-Z0-9]{10})"/g)].map(m => m[1]));
               const offscreen = (body.match(/a-offscreen/g) || []).length;
               const rssItems = (body.match(/<item>/g) || []).length;
+              const chartCells = (body.match(/p13n-sc-uncoverable-faceout/g) || []).length;
+              const chartPrices = (body.match(/p13n-sc-price/g) || []).length;
               console.log(JSON.stringify({
                 url, status: r.status, len: body.length, asins: asins.size,
-                offscreen, rssItems, ms: Date.now() - t0,
+                offscreen, rssItems, chartCells, chartPrices, ms: Date.now() - t0,
                 challenge: /robot|api-services-support|captcha/i.test(body.slice(0, 4000))
               }));
             } catch (e) {
