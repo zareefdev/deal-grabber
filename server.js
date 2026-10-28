@@ -685,6 +685,86 @@ async function fetchAmazonSearchPlain(query, category, deadline) {
   return [];
 }
 
+// ── Amazon bestseller charts ─────────────────────────────────────
+// Amazon answers datacenter IPs with the robot interstitial on nearly every /s
+// search, but the bestseller and new-release charts are served normally (verified
+// from a GitHub runner). They are therefore the reliable breadth source for CI:
+// thirty cards per chart, each with a live price. Charts carry no MRP, so those
+// rows publish at their current price without a discount claim.
+const AMAZON_CHART_URLS = [
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/92071051031', category: 'Mobiles' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/1388921031', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/1389396031', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/1388977031', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/1375424031', category: 'Laptops' },
+  { url: 'https://www.amazon.in/gp/bestsellers/electronics/11599648031', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/new-releases/electronics', category: 'Electronics' },
+  { url: 'https://www.amazon.in/gp/new-releases/computers', category: 'Laptops' }
+];
+
+function amazonChartCategory(fallback, title) {
+  const t = String(title || '');
+  if (/\b(earbud|earbuds|buds|headphone|headphones|headset|speaker|soundbar|airpods)\b/i.test(t)) return 'Electronics';
+  if (/\b(laptop|notebook|macbook|chromebook|desktop|all-in-one)\b/i.test(t)) return 'Laptops';
+  if (/\b(phone|smartphone|mobile|iphone|galaxy|redmi|realme|oneplus|poco|vivo|oppo|iqoo|moto|nothing)\b/i.test(t)) return 'Mobiles';
+  return TECH_KEYWORDS.test(t) ? fallback : '';
+}
+
+// Charts render one `p13n-sc-uncoverable-faceout` block per card. The title and
+// price class hashes rotate, so match on the stable class prefix and read the
+// first rupee amount in the card as the payable price.
+function parseAmazonChartHtml(html, fallbackCategory) {
+  const out = [], seen = new Set();
+  for (const raw of html.split('p13n-sc-uncoverable-faceout').slice(1)) {
+    const cell = raw.slice(0, 9000);
+    const asin = (cell.match(/data-asin="([A-Z0-9]{10})"/) || [])[1];
+    if (!asin || seen.has(asin)) continue;
+    const titleMatch = cell.match(/p13n-sc-css-line-clamp-\d+_[A-Za-z0-9_-]+">([^<]+)</);
+    const title = titleMatch ? decodeHtml(titleMatch[1]).replace(/\s+/g, ' ').trim() : '';
+    const priceText = (cell.match(/₹\s*[\d,]+(?:\.\d+)?/) || [])[0] || '';
+    const pay = Number(priceText.replace(/[^\d.]/g, '')) || 0;
+    const category = amazonChartCategory(fallbackCategory, title);
+    if (!title || !pay || !category) continue;
+    const imgTag = (cell.match(/<img[^>]*>/g) || []).find(tag => tag.includes('p13n-product-image'));
+    const image = imgTag ? decodeHtml((imgTag.match(/src="([^"]+)"/) || [])[1] || '') : '';
+    seen.add(asin);
+    out.push({ asin, title: title.slice(0, 220), image, pay, category });
+  }
+  return out;
+}
+
+async function fetchAmazonChart({ url, category }) {
+  const label = url.split('/gp/')[1] || url;
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(AMAZON_PAGE_TIMEOUT_MS),
+      headers: {
+        'User-Agent': AMAZON_RENDER_UA,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-IN,en-US;q=0.9,en;q=0.8'
+      }
+    });
+    const html = await res.text();
+    if (!res.ok || /are you a robot|api-services-support@amazon|captcha/i.test(html.slice(0, 8000))) {
+      debugAmazon('chart', label, 'blocked', res.status, 'len=' + html.length);
+      return [];
+    }
+    const items = parseAmazonChartHtml(html, category);
+    debugAmazon('chart', label, 'items=' + items.length);
+    return items.map(item => ({
+      id: `amz-${item.asin}`, store: 'Amazon', title: item.title,
+      image: item.image, url: amazonUrl(item.asin),
+      price: `₹${Math.round(item.pay).toLocaleString('en-IN')}`,
+      originalPrice: '', discount: 0,
+      available: true, category: item.category
+    }));
+  } catch (err) {
+    debugAmazon('chart', label, 'failed:', err.message);
+    return [];
+  }
+}
+
 // ── Amazon Creators API (official product data) ──────────────────
 // The Creators API is the official successor to the deprecated Product Advertising
 // API 5.0. It is an authenticated REST call, so unlike page scraping it does not
@@ -872,10 +952,18 @@ async function loadFromAmazonScrape() {
     baseDeals = parseAmazon(await fetchAmazonHtml());
   } catch (err) { baseError = err.message; }
 
+  // Charts are the datacenter-safe source, so they run first: the run always has
+  // Amazon rows even when every /s search is challenged. They are cheap (~1s each).
+  const chartDeals = [];
+  for (const chart of AMAZON_CHART_URLS) {
+    chartDeals.push(...await fetchAmazonChart(chart));
+    await sleep(jitter(250, 700));
+  }
+
   // Search pages supply the bulk of the catalogue; the deal blob adds curated
   // discounts. Rotating the query order nudges the budget-limited tail around.
   const searchDeals = [];
-  let blocked = baseDeals.length ? 0 : 1;
+  let blocked = baseDeals.length || chartDeals.length ? 0 : 1;
   const queries = shuffle(AMAZON_SEARCHES);
   const startedAt = Date.now();
   const overallDeadline = startedAt + AMAZON_BUDGET_MS;
@@ -902,13 +990,13 @@ async function loadFromAmazonScrape() {
   }
 
   const seen = new Set();
-  const deals = [...baseDeals, ...searchDeals].filter(d => {
+  const deals = [...baseDeals, ...chartDeals, ...searchDeals].filter(d => {
     if (seen.has(d.id)) return false;
     seen.add(d.id);
     return true;
   });
 
-  debugAmazon('scrape complete', 'base=' + baseDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, 'blocked=' + blocked, baseError ? ('baseError=' + baseError) : '');
+  debugAmazon('scrape complete', 'base=' + baseDeals.length, 'charts=' + chartDeals.length, 'search=' + searchDeals.length, 'merged=' + deals.length, 'blocked=' + blocked, baseError ? ('baseError=' + baseError) : '');
 
   return {
     status: deals.length ? 'live' : 'error',
