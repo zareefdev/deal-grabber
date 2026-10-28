@@ -23,11 +23,10 @@ const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 // The published feed holds at most this many deals in total, split 70/30 across
 // stores, and every listing must clear this price floor. Out-of-stock rows are
 // dropped outright. Carried (not seen this run) rows publish only while their
-// last fresh sighting is within PUBLISH_GRACE_MS — roughly three 20-minute
-// refresh cycles. Without that window one fully blocked Amazon run blanks the
-// store for half an hour, even though the deals it confirmed an hour ago are
-// still live; with it, an unconfirmed listing simply ages out after the grace.
-const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 90 * 60 * 1000);
+// last fresh sighting is within PUBLISH_GRACE_MS. Amazon throttles datacenter
+// IPs in bursts of several hours, so the window matches the store hold: a
+// blocked stretch keeps last-confirmed listings up instead of blanking the store.
+const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 3 * 60 * 60 * 1000);
 const MAX_DEALS = Number(process.env.MAX_DEALS || 500);
 const MIN_DEAL_PRICE = Number(process.env.MIN_DEAL_PRICE || 1000);
 // Amazon's slice of MAX_DEALS; the remainder is Flipkart's. Mirrors the client mix.
@@ -331,19 +330,6 @@ async function getAmazonContext() {
   return amazonContextPromise;
 }
 
-// Discard the current Amazon browser session (cookies and all) so the next
-// getAmazonContext() call builds a freshly warmed one.
-async function resetAmazonContext() {
-  const pending = amazonContextPromise;
-  amazonContextPromise = null;
-  if (!pending) return;
-  try {
-    const context = await pending;
-    await context?.close();
-  } catch {}
-  debugAmazon('context rotated after block streak');
-}
-
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const jitter = (min, max) => Math.round(min + Math.random() * (max - min));
 
@@ -498,12 +484,20 @@ function parseAmazon(html) {
   return results;
 }
 
-// ── Amazon search-page scraper (rendered) ────────────────────────
+// ── Amazon search-page scraper ───────────────────────────────────
 // The /deals JSON blob only ever carries ~10 tech items and every Amazon deal
 // URL returns the identical payload, so extra breadth has to come from search
-// pages. A bare fetch trips Amazon's `bm-verify` interstitial; a real browser
-// clears it, so searches reuse the shared Chromium instance.
+// pages. Amazon throttles by connection fingerprint: from a datacenter IP a
+// headless Chromium gets the "are you a robot" 503 on every request, while a
+// plain HTTP fetch with a normal browser UA is served the real page much more
+// often. Plain fetch is therefore the primary path and the browser is the
+// fallback for networks where the plain request is challenged instead.
 const AMAZON_RENDER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+const AMAZON_FETCH_UAS = [
+  AMAZON_RENDER_UA,
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15'
+];
 const AMAZON_SEARCHES = [
   { query: 'laptop', category: 'Laptops' },
   { query: 'smartphone', category: 'Mobiles' },
@@ -517,17 +511,16 @@ const AMAZON_SEARCHES = [
   { query: 'iphone', category: 'Mobiles' },
   { query: 'samsung galaxy s', category: 'Mobiles' }
 ];
-const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 180000);
+const AMAZON_BUDGET_MS = Number(process.env.AMAZON_BUDGET_MS || 240000);
 const AMAZON_PAGE_TIMEOUT_MS = Number(process.env.AMAZON_PAGE_TIMEOUT_MS || 15000);
 // A blocked query renders no result cards at all, so the selector wait is really
 // a bot check. Detect it quickly and retry before writing the query off. The
 // wait is long enough for a self-resolving interstitial challenge to finish.
 const AMAZON_SELECTOR_WAIT_MS = Number(process.env.AMAZON_SELECTOR_WAIT_MS || 6000);
 const AMAZON_QUERY_RETRIES = Number(process.env.AMAZON_QUERY_RETRIES || 3);
-// Once this many consecutive queries render nothing, the session is baked into
-// a blocked state (the interstitial pins its verdict to the cookies), so the
-// next query runs in a brand-new context instead of reusing poisoned warm-up.
-const AMAZON_RESET_AFTER_BLOCKED = Number(process.env.AMAZON_RESET_AFTER_BLOCKED || 2);
+// Plain-fetch attempts per query before the browser fallback. Amazon's throttle
+// is per-request, so a spaced-out retry on a different UA often lands a 200.
+const AMAZON_FETCH_RETRIES = Number(process.env.AMAZON_FETCH_RETRIES || 2);
 const debugAmazon = (...args) => { if (process.env.DEBUG_AMAZON) console.error('[amazon]', ...args); };
 
 // Runs inside the page (serialised by page.evaluate): reads the search result
@@ -563,6 +556,70 @@ function normalizeAmazonSearchDeals(items, category) {
   }));
 }
 
+// Parses the server-rendered search cards out of the plain HTML response. Cards
+// are delimited by their ASIN; prices live in `.a-offscreen` spans, with the MRP
+// inside an `a-text-price` span and the payable price outside it.
+function parseAmazonSearchHtml(html) {
+  const out = [], seen = new Set();
+  const cards = [...html.matchAll(/data-asin="([A-Z0-9]{10})"/g)];
+  for (let i = 0; i < cards.length; i++) {
+    const asin = cards[i][1];
+    if (seen.has(asin)) continue;
+    const start = cards[i].index;
+    const end = i + 1 < cards.length ? cards[i + 1].index : Math.min(html.length, start + 12000);
+    const chunk = html.slice(start, end);
+    if (!chunk.includes('s-search-result')) continue;
+
+    const heading = chunk.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
+    const title = decodeHtml((heading ? heading[1] : '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    const imgTag = (chunk.match(/<img[^>]*>/g) || []).find(tag => tag.includes('s-image'));
+    const image = imgTag ? (imgTag.match(/src="([^"]+)"/) || [])[1] || '' : '';
+
+    let pay = 0, mrp = 0;
+    for (const m of chunk.matchAll(/class="([^"]*-price[^"]*)"[\s\S]{0,240}?<span class="a-offscreen">([^<]+)<\/span>/g)) {
+      const amount = Number(m[2].replace(/[^\d.]/g, '')) || 0;
+      if (!amount) continue;
+      if (m[1].includes('a-text-price')) { if (!mrp) mrp = amount; }
+      else if (!pay) pay = amount;
+    }
+    if (!pay) {
+      const whole = chunk.match(/<span class="a-price-whole">([\d,]+)/);
+      if (whole) pay = Number(whole[1].replace(/[^\d]/g, '')) || 0;
+    }
+    if (!title || !pay || seen.has(asin)) continue;
+    seen.add(asin);
+    out.push({ asin, title: title.slice(0, 220), image, pay, mrp: mrp > pay ? mrp : 0 });
+  }
+  return out;
+}
+
+// A single plain HTTP request for one search page. `blocked` distinguishes the
+// robot interstitial / throttle response from a page that simply had no cards.
+async function amazonSearchFetch(query, category, attempt) {
+  const url = `https://www.amazon.in/s?k=${encodeURIComponent(query)}`;
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(AMAZON_PAGE_TIMEOUT_MS),
+      headers: {
+        'User-Agent': AMAZON_FETCH_UAS[attempt % AMAZON_FETCH_UAS.length],
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-IN,en-US;q=0.9,en;q=0.8'
+      }
+    });
+    const html = await res.text();
+    if (!res.ok || /are you a robot|api-services-support@amazon|captcha/i.test(html)) {
+      debugAmazon('fetch', query, 'blocked', res.status, 'len=' + html.length);
+      return { deals: [], blocked: true };
+    }
+    const items = parseAmazonSearchHtml(html);
+    debugAmazon('fetch', query, 'items=' + items.length, 'len=' + html.length);
+    return { deals: normalizeAmazonSearchDeals(items, category), blocked: !items.length };
+  } catch (err) {
+    debugAmazon('fetch', query, 'failed:', err.message);
+    return { deals: [], blocked: true };
+  }
+}
+
 // A single navigation. Returns [] when no result cards render — either a genuinely
 // empty result set or, far more often on a datacenter IP, the robot interstitial.
 async function amazonSearchAttempt(context, query, category, attempt) {
@@ -596,6 +653,18 @@ async function fetchAmazonSearchRendered(query, category) {
     if (attempt < AMAZON_QUERY_RETRIES) await sleep(jitter(2000, 6000));
   }
   debugAmazon('giving up on', query, 'after', AMAZON_QUERY_RETRIES + 1, 'attempts');
+  return [];
+}
+
+// One query over plain HTTP, retried on a fresh UA after a throttle response.
+async function fetchAmazonSearchPlain(query, category, deadline) {
+  for (let attempt = 0; attempt <= AMAZON_FETCH_RETRIES; attempt++) {
+    const budget = deadline - Date.now();
+    if (budget < 4000) return [];
+    const { deals } = await withTimeout(amazonSearchFetch(query, category, attempt), budget, { deals: [], blocked: true });
+    if (deals.length) return deals;
+    if (attempt < AMAZON_FETCH_RETRIES) await sleep(jitter(2000, 5000));
+  }
   return [];
 }
 
@@ -790,25 +859,29 @@ async function loadFromAmazonScrape() {
   // discounts. Rotating the query order nudges the budget-limited tail around.
   const searchDeals = [];
   let blocked = baseDeals.length ? 0 : 1;
-  let zeroStreak = 0;
-  const deadline = Date.now() + AMAZON_BUDGET_MS;
-  for (const { query, category } of shuffle(AMAZON_SEARCHES)) {
-    const remaining = deadline - Date.now();
-    if (remaining < 8000) { blocked++; continue; }
-    const rendered = await withTimeout(fetchAmazonSearchRendered(query, category), remaining - 500, []);
-    if (!rendered.length) {
-      blocked++;
-      if (++zeroStreak >= AMAZON_RESET_AFTER_BLOCKED) {
-        // The block has latched onto this session — drop it and warm a new one
-        // instead of spending the rest of the budget on poisoned cookies.
-        await resetAmazonContext();
-        zeroStreak = 0;
-      }
-    } else zeroStreak = 0;
-    searchDeals.push(...rendered);
-    // Space the navigations out a little; back-to-back requests from one IP are
-    // what triggers the interstitial in the first place.
-    await sleep(jitter(400, 1500));
+  const queries = shuffle(AMAZON_SEARCHES);
+  const startedAt = Date.now();
+  const overallDeadline = startedAt + AMAZON_BUDGET_MS;
+  const plainDeadline = startedAt + Math.round(AMAZON_BUDGET_MS * 0.65);
+  for (const { query, category } of queries) {
+    if (plainDeadline - Date.now() < 6000) { blocked++; continue; }
+    const deals = await fetchAmazonSearchPlain(query, category, plainDeadline);
+    if (!deals.length) blocked++;
+    searchDeals.push(...deals);
+    // Space the requests out; back-to-back calls from one IP are what triggers
+    // the throttle page in the first place.
+    await sleep(jitter(1500, 3500));
+  }
+
+  // The plain path was fully challenged (a captcha-fenced network). Only then is
+  // it worth spending the remaining budget on a real browser.
+  if (!searchDeals.length) {
+    for (const { query, category } of queries) {
+      if (overallDeadline - Date.now() < 8000) break;
+      const deals = await withTimeout(fetchAmazonSearchRendered(query, category), overallDeadline - Date.now() - 500, []);
+      if (deals.length) { searchDeals.push(...deals); blocked = Math.max(0, blocked - 1); }
+      await sleep(jitter(400, 1500));
+    }
   }
 
   const seen = new Set();
