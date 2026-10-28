@@ -6,12 +6,18 @@
  *   2. Web push: render notifications sent by the daily job and route a click
  *      back into the live feed.
  *
+ * Only same-origin responses are cached. A cross-origin product image is an
+ * opaque response, and Chrome counts each one as a multi-megabyte quota entry,
+ * so caching a page of Amazon/Flipkart shots made the site report hundreds of
+ * MB of storage for a couple of MB of files. Those images are served by the
+ * browser's HTTP cache instead.
+ *
  * Bump VERSION whenever the caching rules change so old caches are dropped.
  */
-const VERSION = 'dg-v2';
+const VERSION = 'dg-v3';
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
-const MAX_RUNTIME_ENTRIES = 120;
+const MAX_RUNTIME_ENTRIES = 24;
 const SHELL = [
   '/',
   '/index.html',
@@ -45,11 +51,9 @@ self.addEventListener('activate', event => {
   })());
 });
 
-const isFont = url => /(^|\.)(googleapis|gstatic)\.com$/.test(url.hostname);
-const isImage = url =>
+const isStaticAsset = url =>
   url.pathname.startsWith('/icons/') ||
-  /\.(png|jpe?g|webp|gif|svg|avif)$/i.test(url.pathname) ||
-  /(^|\.)(media-amazon|ssl-images-amazon|flixcart)\.com$/.test(url.hostname);
+  /\.(png|jpe?g|webp|gif|svg|avif|woff2?)$/i.test(url.pathname);
 
 async function trimRuntime() {
   const cache = await caches.open(RUNTIME_CACHE);
@@ -74,8 +78,10 @@ self.addEventListener('fetch', event => {
   // Push endpoints (including the VAPID key) always reach the network.
   if (url.pathname.startsWith('/api/push')) return;
 
-  const sameOrigin = url.origin === self.location.origin;
-  if (!sameOrigin && !isFont(url) && !isImage(url)) return;
+  // Cross-origin requests (product images, webfonts) go straight to the network
+  // cache. Storing them here would double the footprint and inflate the quota
+  // with opaque-response padding.
+  if (url.origin !== self.location.origin) return;
 
   // Navigations: network-first, then the cached shell.
   if (request.mode === 'navigate') {
@@ -113,8 +119,8 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Product images and webfonts are immutable enough to serve cache-first.
-  if (isFont(url) || isImage(url)) {
+  // Same-origin icons and screenshots are immutable enough to serve cache-first.
+  if (isStaticAsset(url)) {
     event.respondWith((async () => {
       const cached = await caches.match(request);
       if (cached) return cached;

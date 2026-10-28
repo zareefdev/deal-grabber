@@ -11,8 +11,9 @@
 
 # The service worker controls caching for everything else, so it must never be
 # served from an old copy — a stale sw.js would pin the previous cache rules.
+# Pages ignores `no-cache` here and serves its 4-hour default, so use no-store.
 /sw.js
-  cache-control: no-cache
+  cache-control: no-store
   service-worker-allowed: /
 
 /manifest.webmanifest
