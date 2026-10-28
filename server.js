@@ -1,7 +1,7 @@
 const http = require('node:http');
 const { createHash } = require('node:crypto');
 const { readFile, writeFile } = require('node:fs/promises');
-const { existsSync, readdirSync, readFileSync, writeFileSync } = require('node:fs');
+const { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
@@ -12,6 +12,10 @@ const cacheFile = path.join(__dirname, 'public', 'deals.json');
 // the merge ledger alive between runs. It is gitignored locally and restored from
 // the Actions cache in CI, so a fresh checkout still knows what it saw last time.
 const stateFile = path.join(__dirname, '.deal-state.json');
+// Amazon rows confirmed over a residential connection, committed to the repo and
+// restored by CI. Datacenter IPs are throttled in multi-hour bursts, so this is
+// the floor that keeps Amazon on the page while the runner is blocked.
+const seedFile = path.join(__dirname, 'data', 'amazon-seed.json');
 
 // Unseen deals survive a merge for this long before being expired for good. A
 // scrape that returns fewer rows than last time never deletes the difference
@@ -24,9 +28,10 @@ const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 // stores, and every listing must clear this price floor. Out-of-stock rows are
 // dropped outright. Carried (not seen this run) rows publish only while their
 // last fresh sighting is within PUBLISH_GRACE_MS. Amazon throttles datacenter
-// IPs in bursts of several hours, so the window matches the store hold: a
-// blocked stretch keeps last-confirmed listings up instead of blanking the store.
-const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 3 * 60 * 60 * 1000);
+// IPs in bursts that last for hours, so this window is deliberately long: an
+// unconfirmed row stays up with its last-confirmed price until a fresh scrape
+// replaces it or the window lapses.
+const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 6 * 60 * 60 * 1000);
 const MAX_DEALS = Number(process.env.MAX_DEALS || 500);
 const MIN_DEAL_PRICE = Number(process.env.MIN_DEAL_PRICE || 1000);
 // Amazon's slice of MAX_DEALS; the remainder is Flipkart's. Mirrors the client mix.
@@ -48,11 +53,13 @@ let cachedAt = 0;
 let inflight = null;
 
 // Restore the last good scrape so a restart cannot regress the page to one store
-// while Flipkart is transiently blocked. There are two candidates: the private
-// sidecar, which is rewritten on every scrape, and the committed public/deals.json,
-// which in CI is the rich snapshot captured on a residential IP. Take whichever
-// holds more of each store, so the committed floor is never shadowed by a smaller
-// ledger the runner accumulated.
+// while Flipkart is transiently blocked. There are three candidates: the private
+// sidecar, which is rewritten on every scrape, the committed public/deals.json,
+// which in CI is the rich snapshot captured on a residential IP, and the
+// residential Amazon seed, which is refreshed from a home connection and is what
+// keeps the Amazon half of the feed populated while CI's datacenter IP is
+// throttled. Take whichever holds more of each store, so the committed floor is
+// never shadowed by a smaller ledger the runner accumulated.
 const restoredSnapshots = [];
 for (const file of [stateFile, cacheFile]) {
   try {
@@ -60,6 +67,16 @@ for (const file of [stateFile, cacheFile]) {
     if (parsed && parsed.amazon && parsed.flipkart) restoredSnapshots.push(parsed);
   } catch {}
 }
+try {
+  const seed = JSON.parse(readFileSync(seedFile, 'utf8'));
+  if (seed && Array.isArray(seed.deals) && seed.deals.length) {
+    restoredSnapshots.push({
+      updatedAt: seed.updatedAt,
+      amazon: { status: 'live', deals: seed.deals, total: seed.deals.length },
+      flipkart: { status: 'live', deals: [], total: 0 }
+    });
+  }
+} catch {}
 if (restoredSnapshots.length) {
   const richerStore = key => restoredSnapshots.reduce((best, snap) =>
     ((snap[key].deals || []).length > (best[key].deals || []).length ? snap : best), restoredSnapshots[0]);
@@ -1341,8 +1358,32 @@ process.on('SIGTERM', shutdown);
 
 // ── Entry point ──────────────────────────────────────────────────
 // `--once` runs a single scrape and exits; the scheduled GitHub Actions job uses it
-// to refresh public/deals.json. Otherwise start the local development server.
-if (process.argv.includes('--once')) {
+// to refresh public/deals.json. `--amazon-seed` scrapes only Amazon and rewrites
+// data/amazon-seed.json, the residential floor CI restores from. Otherwise start
+// the local development server.
+if (process.argv.includes('--amazon-seed')) {
+  loadFromAmazonScrape()
+    .then(async res => {
+      const deals = finaliseStoreDeals(res.deals, Math.round(MAX_DEALS * AMAZON_SHARE), Date.now());
+      if (!deals.length) {
+        console.error(`[seed] no Amazon rows scraped (blocked=${res.blocked}) — leaving the existing seed in place`);
+        process.exitCode = 1;
+        return;
+      }
+      const stamp = new Date().toISOString();
+      const payload = JSON.stringify({
+        updatedAt: stamp,
+        source: 'Residential Amazon scrape',
+        deals: deals.map(d => ({ ...d, lastSeen: stamp }))
+      }, null, 1);
+      mkdirSync(path.dirname(seedFile), { recursive: true });
+      await writeFile(seedFile, payload);
+      console.log(`[seed] wrote ${deals.length} Amazon deals (blocked=${res.blocked}) to ${seedFile}`);
+    })
+    .catch(err => { console.error('[seed] scrape failed:', err.message); process.exitCode = 1; })
+    .then(closeBrowser)
+    .then(() => process.exit(process.exitCode || 0));
+} else if (process.argv.includes('--once')) {
   let failed = false;
   scrapeDeals()
     .catch(err => { failed = true; console.error('[deals] scrape failed:', err.message); })

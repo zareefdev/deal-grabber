@@ -20,3 +20,7 @@ public/under-5000/
 public/under-10000/
 public/under-25000/
 public/over-50000/
+
+.amazon-seed.log
+.amazon-seed.log.tmp
+.amazon-seed.launchd.log
