@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-30T04:51:14.684Z",
+ "updatedAt": "2026-10-30T05:12:17.421Z",
  "source": "Residential Amazon scrape",
  "deals": [
   {
@@ -13,20 +13,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FMDL81GS",
-   "store": "Amazon",
-   "title": "Samsung Original 45W Type-C Travel Adaptor with Cable, Black",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71hUPwNiLfL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FMDL81GS?tag=mdzareef-21",
-   "price": "₹1,495",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B098NS6PVG",
@@ -39,7 +26,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DSKNKCYX",
@@ -52,7 +39,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H1WY1D37",
@@ -65,7 +52,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DDHM6D3L",
@@ -78,7 +65,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DBGP48NW",
@@ -91,7 +78,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DGJHBX5Y",
@@ -104,7 +91,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DSFTRX77",
@@ -117,7 +104,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F7Y54PJX",
@@ -130,7 +117,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FP22HBH9",
@@ -143,7 +130,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0CF1M3PF9",
@@ -156,7 +143,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FVFN2V57",
@@ -169,7 +156,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DSHZLRQB",
@@ -182,7 +169,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GRGY8GTV",
@@ -195,7 +182,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0CDGYCZF9",
@@ -208,7 +195,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F3XQGKDD",
@@ -221,7 +208,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FN89KT94",
@@ -234,7 +221,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FG3CT94S",
@@ -247,7 +234,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DNPWJLQC",
@@ -260,7 +247,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B08TV2P1N8",
@@ -273,7 +260,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H4ZB5NQV",
@@ -286,7 +273,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DZXTVL6V",
@@ -299,7 +286,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DZCRYG7R",
@@ -312,7 +299,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B07T5DKR5D",
@@ -325,7 +312,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FDGVNSLH",
@@ -338,7 +325,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GXBG2MNF",
@@ -351,7 +338,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0BQN2RMJF",
@@ -364,7 +351,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GDTRYXYF",
@@ -377,7 +364,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GX52LD7V",
@@ -390,7 +377,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GXB76VRW",
@@ -403,7 +390,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GXV5313B",
@@ -416,7 +403,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GXK5K633",
@@ -429,7 +416,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GVJSTKS6",
@@ -442,7 +429,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F3HWNTR1",
@@ -455,7 +442,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HBC8Q28H",
@@ -468,7 +455,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F7X5FC43",
@@ -481,7 +468,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DZHRYFG7",
@@ -494,7 +481,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GTZ8WM5W",
@@ -507,7 +494,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FXFG8QL4",
@@ -520,7 +507,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HC3BTZDS",
@@ -533,7 +520,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F6ZLFNVT",
@@ -546,7 +533,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GGR9DCCB",
@@ -559,7 +546,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FDW7819M",
@@ -572,7 +559,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HFWFZSHJ",
@@ -585,7 +572,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H5R6C68N",
@@ -598,7 +585,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FDQTLSFT",
@@ -611,7 +598,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G6LTHMLF",
@@ -624,7 +611,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FBWG1Z6Q",
@@ -637,7 +624,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GVNBSXLS",
@@ -645,12 +632,12 @@
    "title": "PHILIPS 80 cm (32 inches) 6100 Series Frameless HD Smart LED Google TV 32PFT6130/94",
    "image": "https://images-eu.ssl-images-amazon.com/images/I/71YBXXC6T6L._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0GVNBSXLS?tag=mdzareef-21",
-   "price": "₹14,999",
+   "price": "₹14,99,900",
    "originalPrice": "",
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FLKF5V9Y",
@@ -663,7 +650,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FJFQ99FH",
@@ -676,7 +663,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FJLSJ81W",
@@ -689,7 +676,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F8BT3TQW",
@@ -702,7 +689,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HBQMYJL4",
@@ -715,7 +702,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GYDH8JG3",
@@ -728,7 +715,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GWF132YH",
@@ -741,7 +728,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G2CG8XQX",
@@ -754,7 +741,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GWW7V4KG",
@@ -767,7 +754,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GVJRTL4D",
@@ -780,7 +767,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B00316263Y",
@@ -793,7 +780,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HKK3VCYC",
@@ -806,7 +793,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B08HRGRCGL",
@@ -819,7 +806,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B09RK2L1GD",
@@ -832,7 +819,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B07DJLFMPS",
@@ -845,7 +832,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FNMHBRMX",
@@ -858,7 +845,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H6MZ4N6D",
@@ -871,7 +858,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H25X3W7F",
@@ -884,7 +871,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FFTLRYRV",
@@ -897,7 +884,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GP6LS92F",
@@ -910,7 +897,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GSVR9C3X",
@@ -923,7 +910,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HMJ6CVJL",
@@ -936,7 +923,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GWQC4JGJ",
@@ -949,7 +936,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H2J8DDKH",
@@ -962,7 +949,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HJGRVBFF",
@@ -975,7 +962,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GY82GDW2",
@@ -988,7 +975,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H45YFPJT",
@@ -1001,7 +988,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H8P8CFQ4",
@@ -1014,7 +1001,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B09B2F1NV9",
@@ -1027,7 +1014,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GYRK1RZC",
@@ -1035,12 +1022,12 @@
    "title": "ASUS Vivobook 15 (2026),Intel Core 3 100U (i3-14th Gen),Intel iGPU, 8GB/512GB, FHD, 15.6\"(39.6 cm),Windows 11,M365 Basic(1 Year)* Office 2024,Quiet Blue,1.7 Kg, X1504VAP-BQ1322WS,Thin & Light Laptop",
    "image": "https://images-eu.ssl-images-amazon.com/images/I/71i8u4V18ZL._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0GYRK1RZC?tag=mdzareef-21",
-   "price": "₹50,990",
+   "price": "₹52,990",
    "originalPrice": "",
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H46H6JK8",
@@ -1053,7 +1040,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DSFQZTVW",
@@ -1066,7 +1053,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GR1HPR1W",
@@ -1079,7 +1066,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H8P1NCMN",
@@ -1092,7 +1079,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HLRL2N6J",
@@ -1105,7 +1092,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GVRZD89W",
@@ -1118,7 +1105,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F8P844W2",
@@ -1131,7 +1118,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HK7CVVNM",
@@ -1144,7 +1131,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G2MT8YVV",
@@ -1157,7 +1144,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FNQZ9HWX",
@@ -1170,7 +1157,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GWHGS8P5",
@@ -1183,7 +1170,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H2H5QTJD",
@@ -1196,7 +1183,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H9SV5VKG",
@@ -1209,7 +1196,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0BJ72WZQ7",
@@ -1222,7 +1209,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G1T2GZP9",
@@ -1235,7 +1222,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DB5XSKLJ",
@@ -1248,7 +1235,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FDQK5KSZ",
@@ -1261,7 +1248,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FQG8MSVT",
@@ -1274,7 +1261,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H3BXLJ3T",
@@ -1287,7 +1274,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DY7YPBJL",
@@ -1300,7 +1287,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GYP3RP99",
@@ -1313,7 +1300,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FL7LQY6H",
@@ -1326,7 +1313,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FT86SBYS",
@@ -1339,7 +1326,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DY2SWV16",
@@ -1352,7 +1339,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0B6BLTGTT",
@@ -1365,7 +1352,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DTB2TZ84",
@@ -1378,7 +1365,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0CG1Y3336",
@@ -1391,7 +1378,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GLPF5GBP",
@@ -1404,7 +1391,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GH7NP9VB",
@@ -1417,7 +1404,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HGFFCZ2D",
@@ -1430,7 +1417,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GX9JK9SN",
@@ -1443,7 +1430,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B09WJCRHKV",
@@ -1456,7 +1443,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H6JC42H6",
@@ -1469,7 +1456,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HJH7BVVX",
@@ -1482,20 +1469,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H5VWCNWN",
-   "store": "Amazon",
-   "title": "iQOO 15R (Triumph Silver 2026, 8GB RAM, 256GB Storage) | Snapdragon® 8 Gen 5 Processor | India’s Slimmest Smartphone in 7600mAh Battery* | Segment's Most Stable 144FPS Gaming*",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61RJGwzjcjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H5VWCNWN?tag=mdzareef-21",
-   "price": "₹53,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H6TYQ2RH",
@@ -1508,7 +1482,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B01DEWVZ2C",
@@ -1521,7 +1495,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HK7XKRZ9",
@@ -1534,7 +1508,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HD6XX2P4",
@@ -1547,7 +1521,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H6829HHV",
@@ -1560,7 +1534,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HHR8FNXD",
@@ -1573,7 +1547,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H722HRBZ",
@@ -1586,982 +1560,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR64G4H6",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61vTx-Qa1QL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR64G4H6?tag=mdzareef-21",
-   "price": "₹68,990",
-   "originalPrice": "₹79,900",
-   "discount": 14,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1PZYQ8",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/718d4Eu7cFL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1PZYQ8?tag=mdzareef-21",
-   "price": "₹1,59,990",
-   "originalPrice": "₹1,79,900",
-   "discount": 11,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1C4G1T",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/716M8uhjvSL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1C4G1T?tag=mdzareef-21",
-   "price": "₹2,15,900",
-   "originalPrice": "₹2,39,900",
-   "discount": 10,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1K8S8H",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/71kKQjKzW1L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1K8S8H?tag=mdzareef-21",
-   "price": "₹1,67,290",
-   "originalPrice": "₹1,85,900",
-   "discount": 10,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1B1ZS8",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61NJjTxLyiL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1B1ZS8?tag=mdzareef-21",
-   "price": "₹5,89,990",
-   "originalPrice": "₹6,19,900",
-   "discount": 5,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HGGNYJF1",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/51NBurcRq2L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HGGNYJF1?tag=mdzareef-21",
-   "price": "₹1,23,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1LB81D",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61h78UMEXjL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1LB81D?tag=mdzareef-21",
-   "price": "₹5,57,900",
-   "originalPrice": "₹6,19,900",
-   "discount": 10,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR6J183B",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61amETli1DL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR6J183B?tag=mdzareef-21",
-   "price": "₹71,890",
-   "originalPrice": "₹79,900",
-   "discount": 10,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1K73L4",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61+jOMbYhYL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1K73L4?tag=mdzareef-21",
-   "price": "₹3,59,900",
-   "originalPrice": "₹3,99,900",
-   "discount": 10,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GSZY88RM",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/71u-zAQGavL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GSZY88RM?tag=mdzareef-21",
-   "price": "₹1,12,990",
-   "originalPrice": "₹1,42,790",
-   "discount": 21,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GTVDH4G2",
-   "store": "Amazon",
-   "title": "HP",
-   "image": "https://m.media-amazon.com/images/I/71FVyverqHL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GTVDH4G2?tag=mdzareef-21",
-   "price": "₹69,990",
-   "originalPrice": "₹96,409",
-   "discount": 27,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GR1KBG9Z",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61h78UMEXjL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GR1KBG9Z?tag=mdzareef-21",
-   "price": "₹5,13,990",
-   "originalPrice": "₹5,39,900",
-   "discount": 5,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GTZJVD3Y",
-   "store": "Amazon",
-   "title": "Lenovo",
-   "image": "https://m.media-amazon.com/images/I/71uIKhayZPL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GTZJVD3Y?tag=mdzareef-21",
-   "price": "₹99,990",
-   "originalPrice": "₹1,08,890",
-   "discount": 8,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0CG19QXWD",
-   "store": "Amazon",
-   "title": "DJI Osmo Pocket 3 Vlogging Camera with 1'' CMOS & 4K/120fps Video",
-   "image": "https://m.media-amazon.com/images/I/61tukvVUMiL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0CG19QXWD?tag=mdzareef-21",
-   "price": "₹33,990",
-   "originalPrice": "₹59,990",
-   "discount": 43,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H8SQKQKP",
-   "store": "Amazon",
-   "title": "Insta360 X6 Essentials Bundle Black - 8K 360 Camera with 1/1.1'' Sensors | Action Camera, Dual Custom Square 1/1.1\" Sensors, Triple AI Chip, Replaceable Lens 2.0, 140 Minutes 8K Video",
-   "image": "https://m.media-amazon.com/images/I/61e66I2tb3L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8SQKQKP?tag=mdzareef-21",
-   "price": "₹90,990",
-   "originalPrice": "₹1,15,990",
-   "discount": 22,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0F2GW7CBS",
-   "store": "Amazon",
-   "title": "Cason 48MP Digital Camera for Kids & Adults -Real Photo & Video Mini Camera for Photography 2.4” Rotating Screen, Built in Games Kids Cameras for 5-15 Years Girls & Boys with 8 GB Sd Card -(White)",
-   "image": "https://m.media-amazon.com/images/I/71NwinsKkSL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0F2GW7CBS?tag=mdzareef-21",
-   "price": "₹2,414",
-   "originalPrice": "₹4,995",
-   "discount": 52,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0BX8XKNYK",
-   "store": "Amazon",
-   "title": "Fujifilm Instax Mini 12 Instant Camera-White",
-   "image": "https://m.media-amazon.com/images/I/61WXXeDFcnL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0BX8XKNYK?tag=mdzareef-21",
-   "price": "₹6,999",
-   "originalPrice": "₹7,499",
-   "discount": 7,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0B2KV6D97",
-   "store": "Amazon",
-   "title": "Canon EOS R10 24.2MP RF-S18-150 F/3.5-6.3 IS STM Mirrorless Camera (APS-C Sendor, 4K UHD Video) for Wedding & Content Creators - Black",
-   "image": "https://m.media-amazon.com/images/I/61TyCpcEVCL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0B2KV6D97?tag=mdzareef-21",
-   "price": "₹1,07,448",
-   "originalPrice": "₹1,17,995",
-   "discount": 9,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HKD2JWV6",
-   "store": "Amazon",
-   "title": "Maizic Smarthome Q10 Vlogging Camera with 64MP High-Resolution Photos, 4K Video Recording Support, 180° Rotating Movable Body, Compact Handheld Camera for Vlogs, Travel & Creators",
-   "image": "https://m.media-amazon.com/images/I/41bMMrLtTJL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HKD2JWV6?tag=mdzareef-21",
-   "price": "₹2,999",
-   "originalPrice": "₹4,399",
-   "discount": 32,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJWHBFKL",
-   "store": "Amazon",
-   "title": "LEQTRONIQ PLAYZZ 48MP Digital Camera with 180° Flip Screen, Fill Light & 8GB SD Card, Compact Point & Shoot Selfie Vlogging Camera for Beginners, Teens & Travel - White",
-   "image": "https://m.media-amazon.com/images/I/61vAdnzn-1L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJWHBFKL?tag=mdzareef-21",
-   "price": "₹2,288",
-   "originalPrice": "₹3,999",
-   "discount": 43,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0F3X5K2V3",
-   "store": "Amazon",
-   "title": "Canon EOS R50 V Smartchoice Mirrorless Camera Kit with RF-S14-30mm F4-6.3 is STM PZ Lens – Black | 24.2 MP APS-C Sensor, 4K Video, Compact Design",
-   "image": "https://m.media-amazon.com/images/I/71tLYivmz3L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0F3X5K2V3?tag=mdzareef-21",
-   "price": "₹62,990",
-   "originalPrice": "₹79,995",
-   "discount": 21,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0BYZHDRN6",
-   "store": "Amazon",
-   "title": "Canon EOS R50 RF-S18-45mm f/4.5-6.3 is STM Mirrorless Camera (Black)- 4K Video Vlogging with 24.2 MP",
-   "image": "https://m.media-amazon.com/images/I/81LskAU5h1L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0BYZHDRN6?tag=mdzareef-21",
-   "price": "₹64,989",
-   "originalPrice": "₹75,995",
-   "discount": 14,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0C8HCLQVC",
-   "store": "Amazon",
-   "title": "Canon EOS R100 24.1 MP Mirrorless Camera (Black) with RF-S18-45mm f/4.5-6.3 is STM Optical Zoom Lens | 4k Video",
-   "image": "https://m.media-amazon.com/images/I/81Tib6mb8eL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0C8HCLQVC?tag=mdzareef-21",
-   "price": "₹44,989",
-   "originalPrice": "₹64,995",
-   "discount": 31,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GGJDY6M1",
-   "store": "Amazon",
-   "title": "ciciglow Digital Camera, 64MP HD Autofocus 4K Retro Sliding Camera, 16X Digital Zoom CCD Cameras with 2.8 Inch Screen for Teens Adult Beginner (Silver)",
-   "image": "https://m.media-amazon.com/images/I/71vdXSVphrL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GGJDY6M1?tag=mdzareef-21",
-   "price": "₹5,400",
-   "originalPrice": "₹8,800",
-   "discount": 39,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GQZBFLDK",
-   "store": "Amazon",
-   "title": "4K Vlogging Camera with 330° Rotating Lens & Face Tracking, Portable Pocket Digital Camera for YouTube TikTok with WiFi, Includes 16GB Card, Tripod & Carrying Bag,Black",
-   "image": "https://m.media-amazon.com/images/I/51yk54xeKGL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GQZBFLDK?tag=mdzareef-21",
-   "price": "₹8,999",
-   "originalPrice": "₹19,999",
-   "discount": 55,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0G5P9T131",
-   "store": "Amazon",
-   "title": "Fujifilm Instax mini 13 Instant Camera - Candy Pink",
-   "image": "https://m.media-amazon.com/images/I/71tSP4AFUQL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0G5P9T131?tag=mdzareef-21",
-   "price": "₹7,999",
-   "originalPrice": "₹10,999",
-   "discount": 27,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJWKN86V",
-   "store": "Amazon",
-   "title": "LEQTRONIQ PLAYZZ 48MP Digital Camera with 180° Flip Screen, Fill Light & 8GB SD Card, Compact Point & Shoot Selfie Vlogging Camera for Beginners, Teens & Travel (Pink)",
-   "image": "https://m.media-amazon.com/images/I/61yuxUOwKHL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJWKN86V?tag=mdzareef-21",
-   "price": "₹2,279",
-   "originalPrice": "₹3,999",
-   "discount": 43,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FP9JR3C9",
-   "store": "Amazon",
-   "title": "Maizic Smarthome Dual Lens Mini Fox | 5+5MP WiFi CCTV Camera with PTZ & Fixed View | AI Motion Detection, Color Night Vision, Two-Way Audio, 360° Coverage, App Remote Access",
-   "image": "https://m.media-amazon.com/images/I/51A7rCUGCaL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FP9JR3C9?tag=mdzareef-21",
-   "price": "₹1,799",
-   "originalPrice": "₹3,499",
-   "discount": 49,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0B2F5VHLM",
-   "store": "Amazon",
-   "title": "Fujifilm X-H2S Smartchoice 26MP APS-C X-Trans Stacked Sensor|IBIS System|Wedding|Cinematic Camera|Flagship Mirrorless Hybrid Camera|4K Upto 120fps|6.2K ProRes|F-Log2|for Professionals",
-   "image": "https://m.media-amazon.com/images/I/51MJKD0PFWL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0B2F5VHLM?tag=mdzareef-21",
-   "price": "₹1,97,999",
-   "originalPrice": "₹2,39,999",
-   "discount": 18,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0C783YNW7",
-   "store": "Amazon",
-   "title": "DJI Osmo Action 4 Standard Combo, Waterproof Action Camera Vlogging Camera",
-   "image": "https://m.media-amazon.com/images/I/71wlB2kVc+L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0C783YNW7?tag=mdzareef-21",
-   "price": "₹22,990",
-   "originalPrice": "₹44,990",
-   "discount": 49,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H8P8M4VL",
-   "store": "Amazon",
-   "title": "ASUS Vivobook 16 (2026),Intel Core Ultra 5 225H,Intel iGPU,16GB RAM (Upgradeable),512GB SSD,FHD+,16\"(40 cm),Windows 11 Home,M365 Basic(1 Year),Office 2024,Quiet Blue,1.88 kg,X1607CA-MB349WS,AI Laptop",
-   "image": "https://m.media-amazon.com/images/I/71ncaO02W+L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8P8M4VL?tag=mdzareef-21",
-   "price": "₹88,990",
-   "originalPrice": "₹1,59,990",
-   "discount": 44,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GTW3GBTV",
-   "store": "Amazon",
-   "title": "ASUS Vivobook 16 (2026),Smartchoice,Intel Core Ultra 5 325 (Series 3),16GB RAM,512GB SSD,FHD+, 16\"(40 cm),Win 11 Home,M365 Basic(1 Year),Office 2024,Cool Silver,1.88 kg, X1607AA-MB038WS, Copilot+ PC",
-   "image": "https://m.media-amazon.com/images/I/71W4QNuZM5L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GTW3GBTV?tag=mdzareef-21",
-   "price": "₹94,990",
-   "originalPrice": "₹1,59,990",
-   "discount": 41,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HGS4MW9W",
-   "store": "Amazon",
-   "title": "HP 15 (2026), AMD Ryzen 5 Hexa Core 7535U - (8 GB DDR5/512 GB SSD/Radeon 660M Graphics/Windows 11 Home) Thin & Light Business Laptop/15.6\" FHD/Backlit + Fingerprint/Silver/Copilot Key/1.5kg/MSO 2024",
-   "image": "https://m.media-amazon.com/images/I/71min2uj4ZL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HGS4MW9W?tag=mdzareef-21",
-   "price": "₹54,790",
-   "originalPrice": "₹1,18,899",
-   "discount": 54,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GWHFCN1H",
-   "store": "Amazon",
-   "title": "Dell 15 Ai Powered Laptop, Intel® Core™ Ultra 7 255H Processor, 16GB DDR5 RAM, 512GB SSD, 15.6\" FHD Anti-Glare Display, Backlit Keyboard, Dedicated Copilot Key, Silver, Win11 Home + MSO H&S'24, 1.66kg",
-   "image": "https://m.media-amazon.com/images/I/71gVfCMgVUL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GWHFCN1H?tag=mdzareef-21",
-   "price": "₹1,03,990",
-   "originalPrice": "₹1,13,216",
-   "discount": 8,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H8S8QYXF",
-   "store": "Amazon",
-   "title": "Acer Smartchoice Aspire One, Intel Core Celeron N4500, 8GB LPDDR4 RAM/ 256GB SSD, 14.0\"/35.56cm WXGA Display, Intel UHD Graphics, Win 11 Home, Pure Silver, 1.3 Kg, A114-45, Thin and Light Laptop",
-   "image": "https://m.media-amazon.com/images/I/71uVzJHUyGL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8S8QYXF?tag=mdzareef-21",
-   "price": "₹35,990",
-   "originalPrice": "₹70,999",
-   "discount": 49,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0D2642MBF",
-   "store": "Amazon",
-   "title": "HP 15, (i3 14th Gen) Intel Core 3 100U (8GB DDR5, 512GB SSD), Win11, M365* Office24, Micro-Edge, Anti-Glare,15.6''/39.6cm,Silver, 1.59kg,FHD Camera with Privact Shutter, Dual Speakers Laptop-fd0883TU",
-   "image": "https://m.media-amazon.com/images/I/71inn4niF+L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0D2642MBF?tag=mdzareef-21",
-   "price": "₹50,890",
-   "originalPrice": "₹1,00,990",
-   "discount": 50,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FZKZTXSN",
-   "store": "Amazon",
-   "title": "Dell 15 (Previously Inspiron) Laptop, 14th Gen Intel Core i3/Core 3 100U Processor, 8GB DDR4, 512 SSD, 15.6\" FHD 120Hz IPS AG 250 nit Display, Win 11 + Office H&S 2024, Carbon Black, 1.63Kg",
-   "image": "https://m.media-amazon.com/images/I/71rhZEheSZL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FZKZTXSN?tag=mdzareef-21",
-   "price": "₹56,990",
-   "originalPrice": "₹62,598",
-   "discount": 9,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H8P96YRY",
-   "store": "Amazon",
-   "title": "ASUS Zenbook 14 (2026),Smartchoice,Intel Core Ultra 9 285H,Intel Arc iGPU,16GB RAM,512GB SSD,OLED,Touch Screen,14\"(35.5 cm),Win 11,M365 Basic(1Y),Office 24,Silver,1.28 Kg,UX3405CA-QL1692WS,AI Laptop",
-   "image": "https://m.media-amazon.com/images/I/61tjQ9CkAhL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8P96YRY?tag=mdzareef-21",
-   "price": "₹1,39,990",
-   "originalPrice": "₹2,28,990",
-   "discount": 39,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HGQDFL1H",
-   "store": "Amazon",
-   "title": "Acer Aspire 3 AI PC Intel Core Ultra 5 115U, 16GB DDR5 RAM/512GB SSD, 15.6\" FHD IPS Display, Win 11Home, Steel Grey, 1.72 Kg, A325-55, Backlit Keyboard, Thin & Light Laptop",
-   "image": "https://m.media-amazon.com/images/I/71f6QQS8R+L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HGQDFL1H?tag=mdzareef-21",
-   "price": "₹59,990",
-   "originalPrice": "₹1,12,999",
-   "discount": 47,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HLS25M5T",
-   "store": "Amazon",
-   "title": "HP 15 (2026), AMD Ryzen 3 Quad Core 7335U - (8 GB DDR5/512 GB SSD/AMD Radeon 660M Graphics/Windows 11 Pro) Thin and Light Business Laptop/15.6\" FHD/Fingerprint/Silver/Copilot Key/1.5 Kg/MSO 2024",
-   "image": "https://m.media-amazon.com/images/I/81O2FaZ1L2L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HLS25M5T?tag=mdzareef-21",
-   "price": "₹45,000",
-   "originalPrice": "₹75,000",
-   "discount": 40,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0C9DDN2JB",
-   "store": "Amazon",
-   "title": "HP 15, AMD Ryzen 7 7730U (16GB DDR4,512GB SSD) Anti-Glare, Micro-Edge,15.6''/39.6cm, FHD, Win11, M365 Basic(1yr),Office Home24,Silver,1.59kg,FHD Camera w/Privacy Shutter, Backlit KB-Laptop, fc0761AU",
-   "image": "https://m.media-amazon.com/images/I/71nwgp7ZHsL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0C9DDN2JB?tag=mdzareef-21",
-   "price": "₹70,490",
-   "originalPrice": "₹96,747",
-   "discount": 27,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HKZC2BSB",
-   "store": "Amazon",
-   "title": "Lenovo V15 AMD Ryzen 5 150 15.6\" (39.62cm) FHD 300 Nits Antiglare Thin and Light Laptop (16GB/512GB SSD/Windows 11/Office Home 2024/Luna Grey/1.65 Kg)-83V40063IG",
-   "image": "https://m.media-amazon.com/images/I/61dce26eIJL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HKZC2BSB?tag=mdzareef-21",
-   "price": "₹67,990",
-   "originalPrice": "₹1,75,000",
-   "discount": 61,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GWQHCDS6",
-   "store": "Amazon",
-   "title": "HP Smartchoice Omnibook 5 OLED (Previously Pavilion), Snapdragon X Processor 45 Tops (16GB LPDDR5x,1TB SSD) 2K,16''/40.6cm, Win11, Office24, Silver, 1.59kg, fb0001QU, Multi-Day Battery AI Laptop",
-   "image": "https://m.media-amazon.com/images/I/71yaFtjgRzL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GWQHCDS6?tag=mdzareef-21",
-   "price": "₹88,990",
-   "originalPrice": "₹1,51,891",
-   "discount": 41,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HP898C13",
-   "store": "Amazon",
-   "title": "𝗗𝗲𝗹𝗹Laptop Model 7420 Business Laptop | Core i5 11th Gen | 16GB DDR4 RAM | Upto 512GB SSD | 14\" Full HD Display | Win 11 (Pre-Owned & Tested) (128, GB)",
-   "image": "https://m.media-amazon.com/images/I/6167W5WEDsL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HP898C13?tag=mdzareef-21",
-   "price": "₹37,990",
-   "originalPrice": "₹1,29,000",
-   "discount": 71,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GN98J51X",
-   "store": "Amazon",
-   "title": "Lenovo V14, Intel Core i5-13420H, 8GB RAM, 512GB SSD, FHD 14” (35.56cm), Windows 11 Home, Luna Grey, 1.37Kg, 83GUA052IG, 250 Nits, 1Y Onsite Warranty, Laptop",
-   "image": "https://m.media-amazon.com/images/I/71odoZVRgaL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GN98J51X?tag=mdzareef-21",
-   "price": "₹58,440",
-   "originalPrice": "₹81,000",
-   "discount": 28,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HKMBDZ5Y",
-   "store": "Amazon",
-   "title": "ASUS Vivobook 15 (2026),Intel Core 3 304 (Series 3-Latest Gen),Fingerprint Sensor,8GB RAM,256GB SSD,FHD,15.6\"(39.6 cm),Win 11,M365 Basic(1Y),Office 2024,Terra Cotta,1.7 Kg,X1504MA-BQ907WS,AI Laptop",
-   "image": "https://m.media-amazon.com/images/I/71I-+fueA7L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HKMBDZ5Y?tag=mdzareef-21",
-   "price": "₹54,990",
-   "originalPrice": "₹1,07,990",
-   "discount": 49,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HN6XYJ8T",
-   "store": "Amazon",
-   "title": "𝗗𝗲𝗹𝗹ModeI 5420 Laptop | Core i5 11th Gen (1145g7) Processor | Fast 8GB DDR4 RAM | 256GB SSD | 14\" FHD| Win 10 |UHD Graphics 620 | Seller Warranty | (Pre-Owned & Tested)",
-   "image": "https://m.media-amazon.com/images/I/51vIhMJreOL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HN6XYJ8T?tag=mdzareef-21",
-   "price": "₹33,999",
-   "originalPrice": "₹75,999",
-   "discount": 55,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H93MYR9Z",
-   "store": "Amazon",
-   "title": "HP Professional 15 (2026), Intel (i7 14th Gen) Core 7 150U - (32 GB/512 GB SSD/Intel Iris Xe Graphic/Windows 11 Pro) Business Laptop/15.6\" FHD/Backlit + Fingerprint/Silver/Copilot Key/1.5kg/MSO 2024",
-   "image": "https://m.media-amazon.com/images/I/719eV7IOpdL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H93MYR9Z?tag=mdzareef-21",
-   "price": "₹94,000",
-   "originalPrice": "₹1,25,000",
-   "discount": 25,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GYZQJLMW",
-   "store": "Amazon",
-   "title": "Lenovo IdeaPad Slim 3 13th Gen Intel Core i5-13420H 15.3 inch (38.8cm) WUXGA IPS Laptop (16GB RAM/512GB SSD/Windows 11/Office 2024/Top Metal Cover/Backlit KB/Cosmic Blue/1.6Kg), 83K1016PIN",
-   "image": "https://m.media-amazon.com/images/I/71ePP2MjWKL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GYZQJLMW?tag=mdzareef-21",
-   "price": "₹77,990",
-   "originalPrice": "₹99,790",
-   "discount": 22,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HG929FR4",
-   "store": "Amazon",
-   "title": "iQOO Z11xa 5G (Titan Black, 8GB RAM, 128 GB Storage) | Massive 7200mAh Battery | Dimensity 7400 Turbo Processor | OriginOS 6 with 4 Years of Security Updates*",
-   "image": "https://m.media-amazon.com/images/I/61TPlXYAjdL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HG929FR4?tag=mdzareef-21",
-   "price": "₹28,998",
-   "originalPrice": "₹40,999",
-   "discount": 29,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HCNHGQDD",
-   "store": "Amazon",
-   "title": "iQOO Z11 5G (Aurora Green, 6GB RAM, 128GB Storage) | India's 1st MediaTek Dimensity 7500 Turbo Processor* | 3D Curved Display- Brightest Display in the Segment* | AI Captions- Record & Recap*",
-   "image": "https://m.media-amazon.com/images/I/61idJRWAvWL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HCNHGQDD?tag=mdzareef-21",
-   "price": "₹34,999",
-   "originalPrice": "₹49,999",
-   "discount": 30,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FN7QTRPY",
-   "store": "Amazon",
-   "title": "Samsung Galaxy M07 Mobile (Black, 4GB RAM, 64GB Storage) | MediaTek Helio G99 | AnTuTu 624K | IP54| 50MP Camera | 7.6mm Slim | 5000mAh Battery | 25W Fast Charging | 6 Gen OS Upgrades | Without Charger",
-   "image": "https://m.media-amazon.com/images/I/610lbucItmL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FN7QTRPY?tag=mdzareef-21",
-   "price": "₹11,999",
-   "originalPrice": "₹16,999",
-   "discount": 29,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HC9TXP1Y",
-   "store": "Amazon",
-   "title": "iQOO 15R (Dark Knight 2026, 12GB RAM, 256GB Storage) | Snapdragon® 8 Gen 5 Processor | India’s Slimmest Smartphone in 7600mAh Battery* | Segment's Most Stable 144FPS Gaming*",
-   "image": "https://m.media-amazon.com/images/I/51CuPf63sYL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HC9TXP1Y?tag=mdzareef-21",
-   "price": "₹59,999",
-   "originalPrice": "₹77,999",
-   "discount": 23,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FQFLZNKL",
-   "store": "Amazon",
-   "title": "Apple iPhone 17 256 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Sage",
-   "image": "https://m.media-amazon.com/images/I/61vbz66VT1L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FQFLZNKL?tag=mdzareef-21",
-   "price": "₹92,990",
-   "originalPrice": "₹99,900",
-   "discount": 7,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GFVKCNP1",
-   "store": "Amazon",
-   "title": "realme C71 4G Smartphone 4GB+64GB Black",
-   "image": "https://m.media-amazon.com/images/I/61poC8L0VAL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GFVKCNP1?tag=mdzareef-21",
-   "price": "₹13,499",
-   "originalPrice": "₹13,999",
-   "discount": 4,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0G3TFPN94",
-   "store": "Amazon",
-   "title": "Motorola G57 Power 5G (Fluidity, 8GB RAM, 128GB Storage)| Snapdragon 6s Gen 4 Processor | 6.72\" FHD+ Display | 50MP LYT-600 + 8MP Ultrawide | 8MP Selfie Camera | 7000mAh Battery, 33W TurboPower | IP64",
-   "image": "https://m.media-amazon.com/images/I/51A42gljwLL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0G3TFPN94?tag=mdzareef-21",
-   "price": "₹21,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B07WYJVMY6",
-   "store": "Amazon",
-   "title": "iQOO Z11 Lite 44W 5G (Midnight Blue, 4GB RAM, 64GB Storage)",
-   "image": "https://m.media-amazon.com/images/I/51XJr6CKc8L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B07WYJVMY6?tag=mdzareef-21",
-   "price": "₹17,499",
-   "originalPrice": "₹30,999",
-   "discount": 44,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H2X787VM",
-   "store": "Amazon",
-   "title": "Motorola g37 5G (Pantone Capri, 4GB RAM, 64GB Storage) | MediaTek Dimensity 6400 Processor | LPDDR4X RAM, UFS 2.2 Storage | Expandable Storage Up to 1TB | 5G Smartphone",
-   "image": "https://m.media-amazon.com/images/I/61yRwYO1t7L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H2X787VM?tag=mdzareef-21",
-   "price": "₹14,490",
-   "originalPrice": "₹24,999",
-   "discount": 42,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GL1JFK48",
-   "store": "Amazon",
-   "title": "Lava Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box",
-   "image": "https://m.media-amazon.com/images/I/51RK1P+gg6L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GL1JFK48?tag=mdzareef-21",
-   "price": "₹9,349",
-   "originalPrice": "₹12,999",
-   "discount": 28,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B07WYMJPVS",
-   "store": "Amazon",
-   "title": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 64GB Storage)",
-   "image": "https://m.media-amazon.com/images/I/61+l5bzv9hL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B07WYMJPVS?tag=mdzareef-21",
-   "price": "₹17,499",
-   "originalPrice": "₹30,999",
-   "discount": 44,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HHXPF3HB",
-   "store": "Amazon",
-   "title": "P70 Smartphone 4GB/64GB Smartphone",
-   "image": "https://m.media-amazon.com/images/I/51nEb3HnREL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HHXPF3HB?tag=mdzareef-21",
-   "price": "₹7,499",
-   "originalPrice": "₹10,499",
-   "discount": 29,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJ2WM92Y",
-   "store": "Amazon",
-   "title": "Itel Zeno 300 | 6000mAh Mega Battery Smartphone | 18W Type-C Fast Charging | 6.56” HD+ 90Hz Display | Unisoc T7100 Octa-Core | 4GB + 8GB RAM, 64GB Storage | Android 16 Go | Lavender Purple",
-   "image": "https://m.media-amazon.com/images/I/61vIy7DnUZL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJ2WM92Y?tag=mdzareef-21",
-   "price": "₹8,899",
-   "originalPrice": "₹14,999",
-   "discount": 41,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0DSKNQW8F",
-   "store": "Amazon",
-   "title": "Samsung Galaxy S25 Ultra 5G AI Smartphone (Titanium Black, 12GB RAM, 256GB Storage), 200MP Camera, 5000mAh Ultra Long Battery, QHD+ Dynamic AMOLED 2X, Galaxy AI, Knox Security, S Pen Included",
-   "image": "https://m.media-amazon.com/images/I/71HReMsMPrL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0DSKNQW8F?tag=mdzareef-21",
-   "price": "₹94,999",
-   "originalPrice": "₹1,29,999",
-   "discount": 27,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H8NHFZLH",
-   "store": "Amazon",
-   "title": "Zeno 100 Lite | UNISOC Octa-Core Processor | 2GB + 4GB RAM 64GB Storage | 5000mAh Battery | 6.6\" HD+ 90Hz Display | DTS Sound | Pure Black",
-   "image": "https://m.media-amazon.com/images/I/618UcvcTh4L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8NHFZLH?tag=mdzareef-21",
-   "price": "₹7,999",
-   "originalPrice": "₹11,999",
-   "discount": 33,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FT7T3GZF",
-   "store": "Amazon",
-   "title": "Samsung Galaxy F07 (Green, 64 GB) (4 GB RAM)",
-   "image": "https://m.media-amazon.com/images/I/71g-NwxcDqL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FT7T3GZF?tag=mdzareef-21",
-   "price": "₹11,799",
-   "originalPrice": "₹16,999",
-   "discount": 31,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FVWCT477",
-   "store": "Amazon",
-   "title": "Motorola G06 (Tapestry, 4GB RAM, 64GB Storage)",
-   "image": "https://m.media-amazon.com/images/I/617-5p8NaXL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FVWCT477?tag=mdzareef-21",
-   "price": "₹12,200",
-   "originalPrice": "₹13,999",
-   "discount": 13,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GVG27VS7",
-   "store": "Amazon",
-   "title": "REDMI A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box",
-   "image": "https://m.media-amazon.com/images/I/81ddi09Y88L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GVG27VS7?tag=mdzareef-21",
-   "price": "₹12,114",
-   "originalPrice": "₹15,999",
-   "discount": 24,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GS5Y7QBF",
-   "store": "Amazon",
-   "title": "REDMI A7 Pro 5G (Mist Blue, 4GB RAM, 64GB Storage) | Segment's Fastest Processor | Segment's Largest Battery | Segment's Largest & Smoothest 6.9in 120Hz Display",
-   "image": "https://m.media-amazon.com/images/I/71eQsL8sqcL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GS5Y7QBF?tag=mdzareef-21",
-   "price": "₹14,489",
-   "originalPrice": "₹26,999",
-   "discount": 46,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GPXTY8V5",
-   "store": "Amazon",
-   "title": "Lava Bold N2 Lite (Kolar Gold, 3 GB RAM, 64 GB Storage) | 6.75\" HD+ Display | 13MP AI Dual Rear Camera | 5000 mAh Battery | Secure Face Unlock | Fingerprint Reader | Charger & Phone-Cover in Box",
-   "image": "https://m.media-amazon.com/images/I/51rmAP8wN4L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GPXTY8V5?tag=mdzareef-21",
-   "price": "₹8,949",
-   "originalPrice": "₹11,499",
-   "discount": 22,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0CQ4KTCH1",
-   "store": "Amazon",
-   "title": "Noise Twist Go Round dial Smartwatch with BT Calling, 1.39\" Display, Metal Build, 100+ Watch Faces, IP68, Sleep Tracking, 100+ Sports Modes, 24/7 Heart Rate Monitoring (Jet Black)",
-   "image": "https://m.media-amazon.com/images/I/61BoaOUf+KL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0CQ4KTCH1?tag=mdzareef-21",
-   "price": "₹1,599",
-   "originalPrice": "₹4,999",
-   "discount": 68,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0BN1ZG1QZ",
-   "store": "Amazon",
-   "title": "NoiseFit Halo 1.43\" AMOLED Display, Bluetooth Calling Round Dial Smart Watch, Premium Metallic Build, Always on Display, Smart Gesture Control, 100 Sports Modes (Vintage Brown)",
-   "image": "https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0BN1ZG1QZ?tag=mdzareef-21",
-   "price": "₹2,699",
-   "originalPrice": "₹7,999",
-   "discount": 66,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0B853MRMY",
-   "store": "Amazon",
-   "title": "Fire-Boltt Ninja Call Pro Bluetooth Calling Smart Watch, 1.69″ HD Display, Dual Chip,AI Voice Assistant, 120+ Sports Modes, SpO2 & Heart Rate Monitor, Fitness Tracker Smartwatch for Men & Women - Blue",
-   "image": "https://m.media-amazon.com/images/I/61ammxzU18L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0B853MRMY?tag=mdzareef-21",
-   "price": "₹1,199",
-   "originalPrice": "₹17,999",
-   "discount": 93,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FLF5KFQ8",
-   "store": "Amazon",
-   "title": "boAt Wave Call 3 Smartwatch 1.83” HD Display with Animated Watch Faces; BT Calling, Functional Crown, Multiple Sports Modes, IP68, HR, SpO2 Monitor, Smart Watches for Men & Women (Timber Brown)",
-   "image": "https://m.media-amazon.com/images/I/71HwtfJ3c6L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FLF5KFQ8?tag=mdzareef-21",
-   "price": "₹1,099",
-   "originalPrice": "₹6,999",
-   "discount": 84,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0F5HNW218",
-   "store": "Amazon",
-   "title": "Fastrack Volt S1 Smart Watch for Man and Women Latest with 1.83\" Display, Silicone Strap, BT Calling, 100+ Sports Modes, Heart Rate, SpO2, IP68, Ideal Smartwatch for Boys and Girls (Beige)",
-   "image": "https://m.media-amazon.com/images/I/71bGSvPHeNL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0F5HNW218?tag=mdzareef-21",
-   "price": "₹1,299",
-   "originalPrice": "₹2,995",
-   "discount": 57,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FSLSGHN8",
-   "store": "Amazon",
-   "title": "REDMI Watch Move 1.85 Premium AmoLED,14 Day Battery,Best Accuracy,Dual Core Processor Smartwatch (Silver Sprint Strap, Free Size)",
-   "image": "https://m.media-amazon.com/images/I/61iF813l-hL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FSLSGHN8?tag=mdzareef-21",
-   "price": "₹2,199",
-   "originalPrice": "₹3,999",
-   "discount": 45,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DSKMV3ZC",
@@ -2574,7 +1573,7 @@
    "discount": 27,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FNMR6KTQ",
@@ -2587,20 +1586,7 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FNMQW9HW",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/4143cMel2GL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FNMQW9HW?tag=mdzareef-21",
-   "price": "₹49,275",
-   "originalPrice": "₹89,999",
-   "discount": 45,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H8CJQPW7",
@@ -2613,7 +1599,7 @@
    "discount": 30,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GYWQB116",
@@ -2626,7 +1612,20 @@
    "discount": 18,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FNMQW9HW",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/4143cMel2GL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FNMQW9HW?tag=mdzareef-21",
+   "price": "₹49,275",
+   "originalPrice": "₹89,999",
+   "discount": 45,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DHL7YT5S",
@@ -2639,7 +1638,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FTRN7L8Q",
@@ -2652,46 +1651,7 @@
    "discount": 6,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H293SFTR",
-   "store": "Amazon",
-   "title": "Redmi",
-   "image": "https://m.media-amazon.com/images/I/71-soe9ImCL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H293SFTR?tag=mdzareef-21",
-   "price": "₹40,999",
-   "originalPrice": "₹54,999",
-   "discount": 25,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0CS69QQTG",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/714DutH6IBL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0CS69QQTG?tag=mdzareef-21",
-   "price": "₹61,499",
-   "originalPrice": "₹79,999",
-   "discount": 23,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H2J3PRKV",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/41bFFbPBFqL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H2J3PRKV?tag=mdzareef-21",
-   "price": "₹63,499",
-   "originalPrice": "₹94,999",
-   "discount": 33,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HDPDGKJ4",
@@ -2704,7 +1664,46 @@
    "discount": 17,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0CS69QQTG",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/714DutH6IBL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0CS69QQTG?tag=mdzareef-21",
+   "price": "₹61,499",
+   "originalPrice": "₹79,999",
+   "discount": 23,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H2J3PRKV",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/41bFFbPBFqL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H2J3PRKV?tag=mdzareef-21",
+   "price": "₹63,499",
+   "originalPrice": "₹94,999",
+   "discount": 33,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HDD3GR8T",
+   "store": "Amazon",
+   "title": "Lava",
+   "image": "https://m.media-amazon.com/images/I/51IXb3HBPYL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HDD3GR8T?tag=mdzareef-21",
+   "price": "₹12,999",
+   "originalPrice": "₹17,499",
+   "discount": 26,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H5Q6HHWC",
@@ -2717,20 +1716,7 @@
    "discount": 45,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0BT9FDZ8N",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/71goZuIha-L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0BT9FDZ8N?tag=mdzareef-21",
-   "price": "₹79,999",
-   "originalPrice": "₹1,59,999",
-   "discount": 50,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GL88WCV8",
@@ -2743,7 +1729,20 @@
    "discount": 10,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0BT9FDZ8N",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/71goZuIha-L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0BT9FDZ8N?tag=mdzareef-21",
+   "price": "₹79,999",
+   "originalPrice": "₹1,59,999",
+   "discount": 50,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FDB9H9Z7",
@@ -2756,33 +1755,7 @@
    "discount": 10,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GL87VP7N",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/71N8YkTS0TL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GL87VP7N?tag=mdzareef-21",
-   "price": "₹87,999",
-   "originalPrice": "₹1,17,999",
-   "discount": 25,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H3FM2V3Z",
-   "store": "Amazon",
-   "title": "Samsung",
-   "image": "https://m.media-amazon.com/images/I/516cay96C1L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H3FM2V3Z?tag=mdzareef-21",
-   "price": "₹63,430",
-   "originalPrice": "₹1,14,999",
-   "discount": 45,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FNMNWQZV",
@@ -2795,7 +1768,20 @@
    "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GL87VP7N",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/71N8YkTS0TL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GL87VP7N?tag=mdzareef-21",
+   "price": "₹87,999",
+   "originalPrice": "₹1,17,999",
+   "discount": 25,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FNWSP5L3",
@@ -2808,7 +1794,241 @@
    "discount": 17,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HG929FR4",
+   "store": "Amazon",
+   "title": "iQOO Z11xa 5G (Titan Black, 8GB RAM, 128 GB Storage) | Massive 7200mAh Battery | Dimensity 7400 Turbo Processor | OriginOS 6 with 4 Years of Security Updates*",
+   "image": "https://m.media-amazon.com/images/I/61TPlXYAjdL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HG929FR4?tag=mdzareef-21",
+   "price": "₹28,998",
+   "originalPrice": "₹40,999",
+   "discount": 29,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HC9TXP1Y",
+   "store": "Amazon",
+   "title": "iQOO 15R (Dark Knight 2026, 12GB RAM, 256GB Storage) | Snapdragon® 8 Gen 5 Processor | India’s Slimmest Smartphone in 7600mAh Battery* | Segment's Most Stable 144FPS Gaming*",
+   "image": "https://m.media-amazon.com/images/I/51CuPf63sYL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HC9TXP1Y?tag=mdzareef-21",
+   "price": "₹59,999",
+   "originalPrice": "₹77,999",
+   "discount": 23,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FN7QTRPY",
+   "store": "Amazon",
+   "title": "Samsung Galaxy M07 Mobile (Black, 4GB RAM, 64GB Storage) | MediaTek Helio G99 | AnTuTu 624K | IP54| 50MP Camera | 7.6mm Slim | 5000mAh Battery | 25W Fast Charging | 6 Gen OS Upgrades | Without Charger",
+   "image": "https://m.media-amazon.com/images/I/610lbucItmL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FN7QTRPY?tag=mdzareef-21",
+   "price": "₹11,999",
+   "originalPrice": "₹16,999",
+   "discount": 29,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FQFLZNKL",
+   "store": "Amazon",
+   "title": "Apple iPhone 17 256 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Sage",
+   "image": "https://m.media-amazon.com/images/I/61vbz66VT1L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FQFLZNKL?tag=mdzareef-21",
+   "price": "₹92,990",
+   "originalPrice": "₹99,900",
+   "discount": 7,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJ2WM92Y",
+   "store": "Amazon",
+   "title": "Itel Zeno 300 | 6000mAh Mega Battery Smartphone | 18W Type-C Fast Charging | 6.56” HD+ 90Hz Display | Unisoc T7100 Octa-Core | 4GB + 8GB RAM, 64GB Storage | Android 16 Go | Lavender Purple",
+   "image": "https://m.media-amazon.com/images/I/61vIy7DnUZL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJ2WM92Y?tag=mdzareef-21",
+   "price": "₹8,899",
+   "originalPrice": "₹14,999",
+   "discount": 41,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0G3TFPN94",
+   "store": "Amazon",
+   "title": "Motorola G57 Power 5G (Fluidity, 8GB RAM, 128GB Storage)| Snapdragon 6s Gen 4 Processor | 6.72\" FHD+ Display | 50MP LYT-600 + 8MP Ultrawide | 8MP Selfie Camera | 7000mAh Battery, 33W TurboPower | IP64",
+   "image": "https://m.media-amazon.com/images/I/51A42gljwLL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0G3TFPN94?tag=mdzareef-21",
+   "price": "₹21,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H293SFTR",
+   "store": "Amazon",
+   "title": "REDMI Turbo 5 (8GB + 256GB) Turbo White | MediaTek Dimensity 8500 Ultra | Mega 7540mAh Battery | 100W HyperCharge | Compact 16.75cm(6.9) 120Hz Display | 50MP Sony OIS Camera",
+   "image": "https://m.media-amazon.com/images/I/71-soe9ImCL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H293SFTR?tag=mdzareef-21",
+   "price": "₹40,999",
+   "originalPrice": "₹54,999",
+   "discount": 25,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B07WYMJPVS",
+   "store": "Amazon",
+   "title": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 64GB Storage)",
+   "image": "https://m.media-amazon.com/images/I/61+l5bzv9hL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B07WYMJPVS?tag=mdzareef-21",
+   "price": "₹17,499",
+   "originalPrice": "₹30,999",
+   "discount": 44,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GL1JFK48",
+   "store": "Amazon",
+   "title": "Lava Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box",
+   "image": "https://m.media-amazon.com/images/I/51RK1P+gg6L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GL1JFK48?tag=mdzareef-21",
+   "price": "₹9,349",
+   "originalPrice": "₹12,999",
+   "discount": 28,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FVWCT477",
+   "store": "Amazon",
+   "title": "Motorola G06 (Tapestry, 4GB RAM, 64GB Storage)",
+   "image": "https://m.media-amazon.com/images/I/617-5p8NaXL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FVWCT477?tag=mdzareef-21",
+   "price": "₹12,200",
+   "originalPrice": "₹13,999",
+   "discount": 13,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GFVKCNP1",
+   "store": "Amazon",
+   "title": "realme C71 4G Smartphone 4GB+64GB Black",
+   "image": "https://m.media-amazon.com/images/I/61poC8L0VAL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GFVKCNP1?tag=mdzareef-21",
+   "price": "₹13,499",
+   "originalPrice": "₹13,999",
+   "discount": 4,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FT7T3GZF",
+   "store": "Amazon",
+   "title": "Samsung Galaxy F07 (Green, 64 GB) (4 GB RAM)",
+   "image": "https://m.media-amazon.com/images/I/71g-NwxcDqL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FT7T3GZF?tag=mdzareef-21",
+   "price": "₹11,799",
+   "originalPrice": "₹16,999",
+   "discount": 31,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GVG27VS7",
+   "store": "Amazon",
+   "title": "REDMI A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box",
+   "image": "https://m.media-amazon.com/images/I/81ddi09Y88L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GVG27VS7?tag=mdzareef-21",
+   "price": "₹12,114",
+   "originalPrice": "₹15,999",
+   "discount": 24,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HHXPF3HB",
+   "store": "Amazon",
+   "title": "P70 Smartphone 4GB/64GB Smartphone",
+   "image": "https://m.media-amazon.com/images/I/51nEb3HnREL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HHXPF3HB?tag=mdzareef-21",
+   "price": "₹7,499",
+   "originalPrice": "₹10,499",
+   "discount": 29,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H2X787VM",
+   "store": "Amazon",
+   "title": "Motorola g37 5G (Pantone Capri, 4GB RAM, 64GB Storage) | MediaTek Dimensity 6400 Processor | LPDDR4X RAM, UFS 2.2 Storage | Expandable Storage Up to 1TB | 5G Smartphone",
+   "image": "https://m.media-amazon.com/images/I/61yRwYO1t7L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H2X787VM?tag=mdzareef-21",
+   "price": "₹14,490",
+   "originalPrice": "₹24,999",
+   "discount": 42,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H8NHFZLH",
+   "store": "Amazon",
+   "title": "Zeno 100 Lite | UNISOC Octa-Core Processor | 2GB + 4GB RAM 64GB Storage | 5000mAh Battery | 6.6\" HD+ 90Hz Display | DTS Sound | Pure Black",
+   "image": "https://m.media-amazon.com/images/I/618UcvcTh4L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H8NHFZLH?tag=mdzareef-21",
+   "price": "₹7,999",
+   "originalPrice": "₹11,999",
+   "discount": 33,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GPXTY8V5",
+   "store": "Amazon",
+   "title": "Lava Bold N2 Lite (Kolar Gold, 3 GB RAM, 64 GB Storage) | 6.75\" HD+ Display | 13MP AI Dual Rear Camera | 5000 mAh Battery | Secure Face Unlock | Fingerprint Reader | Charger & Phone-Cover in Box",
+   "image": "https://m.media-amazon.com/images/I/51rmAP8wN4L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GPXTY8V5?tag=mdzareef-21",
+   "price": "₹8,949",
+   "originalPrice": "₹11,499",
+   "discount": 22,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GS5Y7QBF",
+   "store": "Amazon",
+   "title": "REDMI A7 Pro 5G (Mist Blue, 4GB RAM, 64GB Storage) | Segment's Fastest Processor | Segment's Largest Battery | Segment's Largest & Smoothest 6.9in 120Hz Display",
+   "image": "https://m.media-amazon.com/images/I/71eQsL8sqcL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GS5Y7QBF?tag=mdzareef-21",
+   "price": "₹14,489",
+   "originalPrice": "₹26,999",
+   "discount": 46,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HHFBKKM6",
@@ -2821,33 +2041,7 @@
    "discount": 32,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GL1WGHJX",
-   "store": "Amazon",
-   "title": "Lava Bold N2 (Indus Black, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box",
-   "image": "https://m.media-amazon.com/images/I/517h1ScmuQL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GL1WGHJX?tag=mdzareef-21",
-   "price": "₹9,349",
-   "originalPrice": "₹10,499",
-   "discount": 11,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0G2B1S4YL",
-   "store": "Amazon",
-   "title": "Redmi 15C 5G Prime Edition (Dusk Purple, 4GB + 128GB) | Massive 6000mAh Battery | Segment's Largest 17.53cm Display Up to 120Hz | MediaTek Dimensity 6300 | 33W Fast Charging | 50MP AI Dual Camera",
-   "image": "https://m.media-amazon.com/images/I/711q7oij2qL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0G2B1S4YL?tag=mdzareef-21",
-   "price": "₹15,999",
-   "originalPrice": "₹26,999",
-   "discount": 41,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GW8DSXW8",
@@ -2860,20 +2054,20 @@
    "discount": 36,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0GW69R46K",
+   "id": "amz-B0G2B1S4YL",
    "store": "Amazon",
-   "title": "Tecno POP X 5G (Ripple Green, 6GB+128GB) | 6500mAh+45W Fast Charger | IP64 Pro | MIL-STD 810H Protection | Upto 18GB* RAM | Fastest 8X Network Speed* with URSP | 120Hz Smooth Display | 50MP Camera",
-   "image": "https://m.media-amazon.com/images/I/61atDI4JmDL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GW69R46K?tag=mdzareef-21",
-   "price": "₹16,999",
-   "originalPrice": "₹31,999",
-   "discount": 47,
+   "title": "Redmi 15C 5G Prime Edition (Dusk Purple, 4GB + 128GB) | Massive 6000mAh Battery | Segment's Largest 17.53cm Display Up to 120Hz | MediaTek Dimensity 6300 | 33W Fast Charging | 50MP AI Dual Camera",
+   "image": "https://m.media-amazon.com/images/I/711q7oij2qL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0G2B1S4YL?tag=mdzareef-21",
+   "price": "₹15,999",
+   "originalPrice": "₹26,999",
+   "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H2WVGDM4",
@@ -2886,7 +2080,7 @@
    "discount": 24,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GRB3ZK3D",
@@ -2899,20 +2093,7 @@
    "discount": 1,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0H1BMBX9R",
-   "store": "Amazon",
-   "title": "realme NARZO 80 Lite 4G (Obsidian Black 2026, 4GB+64GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
-   "image": "https://m.media-amazon.com/images/I/81oxfhHd5XL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0H1BMBX9R?tag=mdzareef-21",
-   "price": "₹13,999",
-   "originalPrice": "₹16,999",
-   "discount": 18,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GS5SM6JR",
@@ -2925,7 +2106,20 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H1BMBX9R",
+   "store": "Amazon",
+   "title": "realme NARZO 80 Lite 4G (Obsidian Black 2026, 4GB+64GB) | 6300mAh Segment's Biggest Battery | 7.94mm Slim Design | 300% Ultra Volume | Pulse Light: 9 Colors, 5 Glow Modes | Ai Assist",
+   "image": "https://m.media-amazon.com/images/I/81oxfhHd5XL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H1BMBX9R?tag=mdzareef-21",
+   "price": "₹13,999",
+   "originalPrice": "₹16,999",
+   "discount": 18,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GM69XM7R",
@@ -2938,7 +2132,7 @@
    "discount": 29,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FVW9B8GQ",
@@ -2946,12 +2140,12 @@
    "title": "Motorola G06 Power (Pantone Laurel Oak, 4GB RAM, 64GB Storage) | 6.88\" 120Hz Display | 50MP Camera | Helio G81 Ultra Processor | 7000mAh Battery | Android 15",
    "image": "https://m.media-amazon.com/images/I/51WoX6Q-LNL._AC_UY218_.jpg",
    "url": "https://www.amazon.in/dp/B0FVW9B8GQ?tag=mdzareef-21",
-   "price": "₹12,238",
-   "originalPrice": "₹19,999",
-   "discount": 39,
+   "price": "₹12,229",
+   "originalPrice": "₹13,999",
+   "discount": 13,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GRBQYQY3",
@@ -2959,12 +2153,12 @@
    "title": "Samsung Galaxy A07 LTE (Green, 4GB RAM, 64GB Storage) | 50MP Dual Camera | 6.7 Inch HD+ Display | 90Hz Refresh Rate | MediaTek Helio G99 (6nm) | IP54 | 6 Gen OS Upgrade and Security Update",
    "image": "https://m.media-amazon.com/images/I/515RYBy9f3L._AC_UY218_.jpg",
    "url": "https://www.amazon.in/dp/B0GRBQYQY3?tag=mdzareef-21",
-   "price": "₹12,678",
-   "originalPrice": "₹12,999",
-   "discount": 2,
+   "price": "₹12,677",
+   "originalPrice": "₹17,999",
+   "discount": 30,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0H6HY2C29",
@@ -2977,20 +2171,7 @@
    "discount": 18,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0CQJZD55X",
-   "store": "Amazon",
-   "title": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Low Latency Gaming, Instacharge(10 Min=120 Min), Bluetooth V5.3 (Ice Blue)",
-   "image": "https://m.media-amazon.com/images/I/518-N2QlrVL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0CQJZD55X?tag=mdzareef-21",
-   "price": "₹1,199",
-   "originalPrice": "₹3,499",
-   "discount": 66,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HCBYMC8D",
@@ -3003,7 +2184,20 @@
    "discount": 43,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0CQJZD55X",
+   "store": "Amazon",
+   "title": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Low Latency Gaming, Instacharge(10 Min=120 Min), Bluetooth V5.3 (Ice Blue)",
+   "image": "https://m.media-amazon.com/images/I/518-N2QlrVL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0CQJZD55X?tag=mdzareef-21",
+   "price": "₹1,199",
+   "originalPrice": "₹3,499",
+   "discount": 66,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FHW7PX1N",
@@ -3016,7 +2210,20 @@
    "discount": 65,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GM167464",
+   "store": "Amazon",
+   "title": "GOBOULT Mustang Sprint in Ear Earbuds with 60H Playtime, Amp App Support, 32dB Active Noise Cancellation, Quad Mic ENC, Dual Device Pairing, 10mm Drivers, BTv 6.0 TWS",
+   "image": "https://m.media-amazon.com/images/I/81niVoFfdrL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GM167464?tag=mdzareef-21",
+   "price": "₹1,299",
+   "originalPrice": "₹5,999",
+   "discount": 78,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0D49ZS9MT",
@@ -3029,20 +2236,696 @@
    "discount": 78,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0GYRQ79V4",
+   "id": "amz-B0CG19QXWD",
    "store": "Amazon",
-   "title": "Samsung 50 inch (125cm) Crystal UHD 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | HDR10+ | 150+ Channels | 7 Years OS Upgrade | UA50UE83AHULXL",
-   "image": "https://m.media-amazon.com/images/I/81AIsrIGCGL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GYRQ79V4?tag=mdzareef-21",
-   "price": "₹37,490",
-   "originalPrice": "₹49,900",
-   "discount": 25,
+   "title": "DJI Osmo Pocket 3 Vlogging Camera with 1'' CMOS & 4K/120fps Video",
+   "image": "https://m.media-amazon.com/images/I/61tukvVUMiL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0CG19QXWD?tag=mdzareef-21",
+   "price": "₹33,990",
+   "originalPrice": "₹59,990",
+   "discount": 43,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H8SQKQKP",
+   "store": "Amazon",
+   "title": "Insta360 X6 Essentials Bundle Black - 8K 360 Camera with 1/1.1'' Sensors | Action Camera, Dual Custom Square 1/1.1\" Sensors, Triple AI Chip, Replaceable Lens 2.0, 140 Minutes 8K Video",
+   "image": "https://m.media-amazon.com/images/I/61e66I2tb3L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H8SQKQKP?tag=mdzareef-21",
+   "price": "₹90,990",
+   "originalPrice": "₹1,15,990",
+   "discount": 22,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0F2GW7CBS",
+   "store": "Amazon",
+   "title": "Cason 48MP Digital Camera for Kids & Adults -Real Photo & Video Mini Camera for Photography 2.4” Rotating Screen, Built in Games Kids Cameras for 5-15 Years Girls & Boys with 8 GB Sd Card -(White)",
+   "image": "https://m.media-amazon.com/images/I/71NwinsKkSL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0F2GW7CBS?tag=mdzareef-21",
+   "price": "₹2,414",
+   "originalPrice": "₹4,995",
+   "discount": 52,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FKT9K6CB",
+   "store": "Amazon",
+   "title": "DJI Osmo Pocket 4 Creator Combo 3-Axis Gimbal Camera",
+   "image": "https://m.media-amazon.com/images/I/41lh40NDDzL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FKT9K6CB?tag=mdzareef-21",
+   "price": "₹64,990",
+   "originalPrice": "₹83,990",
+   "discount": 23,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0C8HCLQVC",
+   "store": "Amazon",
+   "title": "Canon EOS R100 24.1 MP Mirrorless Camera (Black) with RF-S18-45mm f/4.5-6.3 is STM Optical Zoom Lens | 4k Video",
+   "image": "https://m.media-amazon.com/images/I/81Tib6mb8eL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0C8HCLQVC?tag=mdzareef-21",
+   "price": "₹44,989",
+   "originalPrice": "₹64,995",
+   "discount": 31,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HKD2JWV6",
+   "store": "Amazon",
+   "title": "Maizic Smarthome Q10 Vlogging Camera with 64MP High-Resolution Photos, 4K Video Recording Support, 180° Rotating Movable Body, Compact Handheld Camera for Vlogs, Travel & Creators",
+   "image": "https://m.media-amazon.com/images/I/41bMMrLtTJL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HKD2JWV6?tag=mdzareef-21",
+   "price": "₹2,999",
+   "originalPrice": "₹4,399",
+   "discount": 32,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJWHBFKL",
+   "store": "Amazon",
+   "title": "LEQTRONIQ PLAYZZ 48MP Digital Camera with 180° Flip Screen, Fill Light & 8GB SD Card, Compact Point & Shoot Selfie Vlogging Camera for Beginners, Teens & Travel - White",
+   "image": "https://m.media-amazon.com/images/I/61vAdnzn-1L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJWHBFKL?tag=mdzareef-21",
+   "price": "₹2,288",
+   "originalPrice": "₹3,999",
+   "discount": 43,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0BYZHDRN6",
+   "store": "Amazon",
+   "title": "Canon EOS R50 RF-S18-45mm f/4.5-6.3 is STM Mirrorless Camera (Black)- 4K Video Vlogging with 24.2 MP",
+   "image": "https://m.media-amazon.com/images/I/81LskAU5h1L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0BYZHDRN6?tag=mdzareef-21",
+   "price": "₹64,989",
+   "originalPrice": "₹75,995",
+   "discount": 14,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0B2KV6D97",
+   "store": "Amazon",
+   "title": "Canon EOS R10 24.2MP RF-S18-150 F/3.5-6.3 IS STM Mirrorless Camera (APS-C Sendor, 4K UHD Video) for Wedding & Content Creators - Black",
+   "image": "https://m.media-amazon.com/images/I/61TyCpcEVCL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0B2KV6D97?tag=mdzareef-21",
+   "price": "₹1,07,448",
+   "originalPrice": "₹1,17,995",
+   "discount": 9,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GGJDY6M1",
+   "store": "Amazon",
+   "title": "ciciglow Digital Camera, 64MP HD Autofocus 4K Retro Sliding Camera, 16X Digital Zoom CCD Cameras with 2.8 Inch Screen for Teens Adult Beginner (Silver)",
+   "image": "https://m.media-amazon.com/images/I/71vdXSVphrL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GGJDY6M1?tag=mdzareef-21",
+   "price": "₹5,400",
+   "originalPrice": "₹8,800",
+   "discount": 39,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GQZBFLDK",
+   "store": "Amazon",
+   "title": "4K Vlogging Camera with 330° Rotating Lens & Face Tracking, Portable Pocket Digital Camera for YouTube TikTok with WiFi, Includes 16GB Card, Tripod & Carrying Bag,Black",
+   "image": "https://m.media-amazon.com/images/I/51yk54xeKGL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GQZBFLDK?tag=mdzareef-21",
+   "price": "₹8,999",
+   "originalPrice": "₹19,999",
+   "discount": 55,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0G5P9T131",
+   "store": "Amazon",
+   "title": "Fujifilm Instax mini 13 Instant Camera - Candy Pink",
+   "image": "https://m.media-amazon.com/images/I/71tSP4AFUQL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0G5P9T131?tag=mdzareef-21",
+   "price": "₹7,999",
+   "originalPrice": "₹10,999",
+   "discount": 27,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJWKN86V",
+   "store": "Amazon",
+   "title": "LEQTRONIQ PLAYZZ 48MP Digital Camera with 180° Flip Screen, Fill Light & 8GB SD Card, Compact Point & Shoot Selfie Vlogging Camera for Beginners, Teens & Travel (Pink)",
+   "image": "https://m.media-amazon.com/images/I/61yuxUOwKHL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJWKN86V?tag=mdzareef-21",
+   "price": "₹2,279",
+   "originalPrice": "₹3,999",
+   "discount": 43,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FP9JR3C9",
+   "store": "Amazon",
+   "title": "Maizic Smarthome Dual Lens Mini Fox | 5+5MP WiFi CCTV Camera with PTZ & Fixed View | AI Motion Detection, Color Night Vision, Two-Way Audio, 360° Coverage, App Remote Access",
+   "image": "https://m.media-amazon.com/images/I/51A7rCUGCaL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FP9JR3C9?tag=mdzareef-21",
+   "price": "₹1,799",
+   "originalPrice": "₹3,499",
+   "discount": 49,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0B2F5VHLM",
+   "store": "Amazon",
+   "title": "Fujifilm X-H2S Smartchoice 26MP APS-C X-Trans Stacked Sensor|IBIS System|Wedding|Cinematic Camera|Flagship Mirrorless Hybrid Camera|4K Upto 120fps|6.2K ProRes|F-Log2|for Professionals",
+   "image": "https://m.media-amazon.com/images/I/51MJKD0PFWL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0B2F5VHLM?tag=mdzareef-21",
+   "price": "₹1,97,999",
+   "originalPrice": "₹2,39,999",
+   "discount": 18,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0C783YNW7",
+   "store": "Amazon",
+   "title": "DJI Osmo Action 4 Standard Combo, Waterproof Action Camera Vlogging Camera",
+   "image": "https://m.media-amazon.com/images/I/71wlB2kVc+L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0C783YNW7?tag=mdzareef-21",
+   "price": "₹22,990",
+   "originalPrice": "₹44,990",
+   "discount": 49,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR64G4H6",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61vTx-Qa1QL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR64G4H6?tag=mdzareef-21",
+   "price": "₹68,990",
+   "originalPrice": "₹79,900",
+   "discount": 14,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1PZYQ8",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/718d4Eu7cFL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1PZYQ8?tag=mdzareef-21",
+   "price": "₹1,59,990",
+   "originalPrice": "₹1,79,900",
+   "discount": 11,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1C4G1T",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/716M8uhjvSL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1C4G1T?tag=mdzareef-21",
+   "price": "₹2,15,900",
+   "originalPrice": "₹2,39,900",
+   "discount": 10,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1K8S8H",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/71kKQjKzW1L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1K8S8H?tag=mdzareef-21",
+   "price": "₹1,67,290",
+   "originalPrice": "₹1,85,900",
+   "discount": 10,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1B1ZS8",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61NJjTxLyiL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1B1ZS8?tag=mdzareef-21",
+   "price": "₹5,89,990",
+   "originalPrice": "₹6,19,900",
+   "discount": 5,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HGGNYJF1",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/51NBurcRq2L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HGGNYJF1?tag=mdzareef-21",
+   "price": "₹1,23,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1LB81D",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61h78UMEXjL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1LB81D?tag=mdzareef-21",
+   "price": "₹5,57,900",
+   "originalPrice": "₹6,19,900",
+   "discount": 10,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1K73L4",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61+jOMbYhYL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1K73L4?tag=mdzareef-21",
+   "price": "₹3,59,900",
+   "originalPrice": "₹3,99,900",
+   "discount": 10,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GSZY88RM",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/71u-zAQGavL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GSZY88RM?tag=mdzareef-21",
+   "price": "₹1,12,990",
+   "originalPrice": "₹1,42,790",
+   "discount": 21,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GTVDH4G2",
+   "store": "Amazon",
+   "title": "HP",
+   "image": "https://m.media-amazon.com/images/I/71FVyverqHL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GTVDH4G2?tag=mdzareef-21",
+   "price": "₹69,990",
+   "originalPrice": "₹96,409",
+   "discount": 27,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GR1KBG9Z",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61h78UMEXjL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GR1KBG9Z?tag=mdzareef-21",
+   "price": "₹5,13,990",
+   "originalPrice": "₹5,39,900",
+   "discount": 5,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GTZJVD3Y",
+   "store": "Amazon",
+   "title": "Lenovo",
+   "image": "https://m.media-amazon.com/images/I/71uIKhayZPL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GTZJVD3Y?tag=mdzareef-21",
+   "price": "₹99,990",
+   "originalPrice": "₹1,08,890",
+   "discount": 8,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0CQ4KTCH1",
+   "store": "Amazon",
+   "title": "Noise Twist Go Round dial Smartwatch with BT Calling, 1.39\" Display, Metal Build, 100+ Watch Faces, IP68, Sleep Tracking, 100+ Sports Modes, 24/7 Heart Rate Monitoring (Jet Black)",
+   "image": "https://m.media-amazon.com/images/I/61BoaOUf+KL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0CQ4KTCH1?tag=mdzareef-21",
+   "price": "₹1,599",
+   "originalPrice": "₹4,999",
+   "discount": 68,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0BN1ZG1QZ",
+   "store": "Amazon",
+   "title": "NoiseFit Halo 1.43\" AMOLED Display, Bluetooth Calling Round Dial Smart Watch, Premium Metallic Build, Always on Display, Smart Gesture Control, 100 Sports Modes (Vintage Brown)",
+   "image": "https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0BN1ZG1QZ?tag=mdzareef-21",
+   "price": "₹2,699",
+   "originalPrice": "₹7,999",
+   "discount": 66,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0B853MRMY",
+   "store": "Amazon",
+   "title": "Fire-Boltt Ninja Call Pro Bluetooth Calling Smart Watch, 1.69″ HD Display, Dual Chip,AI Voice Assistant, 120+ Sports Modes, SpO2 & Heart Rate Monitor, Fitness Tracker Smartwatch for Men & Women - Blue",
+   "image": "https://m.media-amazon.com/images/I/61ammxzU18L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0B853MRMY?tag=mdzareef-21",
+   "price": "₹1,199",
+   "originalPrice": "₹17,999",
+   "discount": 93,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FLF5KFQ8",
+   "store": "Amazon",
+   "title": "boAt Wave Call 3 Smartwatch 1.83” HD Display with Animated Watch Faces; BT Calling, Functional Crown, Multiple Sports Modes, IP68, HR, SpO2 Monitor, Smart Watches for Men & Women (Timber Brown)",
+   "image": "https://m.media-amazon.com/images/I/71HwtfJ3c6L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FLF5KFQ8?tag=mdzareef-21",
+   "price": "₹1,099",
+   "originalPrice": "₹6,999",
+   "discount": 84,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0F5HNW218",
+   "store": "Amazon",
+   "title": "Fastrack Volt S1 Smart Watch for Man and Women Latest with 1.83\" Display, Silicone Strap, BT Calling, 100+ Sports Modes, Heart Rate, SpO2, IP68, Ideal Smartwatch for Boys and Girls (Beige)",
+   "image": "https://m.media-amazon.com/images/I/71bGSvPHeNL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0F5HNW218?tag=mdzareef-21",
+   "price": "₹1,299",
+   "originalPrice": "₹2,995",
+   "discount": 57,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FSLSGHN8",
+   "store": "Amazon",
+   "title": "REDMI Watch Move 1.85 Premium AmoLED,14 Day Battery,Best Accuracy,Dual Core Processor Smartwatch (Silver Sprint Strap, Free Size)",
+   "image": "https://m.media-amazon.com/images/I/61iF813l-hL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FSLSGHN8?tag=mdzareef-21",
+   "price": "₹2,199",
+   "originalPrice": "₹3,999",
+   "discount": 45,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GWHFCN1H",
+   "store": "Amazon",
+   "title": "Dell 15 Ai Powered Laptop, Intel® Core™ Ultra 7 255H Processor, 16GB DDR5 RAM, 512GB SSD, 15.6\" FHD Anti-Glare Display, Backlit Keyboard, Dedicated Copilot Key, Silver, Win11 Home + MSO H&S'24, 1.66kg",
+   "image": "https://m.media-amazon.com/images/I/71gVfCMgVUL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GWHFCN1H?tag=mdzareef-21",
+   "price": "₹1,03,990",
+   "originalPrice": "₹1,13,216",
+   "discount": 8,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GV1L119H",
+   "store": "Amazon",
+   "title": "Dell 15 (Previously Inspiron) Laptop, 14th Gen Intel Core i3/Core 3 100U Processor, 16GB DDR4, 512 SSD, Intel UHD Graphics, 15.6\" FHD 120Hz IPS AG 250 nit Display, Win 11 + Office 2024, Black, 1.63Kg",
+   "image": "https://m.media-amazon.com/images/I/71rhZEheSZL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GV1L119H?tag=mdzareef-21",
+   "price": "₹63,990",
+   "originalPrice": "₹72,781",
+   "discount": 12,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HGS4MW9W",
+   "store": "Amazon",
+   "title": "HP 15 (2026), AMD Ryzen 5 Hexa Core 7535U - (8 GB DDR5/512 GB SSD/Radeon 660M Graphics/Windows 11 Home) Thin & Light Business Laptop/15.6\" FHD/Backlit + Fingerprint/Silver/Copilot Key/1.5kg/MSO 2024",
+   "image": "https://m.media-amazon.com/images/I/71min2uj4ZL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HGS4MW9W?tag=mdzareef-21",
+   "price": "₹54,790",
+   "originalPrice": "₹1,18,899",
+   "discount": 54,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0999LYKRT",
+   "store": "Amazon",
+   "title": "ASUS ROG Zephyrus G16 (2026),Intel Core Ultra 9 386H (Series 3),RTX 5070 Ti-12GB,32GB RAM,2TB SSD,OLED,16\"(40 cm),240Hz,Win 11,M365 Basic(1Y),Office 24,Gray,1.9 Kg,GU606AR-TB039WS,Gaming Laptop",
+   "image": "https://m.media-amazon.com/images/I/81X2quaC9eL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0999LYKRT?tag=mdzareef-21",
+   "price": "₹4,89,990",
+   "originalPrice": "₹5,93,990",
+   "discount": 18,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H8S8QYXF",
+   "store": "Amazon",
+   "title": "Acer Smartchoice Aspire One, Intel Core Celeron N4500, 8GB LPDDR4 RAM/ 256GB SSD, 14.0\"/35.56cm WXGA Display, Intel UHD Graphics, Win 11 Home, Pure Silver, 1.3 Kg, A114-45, Thin and Light Laptop",
+   "image": "https://m.media-amazon.com/images/I/71uVzJHUyGL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H8S8QYXF?tag=mdzareef-21",
+   "price": "₹35,990",
+   "originalPrice": "₹70,999",
+   "discount": 49,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HLS25M5T",
+   "store": "Amazon",
+   "title": "HP 15 (2026), AMD Ryzen 3 Quad Core 7335U - (8 GB DDR5/512 GB SSD/AMD Radeon 660M Graphics/Windows 11 Pro) Thin and Light Business Laptop/15.6\" FHD/Fingerprint/Silver/Copilot Key/1.5 Kg/MSO 2024",
+   "image": "https://m.media-amazon.com/images/I/81O2FaZ1L2L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HLS25M5T?tag=mdzareef-21",
+   "price": "₹45,000",
+   "originalPrice": "₹75,000",
+   "discount": 40,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HF7X1XS1",
+   "store": "Amazon",
+   "title": "Lenovo Yoga Slim 7 Smartchoice Aura Edition Intel Evo Core Ultra 7 256V (16GB RAM/512GB SSD/14 (35.5cm)/WUXGA OLED/Copilot+ PC/Windows 11/MSO 365 Basic+Office 24/Seashell/1.19Kg), 83JX00H2IN AI Laptop",
+   "image": "https://m.media-amazon.com/images/I/71ED+l7cTbL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HF7X1XS1?tag=mdzareef-21",
+   "price": "₹1,22,990",
+   "originalPrice": "₹2,46,490",
+   "discount": 50,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H26CWY1Y",
+   "store": "Amazon",
+   "title": "ASUS ProArt PZ14 (2026),Snapdragon® X2 Elite,Qualcomm Adreno iGPU,32GB/1TB,3K OLED,Touchscreen,14\"(35.5 cm),144Hz,Win 11,M365 Basic(1Y),Office 24,Black,0.79 Kg,HT7407NA-SN024WS,Creator/Gaming Laptop",
+   "image": "https://m.media-amazon.com/images/I/71pZpkG6QgL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H26CWY1Y?tag=mdzareef-21",
+   "price": "₹2,69,990",
+   "originalPrice": "₹3,59,990",
+   "discount": 25,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0D2642MBF",
+   "store": "Amazon",
+   "title": "HP 15, (i3 14th Gen) Intel Core 3 100U (8GB DDR5, 512GB SSD), Win11, M365* Office24, Micro-Edge, Anti-Glare,15.6''/39.6cm,Silver, 1.59kg,FHD Camera with Privact Shutter, Dual Speakers Laptop-fd0883TU",
+   "image": "https://m.media-amazon.com/images/I/71inn4niF+L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0D2642MBF?tag=mdzareef-21",
+   "price": "₹50,890",
+   "originalPrice": "₹1,00,990",
+   "discount": 50,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HP898C13",
+   "store": "Amazon",
+   "title": "𝗗𝗲𝗹𝗹Laptop Model 7420 Business Laptop | Core i5 11th Gen | 16GB DDR4 RAM | Upto 512GB SSD | 14\" Full HD Display | Win 11 (Pre-Owned & Tested) (128, GB)",
+   "image": "https://m.media-amazon.com/images/I/6167W5WEDsL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HP898C13?tag=mdzareef-21",
+   "price": "₹37,990",
+   "originalPrice": "₹1,29,000",
+   "discount": 71,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HGQDFL1H",
+   "store": "Amazon",
+   "title": "Acer Aspire 3 AI PC Intel Core Ultra 5 115U, 16GB DDR5 RAM/512GB SSD, 15.6\" FHD IPS Display, Win 11Home, Steel Grey, 1.72 Kg, A325-55, Backlit Keyboard, Thin & Light Laptop",
+   "image": "https://m.media-amazon.com/images/I/71f6QQS8R+L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HGQDFL1H?tag=mdzareef-21",
+   "price": "₹59,990",
+   "originalPrice": "₹1,12,999",
+   "discount": 47,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0C9DDN2JB",
+   "store": "Amazon",
+   "title": "HP 15, AMD Ryzen 7 7730U (16GB DDR4,512GB SSD) Anti-Glare, Micro-Edge,15.6''/39.6cm, FHD, Win11, M365 Basic(1yr),Office Home24,Silver,1.59kg,FHD Camera w/Privacy Shutter, Backlit KB-Laptop, fc0761AU",
+   "image": "https://m.media-amazon.com/images/I/71nwgp7ZHsL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0C9DDN2JB?tag=mdzareef-21",
+   "price": "₹70,490",
+   "originalPrice": "₹96,747",
+   "discount": 27,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GN98J51X",
+   "store": "Amazon",
+   "title": "Lenovo V14, Intel Core i5-13420H, 8GB RAM, 512GB SSD, FHD 14” (35.56cm), Windows 11 Home, Luna Grey, 1.37Kg, 83GUA052IG, 250 Nits, 1Y Onsite Warranty, Laptop",
+   "image": "https://m.media-amazon.com/images/I/71odoZVRgaL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GN98J51X?tag=mdzareef-21",
+   "price": "₹58,440",
+   "originalPrice": "₹81,000",
+   "discount": 28,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HN6XYJ8T",
+   "store": "Amazon",
+   "title": "𝗗𝗲𝗹𝗹ModeI 5420 Laptop | Core i5 11th Gen (1145g7) Processor | Fast 8GB DDR4 RAM | 256GB SSD | 14\" FHD| Win 10 |UHD Graphics 620 | Seller Warranty | (Pre-Owned & Tested)",
+   "image": "https://m.media-amazon.com/images/I/51vIhMJreOL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HN6XYJ8T?tag=mdzareef-21",
+   "price": "₹33,999",
+   "originalPrice": "₹75,999",
+   "discount": 55,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H93MYR9Z",
+   "store": "Amazon",
+   "title": "HP Professional 15 (2026), Intel (i7 14th Gen) Core 7 150U - (32 GB/512 GB SSD/Intel Iris Xe Graphic/Windows 11 Pro) Business Laptop/15.6\" FHD/Backlit + Fingerprint/Silver/Copilot Key/1.5kg/MSO 2024",
+   "image": "https://m.media-amazon.com/images/I/719eV7IOpdL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H93MYR9Z?tag=mdzareef-21",
+   "price": "₹94,000",
+   "originalPrice": "₹1,25,000",
+   "discount": 25,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GYZQJLMW",
+   "store": "Amazon",
+   "title": "Lenovo IdeaPad Slim 3 13th Gen Intel Core i5-13420H 15.3 inch (38.8cm) WUXGA IPS Laptop (16GB RAM/512GB SSD/Windows 11/Office 2024/Top Metal Cover/Backlit KB/Cosmic Blue/1.6Kg), 83K1016PIN",
+   "image": "https://m.media-amazon.com/images/I/71ePP2MjWKL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GYZQJLMW?tag=mdzareef-21",
+   "price": "₹77,990",
+   "originalPrice": "₹99,790",
+   "discount": 22,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GTZSC5FH",
+   "store": "Amazon",
+   "title": "Acer Aspire 3 Intel Core i5-1334U Processor,Office 2024 + M365 Basic, (8GB DDR4 RAM/500 GB SSD) with 39.62 cm (15.6\") FHD LED-Backlit IPS Display/Win 11Home,A325-53, Pure Silver, 1.7KG",
+   "image": "https://m.media-amazon.com/images/I/71fbL2mUUJL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GTZSC5FH?tag=mdzareef-21",
+   "price": "₹52,990",
+   "originalPrice": "₹79,999",
+   "discount": 34,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0H6XWSDYH",
+   "store": "Amazon",
+   "title": "Lenovo V14, Intel Core i3-1315U, 8GB RAM, 512GB SSD, FHD 14” (35.56cm), Windows 11 Home, Office 2024, Luna Grey, 1.37Kg, 83HDA05HIG, 250 Nits, 1Y Onsite Warranty, Laptop",
+   "image": "https://m.media-amazon.com/images/I/71odoZVRgaL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0H6XWSDYH?tag=mdzareef-21",
+   "price": "₹53,980",
+   "originalPrice": "₹1,19,200",
+   "discount": 55,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GYZ4NXDX",
+   "store": "Amazon",
+   "title": "Lenovo LOQ 2025, Intel Core i7-13650HX, 13th Gen, NVIDIA RTX 5050 8GB, 16GB RAM, 1TB SSD, FHD IPS, 15.6\" (39.6cm), 144Hz Refresh Rate, Windows 11, Office 24, Grey, 2.4Kg, 83JE010SIN, Gaming Laptop",
+   "image": "https://m.media-amazon.com/images/I/81C9qQpCqiL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GYZ4NXDX?tag=mdzareef-21",
+   "price": "₹1,48,990",
+   "originalPrice": "₹1,97,290",
+   "discount": 24,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F3JKY28G",
@@ -3055,20 +2938,20 @@
    "discount": 39,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0GX5BF141",
+   "id": "amz-B0GYRQ79V4",
    "store": "Amazon",
-   "title": "Visio World VW 80 cm (32 Inches) SmartChoice Spectra Series Full HD Smart QLED Android TV VW32AQ3",
-   "image": "https://m.media-amazon.com/images/I/81oOBnd1iiL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GX5BF141?tag=mdzareef-21",
-   "price": "₹8,599",
-   "originalPrice": "₹13,000",
-   "discount": 34,
+   "title": "Samsung 50 inch (125cm) Crystal UHD 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | HDR10+ | 150+ Channels | 7 Years OS Upgrade | UA50UE83AHULXL",
+   "image": "https://m.media-amazon.com/images/I/81AIsrIGCGL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GYRQ79V4?tag=mdzareef-21",
+   "price": "₹37,490",
+   "originalPrice": "₹49,900",
+   "discount": 25,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0F84DKX8K",
@@ -3081,20 +2964,46 @@
    "discount": 15,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0D3DVC6FF",
+   "id": "amz-B0GTZ9TSDJ",
    "store": "Amazon",
-   "title": "Sony BRAVIA 3 Series 189 cm (75 inches) 4K Ultra HD AI Smart LED Google TV K-75S30B (Black)",
-   "image": "https://m.media-amazon.com/images/I/81D0sxPPpBL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0D3DVC6FF?tag=mdzareef-21",
-   "price": "₹1,24,990",
-   "originalPrice": "₹2,69,900",
-   "discount": 54,
+   "title": "LG 108 cms (43 inches) NU87 AI Series Nano 4K Ultra HD (3840 x 2160) Smart webOS LED TV 43NU870BPLA 2026",
+   "image": "https://m.media-amazon.com/images/I/81pUEPL2Z-L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GTZ9TSDJ?tag=mdzareef-21",
+   "price": "₹31,990",
+   "originalPrice": "₹45,990",
+   "discount": 30,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GX5BF141",
+   "store": "Amazon",
+   "title": "Visio World VW 80 cm (32 Inches) SmartChoice Spectra Series Full HD Smart QLED Android TV VW32AQ3",
+   "image": "https://m.media-amazon.com/images/I/81oOBnd1iiL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GX5BF141?tag=mdzareef-21",
+   "price": "₹8,599",
+   "originalPrice": "₹13,000",
+   "discount": 34,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FJLSNZBW",
+   "store": "Amazon",
+   "title": "Hisense 139 cm (55 Inches) 4K Ultra HD Smart Hi-QLED TV | 48W Speakers | Dolby Atmos & HDR10+ | World Fastest TV OS - VIDAA | 55E75Q (Black)",
+   "image": "https://m.media-amazon.com/images/I/711moZv2hVL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FJLSNZBW?tag=mdzareef-21",
+   "price": "₹36,490",
+   "originalPrice": "₹69,999",
+   "discount": 48,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GXNND5DS",
@@ -3107,7 +3016,7 @@
    "discount": 52,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GTZ27TH9",
@@ -3120,7 +3029,7 @@
    "discount": 35,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DNZKPKXH",
@@ -3133,7 +3042,7 @@
    "discount": 50,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FQFJ87HN",
@@ -3146,7 +3055,7 @@
    "discount": 7,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0DGJH8RYG",
@@ -3159,20 +3068,7 @@
    "discount": 14,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0DGHZWBYB",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61d88xzrklL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0DGHZWBYB?tag=mdzareef-21",
-   "price": "₹76,999",
-   "originalPrice": "₹89,900",
-   "discount": 14,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FQG1LPVF",
@@ -3185,7 +3081,20 @@
    "discount": 4,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0DGHZWBYB",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61d88xzrklL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0DGHZWBYB?tag=mdzareef-21",
+   "price": "₹76,999",
+   "originalPrice": "₹89,900",
+   "discount": 14,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HJBCGNFM",
@@ -3198,111 +3107,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FQFTV1NP",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/614MsdnfBxL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FQFTV1NP?tag=mdzareef-21",
-   "price": "₹1,19,900",
-   "originalPrice": "₹1,49,900",
-   "discount": 20,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FQF9TJ65",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61UCtwkgV7L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FQF9TJ65?tag=mdzareef-21",
-   "price": "₹1,24,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0CHX2F5QT",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/71d7rfSl0wL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0CHX2F5QT?tag=mdzareef-21",
-   "price": "₹63,990",
-   "originalPrice": "₹74,900",
-   "discount": 15,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJB6KG27",
-   "store": "Amazon",
-   "title": "iPhone 18 Pro Max (256 GB) - Silver",
-   "image": "https://m.media-amazon.com/images/I/71VG1Qmy2eL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJB6KG27?tag=mdzareef-21",
-   "price": "₹1,79,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJ9YRMZY",
-   "store": "Amazon",
-   "title": "iPhone 18 Pro Max (2 TB) - Burgundy",
-   "image": "https://m.media-amazon.com/images/I/81cEgv9e-RL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJ9YRMZY?tag=mdzareef-21",
-   "price": "₹3,29,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GQVJCHGD",
-   "store": "Amazon",
-   "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/61ULimPWODL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GQVJCHGD?tag=mdzareef-21",
-   "price": "₹99,999",
-   "originalPrice": "₹1,04,900",
-   "discount": 5,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJCXYKCT",
-   "store": "Amazon",
-   "title": "vivo",
-   "image": "https://m.media-amazon.com/images/I/71lV5kog6gL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJCXYKCT?tag=mdzareef-21",
-   "price": "₹62,999",
-   "originalPrice": "₹1,11,999",
-   "discount": 44,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0HJW2T2Y5",
-   "store": "Amazon",
-   "title": "OnePlus",
-   "image": "https://m.media-amazon.com/images/I/61rbuaZn+AL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HJW2T2Y5?tag=mdzareef-21",
-   "price": "₹21,999",
-   "originalPrice": "₹30,999",
-   "discount": 29,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HLL4CJH1",
@@ -3315,20 +3120,72 @@
    "discount": 52,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0FQF331K6",
+   "id": "amz-B0FQFTV1NP",
    "store": "Amazon",
    "title": "Apple",
-   "image": "https://m.media-amazon.com/images/I/71MXmswILHL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FQF331K6?tag=mdzareef-21",
-   "price": "₹2,24,900",
-   "originalPrice": "₹2,29,900",
-   "discount": 2,
+   "image": "https://m.media-amazon.com/images/I/614MsdnfBxL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FQFTV1NP?tag=mdzareef-21",
+   "price": "₹1,19,900",
+   "originalPrice": "₹1,49,900",
+   "discount": 20,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJ9YRMZY",
+   "store": "Amazon",
+   "title": "iPhone 18 Pro Max (2 TB) - Burgundy",
+   "image": "https://m.media-amazon.com/images/I/81cEgv9e-RL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJ9YRMZY?tag=mdzareef-21",
+   "price": "₹3,29,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJB6KG27",
+   "store": "Amazon",
+   "title": "iPhone 18 Pro Max (256 GB) - Silver",
+   "image": "https://m.media-amazon.com/images/I/71VG1Qmy2eL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJB6KG27?tag=mdzareef-21",
+   "price": "₹1,79,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FQF9TJ65",
+   "store": "Amazon",
+   "title": "Apple",
+   "image": "https://m.media-amazon.com/images/I/61UCtwkgV7L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FQF9TJ65?tag=mdzareef-21",
+   "price": "₹1,24,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJCXYKCT",
+   "store": "Amazon",
+   "title": "vivo",
+   "image": "https://m.media-amazon.com/images/I/71lV5kog6gL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJCXYKCT?tag=mdzareef-21",
+   "price": "₹62,999",
+   "originalPrice": "₹1,11,999",
+   "discount": 44,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HJB7M36L",
@@ -3341,7 +3198,33 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HFX8WCNF",
+   "store": "Amazon",
+   "title": "Google",
+   "image": "https://m.media-amazon.com/images/I/61mFA6EhqdL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HFX8WCNF?tag=mdzareef-21",
+   "price": "₹77,544",
+   "originalPrice": "₹89,999",
+   "discount": 14,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0HJW2T2Y5",
+   "store": "Amazon",
+   "title": "OnePlus",
+   "image": "https://m.media-amazon.com/images/I/61rbuaZn+AL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0HJW2T2Y5?tag=mdzareef-21",
+   "price": "₹21,999",
+   "originalPrice": "₹30,999",
+   "discount": 29,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HLX4GZPG",
@@ -3354,7 +3237,33 @@
    "discount": 16,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GP88QJL8",
+   "store": "Amazon",
+   "title": "Google",
+   "image": "https://m.media-amazon.com/images/I/51CI-cwySeL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GP88QJL8?tag=mdzareef-21",
+   "price": "₹50,749",
+   "originalPrice": "₹55,999",
+   "discount": 9,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FDL3VZR8",
+   "store": "Amazon",
+   "title": "Samsung",
+   "image": "https://m.media-amazon.com/images/I/619Z1QHCy-L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FDL3VZR8?tag=mdzareef-21",
+   "price": "₹1,29,999",
+   "originalPrice": "₹2,04,999",
+   "discount": 37,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HBBGL6C2",
@@ -3367,7 +3276,7 @@
    "discount": 57,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HD6BNRS4",
@@ -3380,59 +3289,7 @@
    "discount": 31,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FDWFRC48",
-   "store": "Amazon",
-   "title": "Lenovo Tab (Smartchoice) | 10.1 Inch Display| Wi-Fi Only| 4 GB RAM + 64 GB ROM (Expandable up to 1 TB)| Metal Body| Dual Speakers with Dolby Atmos| Android 14| Color: Polar Blue",
-   "image": "https://m.media-amazon.com/images/I/71qxj-OeOWL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FDWFRC48?tag=mdzareef-21",
-   "price": "₹14,999",
-   "originalPrice": "₹18,000",
-   "discount": 17,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0FBRVY484",
-   "store": "Amazon",
-   "title": "Redmi Pad 2, 11-inch (27.94 CM), LCD Display - 2.5K Sharp & Clear, 4GB RAM, 128GB ROM, Wi-Fi, Quad Speakers, Dolby Atmos, Sky Blue, AI Enabled",
-   "image": "https://m.media-amazon.com/images/I/71DkSicrb3L._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0FBRVY484?tag=mdzareef-21",
-   "price": "₹17,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GPVLKNN4",
-   "store": "Amazon",
-   "title": "XIAOMI Pad 8 [Smartchoice] Flagship Snapdragon 8s Gen 4 |11.2\" 3.2K Display | 8GB, 128GB | Ultra Slim Metal Design | 9200mAh Battery | 68 Bn+ Colours HyperAI | Wi-Fi 7 | Titanium Blue",
-   "image": "https://m.media-amazon.com/images/I/71bh4WOxGkL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GPVLKNN4?tag=mdzareef-21",
-   "price": "₹35,999",
-   "originalPrice": "₹51,999",
-   "discount": 31,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GDPWLJMM",
-   "store": "Amazon",
-   "title": "Redmi Pad 2 Pro, 12.1-inch (30.73 CM), LCD Display - 2.5K Sharp & Clear, 8GB RAM, 128GB ROM, Wi-Fi, Quad Speakers, Dolby Atmos, Graphite Grey, AI Enabled",
-   "image": "https://m.media-amazon.com/images/I/71t0olqGsFL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GDPWLJMM?tag=mdzareef-21",
-   "price": "₹26,999",
-   "originalPrice": "₹39,999",
-   "discount": 33,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HKRP51KP",
@@ -3445,7 +3302,59 @@
    "discount": 70,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FBRVY484",
+   "store": "Amazon",
+   "title": "Redmi Pad 2, 11-inch (27.94 CM), LCD Display - 2.5K Sharp & Clear, 4GB RAM, 128GB ROM, Wi-Fi, Quad Speakers, Dolby Atmos, Sky Blue, AI Enabled",
+   "image": "https://m.media-amazon.com/images/I/71DkSicrb3L._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FBRVY484?tag=mdzareef-21",
+   "price": "₹17,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GPVLKNN4",
+   "store": "Amazon",
+   "title": "XIAOMI Pad 8 [Smartchoice] Flagship Snapdragon 8s Gen 4 |11.2\" 3.2K Display | 8GB, 128GB | Ultra Slim Metal Design | 9200mAh Battery | 68 Bn+ Colours HyperAI | Wi-Fi 7 | Titanium Blue",
+   "image": "https://m.media-amazon.com/images/I/71bh4WOxGkL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GPVLKNN4?tag=mdzareef-21",
+   "price": "₹35,999",
+   "originalPrice": "₹51,999",
+   "discount": 31,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0GDPWLJMM",
+   "store": "Amazon",
+   "title": "Redmi Pad 2 Pro, 12.1-inch (30.73 CM), LCD Display - 2.5K Sharp & Clear, 8GB RAM, 128GB ROM, Wi-Fi, Quad Speakers, Dolby Atmos, Graphite Grey, AI Enabled",
+   "image": "https://m.media-amazon.com/images/I/71t0olqGsFL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GDPWLJMM?tag=mdzareef-21",
+   "price": "₹26,999",
+   "originalPrice": "₹39,999",
+   "discount": 33,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
+  },
+  {
+   "id": "amz-B0FDWFRC48",
+   "store": "Amazon",
+   "title": "Lenovo Tab (Smartchoice) | 10.1 Inch Display| Wi-Fi Only| 4 GB RAM + 64 GB ROM (Expandable up to 1 TB)| Metal Body| Dual Speakers with Dolby Atmos| Android 14| Color: Polar Blue",
+   "image": "https://m.media-amazon.com/images/I/71qxj-OeOWL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0FDWFRC48?tag=mdzareef-21",
+   "price": "₹14,999",
+   "originalPrice": "₹18,000",
+   "discount": 17,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G1BS9S4Q",
@@ -3458,33 +3367,20 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
-   "id": "amz-B0HHRB6DQG",
+   "id": "amz-B0GWJ4HPY4",
    "store": "Amazon",
-   "title": "Lenovo Idea Tab Pro Gen 2 (Smartchoice) with Pen Plus & Keyboard | 13\" Display, 3.5K Resolution, 144 Hz Refresh |8GB, 256GB| Snapdragon 8s Gen 4, 10200mAh, 4 JBL Speakers |USB 3.0 with DP-Out| WiFi 7",
-   "image": "https://m.media-amazon.com/images/I/817EanxdLoL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0HHRB6DQG?tag=mdzareef-21",
-   "price": "₹47,999",
-   "originalPrice": "₹90,000",
-   "discount": 47,
+   "title": "Lenovo Idea Tab Pro Gen 2 (Smartchoice) with Pen Plus | 13\" Display, 3.5K Resolution, 144 Hz Refresh |12GB, 256GB | Snapdragon 8s Gen 4 | 10200mAh | 4 JBL Speakers | USB 3.0 with DP-Out | Wi-Fi 7",
+   "image": "https://m.media-amazon.com/images/I/81nd28j2gdL._AC_UY218_.jpg",
+   "url": "https://www.amazon.in/dp/B0GWJ4HPY4?tag=mdzareef-21",
+   "price": "₹45,999",
+   "originalPrice": "₹75,000",
+   "discount": 39,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
-  },
-  {
-   "id": "amz-B0GP5LLQDG",
-   "store": "Amazon",
-   "title": "Redmi Pad 2 Wi-Fi + Cellular, Active Pen Support, 27.94cm(11\") Model, 2.5K Sharp & Clear Display, 8GB, 256GB, All Day & More 9000mAh Battery + Logitech MK240 Nano Wireless USB Keyboard and Mouse Set",
-   "image": "https://m.media-amazon.com/images/I/51FpM4x9EDL._AC_UY218_.jpg",
-   "url": "https://www.amazon.in/dp/B0GP5LLQDG?tag=mdzareef-21",
-   "price": "₹25,419",
-   "originalPrice": "₹36,094",
-   "discount": 30,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HBBTV4J4",
@@ -3497,7 +3393,7 @@
    "discount": 58,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HH3H3Z42",
@@ -3510,7 +3406,7 @@
    "discount": 68,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GD5J6HBJ",
@@ -3523,7 +3419,7 @@
    "discount": 38,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HGYMD71M",
@@ -3536,7 +3432,7 @@
    "discount": 68,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FHWR3TBX",
@@ -3549,7 +3445,7 @@
    "discount": 4,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0HDTB27NG",
@@ -3562,7 +3458,7 @@
    "discount": 66,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GQSW13PP",
@@ -3575,7 +3471,7 @@
    "discount": 34,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0G4QQ4FYB",
@@ -3588,7 +3484,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0FJG3CT42",
@@ -3601,7 +3497,7 @@
    "discount": 31,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   },
   {
    "id": "amz-B0GDQ26XZB",
@@ -3614,7 +3510,7 @@
    "discount": 10,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-10-30T04:51:14.684Z"
+   "lastSeen": "2026-10-30T05:12:17.421Z"
   }
  ]
 }
