@@ -34,6 +34,11 @@ const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 // unconfirmed row stays up with its last-confirmed price until a fresh scrape
 // replaces it or the window lapses.
 const PUBLISH_GRACE_MS = Number(process.env.PUBLISH_GRACE_MS || 6 * 60 * 60 * 1000);
+// The residential seed is the only Amazon source that survives a datacenter block,
+// and the machine writing it sleeps overnight, so it legitimately goes 8-10 hours
+// between refreshes. Holding it to the 6h publish grace emptied the Amazon half
+// every morning; the seed gets its own, longer window instead.
+const SEED_FLOOR_MS = Number(process.env.SEED_FLOOR_MS || 24 * 60 * 60 * 1000);
 const MAX_DEALS = Number(process.env.MAX_DEALS || 500);
 const MIN_DEAL_PRICE = Number(process.env.MIN_DEAL_PRICE || 1000);
 // Amazon's slice of MAX_DEALS; the remainder is Flipkart's. Mirrors the client mix.
@@ -65,6 +70,7 @@ let inflight = null;
 // store once the block outlasted the hold window. Pick the snapshot whose newest
 // row for that store was seen most recently, with size only breaking ties.
 const restoredSnapshots = [];
+let seedDeals = [];
 for (const file of [stateFile, cacheFile]) {
   try {
     const parsed = JSON.parse(readFileSync(file, 'utf8'));
@@ -74,7 +80,9 @@ for (const file of [stateFile, cacheFile]) {
 try {
   const seed = JSON.parse(readFileSync(seedFile, 'utf8'));
   if (seed && Array.isArray(seed.deals) && seed.deals.length) {
+    seedDeals = seed.deals;
     restoredSnapshots.push({
+      seed: true,
       updatedAt: seed.updatedAt,
       amazon: { status: 'live', deals: seed.deals, total: seed.deals.length },
       flipkart: { status: 'live', deals: [], total: 0 }
@@ -91,22 +99,26 @@ if (restoredSnapshots.length) {
     return ((snap[key].deals || []).length > (best[key].deals || []).length ? snap : best);
   }, restoredSnapshots[0]);
   // Union the store's rows across snapshots, keeping the newest copy of each id
-  // and dropping anything outside the publish grace. Taking a whole block would
-  // either let a big stale ledger win or throw away rows only the other snapshot
-  // still has; the union keeps every listing either source can vouch for.
+  // and dropping anything outside its source's window (the seed gets the longer
+  // floor window). Taking a whole block would either let a big stale ledger win
+  // or throw away rows only the other snapshot still has; the union keeps every
+  // listing either source can vouch for.
   const restoreStore = key => {
     const chosen = freshestStore(key);
     const pool = new Map();
     for (const snap of restoredSnapshots) {
+      const window = snap.seed ? SEED_FLOOR_MS : PUBLISH_GRACE_MS;
       for (const deal of (snap[key] && snap[key].deals) || []) {
         if (!deal || !deal.id) continue;
         const seen = Date.parse(deal.lastSeen) || 0;
-        if (restoreNow - seen > PUBLISH_GRACE_MS) continue;
+        if (restoreNow - seen > window) continue;
         const existing = pool.get(deal.id);
-        if (!existing || seen >= (Date.parse(existing.lastSeen) || 0)) pool.set(deal.id, deal);
+        if (!existing || seen >= (Date.parse(existing.lastSeen) || 0)) {
+          pool.set(deal.id, snap.seed ? { ...deal, stale: false } : deal);
+        }
       }
     }
-    return { ...chosen[key], deals: pool.size ? [...pool.values()] : chosen[key].deals };
+    return { ...chosen[key], deals: [...pool.values()] };
   };
   cache = {
     ...restoredSnapshots[0],
@@ -1247,6 +1259,17 @@ function finaliseStoreDeals(deals, budget, now) {
   return out;
 }
 
+// Amazon rows confirmed on the residential connection, published as a floor when
+// the CI scrape cannot vouch for enough of the catalogue. Rows older than the
+// seed window are dropped; the stale flag is cleared because these listings are
+// being published, and every consumer treats stale rows as invisible.
+function seedFloorDeals(budget, now) {
+  const usable = seedDeals
+    .filter(d => d && d.id && now - (Date.parse(d.lastSeen) || 0) <= SEED_FLOOR_MS)
+    .map(d => ({ ...d, stale: false }));
+  return finaliseStoreDeals(usable, budget, now);
+}
+
 async function scrapeDeals() {
   const [amazonFresh, flipkartFresh] = await Promise.all([
     loadFromAmazon(),
@@ -1261,7 +1284,26 @@ async function scrapeDeals() {
   // Publish only fresh, in-stock, ₹1000+ deals, split 70/30 and capped so the two
   // stores together never exceed MAX_DEALS.
   const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
-  const amazonDeals = finaliseStoreDeals(amazon.deals, amazonBudget, now);
+  let amazonDeals = finaliseStoreDeals(amazon.deals, amazonBudget, now);
+
+  // Datacenter IPs are blocked in bursts, so a CI run regularly confirms only a
+  // third of the catalogue. Union the residential seed in whenever the scrape is
+  // degraded (or produced nothing at all) instead of shipping a shrunken Amazon
+  // half. Fresh rows win on id; the seed only fills the gaps and ages out on its
+  // own window.
+  let amazonStatus = amazon.status;
+  const seedFloor = seedFloorDeals(amazonBudget, now);
+  const thin = seedFloor.length > 0 && amazonDeals.length < seedFloor.length * 0.5;
+  if (amazonStatus !== 'live' || thin) {
+    const hadConfirmed = amazonDeals.length > 0;
+    const seenIds = new Set(amazonDeals.map(d => d.id));
+    const floor = seedFloor.filter(d => !seenIds.has(d.id));
+    if (floor.length) {
+      amazonDeals = [...amazonDeals, ...floor].slice(0, amazonBudget);
+      if (!hadConfirmed) amazonStatus = 'seed';
+    }
+  }
+
   const flipkartDeals = finaliseStoreDeals(flipkart.deals, MAX_DEALS - amazonBudget, now);
 
   // Deduplicate across stores
@@ -1275,7 +1317,7 @@ async function scrapeDeals() {
   cache = {
     updatedAt: new Date(now).toISOString(),
     source: 'Direct Amazon & Flipkart pages',
-    amazon: { ...storeBlock(amazon), deals: amazonDeals, total: amazonDeals.length },
+    amazon: { ...storeBlock(amazon), status: amazonStatus, deals: amazonDeals, total: amazonDeals.length },
     flipkart: { ...storeBlock(flipkart), deals: flipkartDeals, total: flipkartDeals.length },
     total: deals.length
   };
@@ -1287,8 +1329,11 @@ async function scrapeDeals() {
     writeFile(stateFile, payload).catch(() => {})
   ]);
 
-  for (const [name, merged, published] of [['amazon', amazon, amazonDeals], ['flipkart', flipkart, flipkartDeals]]) {
-    console.log(`[deals] ${name}: scraped=${merged.fresh} dropped=${merged.deals.length - published.length} published=${published.length} status=${merged.status}`);
+  for (const [name, merged, published, status] of [
+    ['amazon', amazon, amazonDeals, amazonStatus],
+    ['flipkart', flipkart, flipkartDeals, flipkart.status]
+  ]) {
+    console.log(`[deals] ${name}: scraped=${merged.fresh} published=${published.length} status=${status}`);
   }
   console.log(`[deals] merged ${deals.length} deals (cap ${MAX_DEALS}, min ₹${MIN_DEAL_PRICE}) at ${cache.updatedAt}`);
   return cache;
