@@ -1472,8 +1472,12 @@ if (process.argv.includes('--amazon-seed')) {
         const existing = JSON.parse(readFileSync(seedFile, 'utf8'));
         if (existing && Array.isArray(existing.deals)) previous = existing.deals;
       } catch {}
+      // A quiet run can answer every query yet still parse only a fraction of the
+      // catalogue, so a thin result is treated as degraded even with blocked=0 —
+      // same guard mergeStore() applies to the CI scrape.
       const freshIds = new Set(fresh.map(d => d.id));
-      const carried = (res.blocked || 0) > 0
+      const shrunk = previous.length >= 40 && fresh.length < previous.length * 0.6;
+      const carried = (res.blocked || 0) > 0 || shrunk
         ? previous.filter(d => !freshIds.has(d.id)).map(d => ({ ...d, stale: true }))
         : [];
       const deals = finaliseStoreDeals(
