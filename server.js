@@ -21,8 +21,10 @@ const seedFile = path.join(__dirname, 'data', 'amazon-seed.json');
 // scrape that returns fewer rows than last time never deletes the difference
 // outright, so this TTL is the only clock that removes a listing.
 const DEAL_TTL_MS = Number(process.env.DEAL_TTL_MS || 24 * 60 * 60 * 1000);
-// A fully blocked store may hold its last snapshot for at most this long.
-const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 3 * 60 * 60 * 1000);
+// A fully blocked store may hold its last snapshot for at most this long. Keep
+// it at least as long as PUBLISH_GRACE_MS: holding for less would drop rows that
+// are still meant to stay published while Amazon is throttling this IP.
+const STORE_STALE_MS = Number(process.env.STORE_STALE_MS || 6 * 60 * 60 * 1000);
 const MAX_STORE_DEALS = Number(process.env.MAX_STORE_DEALS || 600);
 // The published feed holds at most this many deals in total, split 70/30 across
 // stores, and every listing must clear this price floor. Out-of-stock rows are
@@ -58,8 +60,10 @@ let inflight = null;
 // which in CI is the rich snapshot captured on a residential IP, and the
 // residential Amazon seed, which is refreshed from a home connection and is what
 // keeps the Amazon half of the feed populated while CI's datacenter IP is
-// throttled. Take whichever holds more of each store, so the committed floor is
-// never shadowed by a smaller ledger the runner accumulated.
+// throttled. Freshness wins over row count: a ledger captured before an Amazon
+// block can be larger than the seed yet hours old, and preferring it blanked the
+// store once the block outlasted the hold window. Pick the snapshot whose newest
+// row for that store was seen most recently, with size only breaking ties.
 const restoredSnapshots = [];
 for (const file of [stateFile, cacheFile]) {
   try {
@@ -78,17 +82,40 @@ try {
   }
 } catch {}
 if (restoredSnapshots.length) {
-  const richerStore = key => restoredSnapshots.reduce((best, snap) =>
-    ((snap[key].deals || []).length > (best[key].deals || []).length ? snap : best), restoredSnapshots[0]);
+  const restoreNow = Date.now();
+  const newestSighting = (snap, key) => ((snap[key] && snap[key].deals) || [])
+    .reduce((newest, d) => Math.max(newest, Date.parse(d.lastSeen) || 0), 0);
+  const freshestStore = key => restoredSnapshots.reduce((best, snap) => {
+    const newer = newestSighting(snap, key) - newestSighting(best, key);
+    if (newer) return newer > 0 ? snap : best;
+    return ((snap[key].deals || []).length > (best[key].deals || []).length ? snap : best);
+  }, restoredSnapshots[0]);
+  // Union the store's rows across snapshots, keeping the newest copy of each id
+  // and dropping anything outside the publish grace. Taking a whole block would
+  // either let a big stale ledger win or throw away rows only the other snapshot
+  // still has; the union keeps every listing either source can vouch for.
+  const restoreStore = key => {
+    const chosen = freshestStore(key);
+    const pool = new Map();
+    for (const snap of restoredSnapshots) {
+      for (const deal of (snap[key] && snap[key].deals) || []) {
+        if (!deal || !deal.id) continue;
+        const seen = Date.parse(deal.lastSeen) || 0;
+        if (restoreNow - seen > PUBLISH_GRACE_MS) continue;
+        const existing = pool.get(deal.id);
+        if (!existing || seen >= (Date.parse(existing.lastSeen) || 0)) pool.set(deal.id, deal);
+      }
+    }
+    return { ...chosen[key], deals: pool.size ? [...pool.values()] : chosen[key].deals };
+  };
   cache = {
     ...restoredSnapshots[0],
-    amazon: richerStore('amazon').amazon,
-    flipkart: richerStore('flipkart').flipkart
+    amazon: restoreStore('amazon'),
+    flipkart: restoreStore('flipkart')
   };
   // A restored snapshot can predate these rules, so strip stale/out-of-stock and
   // sub-₹1000 rows here too — the first response is already clean.
   const amazonBudget = Math.round(MAX_DEALS * AMAZON_SHARE);
-  const restoreNow = Date.now();
   cache.amazon = { ...cache.amazon, deals: finaliseStoreDeals(cache.amazon.deals, amazonBudget, restoreNow) };
   cache.flipkart = { ...cache.flipkart, deals: finaliseStoreDeals(cache.flipkart.deals, MAX_DEALS - amazonBudget, restoreNow) };
   cache.amazon.total = cache.amazon.deals.length;
