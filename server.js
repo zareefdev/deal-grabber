@@ -1144,10 +1144,13 @@ function mergeStore(freshDeals, previousDeals, now, degraded) {
     };
   }
 
-  // Every query answered: the fresh set is trustworthy, so a row that is absent
-  // is genuinely gone and drops out now.
+  // A run can answer every query and still come back with a fraction of the last
+  // pool: Amazon serves 200s that parse to nothing on some IPs without ever
+  // tripping the block detector. Treat a sudden halving as degraded too, or one
+  // quietly thin scrape would delete most of the store's listings outright.
   const freshIds = new Set(dealt.map(d => d.id));
-  if (!degraded) {
+  const shrunk = prev.length >= 40 && dealt.length < prev.length * 0.6;
+  if (!degraded && !shrunk) {
     return {
       status: 'live',
       deals: dealt.slice(0, MAX_STORE_DEALS),
@@ -1452,17 +1455,36 @@ process.on('SIGTERM', shutdown);
 if (process.argv.includes('--amazon-seed')) {
   loadFromAmazonScrape()
     .then(async res => {
-      const deals = finaliseStoreDeals(res.deals, Math.round(MAX_DEALS * AMAZON_SHARE), Date.now());
-      if (!deals.length) {
+      const now = Date.now();
+      const stamp = new Date(now).toISOString();
+      const budget = Math.round(MAX_DEALS * AMAZON_SHARE);
+      const fresh = finaliseStoreDeals(res.deals, budget, now);
+      if (!fresh.length) {
         console.error(`[seed] no Amazon rows scraped (blocked=${res.blocked}) — leaving the existing seed in place`);
         process.exitCode = 1;
         return;
       }
-      const stamp = new Date().toISOString();
+      // A blocked run only covers part of the catalogue. Merging it into the
+      // previous seed keeps that seed as a floor instead of replacing 280 rows
+      // with the 70 that got through — the shrink that made Amazon disappear.
+      let previous = [];
+      try {
+        const existing = JSON.parse(readFileSync(seedFile, 'utf8'));
+        if (existing && Array.isArray(existing.deals)) previous = existing.deals;
+      } catch {}
+      const freshIds = new Set(fresh.map(d => d.id));
+      const carried = (res.blocked || 0) > 0
+        ? previous.filter(d => !freshIds.has(d.id)).map(d => ({ ...d, stale: true }))
+        : [];
+      const deals = finaliseStoreDeals(
+        [...fresh.map(d => ({ ...d, lastSeen: stamp })), ...carried],
+        budget,
+        now
+      );
       const payload = JSON.stringify({
         updatedAt: stamp,
         source: 'Residential Amazon scrape',
-        deals: deals.map(d => ({ ...d, lastSeen: stamp }))
+        deals
       }, null, 1);
       mkdirSync(path.dirname(seedFile), { recursive: true });
       await writeFile(seedFile, payload);
