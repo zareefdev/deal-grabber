@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T05:23:29.855Z",
+ "updatedAt": "2026-11-11T05:45:52.974Z",
  "source": "Residential Amazon scrape",
  "deals": [
   {
@@ -13,7 +13,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DSKMV3ZC",
@@ -26,7 +26,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H1WY1D37",
@@ -39,7 +39,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0G2B2QVLL",
@@ -52,7 +52,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0D2R2MXXJ",
@@ -65,7 +65,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HG96MZ9P",
@@ -78,7 +78,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H3KZ4VQR",
@@ -91,7 +91,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H1X5XP25",
@@ -104,7 +104,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B09794YHBS",
@@ -117,7 +117,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FP22HBH9",
@@ -130,7 +130,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FBRGKXHG",
@@ -143,7 +143,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FVFNHT7H",
@@ -156,7 +156,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B008FWZ5MS",
@@ -169,7 +169,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CV48C7S3",
@@ -182,7 +182,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CR7N9MD9",
@@ -195,7 +195,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DH3J6LB9",
@@ -208,20 +208,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
-  },
-  {
-   "id": "amz-B08TTXNZ4Y",
-   "store": "Amazon",
-   "title": "realme Buds Wireless 5 ANC in Ear Bluetooth Headphones,50dB ANC, 13.6mm Dynamic Bass Driver,360° Spatial Audio,45ms Low Latency,Upto 38hrs Playback,IP55 Rating,Dual Device Connection (Midnight Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/412-YzPRcPL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B08TTXNZ4Y?tag=mdzareef-21",
-   "price": "₹1,99,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H4ZB5NQV",
@@ -234,7 +221,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FC2Y3XGV",
@@ -247,7 +234,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H3Q5DPP9",
@@ -260,7 +247,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FDGVNSLH",
@@ -273,7 +260,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0BZPK3XFQ",
@@ -286,7 +273,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GGC7JYPP",
@@ -299,7 +286,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DS2XNXZB",
@@ -312,7 +299,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FZ9YD8MN",
@@ -325,7 +312,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GXNND5DS",
@@ -338,7 +325,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GXB76VRW",
@@ -351,7 +338,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GXV5313B",
@@ -364,7 +351,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GXK5K633",
@@ -377,7 +364,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F6ZLFNVT",
@@ -390,7 +377,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HBC8Q28H",
@@ -403,7 +390,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GVJSTKS6",
@@ -416,7 +403,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GGR9DCCB",
@@ -429,7 +416,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GTZ8WM5W",
@@ -442,7 +429,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DZHRYFG7",
@@ -455,7 +442,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F3HWNTR1",
@@ -468,7 +455,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H5R6C68N",
@@ -481,7 +468,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F84DKX8K",
@@ -494,7 +481,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F7X5FC43",
@@ -507,7 +494,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FBW5S6H2",
@@ -520,7 +507,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FXFG8QL4",
@@ -533,7 +520,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FDW7NT4Q",
@@ -546,7 +533,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HFWFZSHJ",
@@ -559,7 +546,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0G6LYM6DY",
@@ -572,7 +559,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FDQTLSFT",
@@ -585,7 +572,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GJGCD8XY",
@@ -598,7 +585,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DV3JFQJD",
@@ -611,7 +598,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GJG3GKYD",
@@ -624,7 +611,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H36VBKR9",
@@ -637,7 +624,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GVNBSXLS",
@@ -650,7 +637,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F8BT3TQW",
@@ -663,7 +650,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FJLSNZBW",
@@ -676,7 +663,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HBQXJY84",
@@ -689,7 +676,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FBS93Y6J",
@@ -702,7 +689,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0000C73CQ",
@@ -715,7 +702,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FK4RND9C",
@@ -728,7 +715,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B07N42JB4S",
@@ -741,7 +728,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B00R1P3B4O",
@@ -754,7 +741,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B08HRGRCGL",
@@ -767,7 +754,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B07DJLFMPS",
@@ -780,7 +767,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H4TZN7WW",
@@ -793,7 +780,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DNMXY6YC",
@@ -806,7 +793,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GR64G4H6",
@@ -819,7 +806,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H94K2RSC",
@@ -832,7 +819,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H25X3W7F",
@@ -845,7 +832,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H46H6JK8",
@@ -858,7 +845,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HF7X1XS1",
@@ -871,7 +858,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GWQC4JGJ",
@@ -884,7 +871,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H2J8DDKH",
@@ -897,7 +884,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GY82GDW2",
@@ -910,7 +897,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H3PV7418",
@@ -923,7 +910,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DSFQZTVW",
@@ -936,7 +923,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GV1L119H",
@@ -949,7 +936,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GWHGS8P5",
@@ -962,7 +949,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HKJK4M3G",
@@ -975,7 +962,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FFMQB3KL",
@@ -988,7 +975,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GWQHCDS6",
@@ -1001,7 +988,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H45YFPJT",
@@ -1014,7 +1001,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H8P895HL",
@@ -1027,7 +1014,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GYZ4NXDX",
@@ -1040,7 +1027,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HMJ5T5P7",
@@ -1053,7 +1040,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GSVR9C3X",
@@ -1066,7 +1053,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GRHZDJBJ",
@@ -1074,12 +1061,12 @@
    "title": "Lenovo LOQ Essential AMD Ryzen 7 170 | NVIDIA RTX 3050 6GB (16GB RAM/512GB SSD/FHD IPS/144Hz Refresh Rate/15.6\" (39.6cm)/Windows 11/Office Home 2024/Grey/1.8Kg), 83S000CRIN Gaming Laptop",
    "image": "https://images-eu.ssl-images-amazon.com/images/I/81Xbk+qRp2L._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0GRHZDJBJ?tag=mdzareef-21",
-   "price": "₹99,990",
+   "price": "₹1,06,200",
    "originalPrice": "",
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DSFP9FCS",
@@ -1092,7 +1079,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H8P8M4VL",
@@ -1105,7 +1092,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B09BB8DQKN",
@@ -1118,7 +1105,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H9SV5VKG",
@@ -1131,7 +1118,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0D2Y31YX4",
@@ -1144,7 +1131,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0F29HNJL1",
@@ -1157,7 +1144,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GZ3FBR3W",
@@ -1170,7 +1157,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0BJ72WZQ7",
@@ -1183,7 +1170,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CMF25TKG",
@@ -1196,7 +1183,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FLF44GTQ",
@@ -1209,7 +1196,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DY7YPBJL",
@@ -1222,7 +1209,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0G1T4R5F5",
@@ -1235,7 +1222,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H3BXLJ3T",
@@ -1248,7 +1235,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FDQK5KSZ",
@@ -1261,7 +1248,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GX9JK9SN",
@@ -1274,7 +1261,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HGFFCZ2D",
@@ -1287,7 +1274,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CG1VX5P4",
@@ -1300,7 +1287,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FQG8MSVT",
@@ -1308,12 +1295,12 @@
    "title": "Fire-Boltt Talk Bluetooth Calling Smartwatch, 1.39\" TFT Display with Dual Button, Hands On Voice Assistance, 120 Sports Modes, in Built Mic & Speaker (Talk, Silver Steel)",
    "image": "https://images-eu.ssl-images-amazon.com/images/I/71uRJs56VAL._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0FQG8MSVT?tag=mdzareef-21",
-   "price": "₹1,099",
+   "price": "₹1,599",
    "originalPrice": "",
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FC6CGZTP",
@@ -1326,7 +1313,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0DB5XSKLJ",
@@ -1339,7 +1326,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0B6BLTGTT",
@@ -1352,7 +1339,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HH3JZ1T7",
@@ -1365,7 +1352,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B09PRGXJJF",
@@ -1378,7 +1365,20 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
+  },
+  {
+   "id": "amz-B0DY2SWV16",
+   "store": "Amazon",
+   "title": "Fire-Boltt Ninja X Ring Smart Watch with 1.96” Large Display, Bluetooth Calling, Wireless Charging, AI Voice Assistant, 500+ Watch Faces, Health Suite, Smart Watch for Man & Woman – Black N",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71vVrHE0eXL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DY2SWV16?tag=mdzareef-21",
+   "price": "₹1,499",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CG1Y3336",
@@ -1391,7 +1391,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0FC6BG26T",
@@ -1404,7 +1404,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0CQCL7G4K",
@@ -1417,7 +1417,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0GH8HDRPN",
@@ -1430,7 +1430,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H6HY2C29",
@@ -1443,7 +1443,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HGM8PBNL",
@@ -1456,7 +1456,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H3KBZ4J9",
@@ -1469,7 +1469,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H6TYQ2RH",
@@ -1482,7 +1482,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HBPNBC7B",
@@ -1495,7 +1495,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HHSXM4KT",
@@ -1508,7 +1508,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HDCFSH6G",
@@ -1521,7 +1521,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HG9NPGZS",
@@ -1534,7 +1534,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HHFBKKM6",
@@ -1547,7 +1547,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HDPDGKJ4",
@@ -1560,20 +1560,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
-  },
-  {
-   "id": "amz-B0HDLVXHM8",
-   "store": "Amazon",
-   "title": "Logitech K250 Bluetooth Keyboard with Numpad, Easy Connectivity, Compact Wireless Keyboard Made with Recycled Plastic, Spill-Resistant, Comfortable Keys - Windows/MacOS - Graphite",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/617PYXoYryL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0HDLVXHM8?tag=mdzareef-21",
-   "price": "₹1,099",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0HGMCTVVF",
@@ -1586,7 +1573,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
   },
   {
    "id": "amz-B0H65QJ4TX",
@@ -1599,7 +1586,35 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:45:52.974Z"
+  },
+  {
+   "id": "amz-B08TTXNZ4Y",
+   "store": "Amazon",
+   "title": "realme Buds Wireless 5 ANC in Ear Bluetooth Headphones,50dB ANC, 13.6mm Dynamic Bass Driver,360° Spatial Audio,45ms Low Latency,Upto 38hrs Playback,IP55 Rating,Dual Device Connection (Midnight Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/412-YzPRcPL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B08TTXNZ4Y?tag=mdzareef-21",
+   "price": "₹1,99,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0HDLVXHM8",
+   "store": "Amazon",
+   "title": "Logitech K250 Bluetooth Keyboard with Numpad, Easy Connectivity, Compact Wireless Keyboard Made with Recycled Plastic, Spill-Resistant, Comfortable Keys - Windows/MacOS - Graphite",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/617PYXoYryL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0HDLVXHM8?tag=mdzareef-21",
+   "price": "₹1,099",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Laptops",
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GWHYQW77",
@@ -1612,7 +1627,8 @@
    "discount": 41,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HBBTV4J4",
@@ -1625,7 +1641,8 @@
    "discount": 58,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FHWR3TBX",
@@ -1638,7 +1655,8 @@
    "discount": 12,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G1BS9S4Q",
@@ -1651,7 +1669,8 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GPWDXZXP",
@@ -1664,7 +1683,8 @@
    "discount": 23,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FDWFRC48",
@@ -1677,7 +1697,8 @@
    "discount": 18,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FBRVY484",
@@ -1690,7 +1711,8 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HD6BNRS4",
@@ -1703,7 +1725,8 @@
    "discount": 33,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H5C6STCH",
@@ -1716,7 +1739,8 @@
    "discount": 44,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HKRP51KP",
@@ -1729,7 +1753,8 @@
    "discount": 60,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HGYMD71M",
@@ -1742,7 +1767,8 @@
    "discount": 60,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G4QQ4FYB",
@@ -1755,7 +1781,8 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GD5J6HBJ",
@@ -1768,7 +1795,8 @@
    "discount": 38,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HBBGL6C2",
@@ -1781,7 +1809,8 @@
    "discount": 57,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FJG3CT42",
@@ -1794,7 +1823,8 @@
    "discount": 31,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GD5FR4DJ",
@@ -1807,7 +1837,8 @@
    "discount": 57,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H1RCSFSK",
@@ -1820,7 +1851,8 @@
    "discount": 31,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FJ87YTMY",
@@ -1833,7 +1865,8 @@
    "discount": 18,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G2RZCF95",
@@ -1846,7 +1879,8 @@
    "discount": 25,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GDQ26XZB",
@@ -1859,7 +1893,8 @@
    "discount": 10,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FNWSP5L3",
@@ -1872,7 +1907,8 @@
    "discount": 12,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FQFYXCC4",
@@ -1885,7 +1921,8 @@
    "discount": 7,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DGJH8RYG",
@@ -1898,7 +1935,8 @@
    "discount": 11,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FQG1LPVF",
@@ -1911,7 +1949,8 @@
    "discount": 5,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DGHZWBYB",
@@ -1924,7 +1963,8 @@
    "discount": 11,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJBCGNFM",
@@ -1937,7 +1977,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FQFW4MVJ",
@@ -1950,7 +1991,8 @@
    "discount": 3,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GQW31KLK",
@@ -1963,7 +2005,8 @@
    "discount": 6,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HLL4CJH1",
@@ -1976,7 +2019,8 @@
    "discount": 52,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJB7MQ97",
@@ -1989,7 +2033,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJ9XZ74M",
@@ -2002,7 +2047,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HFX8WCNF",
@@ -2015,7 +2061,8 @@
    "discount": 14,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJB6KG27",
@@ -2028,7 +2075,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FDL3VZR8",
@@ -2041,7 +2089,8 @@
    "discount": 37,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJB3GZ2C",
@@ -2054,7 +2103,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJCXYKCT",
@@ -2067,7 +2117,8 @@
    "discount": 44,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GWLTLNTV",
@@ -2080,7 +2131,8 @@
    "discount": 15,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJ2PR3FN",
@@ -2093,7 +2145,8 @@
    "discount": 40,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FN7QTRPY",
@@ -2106,7 +2159,8 @@
    "discount": 29,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2X787VM",
@@ -2119,7 +2173,8 @@
    "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HMRMYT66",
@@ -2132,7 +2187,8 @@
    "discount": 17,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H1BMBX9R",
@@ -2145,7 +2201,8 @@
    "discount": 29,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GW8DSXW8",
@@ -2158,7 +2215,8 @@
    "discount": 34,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HDD3GR8T",
@@ -2171,7 +2229,8 @@
    "discount": 20,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GVYXPZBS",
@@ -2184,7 +2243,8 @@
    "discount": 19,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GS5Y7QBF",
@@ -2197,7 +2257,8 @@
    "discount": 9,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2WVGDM4",
@@ -2210,7 +2271,8 @@
    "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FVW9B8GQ",
@@ -2223,7 +2285,8 @@
    "discount": 39,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GS5SM6JR",
@@ -2236,7 +2299,8 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GFVKCNP1",
@@ -2249,7 +2313,8 @@
    "discount": 4,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FT7T3GZF",
@@ -2262,7 +2327,8 @@
    "discount": 29,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GVG27VS7",
@@ -2275,7 +2341,8 @@
    "discount": 24,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DYP4NYYJ",
@@ -2288,7 +2355,8 @@
    "discount": 7,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GRBQYQY3",
@@ -2301,7 +2369,8 @@
    "discount": 1,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2X2RJWP",
@@ -2314,7 +2383,8 @@
    "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HG115Q96",
@@ -2327,7 +2397,8 @@
    "discount": 43,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0CQ4J4YFL",
@@ -2340,7 +2411,8 @@
    "discount": 70,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0B853MRMY",
@@ -2353,7 +2425,8 @@
    "discount": 92,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G61K7RGD",
@@ -2366,7 +2439,8 @@
    "discount": 85,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FLF5KFQ8",
@@ -2379,7 +2453,8 @@
    "discount": 80,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G1T2GZP9",
@@ -2392,7 +2467,8 @@
    "discount": 81,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0D2K6JJNX",
@@ -2405,7 +2481,8 @@
    "discount": 89,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DYVSGMT5",
@@ -2418,7 +2495,8 @@
    "discount": 25,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0C5JPYF86",
@@ -2431,7 +2509,8 @@
    "discount": 26,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0F2GW7CBS",
@@ -2444,7 +2523,8 @@
    "discount": 46,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B08H89FP2P",
@@ -2457,7 +2537,8 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0BX8XKNYK",
@@ -2470,7 +2551,8 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJWKN86V",
@@ -2483,7 +2565,8 @@
    "discount": 38,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJWHBFKL",
@@ -2496,7 +2579,8 @@
    "discount": 38,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0BZJ9D5W3",
@@ -2509,7 +2593,8 @@
    "discount": 13,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0D5J4749K",
@@ -2522,7 +2607,8 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0B15LHF3K",
@@ -2535,7 +2621,8 @@
    "discount": 37,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0CG19QXWD",
@@ -2548,7 +2635,8 @@
    "discount": 40,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJZS8HNP",
@@ -2561,7 +2649,8 @@
    "discount": 31,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FT14NQYK",
@@ -2574,7 +2663,8 @@
    "discount": 49,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HH9K634M",
@@ -2587,7 +2677,8 @@
    "discount": 50,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GHYTRL8M",
@@ -2600,7 +2691,8 @@
    "discount": 50,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G5P9T131",
@@ -2613,7 +2705,8 @@
    "discount": 23,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GTVDH4G2",
@@ -2626,7 +2719,8 @@
    "discount": 27,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GY82SJWT",
@@ -2639,7 +2733,8 @@
    "discount": 57,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HG1QKHLM",
@@ -2652,7 +2747,8 @@
    "discount": 51,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GYZQJLMW",
@@ -2665,7 +2761,8 @@
    "discount": 15,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0CL7CMTXS",
@@ -2678,7 +2775,8 @@
    "discount": 53,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR177QCS",
@@ -2691,7 +2789,8 @@
    "discount": 8,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR6J183B",
@@ -2704,7 +2803,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HKN2F3KY",
@@ -2717,7 +2817,8 @@
    "discount": 47,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2DHYFQZ",
@@ -2730,7 +2831,8 @@
    "discount": 52,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G8YPTR6F",
@@ -2743,7 +2845,8 @@
    "discount": 54,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G2MT8YVV",
@@ -2756,7 +2859,8 @@
    "discount": 57,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HLS25M5T",
@@ -2769,7 +2873,8 @@
    "discount": 41,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJ2P9R9S",
@@ -2782,7 +2887,8 @@
    "discount": 49,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HND8H5XW",
@@ -2795,7 +2901,8 @@
    "discount": 58,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H8S8QYXF",
@@ -2808,7 +2915,8 @@
    "discount": 49,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0C9DDN2JB",
@@ -2821,7 +2929,8 @@
    "discount": 29,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FMDLD86P",
@@ -2834,7 +2943,8 @@
    "discount": 8,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FHW7PX1N",
@@ -2847,7 +2957,8 @@
    "discount": 73,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FZ9RSSWZ",
@@ -2860,7 +2971,8 @@
    "discount": 63,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GTFQG1BQ",
@@ -2873,7 +2985,8 @@
    "discount": 5,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H6FSKJ5K",
@@ -2886,7 +2999,8 @@
    "discount": 60,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GX5BF141",
@@ -2899,7 +3013,8 @@
    "discount": 25,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GTZ9TSDJ",
@@ -2912,7 +3027,8 @@
    "discount": 30,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GVK2RYY4",
@@ -2925,7 +3041,8 @@
    "discount": 52,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GX6FMSQ7",
@@ -2938,7 +3055,8 @@
    "discount": 45,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2Z4FWF4",
@@ -2951,7 +3069,8 @@
    "discount": 46,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GX52LD7V",
@@ -2964,7 +3083,8 @@
    "discount": 49,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GXKC3ZXH",
@@ -2977,7 +3097,8 @@
    "discount": 44,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HC3BTZDS",
@@ -2990,7 +3111,8 @@
    "discount": 21,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FDW1R3WG",
@@ -3003,7 +3125,8 @@
    "discount": 47,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GWLHVJRH",
@@ -3016,7 +3139,8 @@
    "discount": 15,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DGJ7TGDR",
@@ -3029,7 +3153,8 @@
    "discount": 11,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GMQG7QM5",
@@ -3042,7 +3167,8 @@
    "discount": 18,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GRB5C1HW",
@@ -3055,7 +3181,8 @@
    "discount": 15,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0G3TFPN94",
@@ -3068,7 +3195,8 @@
    "discount": 8,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJ2WM92Y",
@@ -3081,7 +3209,8 @@
    "discount": 36,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJW1DW98",
@@ -3094,7 +3223,8 @@
    "discount": 29,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H7SB1JH7",
@@ -3107,7 +3237,8 @@
    "discount": 31,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HPKW9B2V",
@@ -3120,7 +3251,8 @@
    "discount": 43,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GL1JFK48",
@@ -3133,7 +3265,8 @@
    "discount": 23,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H8NHFZLH",
@@ -3146,7 +3279,8 @@
    "discount": 33,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HMRVGQLQ",
@@ -3159,7 +3293,8 @@
    "discount": 20,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B07WYMJPVS",
@@ -3172,7 +3307,8 @@
    "discount": 44,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FNMR6KTQ",
@@ -3185,7 +3321,8 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FNMQW9HW",
@@ -3198,7 +3335,8 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GW5XR5J6",
@@ -3211,7 +3349,8 @@
    "discount": 43,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H1WY55ZL",
@@ -3224,7 +3363,8 @@
    "discount": 36,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0DHL7YT5S",
@@ -3237,7 +3377,8 @@
    "discount": 44,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H2J3PRKV",
@@ -3250,7 +3391,8 @@
    "discount": 32,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FNMNWQZV",
@@ -3263,7 +3405,8 @@
    "discount": 41,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0BT9FDZ8N",
@@ -3276,7 +3419,8 @@
    "discount": 50,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H5Q6HHWC",
@@ -3289,7 +3433,8 @@
    "discount": 46,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HFZNYNXN",
@@ -3302,7 +3447,8 @@
    "discount": 40,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0H3FHXMFJ",
@@ -3315,7 +3461,8 @@
    "discount": 45,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HJ1YVT1V",
@@ -3328,7 +3475,8 @@
    "discount": 30,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B09P7G7Y95",
@@ -3341,7 +3489,8 @@
    "discount": 47,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GL87VP7N",
@@ -3354,7 +3503,8 @@
    "discount": 25,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0FDB9H9Z7",
@@ -3367,7 +3517,8 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1528P7",
@@ -3380,7 +3531,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR16T68F",
@@ -3393,7 +3545,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1B1ZS8",
@@ -3406,7 +3559,8 @@
    "discount": 5,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1C4G1T",
@@ -3419,7 +3573,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1N96QP",
@@ -3432,7 +3587,8 @@
    "discount": 11,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR6LXD6L",
@@ -3445,7 +3601,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HGGNYJF1",
@@ -3458,7 +3615,8 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1PXKTQ",
@@ -3471,7 +3629,8 @@
    "discount": 7,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1LB81D",
@@ -3484,7 +3643,8 @@
    "discount": 10,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HPGM4H5D",
@@ -3497,7 +3657,8 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GSZY88RM",
@@ -3510,7 +3671,8 @@
    "discount": 21,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0GR1JWX1G",
@@ -3523,7 +3685,8 @@
    "discount": 7,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HPGL1Z9H",
@@ -3536,7 +3699,8 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   },
   {
    "id": "amz-B0HPGT4XRT",
@@ -3549,7 +3713,8 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-11T05:23:29.855Z"
+   "lastSeen": "2026-11-11T05:23:29.855Z",
+   "stale": false
   }
  ]
 }
