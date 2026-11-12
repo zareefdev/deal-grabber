@@ -1,774 +1,7 @@
 {
- "updatedAt": "2026-11-12T11:48:46.493Z",
+ "updatedAt": "2026-11-12T12:12:54.985Z",
  "source": "Residential Amazon scrape",
  "deals": [
-  {
-   "id": "amz-B0GVYXPZBS",
-   "store": "Amazon",
-   "title": "OnePlus N6x | 4GB+128GB | Burgundy Red | 7000mAh Battery | Power for Days | 48-Months Smoothness | Smooth 120Hz Display | Largest 5300mm2 Cooling System | Military-Grade Durability",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61rbuaZn+AL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GVYXPZBS?tag=mdzareef-21",
-   "price": "₹22,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H1WY1D37",
-   "store": "Amazon",
-   "title": "OnePlus Nord CE6 Lite | 8GB+128GB | Hyper Black | Segment's Fastest Dimensity 7400 Apex Processor | 7000mAh Battery | Segment's Highest 144Hz Refresh Rate | 50MP Main Camera, 4K Video Recording",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61T18EfkX0L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H1WY1D37?tag=mdzareef-21",
-   "price": "₹30,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FMDL81GS",
-   "store": "Amazon",
-   "title": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 128GB Storage) | 6500mAh Battery with 44W Fast Charging* | Dimensity 6300 with 579k+ AnTuTu Score* | OriginOS 6.0 with AI Creation* & Private Space*",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61+l5bzv9hL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FMDL81GS?tag=mdzareef-21",
-   "price": "₹19,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0D2R2MXXJ",
-   "store": "Amazon",
-   "title": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playback, 2-mic Clear Calls, 3D Spatial Audio, AI Translation, 12.4mm Drivers, Dual-Device Connectivity, 47ms Low Latency - Ash Black",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/51nBTTG3hNL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0D2R2MXXJ?tag=mdzareef-21",
-   "price": "₹1,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DDHM6D3L",
-   "store": "Amazon",
-   "title": "Samsung Galaxy S25 Ultra 5G AI Smartphone (Titanium Gray, 12GB RAM, 256GB Storage), 200MP Camera, 5000mAh Ultra Long Battery, QHD+ Dynamic AMOLED 2X, Galaxy AI, Knox Security, S Pen Included",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/7114RlvzXnL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DDHM6D3L?tag=mdzareef-21",
-   "price": "₹94,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DCNWN8NZ",
-   "store": "Amazon",
-   "title": "OnePlus Nord 6 | 8GB+256GB | Fresh Mint | Snapdragon 8s Gen 4 | Segment's First Stable 165FPS Gaming | Segment's Largest 9000mAh Battery | Most Complete IP Rating | Personalized AI",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61F1NWYtCKL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DCNWN8NZ?tag=mdzareef-21",
-   "price": "₹46,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0G2B2QVLL",
-   "store": "Amazon",
-   "title": "Apple EarPods (USB-C) ​​​​​​​",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/513OSdW4elL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0G2B2QVLL?tag=mdzareef-21",
-   "price": "₹1,599",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F7Y54PJX",
-   "store": "Amazon",
-   "title": "Redmi 15C 5G Prime Edition Dusk Purple 6GB + 128GB | Massive 6000mAh Battery | Segment's Largest 17.53cm Display Up to 120Hz | MediaTek Dimensity 6300 | 33W Fast Charging | 50MP AI Dual Camera",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/711q7oij2qL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F7Y54PJX?tag=mdzareef-21",
-   "price": "₹18,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H3LGB59B",
-   "store": "Amazon",
-   "title": "Apple 20W USB-C Power Adapter (for iPhone, iPad & AirPods), White",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/41aAXonVlQL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H3LGB59B?tag=mdzareef-21",
-   "price": "₹1,499",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DCZ3WDTB",
-   "store": "Amazon",
-   "title": "OnePlus N6 | 6GB+128GB | Fresh Mint | Segment's Biggest 8000mAh Battery | Segment's Fastest 45W Charging | 60-Month Smoothness | Smooth 120Hz Display | 50MP Camera | Military-Grade Durability",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61d03Bx0AjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DCZ3WDTB?tag=mdzareef-21",
-   "price": "₹26,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0HG96MZ9P",
-   "store": "Amazon",
-   "title": "Xiaomi Power Bank 4i 20000mAh 33W Super Fast Charging PD |Smart 12 Layer Protection|Type C Input & Output|Triple Output Ports|Supports Android,Apple, Tablets, Earbuds,Watch(MI Powerbank),Black",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/41vBAaU8clL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0HG96MZ9P?tag=mdzareef-21",
-   "price": "₹2,449",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FP22HBH9",
-   "store": "Amazon",
-   "title": "iQOO Z11xa 5G (Prismatic Green, 8GB RAM, 128 GB Storage) | Massive 7200mAh Battery | Dimensity 7400 Turbo Processor | OriginOS 6 with 4 Years of Security Updates*",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61KRgiSiB0L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FP22HBH9?tag=mdzareef-21",
-   "price": "₹28,998",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0G48KWP3C",
-   "store": "Amazon",
-   "title": "OnePlus Bullets Wireless Z3 in-Ear Neckband with 12.4mm Drivers, 3D Spatial Audio,10 mins Charge for 27 hrs Playback, 4 EQ preset, Dynamic bass Enhancement & BT5.4, Black (E307A)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/51vT4GzBObL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0G48KWP3C?tag=mdzareef-21",
-   "price": "₹1,910",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H1X5XP25",
-   "store": "Amazon",
-   "title": "OnePlus Nord CE6 | 8GB+128GB | Pitch Black | Snapdragon 7s Gen 4 | Segment's Fastest Touch Response | 8000mAh Battery | 144Hz 1.5K AMOLED Display | 50MP Main + 32MP Selfie 4K Cameras | IP66,68,69,69K",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Di24QT6GL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H1X5XP25?tag=mdzareef-21",
-   "price": "₹37,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B008FWZ5MS",
-   "store": "Amazon",
-   "title": "Samsung Galaxy A56 5G Mobile (Awesome Midnight Blue, 8GB, 128GB) | Segment Most Complete Triple Camera | 50MP | AI Editing | 4nm Processor | sAMOLED | 5000mAh | Gorilla Glass Victus+| Knox Security",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71huGP+5FkL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B008FWZ5MS?tag=mdzareef-21",
-   "price": "₹31,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0CV48C7S3",
-   "store": "Amazon",
-   "title": "Noise Twist Round dial Smart Watch with Bluetooth Calling, 1.38\" TFT Display, up-to 7 Days Battery, 100+ Watch Faces, IP68, Heart Rate Monitor, Sleep Tracking (Jet Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61-vRq2ulOL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0CV48C7S3?tag=mdzareef-21",
-   "price": "₹1,599",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0CJMGTMHS",
-   "store": "Amazon",
-   "title": "OnePlus 15R | 16GB+512GB | Charcoal Black | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps Video",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61AsNTuJ6mL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0CJMGTMHS?tag=mdzareef-21",
-   "price": "₹66,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0HCB97YK5",
-   "store": "Amazon",
-   "title": "Ambrane Magsafe Wireless 10000Mah Fast Charging USB Type-C Input Power Bank, Strong Magnet, 22.5W Output For iPhone 12 & Above, Android & Other Qi Enabled Devices + Magnetic Ring (Aerosync Snap, Blue)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61H84kDDNFL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0HCB97YK5?tag=mdzareef-21",
-   "price": "₹1,749",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GS5Y6BD3",
-   "store": "Amazon",
-   "title": "iQOO 15R (Triumph Silver 2026, 8GB RAM, 256GB Storage) | Snapdragon® 8 Gen 5 Processor | India’s Slimmest Smartphone in 7600mAh Battery* | Segment's Most Stable 144FPS Gaming*",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61RJGwzjcjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GS5Y6BD3?tag=mdzareef-21",
-   "price": "₹53,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GRGY8GTV",
-   "store": "Amazon",
-   "title": "REDMI A7 Pro 5G (Mist Blue, 4GB RAM,128GB Storage) | Segment's Fastest Processor | Segment's Largest Battery | Segment's Largest & Smoothest 6.9in 120Hz Display",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71eQsL8sqcL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GRGY8GTV?tag=mdzareef-21",
-   "price": "₹15,497",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0G2H4R5YB",
-   "store": "Amazon",
-   "title": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Low Latency Gaming, Instacharge(10 Min=120 Min), Bluetooth V5.3 (Ice Blue)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/518-N2QlrVL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0G2H4R5YB?tag=mdzareef-21",
-   "price": "₹1,199",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DNPWJLQC",
-   "store": "Amazon",
-   "title": "GOBOULT Z40 True Wireless in Ear Earbuds with 60H Playtime, Zen™ ENC Mic, Low Latency Gaming, Type-C Fast Charging, Made in India, 10mm Rich Bass Drivers, IPX5, Ear Buds TWS (Blue)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71rlmEZ6cjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DNPWJLQC?tag=mdzareef-21",
-   "price": "₹1,099",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GZNFM1CT",
-   "store": "Amazon",
-   "title": "realme Buds Wireless 5 ANC in Ear Bluetooth Headphones,50dB ANC, 13.6mm Dynamic Bass Driver,360° Spatial Audio,45ms Low Latency,Upto 38hrs Playback,IP55 Rating,Dual Device Connection (Midnight Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/412-YzPRcPL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GZNFM1CT?tag=mdzareef-21",
-   "price": "₹1,97,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DS2XNXZB",
-   "store": "Amazon",
-   "title": "boAt 2026 Launch Airdopes ProClip,Air Conduction Tech,Feather-Light Earbuds,Clip-On Design,All Day Wear Comfort,52H Battery,12mm Dynamic Drivers,App Support,BT v6.0,OWS Earbuds with mic(Satin White)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61CE4Bb7AHL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DS2XNXZB?tag=mdzareef-21",
-   "price": "₹1,799",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DBGP48NW",
-   "store": "Amazon",
-   "title": "Noise Buds VS102 Plus Wireless Earbuds, Bluetooth Earbuds with 70H Playtime, Quad Mic ENC for Clear Calls, 11mm Drivers, Deep Bass, Instacharge, Bluetooth v5.3 (Deep Wine)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Sok9EsgjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DBGP48NW?tag=mdzareef-21",
-   "price": "₹1,299",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H3Q5DPP9",
-   "store": "Amazon",
-   "title": "realme Buds T310 True Wireless in-Ear Earbuds with 46dB Hybrid ANC, 360° Spatial Audio, 12.4mm Dynamic Bass Driver, Upto 40Hrs Battery and Fast Charging (Vibrant Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61dj32WdrxL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H3Q5DPP9?tag=mdzareef-21",
-   "price": "₹2,39,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0BM3DNBS8",
-   "store": "Amazon",
-   "title": "OnePlus Nord Buds 4 TWS Earbuds with 52dB Real-time ANC, Game Sound Spatial Audio, 6-Mic AI Clear Calls, Up to 54hrs Playback, 10 min for 11 hrs Fast Charging, Bluetooth 6.1 - Stellar Black",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/51jcu7LAPRL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0BM3DNBS8?tag=mdzareef-21",
-   "price": "₹3,299",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FDGVNSLH",
-   "store": "Amazon",
-   "title": "realme Buds T200x True Wireless Earbuds with 12.4mm Dynamic Bass Drivers, 25 dB ANC, Quad Mic, 45ms Latency, Upto 48 Hrs Playback, Fast Charge, IP55 Rated, BT 5.4 (Pure Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Ow0V-mzkL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FDGVNSLH?tag=mdzareef-21",
-   "price": "₹1,569",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B07L8KNP5F",
-   "store": "Amazon",
-   "title": "Samsung Galaxy Buds Core (Black) Galaxy AI Enabled in-Ear TWS with ANC | Enriched Bass | 6 Mic Setup | IP54 | 35hrs Battery | Touch Controls",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61WRrNa6BIL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B07L8KNP5F?tag=mdzareef-21",
-   "price": "₹3,399",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FZ9YD8MN",
-   "store": "Amazon",
-   "title": "OnePlus Nord Buds 4 Pro E518A Raven Black in",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/51LRQwB1VhL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FZ9YD8MN?tag=mdzareef-21",
-   "price": "₹4,299",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GDTRYXYF",
-   "store": "Amazon",
-   "title": "Noise Newly Launch Buds Play Truly Wireless Earbuds with 40H of Playtime, Quad Mic with ENC, Low Latency for Gaming (Up to 50 Ms), 13mm Driver, BT V6.0(Mauve Wine)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61FcatSQJUL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GDTRYXYF?tag=mdzareef-21",
-   "price": "₹1,199",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GX52LD7V",
-   "store": "Amazon",
-   "title": "Xiaomi 80 cm (32 inch) Smartchoice F Series HD Ready Smart LED Fire TV L32MB-FIN",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71kjAokz-yL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GX52LD7V?tag=mdzareef-21",
-   "price": "₹13,99,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GXB76VRW",
-   "store": "Amazon",
-   "title": "Visio World VW 109 cm (43 Inches) SmartChoice Spectra Series Full HD Smart QLED Android TV VW43AQ3",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/817R+GUhSXL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GXB76VRW?tag=mdzareef-21",
-   "price": "₹14,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GXV5313B",
-   "store": "Amazon",
-   "title": "Samsung 43 inch (108cm) Crystal UHD 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | HDR10+ | 150+ Channels | 7 Years OS Upgrade | UA43UE86AHULXL",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81pgMfiak0L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GXV5313B?tag=mdzareef-21",
-   "price": "₹34,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GXK5K633",
-   "store": "Amazon",
-   "title": "Samsung 55 inch (138cm) Mini LED 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | Mini-LED HDR | 150+ Channels | 7 Years OS Upgrade | UA55M2EHAULXL",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81Akj2iQo+L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GXK5K633?tag=mdzareef-21",
-   "price": "₹53,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GVJSTKS6",
-   "store": "Amazon",
-   "title": "Samsung 32 inch (80cm) HD Smart LED 2026 TV | HDR10+ | 150+ Channels | Voice Assistance Remote | PurColor | Knox Security | UA32H4650FUXXL",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/911txJdaI5L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GVJSTKS6?tag=mdzareef-21",
-   "price": "₹17,400",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F6ZLFNVT",
-   "store": "Amazon",
-   "title": "TCL 139 cm (55 inches) Smartchoice 4K Ultra HD Smart QLED Google TV | HDR 10+ | Dolby Vision & Atmos | 30W Speaker Output | Game Master | 55T6D",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71jRZx43cNL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F6ZLFNVT?tag=mdzareef-21",
-   "price": "₹41,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DZHRYFG7",
-   "store": "Amazon",
-   "title": "Xiaomi (108 cm) 43 inch Smartchoice X 4K Ultra HD Smart | Dolby Vision | Eye Care Mode | Google TV | L43MB-AIN",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81jqJ8elaHL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DZHRYFG7?tag=mdzareef-21",
-   "price": "₹24,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GTZ8WM5W",
-   "store": "Amazon",
-   "title": "TCL 101 cms (40 inches) Smartchoice Full HD Smart QLED Google TV | Dolby Audio 24 watts | Ai Clarity | Metallic Bezel-Less | Multiple Viewing Mode | 40V5C",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71keqeuJ0eL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GTZ8WM5W?tag=mdzareef-21",
-   "price": "₹22,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F84DKX8K",
-   "store": "Amazon",
-   "title": "LG 139 cms (55 inches) NU87 AI Series Nano 4K Ultra HD (3840 x 2160) Smart webOS LED TV 55NU870BPLA 2026",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81YDKCCV8XL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F84DKX8K?tag=mdzareef-21",
-   "price": "₹45,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GGR9DCCB",
-   "store": "Amazon",
-   "title": "Samsung 108 cm (43 inches) FHD Smart LED TV UA43F5550FUXXL",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81wj0iahGCL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GGR9DCCB?tag=mdzareef-21",
-   "price": "₹26,690",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H5R6C68N",
-   "store": "Amazon",
-   "title": "VW 109 cm (43 Inches) SmartChoice Pro Series 4K Ultra HD Smart QLED Google TV VW43GQ2",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81u4bOvKKuL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H5R6C68N?tag=mdzareef-21",
-   "price": "₹23,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F3HWNTR1",
-   "store": "Amazon",
-   "title": "Visio World VW 60 cm (24 Inches) SmartChoice HD Ready QLED TV VW24S2",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81co4tkZgZL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F3HWNTR1?tag=mdzareef-21",
-   "price": "₹5,699",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F7X5FC43",
-   "store": "Amazon",
-   "title": "TCL 139 cm (55 Inches) SmartChoice 4K UHD Smart QD-Mini LED Google TV | 144Hz Refresh Rate | 3GB RAM | 46W Onkyo 2.1 | Upto 512+ Zones | IMAX Enhanced | 55Q6C",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81PLRd3HtUL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F7X5FC43?tag=mdzareef-21",
-   "price": "₹59,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FBW5S6H2",
-   "store": "Amazon",
-   "title": "Sony 139 cm (55 inches) Smartchoice BRAVIA 2M2 Series 4K Ultra HD Smart LED Google TV K-55S25BM2",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81udrKi0c3L._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FBW5S6H2?tag=mdzareef-21",
-   "price": "₹63,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FDW7NT4Q",
-   "store": "Amazon",
-   "title": "PHILIPS 108 cm (43 inches) 6100 Series Frameless Full HD Smart LED Google TV 43PFT6130/94",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81TsKWtySuL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FDW7NT4Q?tag=mdzareef-21",
-   "price": "₹21,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FXFG8QL4",
-   "store": "Amazon",
-   "title": "Acer 139 cm (55 inches) Ultra I Series 4K Ultra HD Smart LED Google TV AR55UDGGU2875BD",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81cn2Z34ORL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FXFG8QL4?tag=mdzareef-21",
-   "price": "₹28,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0HFWFZSHJ",
-   "store": "Amazon",
-   "title": "Xiaomi (164 cm) 65 inch X Pro 4K QLED | Dolby Vision & HDR10+| 34W Boom Box Speakers| 120Hz Game Booster| Gemini AI| Google TV | L65MB-APIN",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81K5EO-JepL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0HFWFZSHJ?tag=mdzareef-21",
-   "price": "₹56,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FDQTLSFT",
-   "store": "Amazon",
-   "title": "Lumio Vision 7 II 2026 109cm (43 inches) 4K Ultra HD Smart QLED Google TV FTW1-ADSK",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/715ky+pK+mL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FDQTLSFT?tag=mdzareef-21",
-   "price": "₹30,99,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GJGCD8XY",
-   "store": "Amazon",
-   "title": "PHILIPS 127 cm (50 inches) Smartchoice 8100 Series 4K Ultra HD Smart QLED Google TV 50PQT8100/94",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81DO69I29UL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GJGCD8XY?tag=mdzareef-21",
-   "price": "₹33,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0G6LYM6DY",
-   "store": "Amazon",
-   "title": "Uniboom Optima 80 cm (32 inch) HD Smart LED Android TV 2026 32S-ULT-AED",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61GMKkMncJL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0G6LYM6DY?tag=mdzareef-21",
-   "price": "₹9,990",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0FJLSNZBW",
-   "store": "Amazon",
-   "title": "PHILIPS 164 cm (65 inches) 4K Ultra HD QLED Smart QD-Mini LED Google TV 65MLED610/94",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81pi6KBN-HL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0FJLSNZBW?tag=mdzareef-21",
-   "price": "₹54,99,900",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0DV3JFQJD",
-   "store": "Amazon",
-   "title": "Hisense 139 cm (55 Inches) 4K Ultra HD Smart Hi-QLED TV | 48W Speakers | Dolby Atmos & HDR10+ | World Fastest TV OS - VIDAA | 55E75Q (Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/711moZv2hVL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0DV3JFQJD?tag=mdzareef-21",
-   "price": "₹36,490",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0H36VBKR9",
-   "store": "Amazon",
-   "title": "VW 109 cm (43 inches) Pro Series Full HD Smart QLED Google TV VW43S1. (Black)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81Agz3tGKHL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H36VBKR9?tag=mdzareef-21",
-   "price": "₹15,499",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GJG3GKYD",
-   "store": "Amazon",
-   "title": "Foxsky 80 cm (32 inch) HD Ready Smart 32FS-Google TV(QLED)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61fMuD-e3IL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GJG3GKYD?tag=mdzareef-21",
-   "price": "₹11,999",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0HBQXJY84",
-   "store": "Amazon",
-   "title": "Uniboom_Optima Series 60 cm (24 inch) HD Ready LED TV 2025 Edition with 30W Sonic Boom - True Frameless - Aura Vision+ Display - (Non Smart)- 24N-ULT-AED",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61dVLjEqujL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0HBQXJY84?tag=mdzareef-21",
-   "price": "₹5,890",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0F8BT3TQW",
-   "store": "Amazon",
-   "title": "Vu California 108cm (43 inches) Smartchoice Glo MiniLED Google 4K TV VUGLOMINILED 2026",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71MnL482iSL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0F8BT3TQW?tag=mdzareef-21",
-   "price": "₹36,490",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GVNBSXLS",
-   "store": "Amazon",
-   "title": "VW 80 cm (32 inches) Pro Series HD Ready Smart QLED Google TV VW32F1",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/81SAKRC--wL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GVNBSXLS?tag=mdzareef-21",
-   "price": "₹10,499",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
-  {
-   "id": "amz-B0GQBX1NZB",
-   "store": "Amazon",
-   "title": "Hisense 55 Inch 55E8S Hi-QLED MiniLED Smart TV | 144Hz Game Mode | Devialet Sound and AI Picture | Dolby Vision IQ | Hands-Free Voice",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/810bneJIqeL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0GQBX1NZB?tag=mdzareef-21",
-   "price": "₹50,490",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
-  },
   {
    "id": "amz-B07NY23WBG",
    "store": "Amazon",
@@ -780,7 +13,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FK4RND9C",
@@ -793,7 +26,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B07N42JB4S",
@@ -806,7 +39,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0BSLRB8NJ",
@@ -819,7 +52,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FNMHBRMX",
@@ -832,7 +65,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B074CWD7MS",
@@ -845,7 +78,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0CPY4SLVR",
@@ -858,7 +91,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B09RK2L1GD",
@@ -871,7 +104,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GTVDH4G2",
@@ -884,7 +117,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H94K2RSC",
@@ -897,7 +130,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0DSFQZTVW",
@@ -910,7 +143,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H25X3W7F",
@@ -923,7 +156,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H46H6JK8",
@@ -936,7 +169,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H2J8DDKH",
@@ -949,7 +182,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GWQC4JGJ",
@@ -962,7 +195,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GY82GDW2",
@@ -975,7 +208,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HMJ5T5P7",
@@ -988,7 +221,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HF7X1XS1",
@@ -1001,7 +234,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FMS373M7",
@@ -1014,7 +247,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GWHGS8P5",
@@ -1027,7 +260,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H3PV7418",
@@ -1040,7 +273,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0D2Y31YX4",
@@ -1053,7 +286,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GV1L119H",
@@ -1066,7 +299,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HGQ11NSG",
@@ -1079,7 +312,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FFMQB3KL",
@@ -1092,7 +325,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H8P895HL",
@@ -1105,7 +338,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GSVR9C3X",
@@ -1118,7 +351,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H45YFPJT",
@@ -1131,7 +364,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0F29HNJL1",
@@ -1144,7 +377,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B09BB8DQKN",
@@ -1157,7 +390,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FFM8M9B5",
@@ -1170,7 +403,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GWQHCDS6",
@@ -1183,7 +416,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GR1528P7",
@@ -1196,7 +429,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HNS1PQSD",
@@ -1209,7 +442,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H9SV5VKG",
@@ -1222,7 +455,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HKJK4M3G",
@@ -1235,7 +468,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H8P8M4VL",
@@ -1248,7 +481,7 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0B854R7NS",
@@ -1261,7 +494,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0CMF25TKG",
@@ -1274,7 +507,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FLF44GTQ",
@@ -1287,7 +520,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0DY7YPBJL",
@@ -1300,7 +533,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H3BXLJ3T",
@@ -1313,7 +546,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0G1T4R5F5",
@@ -1326,7 +559,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FDQK5KSZ",
@@ -1339,7 +572,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HGFFCZ2D",
@@ -1352,7 +585,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0DB5XSKLJ",
@@ -1365,7 +598,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0CG1VX5P4",
@@ -1378,7 +611,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GX9JK9SN",
@@ -1391,7 +624,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0B6BLTGTT",
@@ -1404,7 +637,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FL7LQY6H",
@@ -1417,7 +650,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FQG8MSVT",
@@ -1430,7 +663,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0CG1Y3336",
@@ -1443,7 +676,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0FC6BG26T",
@@ -1456,7 +689,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0GPDRBRBX",
@@ -1469,7 +702,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B09WJCRHKV",
@@ -1482,7 +715,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0DTB2VQFZ",
@@ -1495,7 +728,20 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0CQCL7G4K",
+   "store": "Amazon",
+   "title": "Fire-Boltt Phoenix Pro Round Smart Watch 1.39\" Display with Bluetooth Calling,AI Voice Assistant,SpO2 & Heart Rate Monitor, 120+ Sports Modes,IP67 Waterproof Metal Smart Watch for Men & Women - Silver",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/717+Bu7jtLL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0CQCL7G4K?tag=mdzareef-21",
+   "price": "₹1,099",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HLTGVD3J",
@@ -1508,7 +754,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B09PRGXJJF",
@@ -1521,7 +767,72 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0H1WY1D37",
+   "store": "Amazon",
+   "title": "OnePlus N6x | 4GB+128GB | Burgundy Red | 7000mAh Battery | Power for Days | 48-Months Smoothness | Smooth 120Hz Display | Largest 5300mm2 Cooling System | Military-Grade Durability",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61rbuaZn+AL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H1WY1D37?tag=mdzareef-21",
+   "price": "₹22,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0H3LGB59B",
+   "store": "Amazon",
+   "title": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 128GB Storage) | 6500mAh Battery with 44W Fast Charging* | Dimensity 6300 with 579k+ AnTuTu Score* | OriginOS 6.0 with AI Creation* & Private Space*",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61+l5bzv9hL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H3LGB59B?tag=mdzareef-21",
+   "price": "₹19,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0HG96MZ9P",
+   "store": "Amazon",
+   "title": "OnePlus N6 | 6GB+128GB | Fresh Mint | Segment's Biggest 8000mAh Battery | Segment's Fastest 45W Charging | 60-Month Smoothness | Smooth 120Hz Display | 50MP Camera | Military-Grade Durability",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61d03Bx0AjL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0HG96MZ9P?tag=mdzareef-21",
+   "price": "₹26,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0H3KBZ4J9",
+   "store": "Amazon",
+   "title": "iQOO Z11xa 5G (Prismatic Green, 8GB RAM, 128 GB Storage) | Massive 7200mAh Battery | Dimensity 7400 Turbo Processor | OriginOS 6 with 4 Years of Security Updates*",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61KRgiSiB0L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H3KBZ4J9?tag=mdzareef-21",
+   "price": "₹28,998",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0HCB97YK5",
+   "store": "Amazon",
+   "title": "OnePlus 15R | 16GB+512GB | Charcoal Black | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps Video",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61AsNTuJ6mL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0HCB97YK5?tag=mdzareef-21",
+   "price": "₹66,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H6HY2C29",
@@ -1534,7 +845,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HCNC1Z9X",
@@ -1547,7 +858,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HL9BTXZJ",
@@ -1560,7 +871,33 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B0H8TCFL8X",
+   "store": "Amazon",
+   "title": "iQOO Z11x 5G (Matrix Green, 6GB RAM, 128GB Storage)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61gQd7MKREL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H8TCFL8X?tag=mdzareef-21",
+   "price": "₹27,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
+  },
+  {
+   "id": "amz-B01DEWVZ2C",
+   "store": "Amazon",
+   "title": "Samsung Galaxy M47 5G Mobile (Rogue Red, 6GB RAM, 128GB Storage, 6000mAh Battery)| 50MP OIS| Snapdragon Processor| LPDDR5X RAM,UFS 3.1 Storage| Gorilla Glass Victus+| sAMOLED| Knox Security| AI",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71ZvdXUScLL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B01DEWVZ2C?tag=mdzareef-21",
+   "price": "₹24,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HK7XKRZ9",
@@ -1573,7 +910,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H6JP1SM4",
@@ -1586,7 +923,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HHFBKKM6",
@@ -1599,7 +936,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H8XQ49B8",
@@ -1612,7 +949,7 @@
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0HK4MDSZ6",
@@ -1625,7 +962,7 @@
    "discount": 0,
    "available": true,
    "category": "Mobiles",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
    "id": "amz-B0H6829HHV",
@@ -1638,20 +975,776 @@
    "discount": 0,
    "available": true,
    "category": "Laptops",
-   "lastSeen": "2026-11-12T11:48:46.493Z"
+   "lastSeen": "2026-11-12T12:12:54.985Z"
   },
   {
-   "id": "amz-B0CQCL7G4K",
+   "id": "amz-B0GVYXPZBS",
    "store": "Amazon",
-   "title": "Fire-Boltt Phoenix Pro Round Smart Watch 1.39\" Display with Bluetooth Calling,AI Voice Assistant,SpO2 & Heart Rate Monitor, 120+ Sports Modes,IP67 Waterproof Metal Smart Watch for Men & Women - Silver",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/717+Bu7jtLL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0CQCL7G4K?tag=mdzareef-21",
-   "price": "₹1,09,900",
+   "title": "OnePlus N6x | 4GB+128GB | Burgundy Red | 7000mAh Battery | Power for Days | 48-Months Smoothness | Smooth 120Hz Display | Largest 5300mm2 Cooling System | Military-Grade Durability",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61rbuaZn+AL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GVYXPZBS?tag=mdzareef-21",
+   "price": "₹22,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FMDL81GS",
+   "store": "Amazon",
+   "title": "iQOO Z11 Lite 44W 5G (Solar Flame, 4GB RAM, 128GB Storage) | 6500mAh Battery with 44W Fast Charging* | Dimensity 6300 with 579k+ AnTuTu Score* | OriginOS 6.0 with AI Creation* & Private Space*",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61+l5bzv9hL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FMDL81GS?tag=mdzareef-21",
+   "price": "₹19,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0D2R2MXXJ",
+   "store": "Amazon",
+   "title": "OnePlus Nord Buds 3r TWS Earbuds up to 54 Hours Playback, 2-mic Clear Calls, 3D Spatial Audio, AI Translation, 12.4mm Drivers, Dual-Device Connectivity, 47ms Low Latency - Ash Black",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/51nBTTG3hNL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0D2R2MXXJ?tag=mdzareef-21",
+   "price": "₹1,999",
    "originalPrice": "",
    "discount": 0,
    "available": true,
    "category": "Electronics",
-   "lastSeen": "2026-11-12T11:25:47.010Z",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DDHM6D3L",
+   "store": "Amazon",
+   "title": "Samsung Galaxy S25 Ultra 5G AI Smartphone (Titanium Gray, 12GB RAM, 256GB Storage), 200MP Camera, 5000mAh Ultra Long Battery, QHD+ Dynamic AMOLED 2X, Galaxy AI, Knox Security, S Pen Included",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/7114RlvzXnL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DDHM6D3L?tag=mdzareef-21",
+   "price": "₹94,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DCNWN8NZ",
+   "store": "Amazon",
+   "title": "OnePlus Nord 6 | 8GB+256GB | Fresh Mint | Snapdragon 8s Gen 4 | Segment's First Stable 165FPS Gaming | Segment's Largest 9000mAh Battery | Most Complete IP Rating | Personalized AI",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61F1NWYtCKL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DCNWN8NZ?tag=mdzareef-21",
+   "price": "₹46,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0G2B2QVLL",
+   "store": "Amazon",
+   "title": "Apple EarPods (USB-C) ​​​​​​​",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/513OSdW4elL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0G2B2QVLL?tag=mdzareef-21",
+   "price": "₹1,599",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F7Y54PJX",
+   "store": "Amazon",
+   "title": "Redmi 15C 5G Prime Edition Dusk Purple 6GB + 128GB | Massive 6000mAh Battery | Segment's Largest 17.53cm Display Up to 120Hz | MediaTek Dimensity 6300 | 33W Fast Charging | 50MP AI Dual Camera",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/711q7oij2qL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F7Y54PJX?tag=mdzareef-21",
+   "price": "₹18,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DCZ3WDTB",
+   "store": "Amazon",
+   "title": "OnePlus N6 | 6GB+128GB | Fresh Mint | Segment's Biggest 8000mAh Battery | Segment's Fastest 45W Charging | 60-Month Smoothness | Smooth 120Hz Display | 50MP Camera | Military-Grade Durability",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61d03Bx0AjL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DCZ3WDTB?tag=mdzareef-21",
+   "price": "₹26,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FP22HBH9",
+   "store": "Amazon",
+   "title": "iQOO Z11xa 5G (Prismatic Green, 8GB RAM, 128 GB Storage) | Massive 7200mAh Battery | Dimensity 7400 Turbo Processor | OriginOS 6 with 4 Years of Security Updates*",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61KRgiSiB0L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FP22HBH9?tag=mdzareef-21",
+   "price": "₹28,998",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0G48KWP3C",
+   "store": "Amazon",
+   "title": "OnePlus Bullets Wireless Z3 in-Ear Neckband with 12.4mm Drivers, 3D Spatial Audio,10 mins Charge for 27 hrs Playback, 4 EQ preset, Dynamic bass Enhancement & BT5.4, Black (E307A)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/51vT4GzBObL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0G48KWP3C?tag=mdzareef-21",
+   "price": "₹1,910",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0H1X5XP25",
+   "store": "Amazon",
+   "title": "OnePlus Nord CE6 | 8GB+128GB | Pitch Black | Snapdragon 7s Gen 4 | Segment's Fastest Touch Response | 8000mAh Battery | 144Hz 1.5K AMOLED Display | 50MP Main + 32MP Selfie 4K Cameras | IP66,68,69,69K",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Di24QT6GL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H1X5XP25?tag=mdzareef-21",
+   "price": "₹37,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B008FWZ5MS",
+   "store": "Amazon",
+   "title": "Samsung Galaxy A56 5G Mobile (Awesome Midnight Blue, 8GB, 128GB) | Segment Most Complete Triple Camera | 50MP | AI Editing | 4nm Processor | sAMOLED | 5000mAh | Gorilla Glass Victus+| Knox Security",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71huGP+5FkL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B008FWZ5MS?tag=mdzareef-21",
+   "price": "₹31,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0CV48C7S3",
+   "store": "Amazon",
+   "title": "Noise Twist Round dial Smart Watch with Bluetooth Calling, 1.38\" TFT Display, up-to 7 Days Battery, 100+ Watch Faces, IP68, Heart Rate Monitor, Sleep Tracking (Jet Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61-vRq2ulOL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0CV48C7S3?tag=mdzareef-21",
+   "price": "₹1,599",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0CJMGTMHS",
+   "store": "Amazon",
+   "title": "OnePlus 15R | 16GB+512GB | Charcoal Black | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps Video",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61AsNTuJ6mL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0CJMGTMHS?tag=mdzareef-21",
+   "price": "₹66,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GS5Y6BD3",
+   "store": "Amazon",
+   "title": "iQOO 15R (Triumph Silver 2026, 8GB RAM, 256GB Storage) | Snapdragon® 8 Gen 5 Processor | India’s Slimmest Smartphone in 7600mAh Battery* | Segment's Most Stable 144FPS Gaming*",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61RJGwzjcjL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GS5Y6BD3?tag=mdzareef-21",
+   "price": "₹53,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GRGY8GTV",
+   "store": "Amazon",
+   "title": "REDMI A7 Pro 5G (Mist Blue, 4GB RAM,128GB Storage) | Segment's Fastest Processor | Segment's Largest Battery | Segment's Largest & Smoothest 6.9in 120Hz Display",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71eQsL8sqcL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GRGY8GTV?tag=mdzareef-21",
+   "price": "₹15,497",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Mobiles",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0G2H4R5YB",
+   "store": "Amazon",
+   "title": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Low Latency Gaming, Instacharge(10 Min=120 Min), Bluetooth V5.3 (Ice Blue)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/518-N2QlrVL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0G2H4R5YB?tag=mdzareef-21",
+   "price": "₹1,199",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DNPWJLQC",
+   "store": "Amazon",
+   "title": "GOBOULT Z40 True Wireless in Ear Earbuds with 60H Playtime, Zen™ ENC Mic, Low Latency Gaming, Type-C Fast Charging, Made in India, 10mm Rich Bass Drivers, IPX5, Ear Buds TWS (Blue)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71rlmEZ6cjL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DNPWJLQC?tag=mdzareef-21",
+   "price": "₹1,099",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GZNFM1CT",
+   "store": "Amazon",
+   "title": "realme Buds Wireless 5 ANC in Ear Bluetooth Headphones,50dB ANC, 13.6mm Dynamic Bass Driver,360° Spatial Audio,45ms Low Latency,Upto 38hrs Playback,IP55 Rating,Dual Device Connection (Midnight Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/412-YzPRcPL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GZNFM1CT?tag=mdzareef-21",
+   "price": "₹1,97,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DS2XNXZB",
+   "store": "Amazon",
+   "title": "boAt 2026 Launch Airdopes ProClip,Air Conduction Tech,Feather-Light Earbuds,Clip-On Design,All Day Wear Comfort,52H Battery,12mm Dynamic Drivers,App Support,BT v6.0,OWS Earbuds with mic(Satin White)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61CE4Bb7AHL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DS2XNXZB?tag=mdzareef-21",
+   "price": "₹1,799",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DBGP48NW",
+   "store": "Amazon",
+   "title": "Noise Buds VS102 Plus Wireless Earbuds, Bluetooth Earbuds with 70H Playtime, Quad Mic ENC for Clear Calls, 11mm Drivers, Deep Bass, Instacharge, Bluetooth v5.3 (Deep Wine)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Sok9EsgjL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DBGP48NW?tag=mdzareef-21",
+   "price": "₹1,299",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0H3Q5DPP9",
+   "store": "Amazon",
+   "title": "realme Buds T310 True Wireless in-Ear Earbuds with 46dB Hybrid ANC, 360° Spatial Audio, 12.4mm Dynamic Bass Driver, Upto 40Hrs Battery and Fast Charging (Vibrant Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61dj32WdrxL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H3Q5DPP9?tag=mdzareef-21",
+   "price": "₹2,39,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0BM3DNBS8",
+   "store": "Amazon",
+   "title": "OnePlus Nord Buds 4 TWS Earbuds with 52dB Real-time ANC, Game Sound Spatial Audio, 6-Mic AI Clear Calls, Up to 54hrs Playback, 10 min for 11 hrs Fast Charging, Bluetooth 6.1 - Stellar Black",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/51jcu7LAPRL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0BM3DNBS8?tag=mdzareef-21",
+   "price": "₹3,299",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FDGVNSLH",
+   "store": "Amazon",
+   "title": "realme Buds T200x True Wireless Earbuds with 12.4mm Dynamic Bass Drivers, 25 dB ANC, Quad Mic, 45ms Latency, Upto 48 Hrs Playback, Fast Charge, IP55 Rated, BT 5.4 (Pure Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Ow0V-mzkL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FDGVNSLH?tag=mdzareef-21",
+   "price": "₹1,569",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B07L8KNP5F",
+   "store": "Amazon",
+   "title": "Samsung Galaxy Buds Core (Black) Galaxy AI Enabled in-Ear TWS with ANC | Enriched Bass | 6 Mic Setup | IP54 | 35hrs Battery | Touch Controls",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61WRrNa6BIL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B07L8KNP5F?tag=mdzareef-21",
+   "price": "₹3,399",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FZ9YD8MN",
+   "store": "Amazon",
+   "title": "OnePlus Nord Buds 4 Pro E518A Raven Black in",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/51LRQwB1VhL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FZ9YD8MN?tag=mdzareef-21",
+   "price": "₹4,299",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GDTRYXYF",
+   "store": "Amazon",
+   "title": "Noise Newly Launch Buds Play Truly Wireless Earbuds with 40H of Playtime, Quad Mic with ENC, Low Latency for Gaming (Up to 50 Ms), 13mm Driver, BT V6.0(Mauve Wine)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61FcatSQJUL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GDTRYXYF?tag=mdzareef-21",
+   "price": "₹1,199",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GX52LD7V",
+   "store": "Amazon",
+   "title": "Xiaomi 80 cm (32 inch) Smartchoice F Series HD Ready Smart LED Fire TV L32MB-FIN",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71kjAokz-yL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GX52LD7V?tag=mdzareef-21",
+   "price": "₹13,99,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GXB76VRW",
+   "store": "Amazon",
+   "title": "Visio World VW 109 cm (43 Inches) SmartChoice Spectra Series Full HD Smart QLED Android TV VW43AQ3",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/817R+GUhSXL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GXB76VRW?tag=mdzareef-21",
+   "price": "₹14,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GXV5313B",
+   "store": "Amazon",
+   "title": "Samsung 43 inch (108cm) Crystal UHD 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | HDR10+ | 150+ Channels | 7 Years OS Upgrade | UA43UE86AHULXL",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81pgMfiak0L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GXV5313B?tag=mdzareef-21",
+   "price": "₹34,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GXK5K633",
+   "store": "Amazon",
+   "title": "Samsung 55 inch (138cm) Mini LED 4K Vision AI 2026 Smart TV | 30W Speakers | 4K Upscaling | Mini-LED HDR | 150+ Channels | 7 Years OS Upgrade | UA55M2EHAULXL",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81Akj2iQo+L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GXK5K633?tag=mdzareef-21",
+   "price": "₹53,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GVJSTKS6",
+   "store": "Amazon",
+   "title": "Samsung 32 inch (80cm) HD Smart LED 2026 TV | HDR10+ | 150+ Channels | Voice Assistance Remote | PurColor | Knox Security | UA32H4650FUXXL",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/911txJdaI5L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GVJSTKS6?tag=mdzareef-21",
+   "price": "₹17,400",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F6ZLFNVT",
+   "store": "Amazon",
+   "title": "TCL 139 cm (55 inches) Smartchoice 4K Ultra HD Smart QLED Google TV | HDR 10+ | Dolby Vision & Atmos | 30W Speaker Output | Game Master | 55T6D",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71jRZx43cNL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F6ZLFNVT?tag=mdzareef-21",
+   "price": "₹41,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DZHRYFG7",
+   "store": "Amazon",
+   "title": "Xiaomi (108 cm) 43 inch Smartchoice X 4K Ultra HD Smart | Dolby Vision | Eye Care Mode | Google TV | L43MB-AIN",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81jqJ8elaHL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DZHRYFG7?tag=mdzareef-21",
+   "price": "₹24,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GTZ8WM5W",
+   "store": "Amazon",
+   "title": "TCL 101 cms (40 inches) Smartchoice Full HD Smart QLED Google TV | Dolby Audio 24 watts | Ai Clarity | Metallic Bezel-Less | Multiple Viewing Mode | 40V5C",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71keqeuJ0eL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GTZ8WM5W?tag=mdzareef-21",
+   "price": "₹22,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F84DKX8K",
+   "store": "Amazon",
+   "title": "LG 139 cms (55 inches) NU87 AI Series Nano 4K Ultra HD (3840 x 2160) Smart webOS LED TV 55NU870BPLA 2026",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81YDKCCV8XL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F84DKX8K?tag=mdzareef-21",
+   "price": "₹45,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GGR9DCCB",
+   "store": "Amazon",
+   "title": "Samsung 108 cm (43 inches) FHD Smart LED TV UA43F5550FUXXL",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81wj0iahGCL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GGR9DCCB?tag=mdzareef-21",
+   "price": "₹26,690",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0H5R6C68N",
+   "store": "Amazon",
+   "title": "VW 109 cm (43 Inches) SmartChoice Pro Series 4K Ultra HD Smart QLED Google TV VW43GQ2",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81u4bOvKKuL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H5R6C68N?tag=mdzareef-21",
+   "price": "₹23,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F3HWNTR1",
+   "store": "Amazon",
+   "title": "Visio World VW 60 cm (24 Inches) SmartChoice HD Ready QLED TV VW24S2",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81co4tkZgZL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F3HWNTR1?tag=mdzareef-21",
+   "price": "₹5,699",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F7X5FC43",
+   "store": "Amazon",
+   "title": "TCL 139 cm (55 Inches) SmartChoice 4K UHD Smart QD-Mini LED Google TV | 144Hz Refresh Rate | 3GB RAM | 46W Onkyo 2.1 | Upto 512+ Zones | IMAX Enhanced | 55Q6C",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81PLRd3HtUL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F7X5FC43?tag=mdzareef-21",
+   "price": "₹59,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FBW5S6H2",
+   "store": "Amazon",
+   "title": "Sony 139 cm (55 inches) Smartchoice BRAVIA 2M2 Series 4K Ultra HD Smart LED Google TV K-55S25BM2",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81udrKi0c3L._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FBW5S6H2?tag=mdzareef-21",
+   "price": "₹63,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FDW7NT4Q",
+   "store": "Amazon",
+   "title": "PHILIPS 108 cm (43 inches) 6100 Series Frameless Full HD Smart LED Google TV 43PFT6130/94",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81TsKWtySuL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FDW7NT4Q?tag=mdzareef-21",
+   "price": "₹21,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FXFG8QL4",
+   "store": "Amazon",
+   "title": "Acer 139 cm (55 inches) Ultra I Series 4K Ultra HD Smart LED Google TV AR55UDGGU2875BD",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81cn2Z34ORL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FXFG8QL4?tag=mdzareef-21",
+   "price": "₹28,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0HFWFZSHJ",
+   "store": "Amazon",
+   "title": "Xiaomi (164 cm) 65 inch X Pro 4K QLED | Dolby Vision & HDR10+| 34W Boom Box Speakers| 120Hz Game Booster| Gemini AI| Google TV | L65MB-APIN",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81K5EO-JepL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0HFWFZSHJ?tag=mdzareef-21",
+   "price": "₹56,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FDQTLSFT",
+   "store": "Amazon",
+   "title": "Lumio Vision 7 II 2026 109cm (43 inches) 4K Ultra HD Smart QLED Google TV FTW1-ADSK",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/715ky+pK+mL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FDQTLSFT?tag=mdzareef-21",
+   "price": "₹30,99,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GJGCD8XY",
+   "store": "Amazon",
+   "title": "PHILIPS 127 cm (50 inches) Smartchoice 8100 Series 4K Ultra HD Smart QLED Google TV 50PQT8100/94",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81DO69I29UL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GJGCD8XY?tag=mdzareef-21",
+   "price": "₹33,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0G6LYM6DY",
+   "store": "Amazon",
+   "title": "Uniboom Optima 80 cm (32 inch) HD Smart LED Android TV 2026 32S-ULT-AED",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61GMKkMncJL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0G6LYM6DY?tag=mdzareef-21",
+   "price": "₹9,990",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0FJLSNZBW",
+   "store": "Amazon",
+   "title": "PHILIPS 164 cm (65 inches) 4K Ultra HD QLED Smart QD-Mini LED Google TV 65MLED610/94",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81pi6KBN-HL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0FJLSNZBW?tag=mdzareef-21",
+   "price": "₹54,99,900",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0DV3JFQJD",
+   "store": "Amazon",
+   "title": "Hisense 139 cm (55 Inches) 4K Ultra HD Smart Hi-QLED TV | 48W Speakers | Dolby Atmos & HDR10+ | World Fastest TV OS - VIDAA | 55E75Q (Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/711moZv2hVL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0DV3JFQJD?tag=mdzareef-21",
+   "price": "₹36,490",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0H36VBKR9",
+   "store": "Amazon",
+   "title": "VW 109 cm (43 inches) Pro Series Full HD Smart QLED Google TV VW43S1. (Black)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81Agz3tGKHL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0H36VBKR9?tag=mdzareef-21",
+   "price": "₹15,499",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GJG3GKYD",
+   "store": "Amazon",
+   "title": "Foxsky 80 cm (32 inch) HD Ready Smart 32FS-Google TV(QLED)",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61fMuD-e3IL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GJG3GKYD?tag=mdzareef-21",
+   "price": "₹11,999",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0HBQXJY84",
+   "store": "Amazon",
+   "title": "Uniboom_Optima Series 60 cm (24 inch) HD Ready LED TV 2025 Edition with 30W Sonic Boom - True Frameless - Aura Vision+ Display - (Non Smart)- 24N-ULT-AED",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/61dVLjEqujL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0HBQXJY84?tag=mdzareef-21",
+   "price": "₹5,890",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0F8BT3TQW",
+   "store": "Amazon",
+   "title": "Vu California 108cm (43 inches) Smartchoice Glo MiniLED Google 4K TV VUGLOMINILED 2026",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/71MnL482iSL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0F8BT3TQW?tag=mdzareef-21",
+   "price": "₹36,490",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GVNBSXLS",
+   "store": "Amazon",
+   "title": "VW 80 cm (32 inches) Pro Series HD Ready Smart QLED Google TV VW32F1",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/81SAKRC--wL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GVNBSXLS?tag=mdzareef-21",
+   "price": "₹10,499",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
+   "stale": false
+  },
+  {
+   "id": "amz-B0GQBX1NZB",
+   "store": "Amazon",
+   "title": "Hisense 55 Inch 55E8S Hi-QLED MiniLED Smart TV | 144Hz Game Mode | Devialet Sound and AI Picture | Dolby Vision IQ | Hands-Free Voice",
+   "image": "https://images-eu.ssl-images-amazon.com/images/I/810bneJIqeL._AC_UL300_SR300,200_.jpg",
+   "url": "https://www.amazon.in/dp/B0GQBX1NZB?tag=mdzareef-21",
+   "price": "₹50,490",
+   "originalPrice": "",
+   "discount": 0,
+   "available": true,
+   "category": "Electronics",
+   "lastSeen": "2026-11-12T11:48:46.493Z",
    "stale": false
   },
   {
@@ -1809,20 +1902,6 @@
    "stale": false
   },
   {
-   "id": "amz-B0H8TCFL8X",
-   "store": "Amazon",
-   "title": "GOBOULT Z40 True Wireless in Ear Earbuds with 60H Playtime, Zen™ ENC Mic, Low Latency Gaming, Type-C Fast Charging, Made in India, 10mm Rich Bass Drivers, IPX5, Ear Buds TWS (Blue)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/71rlmEZ6cjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H8TCFL8X?tag=mdzareef-21",
-   "price": "₹1,099",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T10:39:49.409Z",
-   "stale": false
-  },
-  {
    "id": "amz-B0GQTSHLLR",
    "store": "Amazon",
    "title": "Samsung Galaxy Buds Core (Black) Galaxy AI Enabled in-Ear TWS with ANC | Enriched Bass | 6 Mic Setup | IP54 | 35hrs Battery | Touch Controls",
@@ -1843,20 +1922,6 @@
    "image": "https://images-eu.ssl-images-amazon.com/images/I/51LRQwB1VhL._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0BM3LTJMN?tag=mdzareef-21",
    "price": "₹4,299",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Electronics",
-   "lastSeen": "2026-11-12T10:39:49.409Z",
-   "stale": false
-  },
-  {
-   "id": "amz-B01DEWVZ2C",
-   "store": "Amazon",
-   "title": "Noise Buds VS102 Plus Wireless Earbuds, Bluetooth Earbuds with 70H Playtime, Quad Mic ENC for Clear Calls, 11mm Drivers, Deep Bass, Instacharge, Bluetooth v5.3 (Deep Wine)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61Sok9EsgjL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B01DEWVZ2C?tag=mdzareef-21",
-   "price": "₹1,299",
    "originalPrice": "",
    "discount": 0,
    "available": true,
@@ -2137,20 +2202,6 @@
    "image": "https://images-eu.ssl-images-amazon.com/images/I/71tVzg1yofL._AC_UL300_SR300,200_.jpg",
    "url": "https://www.amazon.in/dp/B0HGM8PBNL?tag=mdzareef-21",
    "price": "₹11,998",
-   "originalPrice": "",
-   "discount": 0,
-   "available": true,
-   "category": "Mobiles",
-   "lastSeen": "2026-11-12T10:39:49.409Z",
-   "stale": false
-  },
-  {
-   "id": "amz-B0H3KBZ4J9",
-   "store": "Amazon",
-   "title": "iQOO Z11x 5G (Matrix Green, 6GB RAM, 128GB Storage)",
-   "image": "https://images-eu.ssl-images-amazon.com/images/I/61gQd7MKREL._AC_UL300_SR300,200_.jpg",
-   "url": "https://www.amazon.in/dp/B0H3KBZ4J9?tag=mdzareef-21",
-   "price": "₹27,999",
    "originalPrice": "",
    "discount": 0,
    "available": true,
